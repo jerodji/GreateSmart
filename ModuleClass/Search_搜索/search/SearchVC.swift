@@ -114,18 +114,18 @@ class SearchVC: BaseUIViewController,UITableViewDelegate,UITableViewDataSource {
 
         //MARK: 热门搜索数据展示 flowCollectionView
         //let flowCtrl = FlowCollectionControl.init()
-        var bottomDis: CGFloat!
-        if isiPhoneX() {
-            bottomDis = CGFloat(0)
-        } else {
-            bottomDis = CGFloat(10)
-        }
+//        var bottomDis: CGFloat
+//        if isiPhoneX() {
+//            bottomDis = CGFloat(0)
+//        } else {
+//            bottomDis = CGFloat(10)
+//        }
         
         flowCtrl.setupFlowCollectionView(
-            frame: CGRect.init(x: 20, y: hotTitle.bottom, width:kScreenW-40, height: kScreenH - hotTitle.bottom - bottomDis),
+            frame: CGRect.init(x: 20, y: hotTitle.bottom, width:kScreenW-40, height: kScreenH - hotTitle.bottom),
             InteritemSpacing: 15,
             LineSpacing: 15,
-            contentInset: UIEdgeInsets.init(top: 0, left: 0, bottom: 0, right: 0),
+            contentInset: UIEdgeInsets.init(top: 0, left: 0, bottom: 10, right: 0),
             data:hotList
         )
         

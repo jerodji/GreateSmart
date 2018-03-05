@@ -8,8 +8,8 @@
 
 import UIKit
 
-let LAOPDR_TEST = "http://test.laopdr.cn:8080"
-let LAOPDR = "https://www.laopdr.cn"
+let URLHEAD_LAOPDR_TEST = "http://test.laopdr.cn:8080"
+let URLHEAD_LAOPDR = "https://www.laopdr.cn"
 
 class NetAPI: NSObject {
     /* 单例 */

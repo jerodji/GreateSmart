@@ -10,9 +10,9 @@ import UIKit
 
 class HomePageVC: BaseUIViewController {
 
-    var banerModel = BannerModel()
-    let banerCtrl  = BannerControl()
-    let tableCtrl  = HomeTableControl()
+    private var banerModel = BannerModel()
+    private var banerCtrl  : BannerControl!
+    private var tableCtrl  : HomeTableControl!
     
     override func loadView() {
         super.loadView()
@@ -27,14 +27,16 @@ class HomePageVC: BaseUIViewController {
         self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: UIBarMetrics.default); /* 导航栏 设置透明 */
         self.navigationController?.navigationBar.shadowImage = UIImage(); /* 去掉黑线 */
         self.naviBar.isHidden = true
-    }
-    
-    override func viewWillLayoutSubviews() {
-        super.viewWillLayoutSubviews()
+        
         configBannerView()
         configTableview()
         configSearchButton()
+        tableMoveHandle()
     }
+    
+//    override func viewWillLayoutSubviews() {
+//        super.viewWillLayoutSubviews()
+//    }
     
     //MARK:-
     //MARK: 搜索按钮
@@ -51,23 +53,28 @@ class HomePageVC: BaseUIViewController {
     
     //MARK: banner
     func configBannerView() -> () {
-        banerCtrl.bannerView.frame = CGRect.init(x: 0, y: 0, width: kScreenW, height: 315*kSizeScale)
-//        banerCtrl.bannerView.mas_makeConstraints { (make) in
-//           _ = make?.left.mas_equalTo()(self.view.mas_left)?.setOffset(0)
-//           _ = make?.top.mas_equalTo()(self.view.mas_top)?.setOffset(0)
-//           _ = make?.width.mas_equalTo()(kScreenW)
-//           _ = make?.height.mas_equalTo()(315*kSizeScale)
-//        }
-        
+        banerCtrl = BannerControl()
+        banerCtrl.bannerView.frame = CGRect.init(x: 0, y: 0, width: kScreenW, height: HeightBanner)
         self.view.addSubview(banerCtrl.bannerView)
-        
     }
     
     //MARK: tableView
     func configTableview() -> () {
-        tableCtrl.tableView.frame = CGRect.init(x: 0, y: banerCtrl.bannerView.bottom, width: kScreenW, height: kScreenH-banerCtrl.bannerView.height-49)
+        tableCtrl = HomeTableControl.init(frame: CGRect.init(x: 0, y: banerCtrl.bannerView.bottom, width: kScreenW, height: kScreenH-kNaviH-kTabbarH))
         self.view.addSubview(tableCtrl.tableView)
     }
+    
+    //MARK:-
+    //MARK:tableView移动
+    func tableMoveHandle() -> Void {
+        
+    }
+    
+    
+    
+    
+    
+    
     
     
     override func didReceiveMemoryWarning() {

@@ -10,17 +10,22 @@ import UIKit
 
 class HomeTableControl: BaseControl {
     
-    let tableView = BaseUITableView()
+    var tableView: HomeTableView!
     
     override init() {
         super.init()
     }
     
-    convenience init(frame:CGRect) {
-        self.init()
-        tableView.frame = frame
-    }
+//    convenience init(frame:CGRect) {
+//        self.init()
+//        tableView.frame = frame
+//    }
     
+    init(frame:CGRect) {
+        super.init()
+        tableView = HomeTableView.init(frame: frame, style: UITableViewStyle.plain)
+        
+    }
     
     
     

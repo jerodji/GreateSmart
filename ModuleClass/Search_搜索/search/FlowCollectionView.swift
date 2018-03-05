@@ -39,7 +39,7 @@ class LabelCollectionViewCell: UICollectionViewCell {
 }
 
 
-//MARK:-
+//MARK:- FlowCollectionView
 
 class FlowCollectionView: UICollectionView,UICollectionViewDelegate,UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     
@@ -75,6 +75,8 @@ class FlowCollectionView: UICollectionView,UICollectionViewDelegate,UICollection
         
         self.backgroundColor = UIColor.clear
         self.register(LabelCollectionViewCell.self, forCellWithReuseIdentifier: CellId)
+        self.showsVerticalScrollIndicator = false
+        //self.showsHorizontalScrollIndicator = true
         self.delegate = self
         self.dataSource = self
         

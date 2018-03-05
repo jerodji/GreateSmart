@@ -44,6 +44,15 @@ let kColorTabbar = UIColor.white
 let kColorNavi   = UIColor.white
 let kColorTheme  = UIColor.black /* 主题颜色 */
 
+func ColorRGBA(r:CGFloat, g:CGFloat, b:CGFloat, a:CGFloat) -> UIColor {
+    return UIColor.init(red: r/255.0, green: g/255.0, blue: b/255.0, alpha: a)
+}
+func ColorRGB(r:CGFloat, g:CGFloat, b:CGFloat) -> UIColor {
+    return ColorRGBA(r: r, g: g, b: b, a: 1)
+}
+func ColorHex(hex:String) -> UIColor {
+    return UIColor.init(hex: hex)
+}
 
 /**======================    =======================**/
 
@@ -52,5 +61,12 @@ let kColorTheme  = UIColor.black /* 主题颜色 */
 import UIKit
 
 class PublicDefine: NSObject {
+    /* 单例 */
+    static let instance = PublicDefine()
+    /* 需要重写自己的init方法,设置为私有,保证单例是真正唯一的,避免外部对象通过访问init方法创建单例类的其他实例 */
+    private override init() { }
+    
+    //let HeightBanner:CGFloat = CGFloat(315.0)
+    
     
 }
