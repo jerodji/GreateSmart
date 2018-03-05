@@ -1,0 +1,1067 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 48;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		12F29E0B0732CFC549BCF754 /* Pods_GreateSmart.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AFE5A3FFF7CEC461A4847CB6 /* Pods_GreateSmart.framework */; };
+		381C62FA20464C5500A9066C /* ResultVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 381C62F920464C5500A9066C /* ResultVC.swift */; };
+		381C62FE204685D700A9066C /* SearchRecordTitleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 381C62FD204685D700A9066C /* SearchRecordTitleView.swift */; };
+		381C63002046861100A9066C /* SearchRecordTitleView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 381C62FF2046861100A9066C /* SearchRecordTitleView.xib */; };
+		381C63032046990F00A9066C /* SearchHistoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 381C63012046990F00A9066C /* SearchHistoryCell.swift */; };
+		381C63042046990F00A9066C /* SearchHistoryCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 381C63022046990F00A9066C /* SearchHistoryCell.xib */; };
+		381C630F2047C81A00A9066C /* WSCollectionViewFlowLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 381C630E2047C81A00A9066C /* WSCollectionViewFlowLayout.m */; };
+		381C63152047CCCC00A9066C /* FlowCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 381C63142047CCCC00A9066C /* FlowCollectionView.swift */; };
+		381C63172047D04200A9066C /* FlowCollectionControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 381C63162047D04200A9066C /* FlowCollectionControl.swift */; };
+		381C63192048097F00A9066C /* StringSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = 381C63182048097F00A9066C /* StringSize.swift */; };
+		38212FFD2049473C00F1413C /* Pods_GreateSmart.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D64C8E0F66D55CC3EC66E617 /* Pods_GreateSmart.framework */; };
+		38213004204948EA00F1413C /* JJRealmManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38213003204948EA00F1413C /* JJRealmManager.swift */; };
+		3821300D204A9C4600F1413C /* OCHeaderFile.m in Sources */ = {isa = PBXBuildFile; fileRef = 3821300C204A9C4600F1413C /* OCHeaderFile.m */; };
+		38B8799F204155A00080BB3C /* GoodListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38B8799E204155A00080BB3C /* GoodListVC.swift */; };
+		38B879A1204155C60080BB3C /* ShopCartVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38B879A0204155C60080BB3C /* ShopCartVC.swift */; };
+		38B879A3204155DC0080BB3C /* MyVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38B879A2204155DC0080BB3C /* MyVC.swift */; };
+		38B879A6204268A60080BB3C /* SearchVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38B879A5204268A60080BB3C /* SearchVC.swift */; };
+		38B879AA20426A3F0080BB3C /* BaseControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38B879A920426A3F0080BB3C /* BaseControl.swift */; };
+		38B879AC20426AB20080BB3C /* HomeTableControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38B879AB20426AB20080BB3C /* HomeTableControl.swift */; };
+		38B879AE20426DE30080BB3C /* BannerControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38B879AD20426DE30080BB3C /* BannerControl.swift */; };
+		38EE01532043F29D0050759A /* CustomNaviBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38EE01522043F29D0050759A /* CustomNaviBar.swift */; };
+		38EE015620442D3B0050759A /* swiftHeaderFile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38EE015520442D3B0050759A /* swiftHeaderFile.swift */; };
+		38EE015920455F8A0050759A /* InformationVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38EE015820455F8A0050759A /* InformationVC.swift */; };
+		38EE015B2045778E0050759A /* JJTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38EE015A2045778E0050759A /* JJTextField.swift */; };
+		38F9CA59202FED60004D105D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38F9CA58202FED60004D105D /* AppDelegate.swift */; };
+		38F9CA5E202FED60004D105D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 38F9CA5C202FED60004D105D /* Main.storyboard */; };
+		38F9CA60202FED60004D105D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 38F9CA5F202FED60004D105D /* Assets.xcassets */; };
+		38F9CA63202FED60004D105D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 38F9CA61202FED60004D105D /* LaunchScreen.storyboard */; };
+		38F9CA6E202FED60004D105D /* GreateSmartTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38F9CA6D202FED60004D105D /* GreateSmartTests.swift */; };
+		38F9CA79202FED60004D105D /* GreateSmartUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38F9CA78202FED60004D105D /* GreateSmartUITests.swift */; };
+		38FD685F20401E4F00B19A42 /* UIViewController+XIB.m in Sources */ = {isa = PBXBuildFile; fileRef = 38FD685120401E4D00B19A42 /* UIViewController+XIB.m */; };
+		38FD686120401E4F00B19A42 /* NSObject+isNull.m in Sources */ = {isa = PBXBuildFile; fileRef = 38FD685320401E4D00B19A42 /* NSObject+isNull.m */; };
+		38FD686220401E4F00B19A42 /* UIView+control.m in Sources */ = {isa = PBXBuildFile; fileRef = 38FD685520401E4E00B19A42 /* UIView+control.m */; };
+		38FD686320401E4F00B19A42 /* UIImage+AttributeImage.m in Sources */ = {isa = PBXBuildFile; fileRef = 38FD685620401E4E00B19A42 /* UIImage+AttributeImage.m */; };
+		38FD686420401E4F00B19A42 /* UIView+viewFrame.m in Sources */ = {isa = PBXBuildFile; fileRef = 38FD685720401E4E00B19A42 /* UIView+viewFrame.m */; };
+		38FD686520401E4F00B19A42 /* UIButton+parameter.m in Sources */ = {isa = PBXBuildFile; fileRef = 38FD685920401E4E00B19A42 /* UIButton+parameter.m */; };
+		38FD686620401E4F00B19A42 /* UIColor+HexString.m in Sources */ = {isa = PBXBuildFile; fileRef = 38FD685C20401E4F00B19A42 /* UIColor+HexString.m */; };
+		38FD686820401F9F00B19A42 /* BaseUIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38FD686720401F9F00B19A42 /* BaseUIViewController.swift */; };
+		38FD686A20401FBC00B19A42 /* BaseUINavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38FD686920401FBC00B19A42 /* BaseUINavigationController.swift */; };
+		38FD686C2040202C00B19A42 /* BaseUITableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38FD686B2040202C00B19A42 /* BaseUITableViewController.swift */; };
+		38FD686E2040207A00B19A42 /* XIB.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38FD686D2040207A00B19A42 /* XIB.swift */; };
+		38FD68742040220D00B19A42 /* PublicDefine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38FD68732040220D00B19A42 /* PublicDefine.swift */; };
+		38FD687B2040267C00B19A42 /* BaseAFNetwork.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38FD687A2040267C00B19A42 /* BaseAFNetwork.swift */; };
+		38FD687D204026D200B19A42 /* NetAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38FD687C204026D200B19A42 /* NetAPI.swift */; };
+		38FD687F204027F300B19A42 /* NetworkManage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38FD687E204027F300B19A42 /* NetworkManage.swift */; };
+		38FD688320402A9000B19A42 /* HomePageVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38FD688120402A9000B19A42 /* HomePageVC.swift */; };
+		38FD9A3F2040FD9E0090D978 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 38FD9A3E2040FD9E0090D978 /* Images.xcassets */; };
+		38FD9A412041124A0090D978 /* BaseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38FD9A402041124A0090D978 /* BaseModel.swift */; };
+		38FD9A43204112960090D978 /* BannerModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38FD9A42204112960090D978 /* BannerModel.swift */; };
+		38FD9A45204115160090D978 /* BaseUITableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38FD9A44204115160090D978 /* BaseUITableView.swift */; };
+		38FD9A49204116DF0090D978 /* TabbarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38FD9A48204116DF0090D978 /* TabbarController.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		38F9CA6A202FED60004D105D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 38F9CA4D202FED60004D105D /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 38F9CA54202FED60004D105D;
+			remoteInfo = GreateSmart;
+		};
+		38F9CA75202FED60004D105D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 38F9CA4D202FED60004D105D /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 38F9CA54202FED60004D105D;
+			remoteInfo = GreateSmart;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		2917D95A36F6E4132830CF90 /* Pods-GreateSmart.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GreateSmart.release.xcconfig"; path = "Pods/Target Support Files/Pods-GreateSmart/Pods-GreateSmart.release.xcconfig"; sourceTree = "<group>"; };
+		381C62F920464C5500A9066C /* ResultVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultVC.swift; sourceTree = "<group>"; };
+		381C62FD204685D700A9066C /* SearchRecordTitleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchRecordTitleView.swift; sourceTree = "<group>"; };
+		381C62FF2046861100A9066C /* SearchRecordTitleView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SearchRecordTitleView.xib; sourceTree = "<group>"; };
+		381C63012046990F00A9066C /* SearchHistoryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchHistoryCell.swift; sourceTree = "<group>"; };
+		381C63022046990F00A9066C /* SearchHistoryCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SearchHistoryCell.xib; sourceTree = "<group>"; };
+		381C630A2046C12E00A9066C /* SnapKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = SnapKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		381C630D2047C81A00A9066C /* WSCollectionViewFlowLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WSCollectionViewFlowLayout.h; sourceTree = "<group>"; };
+		381C630E2047C81A00A9066C /* WSCollectionViewFlowLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WSCollectionViewFlowLayout.m; sourceTree = "<group>"; };
+		381C63142047CCCC00A9066C /* FlowCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlowCollectionView.swift; sourceTree = "<group>"; };
+		381C63162047D04200A9066C /* FlowCollectionControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlowCollectionControl.swift; sourceTree = "<group>"; };
+		381C63182048097F00A9066C /* StringSize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringSize.swift; sourceTree = "<group>"; };
+		38213003204948EA00F1413C /* JJRealmManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JJRealmManager.swift; sourceTree = "<group>"; };
+		3821300B204A9C4600F1413C /* OCHeaderFile.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OCHeaderFile.h; sourceTree = "<group>"; };
+		3821300C204A9C4600F1413C /* OCHeaderFile.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OCHeaderFile.m; sourceTree = "<group>"; };
+		38213013204AA09A00F1413C /* AFNetworking.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = AFNetworking.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		38213015204AA58200F1413C /* AFNetworking.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = AFNetworking.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		38213017204AA58800F1413C /* SnapKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = SnapKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		38B8799E204155A00080BB3C /* GoodListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoodListVC.swift; sourceTree = "<group>"; };
+		38B879A0204155C60080BB3C /* ShopCartVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShopCartVC.swift; sourceTree = "<group>"; };
+		38B879A2204155DC0080BB3C /* MyVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyVC.swift; sourceTree = "<group>"; };
+		38B879A5204268A60080BB3C /* SearchVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchVC.swift; sourceTree = "<group>"; };
+		38B879A920426A3F0080BB3C /* BaseControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseControl.swift; sourceTree = "<group>"; };
+		38B879AB20426AB20080BB3C /* HomeTableControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTableControl.swift; sourceTree = "<group>"; };
+		38B879AD20426DE30080BB3C /* BannerControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BannerControl.swift; sourceTree = "<group>"; };
+		38EE01522043F29D0050759A /* CustomNaviBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomNaviBar.swift; sourceTree = "<group>"; };
+		38EE015520442D3B0050759A /* swiftHeaderFile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = swiftHeaderFile.swift; sourceTree = "<group>"; };
+		38EE015820455F8A0050759A /* InformationVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InformationVC.swift; sourceTree = "<group>"; };
+		38EE015A2045778E0050759A /* JJTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JJTextField.swift; sourceTree = "<group>"; };
+		38F9CA55202FED60004D105D /* GreateSmart.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GreateSmart.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		38F9CA58202FED60004D105D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		38F9CA5D202FED60004D105D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		38F9CA5F202FED60004D105D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		38F9CA62202FED60004D105D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		38F9CA64202FED60004D105D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		38F9CA69202FED60004D105D /* GreateSmartTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GreateSmartTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		38F9CA6D202FED60004D105D /* GreateSmartTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GreateSmartTests.swift; sourceTree = "<group>"; };
+		38F9CA6F202FED60004D105D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		38F9CA74202FED60004D105D /* GreateSmartUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GreateSmartUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		38F9CA78202FED60004D105D /* GreateSmartUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GreateSmartUITests.swift; sourceTree = "<group>"; };
+		38F9CA7A202FED60004D105D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		38F9CA88202FEF92004D105D /* SDWebImage.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = SDWebImage.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		38F9CA8A202FEFF7004D105D /* SDWebImage.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = SDWebImage.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		38F9CA8E20300167004D105D /* GreateSmart-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "GreateSmart-Bridging-Header.h"; path = "GreateSmart/GreateSmart-Bridging-Header.h"; sourceTree = SOURCE_ROOT; };
+		38FD685020401E4D00B19A42 /* NSObject+isNull.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+isNull.h"; sourceTree = "<group>"; };
+		38FD685120401E4D00B19A42 /* UIViewController+XIB.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+XIB.m"; sourceTree = "<group>"; };
+		38FD685320401E4D00B19A42 /* NSObject+isNull.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+isNull.m"; sourceTree = "<group>"; };
+		38FD685420401E4E00B19A42 /* UIImage+AttributeImage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+AttributeImage.h"; sourceTree = "<group>"; };
+		38FD685520401E4E00B19A42 /* UIView+control.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+control.m"; sourceTree = "<group>"; };
+		38FD685620401E4E00B19A42 /* UIImage+AttributeImage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+AttributeImage.m"; sourceTree = "<group>"; };
+		38FD685720401E4E00B19A42 /* UIView+viewFrame.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+viewFrame.m"; sourceTree = "<group>"; };
+		38FD685820401E4E00B19A42 /* UIButton+parameter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIButton+parameter.h"; sourceTree = "<group>"; };
+		38FD685920401E4E00B19A42 /* UIButton+parameter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIButton+parameter.m"; sourceTree = "<group>"; };
+		38FD685A20401E4F00B19A42 /* UIViewController+XIB.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+XIB.h"; sourceTree = "<group>"; };
+		38FD685B20401E4F00B19A42 /* UIView+viewFrame.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+viewFrame.h"; sourceTree = "<group>"; };
+		38FD685C20401E4F00B19A42 /* UIColor+HexString.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+HexString.m"; sourceTree = "<group>"; };
+		38FD685D20401E4F00B19A42 /* UIView+control.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+control.h"; sourceTree = "<group>"; };
+		38FD685E20401E4F00B19A42 /* UIColor+HexString.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+HexString.h"; sourceTree = "<group>"; };
+		38FD686720401F9F00B19A42 /* BaseUIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseUIViewController.swift; sourceTree = "<group>"; };
+		38FD686920401FBC00B19A42 /* BaseUINavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseUINavigationController.swift; sourceTree = "<group>"; };
+		38FD686B2040202C00B19A42 /* BaseUITableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseUITableViewController.swift; sourceTree = "<group>"; };
+		38FD686D2040207A00B19A42 /* XIB.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = XIB.swift; path = ../../SmartAgency/Category/XIB.swift; sourceTree = "<group>"; };
+		38FD68732040220D00B19A42 /* PublicDefine.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PublicDefine.swift; sourceTree = "<group>"; };
+		38FD687A2040267C00B19A42 /* BaseAFNetwork.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseAFNetwork.swift; sourceTree = "<group>"; };
+		38FD687C204026D200B19A42 /* NetAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetAPI.swift; sourceTree = "<group>"; };
+		38FD687E204027F300B19A42 /* NetworkManage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManage.swift; sourceTree = "<group>"; };
+		38FD688120402A9000B19A42 /* HomePageVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePageVC.swift; sourceTree = "<group>"; };
+		38FD9A3E2040FD9E0090D978 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		38FD9A402041124A0090D978 /* BaseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseModel.swift; sourceTree = "<group>"; };
+		38FD9A42204112960090D978 /* BannerModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BannerModel.swift; sourceTree = "<group>"; };
+		38FD9A44204115160090D978 /* BaseUITableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseUITableView.swift; sourceTree = "<group>"; };
+		38FD9A48204116DF0090D978 /* TabbarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabbarController.swift; sourceTree = "<group>"; };
+		AD1A70950CD1707D4D6B1553 /* Pods-GreateSmart.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GreateSmart.debug.xcconfig"; path = "Pods/Target Support Files/Pods-GreateSmart/Pods-GreateSmart.debug.xcconfig"; sourceTree = "<group>"; };
+		AFE5A3FFF7CEC461A4847CB6 /* Pods_GreateSmart.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GreateSmart.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D64C8E0F66D55CC3EC66E617 /* Pods_GreateSmart.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GreateSmart.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		38F9CA52202FED60004D105D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				38212FFD2049473C00F1413C /* Pods_GreateSmart.framework in Frameworks */,
+				12F29E0B0732CFC549BCF754 /* Pods_GreateSmart.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		38F9CA66202FED60004D105D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		38F9CA71202FED60004D105D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		0439AB40BE4D279C221BB7AC /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				381C630A2046C12E00A9066C /* SnapKit.framework */,
+				38F9CA8A202FEFF7004D105D /* SDWebImage.framework */,
+				38F9CA88202FEF92004D105D /* SDWebImage.framework */,
+				D64C8E0F66D55CC3EC66E617 /* Pods_GreateSmart.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		381C630B2046C86500A9066C /* ModuleClass */ = {
+			isa = PBXGroup;
+			children = (
+				38B879A42042685A0080BB3C /* Search_搜索 */,
+			);
+			path = ModuleClass;
+			sourceTree = "<group>";
+		};
+		381C630C2047C81A00A9066C /* WSCollectionViewFlowLayout */ = {
+			isa = PBXGroup;
+			children = (
+				381C630D2047C81A00A9066C /* WSCollectionViewFlowLayout.h */,
+				381C630E2047C81A00A9066C /* WSCollectionViewFlowLayout.m */,
+			);
+			path = WSCollectionViewFlowLayout;
+			sourceTree = "<group>";
+		};
+		381C63102047C95800A9066C /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				38FD686920401FBC00B19A42 /* BaseUINavigationController.swift */,
+				38FD686720401F9F00B19A42 /* BaseUIViewController.swift */,
+				38EE01522043F29D0050759A /* CustomNaviBar.swift */,
+				38FD686B2040202C00B19A42 /* BaseUITableViewController.swift */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		381C63112047C99200A9066C /* View */ = {
+			isa = PBXGroup;
+			children = (
+				38FD9A44204115160090D978 /* BaseUITableView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		381C63122047C9A500A9066C /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				38FD9A402041124A0090D978 /* BaseModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		381C63132047C9AD00A9066C /* Control */ = {
+			isa = PBXGroup;
+			children = (
+				38B879A920426A3F0080BB3C /* BaseControl.swift */,
+			);
+			path = Control;
+			sourceTree = "<group>";
+		};
+		381C631E2048ED0D00A9066C /* search */ = {
+			isa = PBXGroup;
+			children = (
+				38B879A5204268A60080BB3C /* SearchVC.swift */,
+				381C62FD204685D700A9066C /* SearchRecordTitleView.swift */,
+				381C62FF2046861100A9066C /* SearchRecordTitleView.xib */,
+				381C63012046990F00A9066C /* SearchHistoryCell.swift */,
+				381C63022046990F00A9066C /* SearchHistoryCell.xib */,
+				381C63162047D04200A9066C /* FlowCollectionControl.swift */,
+				381C63142047CCCC00A9066C /* FlowCollectionView.swift */,
+			);
+			path = search;
+			sourceTree = "<group>";
+		};
+		381C631F2048ED1F00A9066C /* result */ = {
+			isa = PBXGroup;
+			children = (
+				381C62F920464C5500A9066C /* ResultVC.swift */,
+			);
+			path = result;
+			sourceTree = "<group>";
+		};
+		381C63272049458900A9066C /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				38213017204AA58800F1413C /* SnapKit.framework */,
+				38213015204AA58200F1413C /* AFNetworking.framework */,
+				38213013204AA09A00F1413C /* AFNetworking.framework */,
+				AFE5A3FFF7CEC461A4847CB6 /* Pods_GreateSmart.framework */,
+			);
+			path = Frameworks;
+			sourceTree = "<group>";
+		};
+		38B8799B2041553B0080BB3C /* GoodList_商品 */ = {
+			isa = PBXGroup;
+			children = (
+				38B8799E204155A00080BB3C /* GoodListVC.swift */,
+			);
+			path = "GoodList_商品";
+			sourceTree = "<group>";
+		};
+		38B8799C204155490080BB3C /* ShopCart_购物车 */ = {
+			isa = PBXGroup;
+			children = (
+				38B879A0204155C60080BB3C /* ShopCartVC.swift */,
+			);
+			path = "ShopCart_购物车";
+			sourceTree = "<group>";
+		};
+		38B8799D2041554F0080BB3C /* My_我的 */ = {
+			isa = PBXGroup;
+			children = (
+				38B879A2204155DC0080BB3C /* MyVC.swift */,
+			);
+			path = "My_我的";
+			sourceTree = "<group>";
+		};
+		38B879A42042685A0080BB3C /* Search_搜索 */ = {
+			isa = PBXGroup;
+			children = (
+				381C631E2048ED0D00A9066C /* search */,
+				381C631F2048ED1F00A9066C /* result */,
+			);
+			path = "Search_搜索";
+			sourceTree = "<group>";
+		};
+		38B879A7204269F20080BB3C /* Banner */ = {
+			isa = PBXGroup;
+			children = (
+				38B879AD20426DE30080BB3C /* BannerControl.swift */,
+				38FD9A42204112960090D978 /* BannerModel.swift */,
+			);
+			path = Banner;
+			sourceTree = "<group>";
+		};
+		38B879A8204269FC0080BB3C /* TableView */ = {
+			isa = PBXGroup;
+			children = (
+				38B879AB20426AB20080BB3C /* HomeTableControl.swift */,
+			);
+			path = TableView;
+			sourceTree = "<group>";
+		};
+		38EE015720455EB80050759A /* Information_资讯 */ = {
+			isa = PBXGroup;
+			children = (
+				38EE015820455F8A0050759A /* InformationVC.swift */,
+			);
+			path = "Information_资讯";
+			sourceTree = "<group>";
+		};
+		38F9CA4C202FED60004D105D = {
+			isa = PBXGroup;
+			children = (
+				38F9CA57202FED60004D105D /* GreateSmart */,
+				38F9CA86202FED89004D105D /* Class */,
+				381C630B2046C86500A9066C /* ModuleClass */,
+				38FD68792040262200B19A42 /* Network */,
+				38FD686F204020F400B19A42 /* Utils */,
+				38F9CA8C203000B5004D105D /* Category */,
+				38F9CA8D203000DC004D105D /* Base */,
+				38FD6870204020FA00B19A42 /* Resource */,
+				381C63272049458900A9066C /* Frameworks */,
+				38F9CA6C202FED60004D105D /* GreateSmartTests */,
+				38F9CA77202FED60004D105D /* GreateSmartUITests */,
+				38F9CA56202FED60004D105D /* Products */,
+				C7C9A2AC2C3A2AC592168A4D /* Pods */,
+				0439AB40BE4D279C221BB7AC /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		38F9CA56202FED60004D105D /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				38F9CA55202FED60004D105D /* GreateSmart.app */,
+				38F9CA69202FED60004D105D /* GreateSmartTests.xctest */,
+				38F9CA74202FED60004D105D /* GreateSmartUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		38F9CA57202FED60004D105D /* GreateSmart */ = {
+			isa = PBXGroup;
+			children = (
+				38FD9A48204116DF0090D978 /* TabbarController.swift */,
+				38F9CA58202FED60004D105D /* AppDelegate.swift */,
+				38F9CA64202FED60004D105D /* Info.plist */,
+				38FD68732040220D00B19A42 /* PublicDefine.swift */,
+				38EE015520442D3B0050759A /* swiftHeaderFile.swift */,
+				38F9CA8E20300167004D105D /* GreateSmart-Bridging-Header.h */,
+				3821300B204A9C4600F1413C /* OCHeaderFile.h */,
+				3821300C204A9C4600F1413C /* OCHeaderFile.m */,
+			);
+			path = GreateSmart;
+			sourceTree = "<group>";
+		};
+		38F9CA6C202FED60004D105D /* GreateSmartTests */ = {
+			isa = PBXGroup;
+			children = (
+				38F9CA6D202FED60004D105D /* GreateSmartTests.swift */,
+				38F9CA6F202FED60004D105D /* Info.plist */,
+			);
+			path = GreateSmartTests;
+			sourceTree = "<group>";
+		};
+		38F9CA77202FED60004D105D /* GreateSmartUITests */ = {
+			isa = PBXGroup;
+			children = (
+				38F9CA78202FED60004D105D /* GreateSmartUITests.swift */,
+				38F9CA7A202FED60004D105D /* Info.plist */,
+			);
+			path = GreateSmartUITests;
+			sourceTree = "<group>";
+		};
+		38F9CA86202FED89004D105D /* Class */ = {
+			isa = PBXGroup;
+			children = (
+				38FD688020402A5200B19A42 /* HomePage_首页 */,
+				38B8799B2041553B0080BB3C /* GoodList_商品 */,
+				38EE015720455EB80050759A /* Information_资讯 */,
+				38B8799C204155490080BB3C /* ShopCart_购物车 */,
+				38B8799D2041554F0080BB3C /* My_我的 */,
+			);
+			path = Class;
+			sourceTree = "<group>";
+		};
+		38F9CA8C203000B5004D105D /* Category */ = {
+			isa = PBXGroup;
+			children = (
+				38FD686D2040207A00B19A42 /* XIB.swift */,
+				381C63182048097F00A9066C /* StringSize.swift */,
+				38FD685020401E4D00B19A42 /* NSObject+isNull.h */,
+				38FD685320401E4D00B19A42 /* NSObject+isNull.m */,
+				38FD685820401E4E00B19A42 /* UIButton+parameter.h */,
+				38FD685920401E4E00B19A42 /* UIButton+parameter.m */,
+				38FD685E20401E4F00B19A42 /* UIColor+HexString.h */,
+				38FD685C20401E4F00B19A42 /* UIColor+HexString.m */,
+				38FD685420401E4E00B19A42 /* UIImage+AttributeImage.h */,
+				38FD685620401E4E00B19A42 /* UIImage+AttributeImage.m */,
+				38FD685D20401E4F00B19A42 /* UIView+control.h */,
+				38FD685520401E4E00B19A42 /* UIView+control.m */,
+				38FD685B20401E4F00B19A42 /* UIView+viewFrame.h */,
+				38FD685720401E4E00B19A42 /* UIView+viewFrame.m */,
+				38FD685A20401E4F00B19A42 /* UIViewController+XIB.h */,
+				38FD685120401E4D00B19A42 /* UIViewController+XIB.m */,
+			);
+			path = Category;
+			sourceTree = "<group>";
+		};
+		38F9CA8D203000DC004D105D /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				381C63132047C9AD00A9066C /* Control */,
+				381C63102047C95800A9066C /* ViewController */,
+				381C63122047C9A500A9066C /* Model */,
+				381C63112047C99200A9066C /* View */,
+			);
+			path = Base;
+			sourceTree = "<group>";
+		};
+		38FD686F204020F400B19A42 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				38213003204948EA00F1413C /* JJRealmManager.swift */,
+				38EE015A2045778E0050759A /* JJTextField.swift */,
+				381C630C2047C81A00A9066C /* WSCollectionViewFlowLayout */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		38FD6870204020FA00B19A42 /* Resource */ = {
+			isa = PBXGroup;
+			children = (
+				38FD9A3E2040FD9E0090D978 /* Images.xcassets */,
+				38F9CA5F202FED60004D105D /* Assets.xcassets */,
+				38F9CA5C202FED60004D105D /* Main.storyboard */,
+				38F9CA61202FED60004D105D /* LaunchScreen.storyboard */,
+			);
+			path = Resource;
+			sourceTree = "<group>";
+		};
+		38FD68792040262200B19A42 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				38FD687A2040267C00B19A42 /* BaseAFNetwork.swift */,
+				38FD687C204026D200B19A42 /* NetAPI.swift */,
+				38FD687E204027F300B19A42 /* NetworkManage.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		38FD688020402A5200B19A42 /* HomePage_首页 */ = {
+			isa = PBXGroup;
+			children = (
+				38FD688120402A9000B19A42 /* HomePageVC.swift */,
+				38B879A8204269FC0080BB3C /* TableView */,
+				38B879A7204269F20080BB3C /* Banner */,
+			);
+			path = "HomePage_首页";
+			sourceTree = "<group>";
+		};
+		C7C9A2AC2C3A2AC592168A4D /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				AD1A70950CD1707D4D6B1553 /* Pods-GreateSmart.debug.xcconfig */,
+				2917D95A36F6E4132830CF90 /* Pods-GreateSmart.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		38F9CA54202FED60004D105D /* GreateSmart */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 38F9CA7D202FED60004D105D /* Build configuration list for PBXNativeTarget "GreateSmart" */;
+			buildPhases = (
+				79EC76D57DAA29084A74AFEB /* [CP] Check Pods Manifest.lock */,
+				38F9CA51202FED60004D105D /* Sources */,
+				38F9CA52202FED60004D105D /* Frameworks */,
+				38F9CA53202FED60004D105D /* Resources */,
+				86E17434C2DDE4BC7F9C5D86 /* [CP] Embed Pods Frameworks */,
+				F8C462BB98A21BE90116093F /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = GreateSmart;
+			productName = GreateSmart;
+			productReference = 38F9CA55202FED60004D105D /* GreateSmart.app */;
+			productType = "com.apple.product-type.application";
+		};
+		38F9CA68202FED60004D105D /* GreateSmartTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 38F9CA80202FED60004D105D /* Build configuration list for PBXNativeTarget "GreateSmartTests" */;
+			buildPhases = (
+				38F9CA65202FED60004D105D /* Sources */,
+				38F9CA66202FED60004D105D /* Frameworks */,
+				38F9CA67202FED60004D105D /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				38F9CA6B202FED60004D105D /* PBXTargetDependency */,
+			);
+			name = GreateSmartTests;
+			productName = GreateSmartTests;
+			productReference = 38F9CA69202FED60004D105D /* GreateSmartTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		38F9CA73202FED60004D105D /* GreateSmartUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 38F9CA83202FED60004D105D /* Build configuration list for PBXNativeTarget "GreateSmartUITests" */;
+			buildPhases = (
+				38F9CA70202FED60004D105D /* Sources */,
+				38F9CA71202FED60004D105D /* Frameworks */,
+				38F9CA72202FED60004D105D /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				38F9CA76202FED60004D105D /* PBXTargetDependency */,
+			);
+			name = GreateSmartUITests;
+			productName = GreateSmartUITests;
+			productReference = 38F9CA74202FED60004D105D /* GreateSmartUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		38F9CA4D202FED60004D105D /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0920;
+				LastUpgradeCheck = 0920;
+				ORGANIZATIONNAME = Jerod;
+				TargetAttributes = {
+					38F9CA54202FED60004D105D = {
+						CreatedOnToolsVersion = 9.2;
+						LastSwiftMigration = 0920;
+						ProvisioningStyle = Automatic;
+					};
+					38F9CA68202FED60004D105D = {
+						CreatedOnToolsVersion = 9.2;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 38F9CA54202FED60004D105D;
+					};
+					38F9CA73202FED60004D105D = {
+						CreatedOnToolsVersion = 9.2;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 38F9CA54202FED60004D105D;
+					};
+				};
+			};
+			buildConfigurationList = 38F9CA50202FED60004D105D /* Build configuration list for PBXProject "GreateSmart" */;
+			compatibilityVersion = "Xcode 8.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 38F9CA4C202FED60004D105D;
+			productRefGroup = 38F9CA56202FED60004D105D /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				38F9CA54202FED60004D105D /* GreateSmart */,
+				38F9CA68202FED60004D105D /* GreateSmartTests */,
+				38F9CA73202FED60004D105D /* GreateSmartUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		38F9CA53202FED60004D105D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				38F9CA63202FED60004D105D /* LaunchScreen.storyboard in Resources */,
+				38FD9A3F2040FD9E0090D978 /* Images.xcassets in Resources */,
+				381C63042046990F00A9066C /* SearchHistoryCell.xib in Resources */,
+				38F9CA60202FED60004D105D /* Assets.xcassets in Resources */,
+				38F9CA5E202FED60004D105D /* Main.storyboard in Resources */,
+				381C63002046861100A9066C /* SearchRecordTitleView.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		38F9CA67202FED60004D105D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		38F9CA72202FED60004D105D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		79EC76D57DAA29084A74AFEB /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-GreateSmart-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		86E17434C2DDE4BC7F9C5D86 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-GreateSmart/Pods-GreateSmart-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/AFNetworking/AFNetworking.framework",
+				"${BUILT_PRODUCTS_DIR}/Realm/Realm.framework",
+				"${BUILT_PRODUCTS_DIR}/RealmSwift/RealmSwift.framework",
+				"${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework",
+				"${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AFNetworking.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Realm.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RealmSwift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDWebImage.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SnapKit.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-GreateSmart/Pods-GreateSmart-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F8C462BB98A21BE90116093F /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-GreateSmart/Pods-GreateSmart-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		38F9CA51202FED60004D105D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				381C630F2047C81A00A9066C /* WSCollectionViewFlowLayout.m in Sources */,
+				38FD9A412041124A0090D978 /* BaseModel.swift in Sources */,
+				38FD686E2040207A00B19A42 /* XIB.swift in Sources */,
+				38FD687B2040267C00B19A42 /* BaseAFNetwork.swift in Sources */,
+				38FD686420401E4F00B19A42 /* UIView+viewFrame.m in Sources */,
+				38FD9A45204115160090D978 /* BaseUITableView.swift in Sources */,
+				38FD687F204027F300B19A42 /* NetworkManage.swift in Sources */,
+				381C63172047D04200A9066C /* FlowCollectionControl.swift in Sources */,
+				38FD9A49204116DF0090D978 /* TabbarController.swift in Sources */,
+				3821300D204A9C4600F1413C /* OCHeaderFile.m in Sources */,
+				38FD9A43204112960090D978 /* BannerModel.swift in Sources */,
+				38B8799F204155A00080BB3C /* GoodListVC.swift in Sources */,
+				38B879A6204268A60080BB3C /* SearchVC.swift in Sources */,
+				38B879AC20426AB20080BB3C /* HomeTableControl.swift in Sources */,
+				38EE01532043F29D0050759A /* CustomNaviBar.swift in Sources */,
+				38EE015920455F8A0050759A /* InformationVC.swift in Sources */,
+				381C63032046990F00A9066C /* SearchHistoryCell.swift in Sources */,
+				38FD686220401E4F00B19A42 /* UIView+control.m in Sources */,
+				38FD686C2040202C00B19A42 /* BaseUITableViewController.swift in Sources */,
+				38FD685F20401E4F00B19A42 /* UIViewController+XIB.m in Sources */,
+				381C62FA20464C5500A9066C /* ResultVC.swift in Sources */,
+				38FD686520401E4F00B19A42 /* UIButton+parameter.m in Sources */,
+				38213004204948EA00F1413C /* JJRealmManager.swift in Sources */,
+				38FD687D204026D200B19A42 /* NetAPI.swift in Sources */,
+				38B879AE20426DE30080BB3C /* BannerControl.swift in Sources */,
+				38FD68742040220D00B19A42 /* PublicDefine.swift in Sources */,
+				38B879A1204155C60080BB3C /* ShopCartVC.swift in Sources */,
+				38FD686820401F9F00B19A42 /* BaseUIViewController.swift in Sources */,
+				38FD686120401E4F00B19A42 /* NSObject+isNull.m in Sources */,
+				381C63152047CCCC00A9066C /* FlowCollectionView.swift in Sources */,
+				38B879AA20426A3F0080BB3C /* BaseControl.swift in Sources */,
+				381C62FE204685D700A9066C /* SearchRecordTitleView.swift in Sources */,
+				38EE015B2045778E0050759A /* JJTextField.swift in Sources */,
+				38EE015620442D3B0050759A /* swiftHeaderFile.swift in Sources */,
+				38FD686620401E4F00B19A42 /* UIColor+HexString.m in Sources */,
+				38FD688320402A9000B19A42 /* HomePageVC.swift in Sources */,
+				38FD686320401E4F00B19A42 /* UIImage+AttributeImage.m in Sources */,
+				381C63192048097F00A9066C /* StringSize.swift in Sources */,
+				38F9CA59202FED60004D105D /* AppDelegate.swift in Sources */,
+				38B879A3204155DC0080BB3C /* MyVC.swift in Sources */,
+				38FD686A20401FBC00B19A42 /* BaseUINavigationController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		38F9CA65202FED60004D105D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				38F9CA6E202FED60004D105D /* GreateSmartTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		38F9CA70202FED60004D105D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				38F9CA79202FED60004D105D /* GreateSmartUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		38F9CA6B202FED60004D105D /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 38F9CA54202FED60004D105D /* GreateSmart */;
+			targetProxy = 38F9CA6A202FED60004D105D /* PBXContainerItemProxy */;
+		};
+		38F9CA76202FED60004D105D /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 38F9CA54202FED60004D105D /* GreateSmart */;
+			targetProxy = 38F9CA75202FED60004D105D /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		38F9CA5C202FED60004D105D /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				38F9CA5D202FED60004D105D /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		38F9CA61202FED60004D105D /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				38F9CA62202FED60004D105D /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		38F9CA7B202FED60004D105D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		38F9CA7C202FED60004D105D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		38F9CA7E202FED60004D105D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = AD1A70950CD1707D4D6B1553 /* Pods-GreateSmart.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = JR7BAVX2XH;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+					"$(PROJECT_DIR)/Frameworks",
+				);
+				GCC_PREFIX_HEADER = "";
+				INFOPLIST_FILE = GreateSmart/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				OTHER_SWIFT_FLAGS = "-D DEBUG";
+				PRODUCT_BUNDLE_IDENTIFIER = com.hailin.dacongming;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "${SRCROOT}/GreateSmart/GreateSmart-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = 1;
+				USER_HEADER_SEARCH_PATHS = "";
+			};
+			name = Debug;
+		};
+		38F9CA7F202FED60004D105D /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2917D95A36F6E4132830CF90 /* Pods-GreateSmart.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = JR7BAVX2XH;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+					"$(PROJECT_DIR)/Frameworks",
+				);
+				GCC_PREFIX_HEADER = "";
+				INFOPLIST_FILE = GreateSmart/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.hailin.dacongming;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "${SRCROOT}/GreateSmart/GreateSmart-Bridging-Header.h";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = 1;
+				USER_HEADER_SEARCH_PATHS = "";
+			};
+			name = Release;
+		};
+		38F9CA81202FED60004D105D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = JR7BAVX2XH;
+				INFOPLIST_FILE = GreateSmartTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.hailin.GreateSmartTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/GreateSmart.app/GreateSmart";
+			};
+			name = Debug;
+		};
+		38F9CA82202FED60004D105D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = JR7BAVX2XH;
+				INFOPLIST_FILE = GreateSmartTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.hailin.GreateSmartTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/GreateSmart.app/GreateSmart";
+			};
+			name = Release;
+		};
+		38F9CA84202FED60004D105D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = JR7BAVX2XH;
+				INFOPLIST_FILE = GreateSmartUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.hailin.GreateSmartUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = GreateSmart;
+			};
+			name = Debug;
+		};
+		38F9CA85202FED60004D105D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = JR7BAVX2XH;
+				INFOPLIST_FILE = GreateSmartUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.hailin.GreateSmartUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = GreateSmart;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		38F9CA50202FED60004D105D /* Build configuration list for PBXProject "GreateSmart" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				38F9CA7B202FED60004D105D /* Debug */,
+				38F9CA7C202FED60004D105D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		38F9CA7D202FED60004D105D /* Build configuration list for PBXNativeTarget "GreateSmart" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				38F9CA7E202FED60004D105D /* Debug */,
+				38F9CA7F202FED60004D105D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		38F9CA80202FED60004D105D /* Build configuration list for PBXNativeTarget "GreateSmartTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				38F9CA81202FED60004D105D /* Debug */,
+				38F9CA82202FED60004D105D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		38F9CA83202FED60004D105D /* Build configuration list for PBXNativeTarget "GreateSmartUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				38F9CA84202FED60004D105D /* Debug */,
+				38F9CA85202FED60004D105D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 38F9CA4D202FED60004D105D /* Project object */;
+}
