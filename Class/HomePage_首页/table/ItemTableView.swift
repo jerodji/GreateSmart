@@ -8,12 +8,10 @@
 
 import UIKit
 
-class HomeTableView: BaseUITableView,UITableViewDelegate,UITableViewDataSource {
+class ItemTableView: BaseUITableView,UITableViewDelegate,UITableViewDataSource {
     
     var dataArray: NSMutableArray!
-//    var scrolDelegate: HomeTableViewDelegate?
-    
-    private var banerCtrl  : BannerControl!
+    var banner  : BannerView!
     
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
@@ -33,11 +31,9 @@ class HomeTableView: BaseUITableView,UITableViewDelegate,UITableViewDataSource {
     
     func configTableview() -> Void {
         
-        banerCtrl = BannerControl()
-        banerCtrl.imageView.frame = CGRect.init(x: 0, y: -ItemHeight_banner, width: kScreenW, height: ItemHeight_banner)
-        self.addSubview(banerCtrl.imageView)
-        banerCtrl.imageView.layer.zPosition = -1 /* 将view插入到队列最前端 */
-        
+        banner = BannerView.init(frame: CGRect(x: 0, y: -ItemHeight_banner, width: kScreenW, height: ItemHeight_banner))
+        banner.layer.zPosition = -1 /* 将view插入到队列最前端 */
+        self.addSubview(banner)
         self.contentInset = UIEdgeInsetsMake(ItemHeight_banner, 0, 0, 0)
         
         self.separatorStyle = .none
@@ -48,7 +44,12 @@ class HomeTableView: BaseUITableView,UITableViewDelegate,UITableViewDataSource {
     }
     
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
-        banerCtrl.imageView.y = scrollView.contentOffset.y
+        delog("\(scrollView.contentOffset.y)")
+        banner.y = scrollView.contentOffset.y
+        let offsetY = scrollView.contentOffset.y + ItemHeight_banner
+        if offsetY < 0 {
+            banner.frame = CGRect.init(x: 0, y: scrollView.contentOffset.y, width: kScreenW, height: ItemHeight_banner-offsetY)
+        }
     }
     
     //MARK:-
@@ -71,7 +72,7 @@ class HomeTableView: BaseUITableView,UITableViewDelegate,UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        //delog("\(indexPath)")
+        delog("\(indexPath)")
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
