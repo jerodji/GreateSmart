@@ -11,8 +11,9 @@ import UIKit
 class HomePageVC: BaseUIViewController {
 
     private var banerModel = BannerModel()
-    private var banerCtrl  : BannerControl!
-    private var tableCtrl  : HomeTableControl!
+//    private var banerCtrl  : BannerControl!
+    private var tableview  : HomeTableView!
+//    private var scrolView: ItemScrolView!
     
     override func loadView() {
         super.loadView()
@@ -28,15 +29,9 @@ class HomePageVC: BaseUIViewController {
         self.navigationController?.navigationBar.shadowImage = UIImage(); /* 去掉黑线 */
         self.naviBar.isHidden = true
         
-        configBannerView()
-        configTableview()
+        configSubviews()
         configSearchButton()
-        tableMoveHandle()
     }
-    
-//    override func viewWillLayoutSubviews() {
-//        super.viewWillLayoutSubviews()
-//    }
     
     //MARK:-
     //MARK: 搜索按钮
@@ -51,24 +46,24 @@ class HomePageVC: BaseUIViewController {
         self.navigationController?.pushViewController(searchvc, animated: true)
     }
     
-    //MARK: banner
-    func configBannerView() -> () {
-        banerCtrl = BannerControl()
-        banerCtrl.bannerView.frame = CGRect.init(x: 0, y: 0, width: kScreenW, height: HeightBanner)
-        self.view.addSubview(banerCtrl.bannerView)
+    
+    //MARK:
+    func configSubviews() -> () {
+        
+        tableview = HomeTableView.init(frame: CGRect.init(x: 0, y: kStatusH, width: kScreenW, height: kScreenH-kStatusH-kTabbarH))
+        self.view.addSubview(tableview)
     }
     
-    //MARK: tableView
-    func configTableview() -> () {
-        tableCtrl = HomeTableControl.init(frame: CGRect.init(x: 0, y: banerCtrl.bannerView.bottom, width: kScreenW, height: kScreenH-kNaviH-kTabbarH))
-        self.view.addSubview(tableCtrl.tableView)
-    }
+//    func tableScrolDidScrol(_ scrollView: UIScrollView) {
+//
+//    }
+    
     
     //MARK:-
     //MARK:tableView移动
-    func tableMoveHandle() -> Void {
-        
-    }
+//    func tableMoveHandle() -> Void {
+//
+//    }
     
     
     

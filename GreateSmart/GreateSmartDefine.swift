@@ -8,9 +8,19 @@
 
 import UIKit
 
-let HeightBanner:CGFloat = CGFloat(315.0*kSizeScale)
+let ItemHeight_banner:CGFloat = CGFloat(315.0*kSizeScale)
+
+
+public enum HomeItemType:String {
+    case Nature = "nature"
+    case Article = "article"
+}
+
+
+//protocol HomeTableViewDelegate {
+//    func tableScrolDidScrol(_ scrollView: UIScrollView) -> Void
+//}
 
 
 class GreateSmartDefine: NSObject {
-
 }

@@ -11,10 +11,15 @@ import UIKit
 class BannerControl: BaseControl {
     
     let bannerView = UIView()
+    let imageView = UIImageView()
+    
     
     override init() {
         super.init()
-        bannerView.backgroundColor = UIColor.purple
+        //bannerView.backgroundColor = UIColor.purple
+        imageView.backgroundColor = .purple
+        imageView.image = UIImage.init(named: "screenPhoto")
+        
     }
 
 }

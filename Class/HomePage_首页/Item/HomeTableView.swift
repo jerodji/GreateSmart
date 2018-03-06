@@ -11,80 +11,51 @@ import UIKit
 class HomeTableView: BaseUITableView,UITableViewDelegate,UITableViewDataSource {
     
     var dataArray: NSMutableArray!
+//    var scrolDelegate: HomeTableViewDelegate?
     
-    private var STOPY:CGFloat!
+    private var banerCtrl  : BannerControl!
     
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
-        //configSeparator()
         configTableview()
     }
     
     override init(frame: CGRect, style: UITableViewStyle) {
         super.init(frame: frame, style: style)
         //configSeparator()
-        STOPY = frame.origin.y
+        configTableview()
+    }
+    
+    init(frame: CGRect) {
+        super.init(frame: frame, style: UITableViewStyle.grouped)
         configTableview()
     }
     
     func configTableview() -> Void {
+        
+        banerCtrl = BannerControl()
+        banerCtrl.imageView.frame = CGRect.init(x: 0, y: -ItemHeight_banner, width: kScreenW, height: ItemHeight_banner)
+        self.addSubview(banerCtrl.imageView)
+        banerCtrl.imageView.layer.zPosition = -1 /* 将view插入到队列最前端 */
+        
+        self.contentInset = UIEdgeInsetsMake(ItemHeight_banner, 0, 0, 0)
+        
         self.separatorStyle = .none
+//        self.showsVerticalScrollIndicator = false
+//        self.showsHorizontalScrollIndicator = false
         self.delegate = self
-        self.dataSource = self;
+        self.dataSource = self
     }
     
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
-        delog("\(scrollView.contentOffset)")
-       
-        if scrollView.contentOffset.y > CGFloat(0) {
-            //MARK: 在上方
-            if (STOPY - self.y) > 0 {
-                //向上
-                self.y = STOPY - scrollView.contentOffset.y
-                if self.y <= kStatusH {
-                    self.y = kStatusH
-                }
-            }
-            
-            //向下
-            
-        }
-        else {
-            //MARK: 在下方
-            //向上
-            
-
-            //向下
-            
-        }
-        
-//            self.y = STOPY - scrollView.contentOffset.y
-//            if self.y <= kStatusH {
-//                self.y = kStatusH
-////                STOPY = kStatusH
-//            }
-//            if self.y >= HeightBanner {
-//                self.y = HeightBanner
-////                STOPY = HeightBanner
-//            }
-        
-        
+        banerCtrl.imageView.y = scrollView.contentOffset.y
     }
-    
-    func scrollViewDidEndScrollingAnimation(_ scrollView: UIScrollView) {
-//        if ((kStatusH <= self.y) && (self.y <= HeightBanner)) {
-            STOPY = scrollView.contentOffset.y
-//        }
-        
-    }
-    
     
     //MARK:-
     
     func numberOfSections(in tableView: UITableView) -> Int {
         return 8
     }
-    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 1
     }
@@ -95,6 +66,7 @@ class HomeTableView: BaseUITableView,UITableViewDelegate,UITableViewDataSource {
         if nil == cell {
             cell = ItemCell.init(style: .default, reuseIdentifier: dequeueID)
         }
+        
         return cell!
     }
     
@@ -103,20 +75,22 @@ class HomeTableView: BaseUITableView,UITableViewDelegate,UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 330
+        return 200
     }
-    
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        return 100
+        return 50
     }
     func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
-        return 0
+        return 0.01
     }
     
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         let view = UIView.init(frame: CGRect(x: 0, y: 0, width: kScreenW, height: 20))
         view.backgroundColor = .red
         return view
+    }
+    func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
+        return nil
     }
     
     

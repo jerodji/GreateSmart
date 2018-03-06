@@ -29,7 +29,6 @@
 		38B879A3204155DC0080BB3C /* MyVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38B879A2204155DC0080BB3C /* MyVC.swift */; };
 		38B879A6204268A60080BB3C /* SearchVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38B879A5204268A60080BB3C /* SearchVC.swift */; };
 		38B879AA20426A3F0080BB3C /* BaseControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38B879A920426A3F0080BB3C /* BaseControl.swift */; };
-		38B879AC20426AB20080BB3C /* HomeTableControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38B879AB20426AB20080BB3C /* HomeTableControl.swift */; };
 		38B879AE20426DE30080BB3C /* BannerControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38B879AD20426DE30080BB3C /* BannerControl.swift */; };
 		38EE01532043F29D0050759A /* CustomNaviBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38EE01522043F29D0050759A /* CustomNaviBar.swift */; };
 		38EE015620442D3B0050759A /* swiftHeaderFile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38EE015520442D3B0050759A /* swiftHeaderFile.swift */; };
@@ -109,7 +108,6 @@
 		38B879A2204155DC0080BB3C /* MyVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyVC.swift; sourceTree = "<group>"; };
 		38B879A5204268A60080BB3C /* SearchVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchVC.swift; sourceTree = "<group>"; };
 		38B879A920426A3F0080BB3C /* BaseControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseControl.swift; sourceTree = "<group>"; };
-		38B879AB20426AB20080BB3C /* HomeTableControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTableControl.swift; sourceTree = "<group>"; };
 		38B879AD20426DE30080BB3C /* BannerControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BannerControl.swift; sourceTree = "<group>"; };
 		38EE01522043F29D0050759A /* CustomNaviBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomNaviBar.swift; sourceTree = "<group>"; };
 		38EE015520442D3B0050759A /* swiftHeaderFile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = swiftHeaderFile.swift; sourceTree = "<group>"; };
@@ -293,15 +291,14 @@
 			path = Banner;
 			sourceTree = "<group>";
 		};
-		38B879A8204269FC0080BB3C /* TableView */ = {
+		38B879A8204269FC0080BB3C /* Item */ = {
 			isa = PBXGroup;
 			children = (
-				38B879AB20426AB20080BB3C /* HomeTableControl.swift */,
 				38213018204D429600F1413C /* HomeTableView.swift */,
 				3821301E204D47B800F1413C /* ItemModel.swift */,
 				3821301A204D465000F1413C /* ItemCell.swift */,
 			);
-			path = TableView;
+			path = Item;
 			sourceTree = "<group>";
 		};
 		38EE015720455EB80050759A /* Information_资讯 */ = {
@@ -348,12 +345,12 @@
 				38FD9A48204116DF0090D978 /* TabbarController.swift */,
 				38F9CA58202FED60004D105D /* AppDelegate.swift */,
 				38F9CA64202FED60004D105D /* Info.plist */,
-				38FD68732040220D00B19A42 /* PublicDefine.swift */,
-				38213020204D568000F1413C /* GreateSmartDefine.swift */,
 				38EE015520442D3B0050759A /* swiftHeaderFile.swift */,
 				38F9CA8E20300167004D105D /* GreateSmart-Bridging-Header.h */,
 				3821300B204A9C4600F1413C /* OCHeaderFile.h */,
 				3821300C204A9C4600F1413C /* OCHeaderFile.m */,
+				38FD68732040220D00B19A42 /* PublicDefine.swift */,
+				38213020204D568000F1413C /* GreateSmartDefine.swift */,
 			);
 			path = GreateSmart;
 			sourceTree = "<group>";
@@ -460,7 +457,7 @@
 			isa = PBXGroup;
 			children = (
 				38FD688120402A9000B19A42 /* HomePageVC.swift */,
-				38B879A8204269FC0080BB3C /* TableView */,
+				38B879A8204269FC0080BB3C /* Item */,
 				38B879A7204269F20080BB3C /* Banner */,
 			);
 			path = "HomePage_首页";
@@ -693,7 +690,6 @@
 				38FD9A43204112960090D978 /* BannerModel.swift in Sources */,
 				38B8799F204155A00080BB3C /* GoodListVC.swift in Sources */,
 				38B879A6204268A60080BB3C /* SearchVC.swift in Sources */,
-				38B879AC20426AB20080BB3C /* HomeTableControl.swift in Sources */,
 				38EE01532043F29D0050759A /* CustomNaviBar.swift in Sources */,
 				38EE015920455F8A0050759A /* InformationVC.swift in Sources */,
 				381C63032046990F00A9066C /* SearchHistoryCell.swift in Sources */,

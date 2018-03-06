@@ -35,7 +35,7 @@ func delog(_ msg:Any,file:String = #file,funcName:String = #function,lineNum:Int
         let formatter = DateFormatter()
         formatter.dateFormat = "yyyy-MM-dd HH:mm:ss:SSS"
         let datestr:String = formatter.string(from: Date())
-        print("\(datestr) \(fileName) \(funcName)[\(lineNum)]" + ":\n[SmartLog] ",msg,"\n")
+        print("\(datestr) \(fileName) \(funcName)[\(lineNum)]" + ":\n[DEBUG] ",msg,"\n")
     #endif
 }
 
@@ -65,8 +65,6 @@ class PublicDefine: NSObject {
     static let instance = PublicDefine()
     /* 需要重写自己的init方法,设置为私有,保证单例是真正唯一的,避免外部对象通过访问init方法创建单例类的其他实例 */
     private override init() { }
-    
-    //let HeightBanner:CGFloat = CGFloat(315.0)
     
     
 }
