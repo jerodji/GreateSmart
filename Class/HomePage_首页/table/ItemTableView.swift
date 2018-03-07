@@ -37,18 +37,19 @@ class ItemTableView: BaseUITableView,UITableViewDelegate,UITableViewDataSource {
         self.contentInset = UIEdgeInsetsMake(ItemHeight_banner, 0, 0, 0)
         
         self.separatorStyle = .none
-//        self.showsVerticalScrollIndicator = false
-//        self.showsHorizontalScrollIndicator = false
+        //self.showsVerticalScrollIndicator = false
+        //self.showsHorizontalScrollIndicator = false
         self.delegate = self
         self.dataSource = self
     }
     
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
-        delog("\(scrollView.contentOffset.y)")
+        //delog("\(scrollView.contentOffset.y)")
         banner.y = scrollView.contentOffset.y
         let offsetY = scrollView.contentOffset.y + ItemHeight_banner
         if offsetY < 0 {
-            banner.frame = CGRect.init(x: 0, y: scrollView.contentOffset.y, width: kScreenW, height: ItemHeight_banner-offsetY)
+            //banner.frame = CGRect.init(x: 0, y: scrollView.contentOffset.y, width: kScreenW, height: ItemHeight_banner-offsetY)
+            banner.height = ItemHeight_banner-offsetY
         }
     }
     

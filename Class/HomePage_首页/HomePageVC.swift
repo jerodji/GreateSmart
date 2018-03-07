@@ -11,12 +11,18 @@ import UIKit
 class HomePageVC: BaseUIViewController {
 
     private var tableCtrl  : ItemTableControl!
+    private var homeData: NSArray!
     
     override func loadView() {
         super.loadView()
         //MARK:获取首页数据
-        let responseDic = NetworkManage.instance.requestHomePageData(index: 1)
-        delog(responseDic)
+        NetworkManage.instance.requestHomePageData { (info) in
+            if info is NSArray {
+                self.homeData = info as! NSArray
+                delog(self.homeData)
+                //
+            }
+        }
         
     }
     

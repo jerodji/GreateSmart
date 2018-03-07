@@ -11,9 +11,18 @@ import UIKit
 let ItemHeight_banner:CGFloat = CGFloat(315.0*kSizeScale)
 
 
-public enum HomeItemType:String {
-    case Nature = "nature"
-    case Article = "article"
+public enum ItemShowType:String {
+    case NewBanner   = "NewBanner"
+    case SortType    = "SortType"
+    case HotInStore  = "HotInStore"
+    case ForMale     = "ForMale"
+    case HotSale     = "HotSale"
+    case Nature      = "Nature"
+    case TimeReC     = "TimeReC"
+    case Boutique    = "Boutique"
+    case LTC         = "LTC"
+    case NewBlock1   = "NewBlock1"
+    case Nature2     = "Nature2"
 }
 
 
