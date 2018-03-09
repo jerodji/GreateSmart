@@ -18,8 +18,7 @@
 #import "UIView+control.h"
 #import "UIView+viewFrame.h"
 #import "UIViewController+XIB.h"
-
-
+#import "NSObject+conversion.h"
 
 #pragma mark ------------ Utils ------------
 
@@ -40,7 +39,7 @@
 
 #import <SDWebImage/SDWebImage-umbrella.h>
 
-
+#import "YYModel.h"
 
 
 @interface OCHeaderFile : NSObject

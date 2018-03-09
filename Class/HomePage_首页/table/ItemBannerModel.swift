@@ -13,7 +13,7 @@ class BannerModel: BaseModel {
     var jumpUrl: String?
 }
 
-class BannerItemModel: BaseModel {
+class ItemBannerModel: BaseModel {
     var showType: String?
     var data = [BannerModel]() /* 创建一个由特定数据类型构成的空数组 */
 }

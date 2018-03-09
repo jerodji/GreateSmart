@@ -8,10 +8,30 @@
 
 import UIKit
 
+class JJKit: NSObject {
+    @objc var num:NSNumber = 9
+    @objc let doub:Double = 2.2
+    @objc var list:NSArray = [3,4,5,6,7]
+}
+
+class Test1: NSObject {
+    @objc var testInteger: Int = 0
+    @objc var str:String = ""
+    @objc var flo:CGFloat = 0.0
+    @objc var jjkits:NSMutableArray? = NSMutableArray()
+}
+
+class TestEntity: NSObject {
+    @objc var testString: String!
+    @objc var intValue:Int = 0
+    @objc var test1 = Test1()
+}
+
 class HomePageVC: BaseUIViewController {
 
     private var tableCtrl  : ItemTableControl!
     private var homeData: NSArray!
+    @objc var infu:Int = 1
     
     override func loadView() {
         super.loadView()
@@ -20,9 +40,35 @@ class HomePageVC: BaseUIViewController {
             if info is NSArray {
                 self.homeData = info as! NSArray
                 delog(self.homeData)
-                //
             }
         }
+        
+        infu = 3
+        
+        let test1 = Test1()
+        test1.testInteger = 1111
+        test1.str = "teststr"
+        test1.flo = 6.66
+        test1.jjkits?.add(JJKit())
+        
+        let j = JJKit()
+        j.num = 90999
+        j.list = [0,0,1,2,1]
+        
+        test1.jjkits?.add(j)
+//        test1.jjkits?.add(j)
+        
+        
+        let test = TestEntity()
+        test.testString = "kklo"
+        test.test1 = test1
+        test.intValue = 3
+        
+//        AFBaseNetwork.sharedInstance().testURLHead(withParams: test)
+        
+        NetworkManage.instance.testEntityParamsRequest(entity: test)
+        
+        
         
     }
     

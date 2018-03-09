@@ -21,6 +21,7 @@ class NetAPI: NSObject {
     
     let test_fail = "test-fail"
     let test_error = "test-error"
+    let test_entity = "test-entity"
     
     /* 首页数据 */
     private(set) var homePage = "home/homePage"

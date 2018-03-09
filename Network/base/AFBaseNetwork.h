@@ -27,22 +27,45 @@ typedef void (^FAIL)(NSURLSessionDataTask * task, NSError* error);
 
 + (AFBaseNetwork*)sharedInstance;
 
+#pragma mark - 以实体类为参数
+
+/**
+ *  get
+ */
+- (void)get:(NSString*)urlHead URLFunc:(NSString*)urlFunc paramsEntity:(id)entity success:(SUCC)success fail:(FAIL)failure;
+
+/**
+ *  post
+ */
+- (void)post:(NSString*)urlHead URLFunc:(NSString*)urlFunc paramsEntity:(id)entity success:(SUCC)success fail:(FAIL)failure;
+
+/**
+ *  request with url head and func
+ */
+- (void)request:(NetType)type URLHead:(NSString*)urlHead URLFunc:(NSString*)urlFunc paramsEntity:(id)entity success:(SUCC)success fail:(FAIL)failure;
+
+/**
+ *  request with full url
+ */
+- (void)request:(NetType)type URL:(NSString*)fullURL paramsEntity:(id)entity success:(SUCC)success fail:(FAIL)failure;
+
+
+#pragma mark - 以字典集合为参数
+
 /**
  *  http get request
  */
-- (void)get:(NSString*)_urlHead api:(NSString*)_urlFunc params:(NSDictionary*)_parameters success:(SUCC)_success fail:(FAIL)_failure;
+- (void)get:(NSString*)_urlHead api:(NSString*)_urlFunc paramsDict:(NSDictionary*)_parameters success:(SUCC)_success fail:(FAIL)_failure;
 
 /**
  *  http post request
  */
-- (void)post:(NSString*)_urlHead api:(NSString*)_urlFunc params:(NSDictionary*)_parameters success:(SUCC)_success fail:(FAIL)_failure;
-
-
+- (void)post:(NSString*)_urlHead api:(NSString*)_urlFunc paramsDict:(NSDictionary*)_parameters success:(SUCC)_success fail:(FAIL)_failure;
 
 /**
  *  http request with head and func
  */
-- (void)request:(NetType)_type URLHead:(NSString*)_urlHead URLFunc:(NSString*)_urlFunc params:(NSDictionary*)_parameter success:(SUCC)_success fail:(FAIL)_failure;
+- (void)request:(NetType)_type URLHead:(NSString*)_urlHead URLFunc:(NSString*)_urlFunc paramsDict:(NSDictionary*)_parameter success:(SUCC)_success fail:(FAIL)_failure;
 
 /**
  *  http request with full url
@@ -50,6 +73,7 @@ typedef void (^FAIL)(NSURLSessionDataTask * task, NSError* error);
 - (void)request:(NetType)_type fullURL:(NSString*)_url parameterDict:(NSDictionary*)_parameter success:(SUCC)_success fail:(FAIL)_failure;
 
 
+#pragma mark - 上传
 
 /**
  *  upload data request

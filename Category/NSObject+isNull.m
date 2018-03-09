@@ -54,11 +54,13 @@ BOOL NotNullAndNotFullSpace(NSString* obj) {
 {
     if (nil==objc || [objc isEqual:[NSNull null]] || [objc isEqual:@"<null>"] || [objc isEqual:@"null"] || [objc isEqual:@"(null)"] ||  objc==Nil || objc==NULL || [objc isEqual:@"<nil>"])
     {
+        NSLog(@"%s , %@ is nil !!",__func__,objc);
         return YES;
     }
     else
     {
         if ([self isEmpty:objc]) {
+            NSLog(@"%s , %@ is empty !! ",__func__,objc);
             return YES;
         } else {
             return NO;

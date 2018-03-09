@@ -9,5 +9,6 @@ pod 'SDWebImage'
 pod 'AFNetworking'
 pod 'SnapKit'
 pod 'RealmSwift'
+pod 'YYModel'
 
 end

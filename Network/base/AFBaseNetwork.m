@@ -9,6 +9,7 @@
 #import "AFBaseNetwork.h"
 #import "AFNetworking.h"
 //#import <AFHTTPSessionManager.h>
+#import "NSObject+conversion.h"
 
 @interface AFBaseNetwork()
 @property (nonatomic,strong) AFHTTPSessionManager * sessionManager;
@@ -20,15 +21,17 @@
 {
     if (!_sessionManager)
     {
-        _sessionManager = [[AFHTTPSessionManager alloc] init];
+        _sessionManager = [AFHTTPSessionManager manager];//[[AFHTTPSessionManager alloc] init];
+        _sessionManager.requestSerializer.timeoutInterval = 6;
+        _sessionManager.securityPolicy = [AFSecurityPolicy policyWithPinningMode:AFSSLPinningModeNone];//[AFSecurityPolicy defaultPolicy];
+        _sessionManager.requestSerializer.cachePolicy = NSURLRequestUseProtocolCachePolicy;
+        
+        _sessionManager.responseSerializer = [AFHTTPResponseSerializer serializer]; /* 不设置会报-1016或者会有编码问题, 设置了 [AFHTTPResponseSerializer serializer] 会自动转json */
         NSMutableSet *acceptSet = [_sessionManager.responseSerializer.acceptableContentTypes mutableCopy];
         [acceptSet addObject:@"text/plain"];
-        [acceptSet addObject:@"text/html"];
-        
-        _sessionManager.requestSerializer.timeoutInterval = 15;
-        _sessionManager.securityPolicy = [AFSecurityPolicy defaultPolicy];
-        _sessionManager.requestSerializer.cachePolicy = NSURLRequestUseProtocolCachePolicy;
+        [acceptSet addObject:@"text/html"]; /* 不设置会报 error 3840 */
         _sessionManager.responseSerializer.acceptableContentTypes = [acceptSet copy];
+        
     }
     return _sessionManager;
 }
@@ -44,19 +47,81 @@
     return _sharedObject;
 }
 
-- (void)get:(NSString*)_urlHead api:(NSString*)_urlFunc params:(NSDictionary*)_parameters success:(SUCC)_success fail:(FAIL)_failure
-{
-    [self request:GET URLHead:_urlHead URLFunc:_urlFunc params:_parameters success:_success fail:_failure];
+#pragma mark - entity
+
+- (void)get:(NSString*)urlHead URLFunc:(NSString*)urlFunc paramsEntity:(id)entity success:(SUCC)success fail:(FAIL)failure {
+    [self request:GET URLHead:urlHead URLFunc:urlFunc paramsEntity:entity success:success fail:failure];
 }
 
-- (void)post:(NSString*)_urlHead api:(NSString*)_urlFunc params:(NSDictionary*)_parameters success:(SUCC)_success fail:(FAIL)_failure
-{
-    [self request:POST URLHead:_urlHead URLFunc:_urlFunc params:_parameters success:_success fail:_failure];
+- (void)post:(NSString*)urlHead URLFunc:(NSString*)urlFunc paramsEntity:(id)entity success:(SUCC)success fail:(FAIL)failure {
+    [self request:POST URLHead:urlHead URLFunc:urlFunc paramsEntity:entity success:success fail:failure];
 }
 
-#pragma mark URLFunc
+- (void)request:(NetType)type URLHead:(NSString*)urlHead URLFunc:(NSString*)urlFunc paramsEntity:(id)entity success:(SUCC)success fail:(FAIL)failure
+{
+    if (urlHead == nil || urlFunc == nil) {
+        return;
+    }
+    NSString * fullURL = [urlHead stringByAppendingPathComponent:urlFunc];
+    [self request:type URL:fullURL paramsEntity:entity success:success fail:failure];
+}
 
-- (void)request:(NetType)_type URLHead:(NSString*)_urlHead URLFunc:(NSString*)_urlFunc params:(NSDictionary*)_parameter success:(SUCC)_success fail:(FAIL)_failure
+- (void)request:(NetType)type URL:(NSString*)fullURL paramsEntity:(id)entity success:(SUCC)success fail:(FAIL)failure
+{
+    NSString * method = @"POST";
+    if (type == GET) {
+        method = @"GET";
+    }
+    
+    NSDictionary * dict = [entity getIvarDict];
+    
+    NSMutableURLRequest *request = [[AFJSONRequestSerializer serializer] requestWithMethod:method URLString:fullURL parameters:dict error:nil];
+    [request setValue:@"application/json" forHTTPHeaderField:@"Content-Type"];
+    [request addValue:@"application/json" forHTTPHeaderField:@"Accept"];
+    //[request addValue:你需要的accept-id forHTTPHeaderField:@"Accept-Id"];
+    //[request addValue:你需要的user-agent forHTTPHeaderField:@"User-Agent"];
+    
+    //NSData *body = 你需要提交的data;
+    //[request setHTTPBody:body];
+    
+    //发起请求
+    __block NSURLSessionDataTask *dataTask = nil;
+//    url_session_manager_create_task_safely(^{
+//        dataTask = [self.sessionManager.session dataTaskWithRequest:request];
+//    });
+    
+    dataTask = [self.sessionManager dataTaskWithRequest:request completionHandler:^(NSURLResponse * _Nonnull response, id  _Nullable responseObject, NSError * _Nullable error) {
+        
+        if (!error) {
+            if (success) {
+                success(responseObject);
+            }
+            //JJLog(@"Reply JSON: %@", responseObject);
+        } else {
+            if (failure) {
+                failure(dataTask,error);
+            }
+            //JJLog(@"请求错误: %@ \n dataTask:%@ \n %@ \n %@", error,dataTask, response, responseObject);
+        }
+    }];
+    
+    [dataTask resume];
+}
+
+
+#pragma mark - dict
+
+- (void)get:(NSString*)_urlHead api:(NSString*)_urlFunc paramsDict:(NSDictionary*)_parameters success:(SUCC)_success fail:(FAIL)_failure
+{
+    [self request:GET URLHead:_urlHead URLFunc:_urlFunc paramsDict:_parameters success:_success fail:_failure];
+}
+
+- (void)post:(NSString*)_urlHead api:(NSString*)_urlFunc paramsDict:(NSDictionary*)_parameters success:(SUCC)_success fail:(FAIL)_failure
+{
+    [self request:POST URLHead:_urlHead URLFunc:_urlFunc paramsDict:_parameters success:_success fail:_failure];
+}
+
+- (void)request:(NetType)_type URLHead:(NSString*)_urlHead URLFunc:(NSString*)_urlFunc paramsDict:(NSDictionary*)_parameter success:(SUCC)_success fail:(FAIL)_failure
 {
     if (nil==_urlHead || _urlHead.length==0) {return;}
     if ( (nil == _urlFunc) || (_urlFunc.length == 0) ) {return;}
@@ -69,7 +134,7 @@
     {
         [self.sessionManager POST:fullURL parameters:_parameter progress:nil success:^(NSURLSessionDataTask* Task,id responseObject){
             
-                _success(responseObject);
+            _success(responseObject);
             
         } failure:^(NSURLSessionDataTask * task, NSError * error) {
             
@@ -81,7 +146,7 @@
     {
         [self.sessionManager GET:fullURL parameters:_parameter progress:nil success:^(NSURLSessionDataTask* Task,id responseObject){
             
-                _success(responseObject);
+            _success(responseObject);
             
         } failure:^(NSURLSessionDataTask* Task, NSError* Err){
             
@@ -91,8 +156,6 @@
     }
     
 }
-
-#pragma mark fullURL
 
 - (void)request:(NetType)_type fullURL:(NSString*)_url parameterDict:(NSDictionary*)_parameter success:(SUCC)_success fail:(FAIL)_failure
 {
@@ -129,7 +192,7 @@
 }
 
 
-#pragma mark upload
+#pragma mark- upload
 
 - (void)uploadDataWithURLHead:(NSString*)_urlHead URLFunc:(NSString*)_urlFunc parameters:(NSDictionary*)_parameters data:(NSData*)_data name:(NSString*)_name fileName:(NSString*)_fileName mimeType:(NSString*)_mimeType success:(SUCC)_success failure:(FAIL)_failure progress:(void (^)(CGFloat progres))_progress
 {
@@ -142,10 +205,9 @@
         return;
     }
     
-    //===== fullURL =====
     NSString * fullURL = @"";
     fullURL = [NSString stringWithFormat:@"%@%@", _urlHead, _urlFunc];
-    JJLog(@"%@",fullURL);
+    JJLog(@"上传 %@",fullURL);
     
     //====== upload =====
     [self.sessionManager POST:fullURL parameters:_parameters
@@ -154,7 +216,7 @@
         [formData appendPartWithFileData:_data name:_name fileName:_fileName mimeType:_mimeType];
         
     } progress:^(NSProgress * _Nonnull uploadProgress) {
-        //打印上传进度
+        //上传进度
         CGFloat progress = 100.0 * uploadProgress.completedUnitCount / uploadProgress.totalUnitCount;
         JJLog(@"上传进度 %.2lf%%",progress);
         
@@ -162,12 +224,12 @@
         
     } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
         //请求成功
-        //        JJLog(@"请求成功：%@",responseObject);
+        JJLog(@"请求成功：%@",responseObject);
         _success(responseObject);
         
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
         //请求失败
-        //        JJLog(@"请求失败：%@",error);
+        JJLog(@"请求失败：%@",error);
         _failure(task, error);
     }];
     

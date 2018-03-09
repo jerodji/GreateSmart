@@ -12,9 +12,13 @@ class ErrorCodeHandle: NSObject {
     
     static func handleInfo(task:URLSessionDataTask, error:NSError) -> Void {
         
-        let response:HTTPURLResponse = task.response as! HTTPURLResponse
+        if task.response == nil {
+            delog("总有刁民害朕  \(error.domain) \nURL:\(String(describing: task.response?.url)) \n任务信息: \(task)\n错误信息: \(error)")
+            return
+        }
         
-        delog("总有刁民害朕 \(response.statusCode) \n\(String(describing: response.url)) \n任务信息: \(task)\n错误信息: \(error)")
+        let response:HTTPURLResponse = task.response as! HTTPURLResponse
+        delog("总有刁民害朕 \(response.statusCode) \nURL:\(String(describing: response.url)) \n任务信息: \(task)\n错误信息: \(error)")
         
         let info:NSDictionary = error.userInfo as NSDictionary
         let data = info.value(forKey: "com.alamofire.serialization.response.error.data")
@@ -23,14 +27,9 @@ class ErrorCodeHandle: NSObject {
             let infoDic = JsonTransform.dictionaryFromJSONString(jsonString: jsonStr!)
             delog(infoDic)
         }
-        
-        
-        
-        
-        
-        
-        
-        
+
     }
+    
+    
     
 }
