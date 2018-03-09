@@ -31,6 +31,8 @@
 		388004C9204FD58200FE9DD0 /* ErrorCodeHandle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 388004C8204FD58200FE9DD0 /* ErrorCodeHandle.swift */; };
 		388BA0162050FE11009C7C70 /* NSObject+conversion.m in Sources */ = {isa = PBXBuildFile; fileRef = 388BA0152050FE11009C7C70 /* NSObject+conversion.m */; };
 		388BA01A205226BC009C7C70 /* property.swift in Sources */ = {isa = PBXBuildFile; fileRef = 388BA019205226BC009C7C70 /* property.swift */; };
+		388BA0202052A057009C7C70 /* SortTypeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 388BA01F2052A057009C7C70 /* SortTypeModel.swift */; };
+		388BA0222052A3AC009C7C70 /* yyModelSwf.swift in Sources */ = {isa = PBXBuildFile; fileRef = 388BA0212052A3AC009C7C70 /* yyModelSwf.swift */; };
 		38B8799F204155A00080BB3C /* GoodListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38B8799E204155A00080BB3C /* GoodListVC.swift */; };
 		38B879A1204155C60080BB3C /* ShopCartVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38B879A0204155C60080BB3C /* ShopCartVC.swift */; };
 		38B879A3204155DC0080BB3C /* MyVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38B879A2204155DC0080BB3C /* MyVC.swift */; };
@@ -64,7 +66,7 @@
 		38FD688320402A9000B19A42 /* HomePageVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38FD688120402A9000B19A42 /* HomePageVC.swift */; };
 		38FD9A3F2040FD9E0090D978 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 38FD9A3E2040FD9E0090D978 /* Images.xcassets */; };
 		38FD9A412041124A0090D978 /* BaseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38FD9A402041124A0090D978 /* BaseModel.swift */; };
-		38FD9A43204112960090D978 /* ItemBannerModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38FD9A42204112960090D978 /* ItemBannerModel.swift */; };
+		38FD9A43204112960090D978 /* BannerModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38FD9A42204112960090D978 /* BannerModel.swift */; };
 		38FD9A45204115160090D978 /* BaseUITableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38FD9A44204115160090D978 /* BaseUITableView.swift */; };
 		38FD9A49204116DF0090D978 /* TabbarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38FD9A48204116DF0090D978 /* TabbarController.swift */; };
 /* End PBXBuildFile section */
@@ -118,6 +120,8 @@
 		388BA0142050FE11009C7C70 /* NSObject+conversion.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSObject+conversion.h"; sourceTree = "<group>"; };
 		388BA0152050FE11009C7C70 /* NSObject+conversion.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSObject+conversion.m"; sourceTree = "<group>"; };
 		388BA019205226BC009C7C70 /* property.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = property.swift; sourceTree = "<group>"; };
+		388BA01F2052A057009C7C70 /* SortTypeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SortTypeModel.swift; sourceTree = "<group>"; };
+		388BA0212052A3AC009C7C70 /* yyModelSwf.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = yyModelSwf.swift; sourceTree = "<group>"; };
 		38B8799E204155A00080BB3C /* GoodListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoodListVC.swift; sourceTree = "<group>"; };
 		38B879A0204155C60080BB3C /* ShopCartVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShopCartVC.swift; sourceTree = "<group>"; };
 		38B879A2204155DC0080BB3C /* MyVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyVC.swift; sourceTree = "<group>"; };
@@ -167,7 +171,7 @@
 		38FD688120402A9000B19A42 /* HomePageVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePageVC.swift; sourceTree = "<group>"; };
 		38FD9A3E2040FD9E0090D978 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		38FD9A402041124A0090D978 /* BaseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseModel.swift; sourceTree = "<group>"; };
-		38FD9A42204112960090D978 /* ItemBannerModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemBannerModel.swift; sourceTree = "<group>"; };
+		38FD9A42204112960090D978 /* BannerModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BannerModel.swift; sourceTree = "<group>"; };
 		38FD9A44204115160090D978 /* BaseUITableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseUITableView.swift; sourceTree = "<group>"; };
 		38FD9A48204116DF0090D978 /* TabbarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabbarController.swift; sourceTree = "<group>"; };
 		AD1A70950CD1707D4D6B1553 /* Pods-GreateSmart.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GreateSmart.debug.xcconfig"; path = "Pods/Target Support Files/Pods-GreateSmart/Pods-GreateSmart.debug.xcconfig"; sourceTree = "<group>"; };
@@ -273,6 +277,32 @@
 			path = base;
 			sourceTree = "<group>";
 		};
+		388BA01C20529FD2009C7C70 /* Items */ = {
+			isa = PBXGroup;
+			children = (
+				388BA01E20529FF5009C7C70 /* SortType */,
+				388BA01D20529FE6009C7C70 /* NewBanner */,
+			);
+			path = Items;
+			sourceTree = "<group>";
+		};
+		388BA01D20529FE6009C7C70 /* NewBanner */ = {
+			isa = PBXGroup;
+			children = (
+				38213026204EAC3D00F1413C /* BannerView.swift */,
+				38FD9A42204112960090D978 /* BannerModel.swift */,
+			);
+			path = NewBanner;
+			sourceTree = "<group>";
+		};
+		388BA01E20529FF5009C7C70 /* SortType */ = {
+			isa = PBXGroup;
+			children = (
+				388BA01F2052A057009C7C70 /* SortTypeModel.swift */,
+			);
+			path = SortType;
+			sourceTree = "<group>";
+		};
 		38B8799B2041553B0080BB3C /* GoodList_商品 */ = {
 			isa = PBXGroup;
 			children = (
@@ -311,8 +341,6 @@
 			children = (
 				38213024204EAB2C00F1413C /* ItemTableControl.swift */,
 				38213018204D429600F1413C /* ItemTableView.swift */,
-				38213026204EAC3D00F1413C /* BannerView.swift */,
-				38FD9A42204112960090D978 /* ItemBannerModel.swift */,
 				3821301E204D47B800F1413C /* ItemModel.swift */,
 				3821301A204D465000F1413C /* ItemCell.swift */,
 			);
@@ -409,6 +437,7 @@
 				38FD686D2040207A00B19A42 /* XIB.swift */,
 				381C63182048097F00A9066C /* StringSize.swift */,
 				388BA019205226BC009C7C70 /* property.swift */,
+				388BA0212052A3AC009C7C70 /* yyModelSwf.swift */,
 				388BA0142050FE11009C7C70 /* NSObject+conversion.h */,
 				388BA0152050FE11009C7C70 /* NSObject+conversion.m */,
 				38FD685020401E4D00B19A42 /* NSObject+isNull.h */,
@@ -481,6 +510,7 @@
 			children = (
 				38FD688120402A9000B19A42 /* HomePageVC.swift */,
 				38B879A8204269FC0080BB3C /* table */,
+				388BA01C20529FD2009C7C70 /* Items */,
 			);
 			path = "HomePage_首页";
 			sourceTree = "<group>";
@@ -713,7 +743,7 @@
 				38FD9A49204116DF0090D978 /* TabbarController.swift in Sources */,
 				3821300D204A9C4600F1413C /* OCHeaderFile.m in Sources */,
 				3821301C204D465000F1413C /* ItemCell.swift in Sources */,
-				38FD9A43204112960090D978 /* ItemBannerModel.swift in Sources */,
+				38FD9A43204112960090D978 /* BannerModel.swift in Sources */,
 				38B8799F204155A00080BB3C /* GoodListVC.swift in Sources */,
 				38B879A6204268A60080BB3C /* SearchVC.swift in Sources */,
 				38EE01532043F29D0050759A /* CustomNaviBar.swift in Sources */,
@@ -724,6 +754,8 @@
 				38FD686C2040202C00B19A42 /* BaseUITableViewController.swift in Sources */,
 				38FD685F20401E4F00B19A42 /* UIViewController+XIB.m in Sources */,
 				381C62FA20464C5500A9066C /* ResultVC.swift in Sources */,
+				388BA0202052A057009C7C70 /* SortTypeModel.swift in Sources */,
+				388BA0222052A3AC009C7C70 /* yyModelSwf.swift in Sources */,
 				38FD686520401E4F00B19A42 /* UIButton+parameter.m in Sources */,
 				38213004204948EA00F1413C /* JJRealmManager.swift in Sources */,
 				38FD687D204026D200B19A42 /* NetAPI.swift in Sources */,

@@ -9,13 +9,13 @@
 import UIKit
 
 class BannerModel: BaseModel {
-    var imageUrl: String?
-    var jumpUrl: String?
+    @objc var imageUrl: String?
+    @objc var jumpUrl: String?
 }
 
 class ItemBannerModel: BaseModel {
-    var showType: String?
-    var data = [BannerModel]() /* 创建一个由特定数据类型构成的空数组 */
+    @objc var showType: String?
+    @objc var data = [BannerModel]() /* 创建一个由特定数据类型构成的空数组 */
 }
 
 

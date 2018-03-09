@@ -8,7 +8,7 @@
 
 import UIKit
 
-class BaseModel: Object {
+class BaseModel: NSObject {
     
 //    var list: List<String>?
     

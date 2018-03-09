@@ -30,43 +30,40 @@ class TestEntity: NSObject {
 class HomePageVC: BaseUIViewController {
 
     private var tableCtrl  : ItemTableControl!
-    private var homeData: NSArray!
-    @objc var infu:Int = 1
+    private var homeData: NSArray = []
+    private var itemModelArray: NSMutableArray = []
     
     override func loadView() {
         super.loadView()
-        //MARK:获取首页数据
-        NetworkManage.instance.requestHomePageData { (info) in
-            if info is NSArray {
-                self.homeData = info as! NSArray
-                delog(self.homeData)
-            }
-        }
+//        //MARK:获取首页数据
+//        NetworkManage.instance.requestHomePageData { (info) in
+//            if info is NSArray {
+//                self.homeData = info as! NSArray
+////                delog(self.homeData)
+//                self.tableCtrl.handleHomeData(homeData: self.homeData)
+//            }
+//        }
         
-        infu = 3
+
         
-        let test1 = Test1()
-        test1.testInteger = 1111
-        test1.str = "teststr"
-        test1.flo = 6.66
-        test1.jjkits?.add(JJKit())
-        
-        let j = JJKit()
-        j.num = 90999
-        j.list = [0,0,1,2,1]
-        
-        test1.jjkits?.add(j)
+//        let test1 = Test1()
+//        test1.testInteger = 1111
+//        test1.str = "teststr"
+//        test1.flo = 6.66
+//        test1.jjkits?.add(JJKit())
+//
+//        let j = JJKit()
+//        j.num = 90999
+//        j.list = [0,0,1,2,1]
+//
 //        test1.jjkits?.add(j)
-        
-        
-        let test = TestEntity()
-        test.testString = "kklo"
-        test.test1 = test1
-        test.intValue = 3
-        
-//        AFBaseNetwork.sharedInstance().testURLHead(withParams: test)
-        
-        NetworkManage.instance.testEntityParamsRequest(entity: test)
+//
+//        let test = TestEntity()
+//        test.testString = "kklo"
+//        test.test1 = test1
+//        test.intValue = 3
+//
+//        NetworkManage.instance.testEntityParamsRequest(entity: test)
         
         
         
@@ -83,11 +80,28 @@ class HomePageVC: BaseUIViewController {
     }
     
     //MARK:-
-    
-    //MARK:
+
     func configSubviews() -> () {
         tableCtrl = ItemTableControl.init(tableFrame: CGRect(x: 0, y: kStatusH, width: kScreenW, height: kScreenH-kStatusH-kTabbarH))
         self.view.addSubview(tableCtrl.tableView!)
+        
+        self.homeData = [
+            [
+                "showType":"NewBanner",
+                "data":[
+                    ["imageUrl" : "http://pic.laopdr.cn:80/home_page_image/cdd087fc906b41f4990094dff3cccbfc.png",
+                     "jumpUrl" : "localhost://www.laopdr.cn/app/itemTypeDetail?id=banjia"],
+                    ["imageUrl" : "http://pic.laopdr.cn:80/home_page_image/e514ab8543db49ad929dc54cb3fc9649.png",
+                     "jumpUrl" : "localhost://www.laopdr.cn/app/itemTypeDetail?id=004"],
+                    ["imageUrl" : "http://pic.laopdr.cn:80/home_page_image/6d2893cea7eb4ce7acdacaf4751dbc56.png",
+                     "jumpUrl" : "localhost://www.laopdr.cn/app/itemTypeDetail?id=002"]
+                ]
+            ]
+            
+        ]
+        
+        
+        self.tableCtrl.handleHomeData(homeData: self.homeData)
     }
     
     //MARK: 搜索按钮
@@ -101,25 +115,6 @@ class HomePageVC: BaseUIViewController {
         let searchvc = SearchVC()
         self.navigationController?.pushViewController(searchvc, animated: true)
     }
-    
-
-    
-//    func tableScrolDidScrol(_ scrollView: UIScrollView) {
-//
-//    }
-    
-    
-    //MARK:-
-    //MARK:tableView移动
-//    func tableMoveHandle() -> Void {
-//
-//    }
-    
-    
-    
-    
-    
-    
     
     
     override func didReceiveMemoryWarning() {
