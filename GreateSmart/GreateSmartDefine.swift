@@ -8,8 +8,6 @@
 
 import UIKit
 
-let ItemHeight_banner:CGFloat = CGFloat(315.0*kSizeScale)
-
 
 public enum ShowTypeENUM: String {
     case NewBanner   = "NewBanner"
@@ -25,6 +23,14 @@ public enum ShowTypeENUM: String {
     case Nature2     = "Nature2"
 }
 
+let itemcellTop = CGFloat(10)
+let itemcellBottom = CGFloat(20)
+let itemcellLeft = CGFloat(10)
+let itemcellRight = CGFloat(10)
+
+let heightTitle = CGFloat(30)
+let heightBanner = CGFloat(315.0*kSizeScale)
+let heightSortType = CGFloat(140*kSizeScale)
 
 //protocol HomeTableViewDelegate {
 //    func tableScrolDidScrol(_ scrollView: UIScrollView) -> Void

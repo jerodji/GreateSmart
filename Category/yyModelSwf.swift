@@ -10,7 +10,7 @@ import UIKit
 
 extension NSObject {
     
-    static func getModelWithDict(_ dict:NSDictionary) -> Any? {
+    static func getModelWithDict(_ dict:NSDictionary) -> Self? {
         return self.yy_model(with: dict as! [AnyHashable : Any])
     }
     
