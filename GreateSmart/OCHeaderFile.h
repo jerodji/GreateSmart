@@ -39,7 +39,8 @@
 
 #import <SDWebImage/SDWebImage-umbrella.h>
 
-#import "YYModel.h"
+//#import "YYModel.h"
+#import "MJExtension.h"
 
 
 @interface OCHeaderFile : NSObject

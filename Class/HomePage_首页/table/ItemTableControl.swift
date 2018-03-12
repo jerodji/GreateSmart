@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SwiftyJSON
 
 class ItemTableControl: BaseControl,UITableViewDelegate,UITableViewDataSource {
     
@@ -32,6 +33,59 @@ class ItemTableControl: BaseControl,UITableViewDelegate,UITableViewDataSource {
         //self.showsHorizontalScrollIndicator = false
     }
     
+    func handleHomeJson(_ dataFromString:Data) -> Void {
+        
+        let json = try! JSON(data: dataFromString)
+        
+
+        
+
+        var count = 0;
+        if json.rawValue is NSArray {
+            count = (json.rawValue as! NSArray).count
+        }
+        
+        for index in 0...count {
+            let objson = json[index]
+            
+            if objson.rawValue is NSDictionary {
+                
+                let showType = objson["showType"].stringValue
+                let dataJson = objson["data"] as JSON
+                
+                
+//                delog(showType)
+                
+//                //If json is .Dictionary
+//                for (key: String, subJson: JSON) in objson {
+//                    //Do something you want
+                
+                    switch (showType) {
+                        
+                        case ShowTypeENUM.NewBanner.rawValue :  do {
+                            //delog("2")
+                            
+                        }; break
+                        
+                        case ShowTypeENUM.SortType.rawValue: do {
+                            
+//                            sortTypeCtrl.handleData(dataJson)
+                            
+                            
+                        }; break
+                        
+                        
+                        default:
+                            break
+                    }
+//                }
+            }
+        }
+        
+        
+        
+    }
+    
     func handleHomeData(homeData:NSArray!) -> Void {
         
         dataArray = homeData!
@@ -42,7 +96,18 @@ class ItemTableControl: BaseControl,UITableViewDelegate,UITableViewDataSource {
             
             if obj is NSDictionary {
                 let dict = obj as! NSDictionary
+                
                 let type = dict.object(forKey: "showType") as! String
+                var data: Any = ""
+                if dict.object(forKey: "data") is NSDictionary {
+                    data = dict.object(forKey: "data") as! NSDictionary
+                }
+                if dict.object(forKey: "data") is NSArray {
+                    data = dict.object(forKey: "data") as! NSArray
+                }
+                if dict.object(forKey: "data") is String {
+                    data = dict.object(forKey: "data") as! String
+                }
                 
                 switch (type) {
                     
@@ -52,7 +117,7 @@ class ItemTableControl: BaseControl,UITableViewDelegate,UITableViewDataSource {
                 }; break
                     
                 case ShowTypeENUM.SortType.rawValue: do {
-                    sortTypeCtrl.handleData(homeData.object(at: index))
+                    sortTypeCtrl.handleData(data)
                 }; break
                     
                     

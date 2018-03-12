@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SwiftyJSON
 
 let distance = CGFloat(10)
 
@@ -24,10 +25,13 @@ class SortTypeControl: BaseControl,UICollectionViewDataSource,UICollectionViewDe
         collectionView.register(SortTypeCell.self, forCellWithReuseIdentifier: "SortTypeCellid")
     }
     
-    func handleData(_ data : Any!) -> Void {
-        
-        let dict: NSDictionary = data as! NSDictionary
-        model = SortTypeModel.getModelWithDict(dict)
+    
+    func handleData(_ data : Any) -> Void {
+        if data is NSDictionary {
+            let dict = data as! NSDictionary
+            model = SortTypeModel.mj_object(withKeyValues: dict)
+            delog(model)
+        }
     }
     
     
@@ -39,8 +43,8 @@ class SortTypeControl: BaseControl,UICollectionViewDataSource,UICollectionViewDe
         
         let cell: SortTypeCell = collectionView.dequeueReusableCell(withReuseIdentifier: "SortTypeCellid", for: indexPath) as! SortTypeCell
         
-        let imgModel = model.block.object(at: indexPath.item) as! SortTypeBlockElementModel
-        cell.image(imgModel.imageUrl)
+        let imgModel = model.block.object(at: indexPath.item) as! NSDictionary
+        cell.image(imgModel["imageUrl"] as! String)
         
         return cell
     }

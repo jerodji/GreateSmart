@@ -9,16 +9,17 @@
 import UIKit
 
 
-class SortTypeModel: BaseModel {
+@objc class SortTypeModel: BaseModel {
     
-    @objc var block: NSMutableArray = [SortTypeBlockElementModel]() as! NSMutableArray
-    //@objc var block = [SortTypeBlockElementModel]()
+//    @objc var block: NSMutableArray = [SortTypeBlockElementModel]() as! NSMutableArray
+    @objc var block: NSMutableArray!
     @objc var smallTitle: String = ""
     @objc var title: String = ""
     
 }
 
-class SortTypeBlockElementModel: BaseModel {
-    @objc var imageUrl = ""
-    @objc var jumpUrl = ""
-}
+//@objc class SortTypeBlockElementModel: BaseModel {
+//    @objc var imageUrl = ""
+//    @objc var jumpUrl = ""
+//}
+
