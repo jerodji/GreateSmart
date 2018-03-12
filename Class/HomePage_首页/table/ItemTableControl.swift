@@ -7,7 +7,7 @@
 //
 
 import UIKit
-import SwiftyJSON
+//import SwiftyJSON
 
 class ItemTableControl: BaseControl,UITableViewDelegate,UITableViewDataSource {
     
@@ -31,59 +31,6 @@ class ItemTableControl: BaseControl,UITableViewDelegate,UITableViewDataSource {
         tableView.dataSource = self
         //self.showsVerticalScrollIndicator = false
         //self.showsHorizontalScrollIndicator = false
-    }
-    
-    func handleHomeJson(_ dataFromString:Data) -> Void {
-        
-        let json = try! JSON(data: dataFromString)
-        
-
-        
-
-        var count = 0;
-        if json.rawValue is NSArray {
-            count = (json.rawValue as! NSArray).count
-        }
-        
-        for index in 0...count {
-            let objson = json[index]
-            
-            if objson.rawValue is NSDictionary {
-                
-                let showType = objson["showType"].stringValue
-                let dataJson = objson["data"] as JSON
-                
-                
-//                delog(showType)
-                
-//                //If json is .Dictionary
-//                for (key: String, subJson: JSON) in objson {
-//                    //Do something you want
-                
-                    switch (showType) {
-                        
-                        case ShowTypeENUM.NewBanner.rawValue :  do {
-                            //delog("2")
-                            
-                        }; break
-                        
-                        case ShowTypeENUM.SortType.rawValue: do {
-                            
-//                            sortTypeCtrl.handleData(dataJson)
-                            
-                            
-                        }; break
-                        
-                        
-                        default:
-                            break
-                    }
-//                }
-            }
-        }
-        
-        
-        
     }
     
     func handleHomeData(homeData:NSArray!) -> Void {
@@ -111,20 +58,48 @@ class ItemTableControl: BaseControl,UITableViewDelegate,UITableViewDataSource {
                 
                 switch (type) {
                     
-                case ShowTypeENUM.NewBanner.rawValue :  do {
-                    delog("2")
+                    case ShowTypeENUM.NewBanner.rawValue :  do {
+                        tableView.banner.handleData(data: data)
+                    }; break
                     
-                }; break
+                    case ShowTypeENUM.SortType.rawValue: do {
+                        sortTypeCtrl.handleData(data)
+                    }; break
                     
-                case ShowTypeENUM.SortType.rawValue: do {
-                    sortTypeCtrl.handleData(data)
-                }; break
+                    case ShowTypeENUM.HotInStore.rawValue: do {
+                        
+                    }; break
                     
+                    case ShowTypeENUM.ForMale.rawValue: do {
+                        
+                    }; break
                     
-
-
-                default:
-                    break
+                    case ShowTypeENUM.HotSale.rawValue: do {
+                        
+                    }; break
+                    
+                    case ShowTypeENUM.Nature2.rawValue: do {
+                        
+                    }; break
+                    
+                    case ShowTypeENUM.Nature.rawValue: do {
+                        
+                    }; break
+                    
+                    case ShowTypeENUM.Boutique.rawValue: do {
+                        
+                    }; break
+                    
+                    case ShowTypeENUM.LTC.rawValue: do {
+                        
+                    }; break
+                    
+                    case ShowTypeENUM.NewBlock1.rawValue: do {
+                        
+                    }; break
+                    
+                    default:
+                        break
                 }
                 
             }

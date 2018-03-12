@@ -16,10 +16,20 @@ import UIKit
     @objc var smallTitle: String = ""
     @objc var title: String = ""
     
+    class func dataReader(_ data:Any!) -> SortTypeModel {
+        var model = SortTypeModel()
+        if data is NSDictionary {
+            let dict = data as! NSDictionary
+            model = SortTypeModel.mj_object(withKeyValues: dict)
+            model.block = SortTypeBlockElementModel.mj_objectArray(withKeyValuesArray: model.block)
+        }
+        return model
+    }
 }
 
-//@objc class SortTypeBlockElementModel: BaseModel {
-//    @objc var imageUrl = ""
-//    @objc var jumpUrl = ""
-//}
+
+@objc class SortTypeBlockElementModel: BaseModel {
+    @objc var imageUrl = ""
+    @objc var jumpUrl = ""
+}
 

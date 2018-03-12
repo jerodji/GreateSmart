@@ -7,5 +7,4 @@
 //
 
 import SnapKit
-import SwiftyJSON
 

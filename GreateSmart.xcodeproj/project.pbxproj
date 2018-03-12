@@ -73,6 +73,8 @@
 		38FD9A43204112960090D978 /* BannerModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38FD9A42204112960090D978 /* BannerModel.swift */; };
 		38FD9A45204115160090D978 /* BaseUITableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38FD9A44204115160090D978 /* BaseUITableView.swift */; };
 		38FD9A49204116DF0090D978 /* TabbarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38FD9A48204116DF0090D978 /* TabbarController.swift */; };
+		FA16F7B42056D30B0094F47B /* HotInStoreModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA16F7B32056D30B0094F47B /* HotInStoreModel.swift */; };
+		FA16F7B72056ECFB0094F47B /* ForMaleModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA16F7B62056ECFB0094F47B /* ForMaleModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -185,6 +187,8 @@
 		AD1A70950CD1707D4D6B1553 /* Pods-GreateSmart.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GreateSmart.debug.xcconfig"; path = "Pods/Target Support Files/Pods-GreateSmart/Pods-GreateSmart.debug.xcconfig"; sourceTree = "<group>"; };
 		AFE5A3FFF7CEC461A4847CB6 /* Pods_GreateSmart.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GreateSmart.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D64C8E0F66D55CC3EC66E617 /* Pods_GreateSmart.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GreateSmart.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		FA16F7B32056D30B0094F47B /* HotInStoreModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HotInStoreModel.swift; sourceTree = "<group>"; };
+		FA16F7B62056ECFB0094F47B /* ForMaleModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForMaleModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -288,6 +292,8 @@
 		388BA01C20529FD2009C7C70 /* Items */ = {
 			isa = PBXGroup;
 			children = (
+				FA16F7B52056ECEB0094F47B /* ForMale */,
+				FA16F7B22056D2EB0094F47B /* HotInStore */,
 				388BA01E20529FF5009C7C70 /* SortType */,
 				388BA01D20529FE6009C7C70 /* NewBanner */,
 				38BAE1452053775E00CA822A /* title */,
@@ -544,6 +550,22 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		FA16F7B22056D2EB0094F47B /* HotInStore */ = {
+			isa = PBXGroup;
+			children = (
+				FA16F7B32056D30B0094F47B /* HotInStoreModel.swift */,
+			);
+			path = HotInStore;
+			sourceTree = "<group>";
+		};
+		FA16F7B52056ECEB0094F47B /* ForMale */ = {
+			isa = PBXGroup;
+			children = (
+				FA16F7B62056ECFB0094F47B /* ForMaleModel.swift */,
+			);
+			path = ForMale;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -773,6 +795,7 @@
 				38EE015920455F8A0050759A /* InformationVC.swift in Sources */,
 				381C63032046990F00A9066C /* SearchHistoryCell.swift in Sources */,
 				38FD686220401E4F00B19A42 /* UIView+control.m in Sources */,
+				FA16F7B72056ECFB0094F47B /* ForMaleModel.swift in Sources */,
 				38FD686C2040202C00B19A42 /* BaseUITableViewController.swift in Sources */,
 				38FD685F20401E4F00B19A42 /* UIViewController+XIB.m in Sources */,
 				381C62FA20464C5500A9066C /* ResultVC.swift in Sources */,
@@ -782,6 +805,7 @@
 				38213004204948EA00F1413C /* JJRealmManager.swift in Sources */,
 				38FD687D204026D200B19A42 /* NetAPI.swift in Sources */,
 				3821301F204D47B800F1413C /* ItemModel.swift in Sources */,
+				FA16F7B42056D30B0094F47B /* HotInStoreModel.swift in Sources */,
 				38213021204D568000F1413C /* GreateSmartDefine.swift in Sources */,
 				388BA01A205226BC009C7C70 /* property.swift in Sources */,
 				38FD68742040220D00B19A42 /* PublicDefine.swift in Sources */,

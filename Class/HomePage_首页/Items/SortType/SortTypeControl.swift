@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import SwiftyJSON
 
 let distance = CGFloat(10)
 
@@ -27,11 +26,8 @@ class SortTypeControl: BaseControl,UICollectionViewDataSource,UICollectionViewDe
     
     
     func handleData(_ data : Any) -> Void {
-        if data is NSDictionary {
-            let dict = data as! NSDictionary
-            model = SortTypeModel.mj_object(withKeyValues: dict)
-            delog(model)
-        }
+        model = SortTypeModel.dataReader(data)
+        delog(model)
     }
     
     

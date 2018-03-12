@@ -11,6 +11,7 @@ import UIKit
 class BannerView: UIView {
 
     let imageView = UIImageView()
+    var model = BannerModel()
     
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
@@ -32,6 +33,11 @@ class BannerView: UIView {
         //adjustImageBrightness(brightness: -0.5)
         
         //CGImageRelease(cgImage!)
+    }
+    
+    
+    func handleData(data: Any!) -> Void {
+        model = BannerModel.dataReader(data: data)
     }
     
     func adjustImageBrightness(brightness: CGFloat) -> Void {
