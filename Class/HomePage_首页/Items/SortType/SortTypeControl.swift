@@ -8,40 +8,38 @@
 
 import UIKit
 
-let distance = CGFloat(10)
-
-
 class SortTypeControl: BaseControl,UICollectionViewDataSource,UICollectionViewDelegate {
     
     var collectionView : SortTypeView!
     var model : SortTypeModel!
     
-    override init() {
+    init(frame:CGRect) {
         super.init()
-        collectionView = SortTypeView.init(frame: CGRect(x:kScreenW - itemcellLeft, y: itemcellTop, width: kScreenW - itemcellLeft - itemcellRight, height: 1))
+
+        collectionView = SortTypeView.init(frame: frame)
         collectionView.delegate = self
         collectionView.dataSource = self
         collectionView.register(SortTypeCell.self, forCellWithReuseIdentifier: "SortTypeCellid")
     }
     
-    
-    func handleData(_ data : Any) -> Void {
-        model = SortTypeModel.dataReader(data)
-        delog(model)
+    func handleData(typeInfo : Any) -> SortTypeModel {
+        model = SortTypeModel.dataReader(typeInfo: typeInfo)
+        return model
     }
     
-    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return model.block.count
+        return model.data.block.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
         let cell: SortTypeCell = collectionView.dequeueReusableCell(withReuseIdentifier: "SortTypeCellid", for: indexPath) as! SortTypeCell
         
-        let imgModel = model.block.object(at: indexPath.item) as! NSDictionary
-        cell.image(imgModel["imageUrl"] as! String)
+        let imgModel = model.data.block.object(at: indexPath.item) as! SortTypeBlockElementModel
+        cell.image(imgModel.imageUrl)
         
         return cell
     }
+    
+    
 }

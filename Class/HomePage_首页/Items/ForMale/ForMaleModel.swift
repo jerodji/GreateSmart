@@ -9,23 +9,27 @@
 import UIKit
 
 class ForMaleBlockElemModel: BaseModel {
-    var imageUrl: String = ""
-    var jumpUrl: String = ""
+    @objc var imageUrl: String = ""
+    @objc var jumpUrl: String = ""
+}
+
+class ForMaleDataModel : BaseModel {
+    @objc var title: String = ""
+    @objc var smallTitle: String = ""
+    @objc var block:NSArray = []
 }
 
 class ForMaleModel: BaseModel {
 
-    var title: String = ""
-    var smallTitle: String = ""
-    var block:NSArray = []
+    @objc var showType : String = ""
+    @objc var data : ForMaleDataModel!
     
-    class func dataReader(_ data:Any!) -> ForMaleModel {
+    class func dataReader(typeInfo:Any!) -> ForMaleModel {
         var model = ForMaleModel()
-        if data is NSDictionary {
-            let dict = data as! NSDictionary
+        if typeInfo is NSDictionary {
+            let dict = typeInfo as! NSDictionary
             model = ForMaleModel.mj_object(withKeyValues: dict)
-            model.block = ForMaleBlockElemModel.mj_objectArray(withKeyValuesArray: model.block)
-            //mj_objectArrayWithKeyValuesArray
+            model.data.block = ForMaleBlockElemModel.mj_objectArray(withKeyValuesArray: model.data.block)
         }
         return model
     }

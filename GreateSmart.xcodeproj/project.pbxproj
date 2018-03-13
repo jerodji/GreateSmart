@@ -22,10 +22,24 @@
 		3821300D204A9C4600F1413C /* OCHeaderFile.m in Sources */ = {isa = PBXBuildFile; fileRef = 3821300C204A9C4600F1413C /* OCHeaderFile.m */; };
 		38213019204D429600F1413C /* ItemTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38213018204D429600F1413C /* ItemTableView.swift */; };
 		3821301C204D465000F1413C /* ItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3821301A204D465000F1413C /* ItemCell.swift */; };
-		3821301F204D47B800F1413C /* ItemModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3821301E204D47B800F1413C /* ItemModel.swift */; };
 		38213021204D568000F1413C /* GreateSmartDefine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38213020204D568000F1413C /* GreateSmartDefine.swift */; };
 		38213025204EAB2C00F1413C /* ItemTableControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38213024204EAB2C00F1413C /* ItemTableControl.swift */; };
 		38213027204EAC3D00F1413C /* BannerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38213026204EAC3D00F1413C /* BannerView.swift */; };
+		384EE4422057673A00D2BCB6 /* HotSaleModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 384EE4412057673A00D2BCB6 /* HotSaleModel.swift */; };
+		384EE4452057699600D2BCB6 /* NatureModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 384EE4442057699600D2BCB6 /* NatureModel.swift */; };
+		384EE44820576AED00D2BCB6 /* TimeReCModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 384EE44720576AED00D2BCB6 /* TimeReCModel.swift */; };
+		384EE44B205770FD00D2BCB6 /* BoutiqueModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 384EE44A205770FD00D2BCB6 /* BoutiqueModel.swift */; };
+		384EE44E205771C900D2BCB6 /* LTCModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 384EE44D205771C900D2BCB6 /* LTCModel.swift */; };
+		384EE4502057A37D00D2BCB6 /* errorPrevent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 384EE44F2057A37D00D2BCB6 /* errorPrevent.swift */; };
+		384EE4522057C4ED00D2BCB6 /* LTCControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 384EE4512057C4ED00D2BCB6 /* LTCControl.swift */; };
+		384EE4542057C51700D2BCB6 /* LTCView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 384EE4532057C51700D2BCB6 /* LTCView.swift */; };
+		384EE4562057C56700D2BCB6 /* LTCView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 384EE4552057C56700D2BCB6 /* LTCView.xib */; };
+		384EE4582057EB8800D2BCB6 /* HotInStoreControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 384EE4572057EB8800D2BCB6 /* HotInStoreControl.swift */; };
+		384EE45A2057EB9A00D2BCB6 /* ForMaleControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 384EE4592057EB9A00D2BCB6 /* ForMaleControl.swift */; };
+		384EE45C2057EBA900D2BCB6 /* HotSaleControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 384EE45B2057EBA900D2BCB6 /* HotSaleControl.swift */; };
+		384EE45E2057EBB600D2BCB6 /* NatureControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 384EE45D2057EBB600D2BCB6 /* NatureControl.swift */; };
+		384EE4602057EBC500D2BCB6 /* TimeReCControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 384EE45F2057EBC500D2BCB6 /* TimeReCControl.swift */; };
+		384EE4622057EBD200D2BCB6 /* BoutiqueControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 384EE4612057EBD200D2BCB6 /* BoutiqueControl.swift */; };
 		388004C2204F92BE00FE9DD0 /* AFBaseNetwork.m in Sources */ = {isa = PBXBuildFile; fileRef = 388004C1204F92BD00FE9DD0 /* AFBaseNetwork.m */; };
 		388004C7204FAAEE00FE9DD0 /* JsonTransform.swift in Sources */ = {isa = PBXBuildFile; fileRef = 388004C6204FAAEE00FE9DD0 /* JsonTransform.swift */; };
 		388004C9204FD58200FE9DD0 /* ErrorCodeHandle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 388004C8204FD58200FE9DD0 /* ErrorCodeHandle.swift */; };
@@ -115,10 +129,24 @@
 		38213017204AA58800F1413C /* SnapKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = SnapKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		38213018204D429600F1413C /* ItemTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemTableView.swift; sourceTree = "<group>"; };
 		3821301A204D465000F1413C /* ItemCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemCell.swift; sourceTree = "<group>"; };
-		3821301E204D47B800F1413C /* ItemModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemModel.swift; sourceTree = "<group>"; };
 		38213020204D568000F1413C /* GreateSmartDefine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GreateSmartDefine.swift; sourceTree = "<group>"; };
 		38213024204EAB2C00F1413C /* ItemTableControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemTableControl.swift; sourceTree = "<group>"; };
 		38213026204EAC3D00F1413C /* BannerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BannerView.swift; sourceTree = "<group>"; };
+		384EE4412057673A00D2BCB6 /* HotSaleModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HotSaleModel.swift; sourceTree = "<group>"; };
+		384EE4442057699600D2BCB6 /* NatureModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NatureModel.swift; sourceTree = "<group>"; };
+		384EE44720576AED00D2BCB6 /* TimeReCModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeReCModel.swift; sourceTree = "<group>"; };
+		384EE44A205770FD00D2BCB6 /* BoutiqueModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoutiqueModel.swift; sourceTree = "<group>"; };
+		384EE44D205771C900D2BCB6 /* LTCModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LTCModel.swift; sourceTree = "<group>"; };
+		384EE44F2057A37D00D2BCB6 /* errorPrevent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = errorPrevent.swift; sourceTree = "<group>"; };
+		384EE4512057C4ED00D2BCB6 /* LTCControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LTCControl.swift; sourceTree = "<group>"; };
+		384EE4532057C51700D2BCB6 /* LTCView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LTCView.swift; sourceTree = "<group>"; };
+		384EE4552057C56700D2BCB6 /* LTCView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LTCView.xib; sourceTree = "<group>"; };
+		384EE4572057EB8800D2BCB6 /* HotInStoreControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HotInStoreControl.swift; sourceTree = "<group>"; };
+		384EE4592057EB9A00D2BCB6 /* ForMaleControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForMaleControl.swift; sourceTree = "<group>"; };
+		384EE45B2057EBA900D2BCB6 /* HotSaleControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HotSaleControl.swift; sourceTree = "<group>"; };
+		384EE45D2057EBB600D2BCB6 /* NatureControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NatureControl.swift; sourceTree = "<group>"; };
+		384EE45F2057EBC500D2BCB6 /* TimeReCControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeReCControl.swift; sourceTree = "<group>"; };
+		384EE4612057EBD200D2BCB6 /* BoutiqueControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoutiqueControl.swift; sourceTree = "<group>"; };
 		388004C0204F92BD00FE9DD0 /* AFBaseNetwork.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFBaseNetwork.h; sourceTree = "<group>"; };
 		388004C1204F92BD00FE9DD0 /* AFBaseNetwork.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFBaseNetwork.m; sourceTree = "<group>"; };
 		388004C6204FAAEE00FE9DD0 /* JsonTransform.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JsonTransform.swift; sourceTree = "<group>"; };
@@ -279,6 +307,53 @@
 			path = Frameworks;
 			sourceTree = "<group>";
 		};
+		384EE4402057671000D2BCB6 /* HotSale */ = {
+			isa = PBXGroup;
+			children = (
+				384EE45B2057EBA900D2BCB6 /* HotSaleControl.swift */,
+				384EE4412057673A00D2BCB6 /* HotSaleModel.swift */,
+			);
+			path = HotSale;
+			sourceTree = "<group>";
+		};
+		384EE4432057698B00D2BCB6 /* Nature */ = {
+			isa = PBXGroup;
+			children = (
+				384EE45D2057EBB600D2BCB6 /* NatureControl.swift */,
+				384EE4442057699600D2BCB6 /* NatureModel.swift */,
+			);
+			path = Nature;
+			sourceTree = "<group>";
+		};
+		384EE44620576AE000D2BCB6 /* TimeReC */ = {
+			isa = PBXGroup;
+			children = (
+				384EE45F2057EBC500D2BCB6 /* TimeReCControl.swift */,
+				384EE44720576AED00D2BCB6 /* TimeReCModel.swift */,
+			);
+			path = TimeReC;
+			sourceTree = "<group>";
+		};
+		384EE44920576DE500D2BCB6 /* Boutique */ = {
+			isa = PBXGroup;
+			children = (
+				384EE4612057EBD200D2BCB6 /* BoutiqueControl.swift */,
+				384EE44A205770FD00D2BCB6 /* BoutiqueModel.swift */,
+			);
+			path = Boutique;
+			sourceTree = "<group>";
+		};
+		384EE44C205771BB00D2BCB6 /* LTC */ = {
+			isa = PBXGroup;
+			children = (
+				384EE4512057C4ED00D2BCB6 /* LTCControl.swift */,
+				384EE4532057C51700D2BCB6 /* LTCView.swift */,
+				384EE4552057C56700D2BCB6 /* LTCView.xib */,
+				384EE44D205771C900D2BCB6 /* LTCModel.swift */,
+			);
+			path = LTC;
+			sourceTree = "<group>";
+		};
 		388BA01B20525A65009C7C70 /* base */ = {
 			isa = PBXGroup;
 			children = (
@@ -292,11 +367,14 @@
 		388BA01C20529FD2009C7C70 /* Items */ = {
 			isa = PBXGroup;
 			children = (
+				384EE44C205771BB00D2BCB6 /* LTC */,
+				384EE44920576DE500D2BCB6 /* Boutique */,
+				384EE44620576AE000D2BCB6 /* TimeReC */,
+				384EE4432057698B00D2BCB6 /* Nature */,
+				384EE4402057671000D2BCB6 /* HotSale */,
 				FA16F7B52056ECEB0094F47B /* ForMale */,
 				FA16F7B22056D2EB0094F47B /* HotInStore */,
 				388BA01E20529FF5009C7C70 /* SortType */,
-				388BA01D20529FE6009C7C70 /* NewBanner */,
-				38BAE1452053775E00CA822A /* title */,
 			);
 			path = Items;
 			sourceTree = "<group>";
@@ -358,7 +436,6 @@
 			children = (
 				38213024204EAB2C00F1413C /* ItemTableControl.swift */,
 				38213018204D429600F1413C /* ItemTableView.swift */,
-				3821301E204D47B800F1413C /* ItemModel.swift */,
 				3821301A204D465000F1413C /* ItemCell.swift */,
 			);
 			path = table;
@@ -464,6 +541,7 @@
 				381C63182048097F00A9066C /* StringSize.swift */,
 				388BA019205226BC009C7C70 /* property.swift */,
 				388BA0212052A3AC009C7C70 /* yyModelSwf.swift */,
+				384EE44F2057A37D00D2BCB6 /* errorPrevent.swift */,
 				388BA0142050FE11009C7C70 /* NSObject+conversion.h */,
 				388BA0152050FE11009C7C70 /* NSObject+conversion.m */,
 				38FD685020401E4D00B19A42 /* NSObject+isNull.h */,
@@ -536,6 +614,8 @@
 			children = (
 				38FD688120402A9000B19A42 /* HomePageVC.swift */,
 				38B879A8204269FC0080BB3C /* table */,
+				388BA01D20529FE6009C7C70 /* NewBanner */,
+				38BAE1452053775E00CA822A /* title */,
 				388BA01C20529FD2009C7C70 /* Items */,
 			);
 			path = "HomePage_首页";
@@ -553,6 +633,7 @@
 		FA16F7B22056D2EB0094F47B /* HotInStore */ = {
 			isa = PBXGroup;
 			children = (
+				384EE4572057EB8800D2BCB6 /* HotInStoreControl.swift */,
 				FA16F7B32056D30B0094F47B /* HotInStoreModel.swift */,
 			);
 			path = HotInStore;
@@ -561,6 +642,7 @@
 		FA16F7B52056ECEB0094F47B /* ForMale */ = {
 			isa = PBXGroup;
 			children = (
+				384EE4592057EB9A00D2BCB6 /* ForMaleControl.swift */,
 				FA16F7B62056ECFB0094F47B /* ForMaleModel.swift */,
 			);
 			path = ForMale;
@@ -679,6 +761,7 @@
 			files = (
 				38F9CA63202FED60004D105D /* LaunchScreen.storyboard in Resources */,
 				38FD9A3F2040FD9E0090D978 /* Images.xcassets in Resources */,
+				384EE4562057C56700D2BCB6 /* LTCView.xib in Resources */,
 				381C63042046990F00A9066C /* SearchHistoryCell.xib in Resources */,
 				38F9CA60202FED60004D105D /* Assets.xcassets in Resources */,
 				38F9CA5E202FED60004D105D /* Main.storyboard in Resources */,
@@ -772,28 +855,36 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				384EE45C2057EBA900D2BCB6 /* HotSaleControl.swift in Sources */,
 				38213019204D429600F1413C /* ItemTableView.swift in Sources */,
 				388BA0162050FE11009C7C70 /* NSObject+conversion.m in Sources */,
 				381C630F2047C81A00A9066C /* WSCollectionViewFlowLayout.m in Sources */,
 				38213025204EAB2C00F1413C /* ItemTableControl.swift in Sources */,
 				38BAE1472053780000CA822A /* ItemTitleView.swift in Sources */,
 				38FD9A412041124A0090D978 /* BaseModel.swift in Sources */,
+				384EE4452057699600D2BCB6 /* NatureModel.swift in Sources */,
 				38FD686E2040207A00B19A42 /* XIB.swift in Sources */,
 				38FD687B2040267C00B19A42 /* BaseAFNetwork.swift in Sources */,
 				38FD686420401E4F00B19A42 /* UIView+viewFrame.m in Sources */,
 				38FD9A45204115160090D978 /* BaseUITableView.swift in Sources */,
 				38FD687F204027F300B19A42 /* NetworkManage.swift in Sources */,
 				381C63172047D04200A9066C /* FlowCollectionControl.swift in Sources */,
+				384EE45E2057EBB600D2BCB6 /* NatureControl.swift in Sources */,
 				38FD9A49204116DF0090D978 /* TabbarController.swift in Sources */,
+				384EE44B205770FD00D2BCB6 /* BoutiqueModel.swift in Sources */,
 				3821300D204A9C4600F1413C /* OCHeaderFile.m in Sources */,
 				3821301C204D465000F1413C /* ItemCell.swift in Sources */,
 				38FD9A43204112960090D978 /* BannerModel.swift in Sources */,
 				38B8799F204155A00080BB3C /* GoodListVC.swift in Sources */,
 				38B879A6204268A60080BB3C /* SearchVC.swift in Sources */,
 				38EE01532043F29D0050759A /* CustomNaviBar.swift in Sources */,
+				384EE4502057A37D00D2BCB6 /* errorPrevent.swift in Sources */,
 				388004C9204FD58200FE9DD0 /* ErrorCodeHandle.swift in Sources */,
+				384EE4622057EBD200D2BCB6 /* BoutiqueControl.swift in Sources */,
 				38EE015920455F8A0050759A /* InformationVC.swift in Sources */,
+				384EE4602057EBC500D2BCB6 /* TimeReCControl.swift in Sources */,
 				381C63032046990F00A9066C /* SearchHistoryCell.swift in Sources */,
+				384EE4422057673A00D2BCB6 /* HotSaleModel.swift in Sources */,
 				38FD686220401E4F00B19A42 /* UIView+control.m in Sources */,
 				FA16F7B72056ECFB0094F47B /* ForMaleModel.swift in Sources */,
 				38FD686C2040202C00B19A42 /* BaseUITableViewController.swift in Sources */,
@@ -803,20 +894,24 @@
 				388BA0222052A3AC009C7C70 /* yyModelSwf.swift in Sources */,
 				38FD686520401E4F00B19A42 /* UIButton+parameter.m in Sources */,
 				38213004204948EA00F1413C /* JJRealmManager.swift in Sources */,
+				384EE4582057EB8800D2BCB6 /* HotInStoreControl.swift in Sources */,
 				38FD687D204026D200B19A42 /* NetAPI.swift in Sources */,
-				3821301F204D47B800F1413C /* ItemModel.swift in Sources */,
 				FA16F7B42056D30B0094F47B /* HotInStoreModel.swift in Sources */,
 				38213021204D568000F1413C /* GreateSmartDefine.swift in Sources */,
+				384EE4542057C51700D2BCB6 /* LTCView.swift in Sources */,
 				388BA01A205226BC009C7C70 /* property.swift in Sources */,
 				38FD68742040220D00B19A42 /* PublicDefine.swift in Sources */,
 				38B879A1204155C60080BB3C /* ShopCartVC.swift in Sources */,
 				38FD686820401F9F00B19A42 /* BaseUIViewController.swift in Sources */,
 				38FD686120401E4F00B19A42 /* NSObject+isNull.m in Sources */,
+				384EE4522057C4ED00D2BCB6 /* LTCControl.swift in Sources */,
 				381C63152047CCCC00A9066C /* FlowCollectionView.swift in Sources */,
 				38B879AA20426A3F0080BB3C /* BaseControl.swift in Sources */,
 				38BAE14F2053865100CA822A /* SortTypeView.swift in Sources */,
 				381C62FE204685D700A9066C /* SearchRecordTitleView.swift in Sources */,
 				38BAE1512053869D00CA822A /* SortTypeControl.swift in Sources */,
+				384EE44820576AED00D2BCB6 /* TimeReCModel.swift in Sources */,
+				384EE45A2057EB9A00D2BCB6 /* ForMaleControl.swift in Sources */,
 				388004C7204FAAEE00FE9DD0 /* JsonTransform.swift in Sources */,
 				38213027204EAC3D00F1413C /* BannerView.swift in Sources */,
 				388004C2204F92BE00FE9DD0 /* AFBaseNetwork.m in Sources */,
@@ -825,6 +920,7 @@
 				38FD686620401E4F00B19A42 /* UIColor+HexString.m in Sources */,
 				38FD688320402A9000B19A42 /* HomePageVC.swift in Sources */,
 				38FD686320401E4F00B19A42 /* UIImage+AttributeImage.m in Sources */,
+				384EE44E205771C900D2BCB6 /* LTCModel.swift in Sources */,
 				381C63192048097F00A9066C /* StringSize.swift in Sources */,
 				38F9CA59202FED60004D105D /* AppDelegate.swift in Sources */,
 				38B879A3204155DC0080BB3C /* MyVC.swift in Sources */,

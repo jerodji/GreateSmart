@@ -8,7 +8,14 @@
 
 import UIKit
 
-class BaseModel: NSObject {
+@objc class BaseModel: NSObject {
+    
+    
+//    func dataReader(_ data:Any!) -> Self {
+//        
+//        
+//    }
+    
     
 //    var list: List<String>?
     

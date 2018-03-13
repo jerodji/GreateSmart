@@ -7,15 +7,18 @@
 //
 
 import UIKit
-//import SwiftyJSON
 
 class ItemTableControl: BaseControl,UITableViewDelegate,UITableViewDataSource {
     
     var tableView: ItemTableView!
     var dataArray: NSArray!
+    var dataHeights: NSMutableArray = []
+    var dataTitleHeights: NSMutableArray = []
+    var dataControls: NSMutableArray = []
+    var dataModels: NSMutableArray = []
     
-    
-    let sortTypeCtrl = SortTypeControl.init()
+//    var sortTypeCtrl : SortTypeControl!
+//    var LTCCtrl : LTCControl!
     
     
     override init() {
@@ -37,69 +40,84 @@ class ItemTableControl: BaseControl,UITableViewDelegate,UITableViewDataSource {
         
         dataArray = homeData!
         
-        for obj in homeData! {
+        for index in 0...homeData.count-1 {
             
-            let index = homeData!.index(of: obj)
+            let obj = homeData.object(at: index)
             
             if obj is NSDictionary {
-                let dict = obj as! NSDictionary
                 
-                let type = dict.object(forKey: "showType") as! String
-                var data: Any = ""
-                if dict.object(forKey: "data") is NSDictionary {
-                    data = dict.object(forKey: "data") as! NSDictionary
-                }
-                if dict.object(forKey: "data") is NSArray {
-                    data = dict.object(forKey: "data") as! NSArray
-                }
-                if dict.object(forKey: "data") is String {
-                    data = dict.object(forKey: "data") as! String
-                }
+                let itemDict = obj as! NSDictionary
+                let type = itemDict.object(forKey: "showType") as! String
                 
                 switch (type) {
                     
                     case ShowTypeENUM.NewBanner.rawValue :  do {
-                        tableView.banner.handleData(data: data)
+                        tableView.banner.handleData(typeInfo: itemDict)
                     }; break
                     
                     case ShowTypeENUM.SortType.rawValue: do {
-                        sortTypeCtrl.handleData(data)
-                    }; break
+                        let sortTypeCtrl = SortTypeControl.init(frame: CGRect(x: 0, y: 0, width: tableView.width, height: heightSortType))
+                        let model = sortTypeCtrl.handleData(typeInfo: itemDict)
+                        dataModels.add(model)
+                        dataHeights.add(heightSortType)
+                        dataTitleHeights.add(heightTitle)
+                        dataControls.add(sortTypeCtrl)
+                    };
+                    break
                     
                     case ShowTypeENUM.HotInStore.rawValue: do {
-                        
+//                        dataHeights.add(CGFloat(10))
+//                        dataTitleHeights.add(heightTitle)
                     }; break
                     
                     case ShowTypeENUM.ForMale.rawValue: do {
-                        
+//                        dataHeights.add(CGFloat(20))
+//                        dataTitleHeights.add(heightTitle)
                     }; break
                     
                     case ShowTypeENUM.HotSale.rawValue: do {
-                        
+//                        dataHeights.add(CGFloat(30))
+//                        dataTitleHeights.add(heightTitle)
                     }; break
-                    
-                    case ShowTypeENUM.Nature2.rawValue: do {
-                        
-                    }; break
-                    
+
                     case ShowTypeENUM.Nature.rawValue: do {
-                        
+//                        dataHeights.add(CGFloat(50))
+//                        dataTitleHeights.add(heightTitle)
+                    }; break
+                    
+                    case ShowTypeENUM.TimeReC.rawValue: do {
+//                        dataHeights.add(5)
+//                        dataTitleHeights.add(heightTitle)
                     }; break
                     
                     case ShowTypeENUM.Boutique.rawValue: do {
-                        
+//                        dataHeights.add(CGFloat(60))
+//                        dataTitleHeights.add(heightTitle)
                     }; break
                     
                     case ShowTypeENUM.LTC.rawValue: do {
-                        
+                        let LTCCtrl = LTCControl.init()
+                        let model = LTCCtrl.handleData(typeInfo:itemDict)
+                        dataHeights.add(CGFloat(heightLTC))
+                        dataTitleHeights.add(heightTitle)
+                        dataModels.add(model)
+                        dataControls.add(LTCCtrl)
+                    }; break
+                    
+                    case ShowTypeENUM.Nature2.rawValue: do {
+//                        dataHeights.add(CGFloat(40))
+//                        dataTitleHeights.add(heightTitle)
                     }; break
                     
                     case ShowTypeENUM.NewBlock1.rawValue: do {
-                        
+//                        dataHeights.add(CGFloat(80))
+//                        dataTitleHeights.add(heightTitle)
                     }; break
                     
-                    default:
-                        break
+                    default: do {
+                        dataHeights.add(CGFloat(0))
+                        dataTitleHeights.add(0)
+                    };break
                 }
                 
             }
@@ -108,33 +126,134 @@ class ItemTableControl: BaseControl,UITableViewDelegate,UITableViewDataSource {
     }
     
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
-        //delog("\(scrollView.contentOffset.y)")
         tableView.banner.y = scrollView.contentOffset.y
         let offsetY = scrollView.contentOffset.y + heightBanner
         if offsetY < 0 {
-            //banner.frame = CGRect.init(x: 0, y: scrollView.contentOffset.y, width: kScreenW, height: ItemHeight_banner-offsetY)
             tableView.banner.height = heightBanner-offsetY
         }
     }
     
     //MARK:-
-    
-    func numberOfSections(in tableView: UITableView) -> Int {
-        return 8
-    }
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1
-    }
-    
+
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let dequeueID = String.init(format: "homeItemCellId_%i", arguments: [indexPath.row])
+        
+        let dequeueID = String.init(format: "homeItemCellId_%i", arguments: [indexPath.section])
+        
         var cell = tableView.dequeueReusableCell(withIdentifier: dequeueID)
         if nil == cell {
             cell = ItemCell.init(style: .default, reuseIdentifier: dequeueID)
             cell?.selectionStyle = .none
+            
+            if indexPath.section <= dataControls.count-1 {
+                let obj = dataControls.object(at: indexPath.section)
+                
+                if obj is SortTypeControl {
+                    let control = obj as! SortTypeControl
+                    control.collectionView.frame = CGRect.init(x: 0, y: 0, width: kScreenW, height: heightSortType)
+                    cell!.addSubview(control.collectionView)
+                }
+                if obj is HotInStoreControl {
+                    let control = obj as! HotInStoreControl
+                }
+                if obj is ForMaleControl {
+                    let control = obj as! ForMaleControl
+                }
+                if obj is HotSaleControl {
+                    let control = obj as! HotSaleControl
+                }
+                if obj is NatureControl {
+                    let control = obj as! NatureControl
+                }
+                if obj is TimeReCControl {
+                    let control = obj as! TimeReCControl
+                }
+                if obj is BoutiqueControl {
+                    let control = obj as! BoutiqueControl
+                }
+                if obj is LTCControl {
+                    let control = obj as! LTCControl
+                    control.view.frame = CGRect.init(x: 0, y: 0, width: kScreenW, height: heightLTC)
+                    cell!.contentView.addSubview(control.view)
+                }
+                //...
+            }
         }
         
+        
+        
         return cell!
+    }
+    
+    
+    
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        
+        let header = ItemTitleView.loadFromXIB()
+        header.frame = CGRect.init(x: 0, y: 0, width: kScreenW, height: heightTitle)
+        
+        if section <= dataModels.count-1 {
+            let obj = dataModels.object(at: section)
+            
+            if obj is SortTypeModel {
+                let model = obj as! SortTypeModel
+                header.titleLab.text = model.data.title
+                header.smailTitleLab.text = model.data.smallTitle
+            }
+            if obj is HotInStoreModel {
+                let model = obj as! HotInStoreModel
+                header.titleLab.text = model.data.title
+                header.smailTitleLab.text = model.data.smallTitle
+            }
+            if obj is ForMaleModel {
+                let model = obj as! ForMaleModel
+                header.titleLab.text = model.data.title
+                header.smailTitleLab.text = model.data.smallTitle
+            }
+            if obj is HotSaleModel {
+                let model = obj as! HotSaleModel
+                header.titleLab.text = model.data.title
+                header.smailTitleLab.text = model.data.smallTitle
+            }
+            if obj is NatureModel {
+                let model = obj as! NatureModel
+                header.titleLab.text = model.data.title
+                header.smailTitleLab.text = model.data.smallTitle
+            }
+            if obj is TimeReCModel {
+                let model = obj as! TimeReCModel
+                header.titleLab.text = model.data.title
+                header.smailTitleLab.text = model.data.smallTitle
+            }
+            if obj is BoutiqueModel {
+                let model = obj as! BoutiqueModel
+                header.titleLab.text = model.data.title
+                header.smailTitleLab.text = model.data.smallTitle
+            }
+            if obj is LTCModel {
+                let model = obj as! LTCModel
+                header.titleLab.text = model.data.title
+                header.smailTitleLab.text = model.data.smallTitle
+            }
+            //...
+        }
+        else {
+            header.titleLab.text = "暂未开放"
+            header.smailTitleLab.text = "敬请期待"
+        }
+        
+        return header
+    }
+    
+    func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
+        return nil
+    }
+    
+    func numberOfSections(in tableView: UITableView) -> Int {
+        //return dataArray.count - 1 /* 减去banner */
+        return dataControls.count
+    }
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 1
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
@@ -142,23 +261,20 @@ class ItemTableControl: BaseControl,UITableViewDelegate,UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 200
+        if (indexPath.row + 1) <= dataHeights.count {
+            return dataHeights.safe_object(at: indexPath.section) as! CGFloat
+        }
+        return 0
     }
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        return heightTitle
+        if section <= dataTitleHeights.count-1 {
+            return dataTitleHeights.safe_object(at: section) as! CGFloat
+        }
+        return 0
     }
     func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
         return 0.01
     }
     
-    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-        let header = ItemTitleView.loadFromXIB()
-        header.frame = CGRect.init(x: 0, y: 0, width: kScreenW, height: heightTitle)
-        
-        return header
-    }
-    func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
-        return nil
-    }
-    
+
 }

@@ -8,6 +8,7 @@
 
 import UIKit
 
+private let distance = CGFloat(10)
 private let cellwidth = (kScreenW - 6 * distance)/5
 
 class SortTypeView: UICollectionView {
@@ -20,20 +21,15 @@ class SortTypeView: UICollectionView {
         super.init(frame: frame, collectionViewLayout: layout)
     }
     
-    class func configCollectionViewLayout() -> UICollectionViewFlowLayout {
-        let layout = UICollectionViewFlowLayout.init()
-        layout.scrollDirection = .vertical
-        return layout
-    }
     
     convenience init(frame: CGRect) {
-//        let layout = SortTypeView.configCollectionViewLayout()
+
         let layout = UICollectionViewFlowLayout.init()
         layout.scrollDirection = .vertical
         layout.itemSize = CGSize.init(width: cellwidth, height: cellwidth) /* item大小 */
         layout.minimumLineSpacing = distance /* 行间距 */
         layout.minimumInteritemSpacing = distance /* 列间距 */
-        
+        layout.sectionInset = UIEdgeInsets.init(top: itemcellTop, left: itemcellLeft, bottom: itemcellBottom, right: itemcellRight) /* 内边距 */
         
         self.init(frame: frame, collectionViewLayout: layout)
         self.backgroundColor = .clear
@@ -57,10 +53,8 @@ class SortTypeCell: UICollectionViewCell {
     
     func image(_ url:String) -> Void {
         
-        let img = UIImage.init(contentsOfFile: url)
-        
         let imgview = UIImageView.init(frame: self.contentView.bounds)
-        imgview.image = img
+        imgview.sd_setImage(with: URL.init(string: url), completed: nil)
         imgview.layer.cornerRadius = 5
         
         self.contentView.addSubview(imgview)

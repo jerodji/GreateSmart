@@ -9,27 +9,30 @@
 import UIKit
 
 
-@objc class SortTypeModel: BaseModel {
-    
-//    @objc var block: NSMutableArray = [SortTypeBlockElementModel]() as! NSMutableArray
-    @objc var block: NSMutableArray!
-    @objc var smallTitle: String = ""
-    @objc var title: String = ""
-    
-    class func dataReader(_ data:Any!) -> SortTypeModel {
-        var model = SortTypeModel()
-        if data is NSDictionary {
-            let dict = data as! NSDictionary
-            model = SortTypeModel.mj_object(withKeyValues: dict)
-            model.block = SortTypeBlockElementModel.mj_objectArray(withKeyValuesArray: model.block)
-        }
-        return model
-    }
-}
-
-
 @objc class SortTypeBlockElementModel: BaseModel {
     @objc var imageUrl = ""
     @objc var jumpUrl = ""
 }
 
+@objc class DataModel: BaseModel {
+    @objc var block: NSMutableArray!
+    @objc var smallTitle: String = ""
+    @objc var title: String = ""
+}
+
+@objc class SortTypeModel: BaseModel {
+    
+    @objc var showType = ""
+    @objc var data : DataModel!
+    
+    class func dataReader(typeInfo:Any!) -> SortTypeModel {
+        var model = SortTypeModel()
+        if typeInfo is NSDictionary {
+            let dict = typeInfo as! NSDictionary
+            model = SortTypeModel.mj_object(withKeyValues: dict)
+            //model.data = DataModel.mj_object(withKeyValues: model.data)
+            model.data.block = SortTypeBlockElementModel.mj_objectArray(withKeyValuesArray: model.data.block)
+        }
+        return model
+    }
+}

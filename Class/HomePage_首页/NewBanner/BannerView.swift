@@ -36,8 +36,8 @@ class BannerView: UIView {
     }
     
     
-    func handleData(data: Any!) -> Void {
-        model = BannerModel.dataReader(data: data)
+    func handleData(typeInfo: Any!) -> Void {
+        model = BannerModel.dataReader(typeInfo: typeInfo)
     }
     
     func adjustImageBrightness(brightness: CGFloat) -> Void {

@@ -8,20 +8,25 @@
 
 import UIKit
 
+class HotInStoreDataModel : BaseModel {
+    @objc var title:String = ""
+    @objc var smallTitle:String = ""
+    @objc var imageUrl:String = ""
+    @objc var jumpUrl:String = ""
+    @objc var type: String = ""
+    @objc var name: String = ""
+    @objc var block: NSMutableArray = []
+}
+
 class HotInStoreModel: BaseModel {
     
-    var title:String = ""
-    var smallTitle:String = ""
-    var imageUrl:String = ""
-    var jumpUrl:String = ""
-    var type: String = ""
-    var name: String = ""
-    var block: NSMutableArray = []
+    @objc var showType : String = ""
+    @objc var data : HotInStoreDataModel!
     
-    class func dataReader(_ data:Any) -> HotInStoreModel {
+    class func dataReader(typeInfo:Any) -> HotInStoreModel {
         var model = HotInStoreModel()
-        if data is NSDictionary {
-            let dict = data as! NSDictionary
+        if typeInfo is NSDictionary {
+            let dict = typeInfo as! NSDictionary
             model = HotInStoreModel.mj_object(withKeyValues: dict)
         }
         return model

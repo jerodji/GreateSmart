@@ -8,30 +8,32 @@
 
 import UIKit
 
-class JJKit: NSObject {
-    @objc var num:NSNumber = 9
-    @objc let doub:Double = 2.2
-    @objc var list:NSArray = [3,4,5,6,7]
-}
-
-class Test1: NSObject {
-    @objc var testInteger: Int = 0
-    @objc var str:String = ""
-    @objc var flo:CGFloat = 0.0
-    @objc var jjkits:NSMutableArray? = NSMutableArray()
-}
-
-class TestEntity: NSObject {
-    @objc var testString: String!
-    @objc var intValue:Int = 0
-    @objc var test1 = Test1()
-}
+//class JJKit: NSObject {
+//    @objc var num:NSNumber = 9
+//    @objc let doub:Double = 2.2
+//    @objc var list:NSArray = [3,4,5,6,7]
+//}
+//
+//class Test1: NSObject {
+//    @objc var testInteger: Int = 0
+//    @objc var str:String = ""
+//    @objc var flo:CGFloat = 0.0
+//    @objc var jjkits:NSMutableArray? = NSMutableArray()
+//}
+//
+//class TestEntity: NSObject {
+//    @objc var testString: String!
+//    @objc var intValue:Int = 0
+//    @objc var test1 = Test1()
+//}
 
 class HomePageVC: BaseUIViewController {
 
     private var tableCtrl  : ItemTableControl!
     private var homeData: NSArray = []
     private var itemModelArray: NSMutableArray = []
+    
+    var testJsonStr = ""
     
     override func loadView() {
         super.loadView()
@@ -45,47 +47,7 @@ class HomePageVC: BaseUIViewController {
 //        }
         
 
-        
-//        let test1 = Test1()
-//        test1.testInteger = 1111
-//        test1.str = "teststr"
-//        test1.flo = 6.66
-//        test1.jjkits?.add(JJKit())
-//
-//        let j = JJKit()
-//        j.num = 90999
-//        j.list = [0,0,1,2,1]
-//
-//        test1.jjkits?.add(j)
-//
-//        let test = TestEntity()
-//        test.testString = "kklo"
-//        test.test1 = test1
-//        test.intValue = 3
-//
-//        NetworkManage.instance.testEntityParamsRequest(entity: test)
-        
-        
-        
-    }
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: UIBarMetrics.default); /* 导航栏 设置透明 */
-        self.navigationController?.navigationBar.shadowImage = UIImage(); /* 去掉黑线 */
-        self.naviBar.isHidden = true
-        
-        configSubviews()
-        configSearchButton()
-    }
-    
-    //MARK:-
-    
-    func configSubviews() -> () {
-        tableCtrl = ItemTableControl.init(tableFrame: CGRect(x: 0, y: kStatusH, width: kScreenW, height: kScreenH-kStatusH-kTabbarH))
-        self.view.addSubview(tableCtrl.tableView!)
-        
-        let jsonStr = "[\n" +
+        testJsonStr = "[\n" +
             "    {\n" +
             "        \"data\": [\n" +
             "            {\n" +
@@ -487,11 +449,48 @@ class HomePageVC: BaseUIViewController {
             "    }\n" +
         "]"
         
+//        let test1 = Test1()
+//        test1.testInteger = 1111
+//        test1.str = "teststr"
+//        test1.flo = 6.66
+//        test1.jjkits?.add(JJKit())
+//
+//        let j = JJKit()
+//        j.num = 90999
+//        j.list = [0,0,1,2,1]
+//
+//        test1.jjkits?.add(j)
+//
+//        let test = TestEntity()
+//        test.testString = "kklo"
+//        test.test1 = test1
+//        test.intValue = 3
+//
+//        NetworkManage.instance.testEntityParamsRequest(entity: test)
         
         
-        self.homeData = NSObject.object(fromJSONString: jsonStr) as! NSArray
+        
+    }
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: UIBarMetrics.default); /* 导航栏 设置透明 */
+        self.navigationController?.navigationBar.shadowImage = UIImage(); /* 去掉黑线 */
+        self.naviBar.isHidden = true
+        
+        configSubviews()
+        configSearchButton()
+    }
+    
+    //MARK:-
+    
+    func configSubviews() -> () {
+        tableCtrl = ItemTableControl.init(tableFrame: CGRect(x: 0, y: kStatusH, width: kScreenW, height: kScreenH-kStatusH-kTabbarH))
+
+        self.homeData = NSArray.object(fromJSONString: testJsonStr) as! NSArray
         self.tableCtrl.handleHomeData(homeData: self.homeData)
         
+        self.view.addSubview(tableCtrl.tableView!)
     }
     
     //MARK: 搜索按钮
