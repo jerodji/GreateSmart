@@ -87,6 +87,8 @@
 		38FD9A43204112960090D978 /* BannerModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38FD9A42204112960090D978 /* BannerModel.swift */; };
 		38FD9A45204115160090D978 /* BaseUITableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38FD9A44204115160090D978 /* BaseUITableView.swift */; };
 		38FD9A49204116DF0090D978 /* TabbarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38FD9A48204116DF0090D978 /* TabbarController.swift */; };
+		FA13949920581CF4008D6F68 /* ForMaleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA13949820581CF4008D6F68 /* ForMaleView.swift */; };
+		FA13949B20581DC7008D6F68 /* ForMaleView.xib in Resources */ = {isa = PBXBuildFile; fileRef = FA13949A20581DC7008D6F68 /* ForMaleView.xib */; };
 		FA16F7B42056D30B0094F47B /* HotInStoreModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA16F7B32056D30B0094F47B /* HotInStoreModel.swift */; };
 		FA16F7B72056ECFB0094F47B /* ForMaleModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA16F7B62056ECFB0094F47B /* ForMaleModel.swift */; };
 /* End PBXBuildFile section */
@@ -215,6 +217,8 @@
 		AD1A70950CD1707D4D6B1553 /* Pods-GreateSmart.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GreateSmart.debug.xcconfig"; path = "Pods/Target Support Files/Pods-GreateSmart/Pods-GreateSmart.debug.xcconfig"; sourceTree = "<group>"; };
 		AFE5A3FFF7CEC461A4847CB6 /* Pods_GreateSmart.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GreateSmart.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D64C8E0F66D55CC3EC66E617 /* Pods_GreateSmart.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GreateSmart.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		FA13949820581CF4008D6F68 /* ForMaleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForMaleView.swift; sourceTree = "<group>"; };
+		FA13949A20581DC7008D6F68 /* ForMaleView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ForMaleView.xib; sourceTree = "<group>"; };
 		FA16F7B32056D30B0094F47B /* HotInStoreModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HotInStoreModel.swift; sourceTree = "<group>"; };
 		FA16F7B62056ECFB0094F47B /* ForMaleModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForMaleModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -307,43 +311,43 @@
 			path = Frameworks;
 			sourceTree = "<group>";
 		};
-		384EE4402057671000D2BCB6 /* HotSale */ = {
+		384EE4402057671000D2BCB6 /* HotSale_人气商品 */ = {
 			isa = PBXGroup;
 			children = (
 				384EE45B2057EBA900D2BCB6 /* HotSaleControl.swift */,
 				384EE4412057673A00D2BCB6 /* HotSaleModel.swift */,
 			);
-			path = HotSale;
+			path = "HotSale_人气商品";
 			sourceTree = "<group>";
 		};
-		384EE4432057698B00D2BCB6 /* Nature */ = {
+		384EE4432057698B00D2BCB6 /* Nature_健康资讯 */ = {
 			isa = PBXGroup;
 			children = (
 				384EE45D2057EBB600D2BCB6 /* NatureControl.swift */,
 				384EE4442057699600D2BCB6 /* NatureModel.swift */,
 			);
-			path = Nature;
+			path = "Nature_健康资讯";
 			sourceTree = "<group>";
 		};
-		384EE44620576AE000D2BCB6 /* TimeReC */ = {
+		384EE44620576AE000D2BCB6 /* TimeReC_限时特价 */ = {
 			isa = PBXGroup;
 			children = (
 				384EE45F2057EBC500D2BCB6 /* TimeReCControl.swift */,
 				384EE44720576AED00D2BCB6 /* TimeReCModel.swift */,
 			);
-			path = TimeReC;
+			path = "TimeReC_限时特价";
 			sourceTree = "<group>";
 		};
-		384EE44920576DE500D2BCB6 /* Boutique */ = {
+		384EE44920576DE500D2BCB6 /* Boutique_精选专区 */ = {
 			isa = PBXGroup;
 			children = (
 				384EE4612057EBD200D2BCB6 /* BoutiqueControl.swift */,
 				384EE44A205770FD00D2BCB6 /* BoutiqueModel.swift */,
 			);
-			path = Boutique;
+			path = "Boutique_精选专区";
 			sourceTree = "<group>";
 		};
-		384EE44C205771BB00D2BCB6 /* LTC */ = {
+		384EE44C205771BB00D2BCB6 /* LTC_老挝直邮 */ = {
 			isa = PBXGroup;
 			children = (
 				384EE4512057C4ED00D2BCB6 /* LTCControl.swift */,
@@ -351,7 +355,7 @@
 				384EE4552057C56700D2BCB6 /* LTCView.xib */,
 				384EE44D205771C900D2BCB6 /* LTCModel.swift */,
 			);
-			path = LTC;
+			path = "LTC_老挝直邮";
 			sourceTree = "<group>";
 		};
 		388BA01B20525A65009C7C70 /* base */ = {
@@ -367,14 +371,14 @@
 		388BA01C20529FD2009C7C70 /* Items */ = {
 			isa = PBXGroup;
 			children = (
-				384EE44C205771BB00D2BCB6 /* LTC */,
-				384EE44920576DE500D2BCB6 /* Boutique */,
-				384EE44620576AE000D2BCB6 /* TimeReC */,
-				384EE4432057698B00D2BCB6 /* Nature */,
-				384EE4402057671000D2BCB6 /* HotSale */,
-				FA16F7B52056ECEB0094F47B /* ForMale */,
-				FA16F7B22056D2EB0094F47B /* HotInStore */,
-				388BA01E20529FF5009C7C70 /* SortType */,
+				384EE44C205771BB00D2BCB6 /* LTC_老挝直邮 */,
+				384EE44920576DE500D2BCB6 /* Boutique_精选专区 */,
+				384EE44620576AE000D2BCB6 /* TimeReC_限时特价 */,
+				384EE4432057698B00D2BCB6 /* Nature_健康资讯 */,
+				384EE4402057671000D2BCB6 /* HotSale_人气商品 */,
+				FA16F7B52056ECEB0094F47B /* ForMale_男女专区 */,
+				FA16F7B22056D2EB0094F47B /* HotInStore_实体店铺推荐 */,
+				388BA01E20529FF5009C7C70 /* SortType_产品分类 */,
 			);
 			path = Items;
 			sourceTree = "<group>";
@@ -388,14 +392,14 @@
 			path = NewBanner;
 			sourceTree = "<group>";
 		};
-		388BA01E20529FF5009C7C70 /* SortType */ = {
+		388BA01E20529FF5009C7C70 /* SortType_产品分类 */ = {
 			isa = PBXGroup;
 			children = (
 				38BAE1502053869D00CA822A /* SortTypeControl.swift */,
 				38BAE14E2053865100CA822A /* SortTypeView.swift */,
 				388BA01F2052A057009C7C70 /* SortTypeModel.swift */,
 			);
-			path = SortType;
+			path = "SortType_产品分类";
 			sourceTree = "<group>";
 		};
 		38B8799B2041553B0080BB3C /* GoodList_商品 */ = {
@@ -630,22 +634,24 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
-		FA16F7B22056D2EB0094F47B /* HotInStore */ = {
+		FA16F7B22056D2EB0094F47B /* HotInStore_实体店铺推荐 */ = {
 			isa = PBXGroup;
 			children = (
 				384EE4572057EB8800D2BCB6 /* HotInStoreControl.swift */,
 				FA16F7B32056D30B0094F47B /* HotInStoreModel.swift */,
 			);
-			path = HotInStore;
+			path = "HotInStore_实体店铺推荐";
 			sourceTree = "<group>";
 		};
-		FA16F7B52056ECEB0094F47B /* ForMale */ = {
+		FA16F7B52056ECEB0094F47B /* ForMale_男女专区 */ = {
 			isa = PBXGroup;
 			children = (
 				384EE4592057EB9A00D2BCB6 /* ForMaleControl.swift */,
 				FA16F7B62056ECFB0094F47B /* ForMaleModel.swift */,
+				FA13949820581CF4008D6F68 /* ForMaleView.swift */,
+				FA13949A20581DC7008D6F68 /* ForMaleView.xib */,
 			);
-			path = ForMale;
+			path = "ForMale_男女专区";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -763,6 +769,7 @@
 				38FD9A3F2040FD9E0090D978 /* Images.xcassets in Resources */,
 				384EE4562057C56700D2BCB6 /* LTCView.xib in Resources */,
 				381C63042046990F00A9066C /* SearchHistoryCell.xib in Resources */,
+				FA13949B20581DC7008D6F68 /* ForMaleView.xib in Resources */,
 				38F9CA60202FED60004D105D /* Assets.xcassets in Resources */,
 				38F9CA5E202FED60004D105D /* Main.storyboard in Resources */,
 				38BAE1492053781100CA822A /* ItemTitleView.xib in Resources */,
@@ -897,6 +904,7 @@
 				384EE4582057EB8800D2BCB6 /* HotInStoreControl.swift in Sources */,
 				38FD687D204026D200B19A42 /* NetAPI.swift in Sources */,
 				FA16F7B42056D30B0094F47B /* HotInStoreModel.swift in Sources */,
+				FA13949920581CF4008D6F68 /* ForMaleView.swift in Sources */,
 				38213021204D568000F1413C /* GreateSmartDefine.swift in Sources */,
 				384EE4542057C51700D2BCB6 /* LTCView.swift in Sources */,
 				388BA01A205226BC009C7C70 /* property.swift in Sources */,

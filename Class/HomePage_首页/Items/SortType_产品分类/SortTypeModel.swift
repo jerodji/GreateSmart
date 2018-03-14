@@ -8,7 +8,6 @@
 
 import UIKit
 
-
 @objc class SortTypeBlockElementModel: BaseModel {
     @objc var imageUrl = ""
     @objc var jumpUrl = ""

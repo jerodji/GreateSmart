@@ -36,7 +36,7 @@ let heightBanner = CGFloat(315.0*kSizeScale)
 // 每个item的高度
 let heightSortType = CGFloat(140*kSizeScale + itemcellTop + itemcellBottom)
 let heightLTC = CGFloat(330*kSizeScale + itemcellTop + itemcellBottom)
-
+let heightForMale = CGFloat(200*kSizeScale + itemcellTop + itemcellBottom)
 
 
 

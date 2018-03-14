@@ -71,8 +71,12 @@ class ItemTableControl: BaseControl,UITableViewDelegate,UITableViewDataSource {
                     }; break
                     
                     case ShowTypeENUM.ForMale.rawValue: do {
-//                        dataHeights.add(CGFloat(20))
-//                        dataTitleHeights.add(heightTitle)
+                        let ForMaleCtrl = ForMaleControl.init()
+                        let model = ForMaleCtrl.handleData(typeInfo: itemDict)
+                        dataHeights.add(heightForMale)
+                        dataTitleHeights.add(heightTitle)
+                        dataModels.add(model)
+                        dataControls.add(ForMaleCtrl)
                     }; break
                     
                     case ShowTypeENUM.HotSale.rawValue: do {
@@ -157,6 +161,8 @@ class ItemTableControl: BaseControl,UITableViewDelegate,UITableViewDataSource {
                 }
                 if obj is ForMaleControl {
                     let control = obj as! ForMaleControl
+                    control.view.frame = CGRect.init(x: 0, y: 0, width: kScreenW, height: heightForMale)
+                    cell!.addSubview(control.view)
                 }
                 if obj is HotSaleControl {
                     let control = obj as! HotSaleControl

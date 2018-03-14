@@ -41,6 +41,7 @@ class SortTypeView: UICollectionView {
 }
 
 
+
 class SortTypeCell: UICollectionViewCell {
 
     required init?(coder aDecoder: NSCoder) {
