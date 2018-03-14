@@ -24,21 +24,44 @@ public enum ShowTypeENUM: String {
 }
 
 // 每个item的内边距
-let itemcellTop = CGFloat(10)
-let itemcellLeft = CGFloat(10)
+let itemcellTop    = CGFloat(10)
+let itemcellLeft   = CGFloat(10)
 let itemcellBottom = CGFloat(20)
-let itemcellRight = CGFloat(10)
+let itemcellRight  = CGFloat(10)
 
 // 标题高度
 let heightTitle = CGFloat(30)
+
 // banner高度
 let heightBanner = CGFloat(315.0*kSizeScale)
+
 // 每个item的高度
-let heightSortType = CGFloat(140*kSizeScale + itemcellTop + itemcellBottom)
-let heightLTC = CGFloat(330*kSizeScale + itemcellTop + itemcellBottom)
-let heightForMale = CGFloat(200*kSizeScale + itemcellTop + itemcellBottom)
+
+let heightSortType = CGFloat(140 * kSizeScale + itemcellTop + itemcellBottom)
+
+let heightLTC      = CGFloat(330 * kSizeScale + itemcellTop + itemcellBottom)
+
+let heightForMale  = CGFloat(108 * kSizeScale + itemcellTop + itemcellBottom)
+
+let heightHotInStore = CGFloat(300 * kSizeScale + itemcellTop + itemcellBottom)
 
 
+let widthTimeRecCell = CGFloat(115)
+let heightTimeRec    = CGFloat(170 + itemcellTop + itemcellBottom)
+
+let elemHeightBoutique = CGFloat(108 * kSizeScale)
+let distanceBoutique = CGFloat(8) //竖向间距是 8
+func heightBoutique(elemCount:Int) -> CGFloat {
+    if elemCount <= 0 { return 0}
+    return CGFloat(itemcellTop + itemcellBottom + elemHeightBoutique*CGFloat(elemCount) + distanceBoutique * CGFloat(elemCount-1) )
+}
+
+let elemHeightNature = CGFloat(102 * kSizeScale)
+let distanceNature = CGFloat(27)
+func heightNature(elemCount:Int) -> CGFloat {
+    if elemCount <= 0 {return 0}
+    return CGFloat(itemcellTop + itemcellBottom + elemHeightNature*CGFloat(elemCount) + distanceNature * CGFloat(elemCount-1))
+}
 
 
 class GreateSmartDefine: NSObject {

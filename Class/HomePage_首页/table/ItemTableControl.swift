@@ -17,10 +17,6 @@ class ItemTableControl: BaseControl,UITableViewDelegate,UITableViewDataSource {
     var dataControls: NSMutableArray = []
     var dataModels: NSMutableArray = []
     
-//    var sortTypeCtrl : SortTypeControl!
-//    var LTCCtrl : LTCControl!
-    
-    
     override init() {
         super.init()
     }
@@ -66,8 +62,13 @@ class ItemTableControl: BaseControl,UITableViewDelegate,UITableViewDataSource {
                     break
                     
                     case ShowTypeENUM.HotInStore.rawValue: do {
-//                        dataHeights.add(CGFloat(10))
-//                        dataTitleHeights.add(heightTitle)
+                        let cl = HotInStoreControl()
+                        let model = cl.handleData(typeInfo: itemDict)
+                        cl.initView(frame: CGRect(x: itemcellLeft, y: itemcellTop, width: kScreenW-itemcellLeft-itemcellRight, height: heightHotInStore-itemcellTop-itemcellBottom))
+                        dataHeights.add(heightHotInStore)
+                        dataTitleHeights.add(heightTitle)
+                        dataModels.add(model)
+                        dataControls.add(cl)
                     }; break
                     
                     case ShowTypeENUM.ForMale.rawValue: do {
@@ -80,23 +81,38 @@ class ItemTableControl: BaseControl,UITableViewDelegate,UITableViewDataSource {
                     }; break
                     
                     case ShowTypeENUM.HotSale.rawValue: do {
-//                        dataHeights.add(CGFloat(30))
-//                        dataTitleHeights.add(heightTitle)
                     }; break
 
                     case ShowTypeENUM.Nature.rawValue: do {
-//                        dataHeights.add(CGFloat(50))
-//                        dataTitleHeights.add(heightTitle)
+                        let ctrl = NatureControl.init()
+                        let model = ctrl.handleData(typeInfo: itemDict)
+                        ctrl.setViewWithFrame(CGRect(x: 0, y: 0, width: kScreenW, height: heightNature(elemCount: model.data.block.count)))
+                        dataHeights.add(heightNature(elemCount: model.data.block.count))
+                        dataTitleHeights.add(heightTitle)
+                        dataModels.add(model)
+                        dataControls.add(ctrl)
+                        ctrl.setCells(natureModel: model)
                     }; break
                     
                     case ShowTypeENUM.TimeReC.rawValue: do {
-//                        dataHeights.add(5)
-//                        dataTitleHeights.add(heightTitle)
+                        let cl = TimeReCControl()
+                        let model = cl.handleData(typeInfo: itemDict)
+                        cl.initView(frame: CGRect.init(x: 0, y: 0, width: kScreenW, height: heightTimeRec))
+                        dataHeights.add(heightTimeRec)
+                        dataTitleHeights.add(heightTitle)
+                        dataModels.add(model)
+                        dataControls.add(cl)
                     }; break
                     
                     case ShowTypeENUM.Boutique.rawValue: do {
-//                        dataHeights.add(CGFloat(60))
-//                        dataTitleHeights.add(heightTitle)
+                        let boutiqueCtrl = BoutiqueControl.init()
+                        let model = boutiqueCtrl.handleData(typeInfo: itemDict)
+                        let hei = heightBoutique(elemCount: model.data.block.count)
+                        boutiqueCtrl.setView(frame: CGRect.init(x: 0, y: 0, width: kScreenW, height: hei))
+                        dataHeights.add(hei)
+                        dataTitleHeights.add(heightTitle)
+                        dataModels.add(model)
+                        dataControls.add(boutiqueCtrl)
                     }; break
                     
                     case ShowTypeENUM.LTC.rawValue: do {
@@ -109,13 +125,9 @@ class ItemTableControl: BaseControl,UITableViewDelegate,UITableViewDataSource {
                     }; break
                     
                     case ShowTypeENUM.Nature2.rawValue: do {
-//                        dataHeights.add(CGFloat(40))
-//                        dataTitleHeights.add(heightTitle)
                     }; break
                     
                     case ShowTypeENUM.NewBlock1.rawValue: do {
-//                        dataHeights.add(CGFloat(80))
-//                        dataTitleHeights.add(heightTitle)
                     }; break
                     
                     default: do {
@@ -138,7 +150,7 @@ class ItemTableControl: BaseControl,UITableViewDelegate,UITableViewDataSource {
     }
     
     //MARK:-
-
+    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let dequeueID = String.init(format: "homeItemCellId_%i", arguments: [indexPath.section])
@@ -150,46 +162,50 @@ class ItemTableControl: BaseControl,UITableViewDelegate,UITableViewDataSource {
             
             if indexPath.section <= dataControls.count-1 {
                 let obj = dataControls.object(at: indexPath.section)
-                
-                if obj is SortTypeControl {
-                    let control = obj as! SortTypeControl
-                    control.collectionView.frame = CGRect.init(x: 0, y: 0, width: kScreenW, height: heightSortType)
-                    cell!.addSubview(control.collectionView)
-                }
-                if obj is HotInStoreControl {
-                    let control = obj as! HotInStoreControl
-                }
-                if obj is ForMaleControl {
-                    let control = obj as! ForMaleControl
-                    control.view.frame = CGRect.init(x: 0, y: 0, width: kScreenW, height: heightForMale)
-                    cell!.addSubview(control.view)
-                }
-                if obj is HotSaleControl {
-                    let control = obj as! HotSaleControl
-                }
-                if obj is NatureControl {
-                    let control = obj as! NatureControl
-                }
-                if obj is TimeReCControl {
-                    let control = obj as! TimeReCControl
-                }
-                if obj is BoutiqueControl {
-                    let control = obj as! BoutiqueControl
-                }
-                if obj is LTCControl {
-                    let control = obj as! LTCControl
-                    control.view.frame = CGRect.init(x: 0, y: 0, width: kScreenW, height: heightLTC)
-                    cell!.contentView.addSubview(control.view)
-                }
-                //...
+                differentTypeHandle(obj: obj, cell: cell as! ItemCell)
             }
         }
-        
-        
         
         return cell!
     }
     
+    func differentTypeHandle(obj:Any!, cell:ItemCell!) -> Void {
+        if obj is SortTypeControl {
+            let control = obj as! SortTypeControl
+            control.collectionView.frame = CGRect.init(x: 0, y: 0, width: kScreenW, height: heightSortType)
+            cell!.addSubview(control.collectionView)
+        }
+        if obj is HotInStoreControl {
+            let control = obj as! HotInStoreControl
+            cell!.addSubview(control.view)
+        }
+        if obj is ForMaleControl {
+            let control = obj as! ForMaleControl
+            control.view.setFrame(CGRect.init(x: 0, y: 0, width: kScreenW, height: heightForMale))
+            cell!.addSubview(control.view)
+        }
+        if obj is HotSaleControl {
+            let control = obj as! HotSaleControl
+        }
+        if obj is NatureControl {
+            let control = obj as! NatureControl
+            cell!.addSubview(control.view)
+        }
+        if obj is TimeReCControl {
+            let control = obj as! TimeReCControl
+            cell!.addSubview(control.view)
+        }
+        if obj is BoutiqueControl {
+            let control = obj as! BoutiqueControl
+            cell!.contentView.addSubview(control.view)
+        }
+        if obj is LTCControl {
+            let control = obj as! LTCControl
+            control.view.frame = CGRect.init(x: 0, y: 0, width: kScreenW, height: heightLTC)
+            cell!.contentView.addSubview(control.view)
+        }
+        //...
+    }
     
     
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
@@ -199,55 +215,57 @@ class ItemTableControl: BaseControl,UITableViewDelegate,UITableViewDataSource {
         
         if section <= dataModels.count-1 {
             let obj = dataModels.object(at: section)
-            
-            if obj is SortTypeModel {
-                let model = obj as! SortTypeModel
-                header.titleLab.text = model.data.title
-                header.smailTitleLab.text = model.data.smallTitle
-            }
-            if obj is HotInStoreModel {
-                let model = obj as! HotInStoreModel
-                header.titleLab.text = model.data.title
-                header.smailTitleLab.text = model.data.smallTitle
-            }
-            if obj is ForMaleModel {
-                let model = obj as! ForMaleModel
-                header.titleLab.text = model.data.title
-                header.smailTitleLab.text = model.data.smallTitle
-            }
-            if obj is HotSaleModel {
-                let model = obj as! HotSaleModel
-                header.titleLab.text = model.data.title
-                header.smailTitleLab.text = model.data.smallTitle
-            }
-            if obj is NatureModel {
-                let model = obj as! NatureModel
-                header.titleLab.text = model.data.title
-                header.smailTitleLab.text = model.data.smallTitle
-            }
-            if obj is TimeReCModel {
-                let model = obj as! TimeReCModel
-                header.titleLab.text = model.data.title
-                header.smailTitleLab.text = model.data.smallTitle
-            }
-            if obj is BoutiqueModel {
-                let model = obj as! BoutiqueModel
-                header.titleLab.text = model.data.title
-                header.smailTitleLab.text = model.data.smallTitle
-            }
-            if obj is LTCModel {
-                let model = obj as! LTCModel
-                header.titleLab.text = model.data.title
-                header.smailTitleLab.text = model.data.smallTitle
-            }
-            //...
-        }
-        else {
+            difTypeTitleHandle(obj: obj, header: header)
+        } else {
             header.titleLab.text = "暂未开放"
             header.smailTitleLab.text = "敬请期待"
         }
         
         return header
+    }
+    
+    func difTypeTitleHandle(obj:Any!,header:ItemTitleView!) -> Void {
+        if obj is SortTypeModel {
+            let model = obj as! SortTypeModel
+            header.titleLab.text = model.data.title
+            header.smailTitleLab.text = model.data.smallTitle
+        }
+        if obj is HotInStoreModel {
+            let model = obj as! HotInStoreModel
+            header.titleLab.text = model.data.title
+            header.smailTitleLab.text = model.data.smallTitle
+        }
+        if obj is ForMaleModel {
+            let model = obj as! ForMaleModel
+            header.titleLab.text = model.data.title
+            header.smailTitleLab.text = model.data.smallTitle
+        }
+        if obj is HotSaleModel {
+            let model = obj as! HotSaleModel
+            header.titleLab.text = model.data.title
+            header.smailTitleLab.text = model.data.smallTitle
+        }
+        if obj is NatureModel {
+            let model = obj as! NatureModel
+            header.titleLab.text = model.data.title
+            header.smailTitleLab.text = model.data.smallTitle
+        }
+        if obj is TimeReCModel {
+            let model = obj as! TimeReCModel
+            header.titleLab.text = model.data.title
+            header.smailTitleLab.text = model.data.smallTitle
+        }
+        if obj is BoutiqueModel {
+            let model = obj as! BoutiqueModel
+            header.titleLab.text = model.data.title
+            header.smailTitleLab.text = model.data.smallTitle
+        }
+        if obj is LTCModel {
+            let model = obj as! LTCModel
+            header.titleLab.text = model.data.title
+            header.smailTitleLab.text = model.data.smallTitle
+        }
+        //...
     }
     
     func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
@@ -273,10 +291,11 @@ class ItemTableControl: BaseControl,UITableViewDelegate,UITableViewDataSource {
         return 0
     }
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        if section <= dataTitleHeights.count-1 {
-            return dataTitleHeights.safe_object(at: section) as! CGFloat
-        }
-        return 0
+        return heightTitle
+//        if section <= dataTitleHeights.count-1 {
+//            return dataTitleHeights.safe_object(at: section) as! CGFloat
+//        }
+//        return 0
     }
     func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
         return 0.01

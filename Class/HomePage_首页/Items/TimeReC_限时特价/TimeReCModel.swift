@@ -32,17 +32,15 @@ class TimeReCModel: BaseModel {
     @objc var showType : String = ""
     @objc var data : TimeReCDataModel!
     
+    
     class func dataReader(typeInfo:Any!) -> TimeReCModel {
 
         var model = TimeReCModel()
-        
         if typeInfo is NSDictionary {
-            
             let dict = typeInfo as! NSDictionary
             model = TimeReCModel.mj_object(withKeyValues: dict)
             model.data.block = TimeReCBlockElemModel.mj_objectArray(withKeyValuesArray: model.data.block)
         }
-        
         return model
     }
     

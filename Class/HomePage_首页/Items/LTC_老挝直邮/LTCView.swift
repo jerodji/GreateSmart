@@ -24,11 +24,11 @@ class LTCView: UIView,LoadXIBView {
         imageVIew.frame = CGRect.init(x: itemcellLeft, y: itemcellTop, width: kScreenW-itemcellLeft-itemcellRight, height: heightLTC-itemcellTop-itemcellBottom)
     }
     
-    // Only override draw() if you perform custom drawing.
-    // An empty implementation adversely affects performance during animation.
-    override func draw(_ rect: CGRect) {
-        // Drawing code
-    }
+//    // Only override draw() if you perform custom drawing.
+//    // An empty implementation adversely affects performance during animation.
+//    override func draw(_ rect: CGRect) {
+//        // Drawing code
+//    }
     
     func image(_ url:String) -> Void {
         imageVIew.sd_setImage(with: URL.init(string: url), completed: nil)

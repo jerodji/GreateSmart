@@ -43,7 +43,7 @@
                     <nil key="highlightedColor"/>
                 </label>
             </subviews>
-            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
                 <constraint firstItem="RJ5-JC-NN3" firstAttribute="height" secondItem="aHn-To-e84" secondAttribute="height" constant="-7" id="FLy-S3-m5R"/>
                 <constraint firstItem="aHn-To-e84" firstAttribute="leading" secondItem="QyV-rh-kIS" secondAttribute="trailing" constant="10" id="Ngr-cR-EZH"/>

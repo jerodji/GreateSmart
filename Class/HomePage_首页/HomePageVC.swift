@@ -482,6 +482,11 @@ class HomePageVC: BaseUIViewController {
         configSearchButton()
     }
     
+    override func viewWillLayoutSubviews() {
+        super.viewWillLayoutSubviews()
+        
+    }
+    
     //MARK:-
     
     func configSubviews() -> () {
