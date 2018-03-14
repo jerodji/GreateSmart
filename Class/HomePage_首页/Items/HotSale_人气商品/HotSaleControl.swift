@@ -8,6 +8,33 @@
 
 import UIKit
 
-class HotSaleControl: BaseControl {
+class HotSaleControl: BaseControl,iCarouselDelegate, iCarouselDataSource {
 
+    var view : HotSaleView!
+    var model: HotSaleModel!
+    
+    override init() {
+        super.init()
+    }
+    
+    
+    func handleData(typeInfo:Any!) -> HotSaleModel {
+        model = HotSaleModel.dataReader(typeInfo: typeInfo)
+        return model
+    }
+    
+    func initView(frame:CGRect) -> Void {
+        view = HotSaleView.init(frame: frame)
+        view.delegate = self
+        view.dataSource = self
+    }
+    
+    func numberOfItems(in carousel: iCarousel) -> Int {
+        return model.data.block.count
+    }
+    
+    func carousel(_ carousel: iCarousel, viewForItemAt index: Int, reusing view: UIView?) -> UIView {
+        <#code#>
+    }
+    
 }

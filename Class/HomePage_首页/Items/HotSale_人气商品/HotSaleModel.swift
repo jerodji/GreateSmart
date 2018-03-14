@@ -24,14 +24,14 @@ class HotSaleBlockElemModel: BaseModel {
 class HotSaleDataModel: BaseModel {
     @objc var title: String = ""
     @objc var smallTitle: String = ""
-    @objc var block:NSArray = []
+    @objc var block: NSArray = []
 }
 
 class HotSaleModel: BaseModel {
     
     @objc var showType : String = ""
     @objc var data : HotSaleDataModel!
-   
+    
     
     class func dataReader(typeInfo:Any!) -> HotSaleModel {
         var model = HotSaleModel()

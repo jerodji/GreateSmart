@@ -24,7 +24,7 @@
 
 #import "WSCollectionViewFlowLayout.h"
 #import "AFBaseNetwork.h"
-
+#import "iCarousel.h"
 
 
 
@@ -41,6 +41,8 @@
 
 //#import "YYModel.h"
 #import "MJExtension.h"
+
+
 
 
 @interface OCHeaderFile : NSObject

@@ -70,6 +70,10 @@
 		38F7636620592012002C1999 /* HotInStoreView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 38F7636520592012002C1999 /* HotInStoreView.xib */; };
 		38F76368205922E6002C1999 /* HotInStoreCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38F76367205922E6002C1999 /* HotInStoreCell.swift */; };
 		38F7636A205922F4002C1999 /* HotInStoreCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 38F76369205922F4002C1999 /* HotInStoreCell.xib */; };
+		38F7636D20593950002C1999 /* iCarousel.m in Sources */ = {isa = PBXBuildFile; fileRef = 38F7636C20593950002C1999 /* iCarousel.m */; };
+		38F7636F20593A3B002C1999 /* HotSaleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38F7636E20593A3B002C1999 /* HotSaleView.swift */; };
+		38F76371205940BA002C1999 /* HotSaleCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38F76370205940BA002C1999 /* HotSaleCell.swift */; };
+		38F76373205940CB002C1999 /* HotSaleCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 38F76372205940CB002C1999 /* HotSaleCell.xib */; };
 		38F9CA59202FED60004D105D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38F9CA58202FED60004D105D /* AppDelegate.swift */; };
 		38F9CA5E202FED60004D105D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 38F9CA5C202FED60004D105D /* Main.storyboard */; };
 		38F9CA60202FED60004D105D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 38F9CA5F202FED60004D105D /* Assets.xcassets */; };
@@ -191,6 +195,11 @@
 		38F7636520592012002C1999 /* HotInStoreView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HotInStoreView.xib; sourceTree = "<group>"; };
 		38F76367205922E6002C1999 /* HotInStoreCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HotInStoreCell.swift; sourceTree = "<group>"; };
 		38F76369205922F4002C1999 /* HotInStoreCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HotInStoreCell.xib; sourceTree = "<group>"; };
+		38F7636B20593950002C1999 /* iCarousel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = iCarousel.h; sourceTree = "<group>"; };
+		38F7636C20593950002C1999 /* iCarousel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = iCarousel.m; sourceTree = "<group>"; };
+		38F7636E20593A3B002C1999 /* HotSaleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HotSaleView.swift; sourceTree = "<group>"; };
+		38F76370205940BA002C1999 /* HotSaleCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HotSaleCell.swift; sourceTree = "<group>"; };
+		38F76372205940CB002C1999 /* HotSaleCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HotSaleCell.xib; sourceTree = "<group>"; };
 		38F9CA55202FED60004D105D /* GreateSmart.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GreateSmart.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		38F9CA58202FED60004D105D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		38F9CA5D202FED60004D105D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -335,6 +344,9 @@
 			isa = PBXGroup;
 			children = (
 				384EE45B2057EBA900D2BCB6 /* HotSaleControl.swift */,
+				38F7636E20593A3B002C1999 /* HotSaleView.swift */,
+				38F76370205940BA002C1999 /* HotSaleCell.swift */,
+				38F76372205940CB002C1999 /* HotSaleCell.xib */,
 				384EE4412057673A00D2BCB6 /* HotSaleModel.swift */,
 			);
 			path = "HotSale_人气商品";
@@ -609,6 +621,8 @@
 		38FD686F204020F400B19A42 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				38F7636B20593950002C1999 /* iCarousel.h */,
+				38F7636C20593950002C1999 /* iCarousel.m */,
 				388004C6204FAAEE00FE9DD0 /* JsonTransform.swift */,
 				38213003204948EA00F1413C /* JJRealmManager.swift */,
 				38EE015A2045778E0050759A /* JJTextField.swift */,
@@ -801,6 +815,7 @@
 				384EE4562057C56700D2BCB6 /* LTCView.xib in Resources */,
 				381C63042046990F00A9066C /* SearchHistoryCell.xib in Resources */,
 				FA13949B20581DC7008D6F68 /* ForMaleView.xib in Resources */,
+				38F76373205940CB002C1999 /* HotSaleCell.xib in Resources */,
 				38F7636A205922F4002C1999 /* HotInStoreCell.xib in Resources */,
 				38F9CA60202FED60004D105D /* Assets.xcassets in Resources */,
 				38F9CA5E202FED60004D105D /* Main.storyboard in Resources */,
@@ -908,6 +923,7 @@
 				384EE4452057699600D2BCB6 /* NatureModel.swift in Sources */,
 				38FD686E2040207A00B19A42 /* XIB.swift in Sources */,
 				38FD687B2040267C00B19A42 /* BaseAFNetwork.swift in Sources */,
+				38F76371205940BA002C1999 /* HotSaleCell.swift in Sources */,
 				38FD686420401E4F00B19A42 /* UIView+viewFrame.m in Sources */,
 				38FD9A45204115160090D978 /* BaseUITableView.swift in Sources */,
 				38FD687F204027F300B19A42 /* NetworkManage.swift in Sources */,
@@ -953,6 +969,7 @@
 				384EE4522057C4ED00D2BCB6 /* LTCControl.swift in Sources */,
 				381C63152047CCCC00A9066C /* FlowCollectionView.swift in Sources */,
 				38F6423C20591F99004A75DF /* HotInStoreView.swift in Sources */,
+				38F7636D20593950002C1999 /* iCarousel.m in Sources */,
 				38B879AA20426A3F0080BB3C /* BaseControl.swift in Sources */,
 				38437B452058E71B00F7FE2F /* NatureView.swift in Sources */,
 				38BAE14F2053865100CA822A /* SortTypeView.swift in Sources */,
@@ -961,6 +978,7 @@
 				384EE44820576AED00D2BCB6 /* TimeReCModel.swift in Sources */,
 				384EE45A2057EB9A00D2BCB6 /* ForMaleControl.swift in Sources */,
 				388004C7204FAAEE00FE9DD0 /* JsonTransform.swift in Sources */,
+				38F7636F20593A3B002C1999 /* HotSaleView.swift in Sources */,
 				38213027204EAC3D00F1413C /* BannerView.swift in Sources */,
 				388004C2204F92BE00FE9DD0 /* AFBaseNetwork.m in Sources */,
 				38EE015B2045778E0050759A /* JJTextField.swift in Sources */,
