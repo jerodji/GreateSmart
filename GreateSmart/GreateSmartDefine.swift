@@ -45,6 +45,8 @@ let heightForMale  = CGFloat(108 * kSizeScale + itemcellTop + itemcellBottom)
 
 let heightHotInStore = CGFloat(300 * kSizeScale + itemcellTop + itemcellBottom)
 
+let heightHotSale = CGFloat(245 + itemcellTop + itemcellBottom)
+
 
 let widthTimeRecCell = CGFloat(115)
 let heightTimeRec    = CGFloat(170 + itemcellTop + itemcellBottom)

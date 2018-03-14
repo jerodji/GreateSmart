@@ -34,6 +34,7 @@ class ItemTableView: BaseUITableView /* ,UITableViewDelegate,UITableViewDataSour
         
         banner = BannerView.init(frame: CGRect(x: 0, y: -heightBanner, width: kScreenW, height: heightBanner))
         banner.layer.zPosition = -1 /* 将view插入到队列最前端 */
+        
         self.addSubview(banner)
     }
     

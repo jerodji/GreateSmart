@@ -12,6 +12,7 @@ class HotSaleControl: BaseControl,iCarouselDelegate, iCarouselDataSource {
 
     var view : HotSaleView!
     var model: HotSaleModel!
+//    private var rect:CGRect!
     
     override init() {
         super.init()
@@ -24,6 +25,7 @@ class HotSaleControl: BaseControl,iCarouselDelegate, iCarouselDataSource {
     }
     
     func initView(frame:CGRect) -> Void {
+//        rect = frame
         view = HotSaleView.init(frame: frame)
         view.delegate = self
         view.dataSource = self
@@ -34,7 +36,15 @@ class HotSaleControl: BaseControl,iCarouselDelegate, iCarouselDataSource {
     }
     
     func carousel(_ carousel: iCarousel, viewForItemAt index: Int, reusing view: UIView?) -> UIView {
-        <#code#>
+        let mod = model.data.block[index] as! HotSaleBlockElemModel
+        let cell = HotSaleCell.loadFromXIB()
+//        cell.setFrame(rect)
+        cell.imageView.sd_setImage(with: URL.init(string: mod.itemTitleImage), completed: nil)
+        cell.priceLabel.text = mod.price + " " + mod.originalPrice
+        cell.nameLabel.text = mod.itemName
+        cell.decsLabel.text = mod.publicity
+        
+        return cell
     }
     
 }

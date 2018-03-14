@@ -77,7 +77,14 @@
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
-            <point key="canvasLocation" x="153" y="228"/>
+            <connections>
+                <outlet property="decsLabel" destination="I8b-3L-tGh" id="Nox-cB-LQk"/>
+                <outlet property="imageView" destination="u16-2D-XZr" id="V76-K4-u4o"/>
+                <outlet property="nameLabel" destination="yO0-NJ-kAV" id="cKu-zi-yxu"/>
+                <outlet property="priceLabel" destination="LGZ-PB-6h2" id="Qgr-xt-Abd"/>
+                <outlet property="shopButton" destination="wFX-tp-vmR" id="bjJ-Bg-N3U"/>
+            </connections>
+            <point key="canvasLocation" x="-16" y="43"/>
         </view>
     </objects>
 </document>

@@ -81,6 +81,13 @@ class ItemTableControl: BaseControl,UITableViewDelegate,UITableViewDataSource {
                     }; break
                     
                     case ShowTypeENUM.HotSale.rawValue: do {
+                        let cl = HotSaleControl()
+                        let model = cl.handleData(typeInfo: itemDict)
+                        cl.initView(frame: CGRect(x: itemcellLeft, y: itemcellTop, width: kScreenW-itemcellLeft-itemcellRight, height: heightHotSale-itemcellTop-itemcellBottom))
+                        dataHeights.add(heightHotSale)
+                        dataTitleHeights.add(heightTitle)
+                        dataModels.add(model)
+                        dataControls.add(cl)
                     }; break
 
                     case ShowTypeENUM.Nature.rawValue: do {
@@ -142,10 +149,13 @@ class ItemTableControl: BaseControl,UITableViewDelegate,UITableViewDataSource {
     }
     
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        delog("\(scrollView.contentOffset.y)")
         tableView.banner.y = scrollView.contentOffset.y
         let offsetY = scrollView.contentOffset.y + heightBanner
+//        tableView.banner.isUserInteractionEnabled = false
         if offsetY < 0 {
             tableView.banner.height = heightBanner-offsetY
+//            tableView.banner.isUserInteractionEnabled = true
         }
     }
     
@@ -186,6 +196,8 @@ class ItemTableControl: BaseControl,UITableViewDelegate,UITableViewDataSource {
         }
         if obj is HotSaleControl {
             let control = obj as! HotSaleControl
+//            control.view.frame = CGRect(x: itemcellLeft, y: itemcellTop, width: kScreenW-itemcellLeft-itemcellRight, height: heightHotSale-itemcellTop-itemcellBottom)
+            cell!.addSubview(control.view)
         }
         if obj is NatureControl {
             let control = obj as! NatureControl
