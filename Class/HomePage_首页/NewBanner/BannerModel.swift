@@ -18,10 +18,10 @@ class BannerModel: BaseModel {
     @objc var data: NSArray!
     @objc var showType: String!
     
+    
     class func dataReader(typeInfo: Any!) -> BannerModel {
         
         var bannerModel = BannerModel()
-        
         if typeInfo is NSDictionary {
             let dict = typeInfo as! NSDictionary
             bannerModel = BannerModel.mj_object(withKeyValues: dict)

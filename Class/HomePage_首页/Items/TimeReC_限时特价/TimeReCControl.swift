@@ -44,7 +44,7 @@ class TimeReCControl: BaseControl,UICollectionViewDelegate,UICollectionViewDataS
         
 //        let elemModel = model.data.block[index] as! TimeReCBlockElemModel
         
-        cell.imageView.sd_setImage(with: URL.init(string: model.itemTitleImage), completed: nil)
+        cell.imageView.kf.setImage(with: URL.init(string: model.itemTitleImage))
         cell.priceLabel.text = "¥" + model.price
         cell.nameLabel.text = model.itemName
         //cell.discountLabel.text = "限量半价"

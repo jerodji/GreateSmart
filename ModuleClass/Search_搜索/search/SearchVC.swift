@@ -34,8 +34,7 @@ class SearchVC: BaseUIViewController,UITableViewDelegate,UITableViewDataSource {
         super.loadView()
         
         let imgv = UIImageView()
-        imgv.sd_setImage(with: URL.init(string: ""), completed: nil)
-        
+        imgv.kf.setImage(with: URL.init(string: ""))
         
         //MARK: 获取数据
         historyList.addObjects(from: ["111","222","333","4","5"])
@@ -46,12 +45,8 @@ class SearchVC: BaseUIViewController,UITableViewDelegate,UITableViewDataSource {
         hotList.addObjects(from: ["a","2sdf22","xvb","kshjdk","wyerio","kzbxckjv","jqowieuroj","askjdfhlanvkahjefo","akshdfln","lkha","a","2sdf22","xvb","kshjdk","wyerio","kzbxckjv","jqowieuroj","askjdfhlanvkahjefo","akshdfln","lkha","a","2sdf22","xvb","kshjdk","wyerio","kzbxckjv","jqowieuroj","askjdfhlanvkahjefo","akshdfln","lkha","a","2sdf22","xvb","kshjdk","wyerio","kzbxckjv","jqowieuroj","askjdfhlanvkahjefo","akshdfln","lkha","a","2sdf22","xvb","kshjdk","wyerio","kzbxckjv","jqowieuroj","askjdfhlanvkahjefo","akshdfln","lkha","a","2sdf22","xvb","kshjdk","wyerio","kzbxckjv","jqowieuroj","askjdfhlanvkahjefo","akshdfln","lkha","a","2sdf22","xvb","kshjdk","wyerio","kzbxckjv","jqowieuroj","askjdfhlanvkahjefo","akshdfln","lkha","a","2sdf22","xvb","kshjdk","wyerio","kzbxckjv","jqowieuroj","askjdfhlanvkahjefo","akshdfln","lkha","a","2sdf22","xvb","kshjdk","wyerio","kzbxckjv","jqowieuroj","askjdfhlanvkahjefo","akshdfln","lkha","a","2sdf22","xvb","kshjdk","wyerio","kzbxckjv","jqowieuroj","askjdfhlanvkahjefo","akshdfln","lkha","a","2sdf22","xvb","kshjdk","wyerio","kzbxckjv","jqowieuroj","askjdfhlanvkahjefo","akshdfln","lkha","a","2sdf22","xvb","kshjdk","wyerio","kzbxckjv","jqowieuroj","askjdfhlanvkahjefo","akshdfln","lkha"]
         )
         
-//        realmHitsoty = JJRealmManager.createDB(name: HistoryDataBase)
-        
-        HitsotyDBManager.createDB(name: HistoryDBName)
-        
-//        HitsotyDBManager.database?.add(historyModel)
-        
+//        HitsotyDBManager.createDB(name: HistoryDBName)
+                
     }
 
     override func viewDidLoad() {

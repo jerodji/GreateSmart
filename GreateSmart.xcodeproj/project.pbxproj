@@ -44,6 +44,18 @@
 		384EE45E2057EBB600D2BCB6 /* NatureControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 384EE45D2057EBB600D2BCB6 /* NatureControl.swift */; };
 		384EE4602057EBC500D2BCB6 /* TimeReCControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 384EE45F2057EBC500D2BCB6 /* TimeReCControl.swift */; };
 		384EE4622057EBD200D2BCB6 /* BoutiqueControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 384EE4612057EBD200D2BCB6 /* BoutiqueControl.swift */; };
+		387B6F2A205A571F00E6D916 /* ZCycleLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 387B6F26205A571F00E6D916 /* ZCycleLayout.swift */; };
+		387B6F2B205A571F00E6D916 /* ZCycleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 387B6F27205A571F00E6D916 /* ZCycleView.swift */; };
+		387B6F2C205A571F00E6D916 /* ZCycleViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 387B6F28205A571F00E6D916 /* ZCycleViewCell.swift */; };
+		387B6F2D205A571F00E6D916 /* ZPageControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 387B6F29205A571F00E6D916 /* ZPageControl.swift */; };
+		387B6F30205A72EF00E6D916 /* UserHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 387B6F2F205A72EF00E6D916 /* UserHeaderView.swift */; };
+		387B6F32205A72F700E6D916 /* UserHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 387B6F31205A72F700E6D916 /* UserHeaderView.xib */; };
+		387B6F38205A831D00E6D916 /* UserOrderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 387B6F36205A831D00E6D916 /* UserOrderCell.swift */; };
+		387B6F39205A831D00E6D916 /* UserOrderCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 387B6F37205A831D00E6D916 /* UserOrderCell.xib */; };
+		387B6F3C205A83F300E6D916 /* UserCenterButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 387B6F3B205A83F300E6D916 /* UserCenterButton.swift */; };
+		387B6F3E205A988900E6D916 /* UserServceBtn.swift in Sources */ = {isa = PBXBuildFile; fileRef = 387B6F3D205A988900E6D916 /* UserServceBtn.swift */; };
+		387B6F42205A99E800E6D916 /* UserServceCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 387B6F40205A99E800E6D916 /* UserServceCell.swift */; };
+		387B6F43205A99E800E6D916 /* UserServceCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 387B6F41205A99E800E6D916 /* UserServceCell.xib */; };
 		388004C2204F92BE00FE9DD0 /* AFBaseNetwork.m in Sources */ = {isa = PBXBuildFile; fileRef = 388004C1204F92BD00FE9DD0 /* AFBaseNetwork.m */; };
 		388004C7204FAAEE00FE9DD0 /* JsonTransform.swift in Sources */ = {isa = PBXBuildFile; fileRef = 388004C6204FAAEE00FE9DD0 /* JsonTransform.swift */; };
 		388004C9204FD58200FE9DD0 /* ErrorCodeHandle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 388004C8204FD58200FE9DD0 /* ErrorCodeHandle.swift */; };
@@ -167,6 +179,18 @@
 		384EE45D2057EBB600D2BCB6 /* NatureControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NatureControl.swift; sourceTree = "<group>"; };
 		384EE45F2057EBC500D2BCB6 /* TimeReCControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeReCControl.swift; sourceTree = "<group>"; };
 		384EE4612057EBD200D2BCB6 /* BoutiqueControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoutiqueControl.swift; sourceTree = "<group>"; };
+		387B6F26205A571F00E6D916 /* ZCycleLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZCycleLayout.swift; sourceTree = "<group>"; };
+		387B6F27205A571F00E6D916 /* ZCycleView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZCycleView.swift; sourceTree = "<group>"; };
+		387B6F28205A571F00E6D916 /* ZCycleViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZCycleViewCell.swift; sourceTree = "<group>"; };
+		387B6F29205A571F00E6D916 /* ZPageControl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZPageControl.swift; sourceTree = "<group>"; };
+		387B6F2F205A72EF00E6D916 /* UserHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserHeaderView.swift; sourceTree = "<group>"; };
+		387B6F31205A72F700E6D916 /* UserHeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UserHeaderView.xib; sourceTree = "<group>"; };
+		387B6F36205A831D00E6D916 /* UserOrderCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserOrderCell.swift; sourceTree = "<group>"; };
+		387B6F37205A831D00E6D916 /* UserOrderCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UserOrderCell.xib; sourceTree = "<group>"; };
+		387B6F3B205A83F300E6D916 /* UserCenterButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserCenterButton.swift; sourceTree = "<group>"; };
+		387B6F3D205A988900E6D916 /* UserServceBtn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserServceBtn.swift; sourceTree = "<group>"; };
+		387B6F40205A99E800E6D916 /* UserServceCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserServceCell.swift; sourceTree = "<group>"; };
+		387B6F41205A99E800E6D916 /* UserServceCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UserServceCell.xib; sourceTree = "<group>"; };
 		388004C0204F92BD00FE9DD0 /* AFBaseNetwork.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFBaseNetwork.h; sourceTree = "<group>"; };
 		388004C1204F92BD00FE9DD0 /* AFBaseNetwork.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFBaseNetwork.m; sourceTree = "<group>"; };
 		388004C6204FAAEE00FE9DD0 /* JsonTransform.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JsonTransform.swift; sourceTree = "<group>"; };
@@ -298,15 +322,6 @@
 			path = ModuleClass;
 			sourceTree = "<group>";
 		};
-		381C630C2047C81A00A9066C /* WSCollectionViewFlowLayout */ = {
-			isa = PBXGroup;
-			children = (
-				381C630D2047C81A00A9066C /* WSCollectionViewFlowLayout.h */,
-				381C630E2047C81A00A9066C /* WSCollectionViewFlowLayout.m */,
-			);
-			path = WSCollectionViewFlowLayout;
-			sourceTree = "<group>";
-		};
 		381C631E2048ED0D00A9066C /* search */ = {
 			isa = PBXGroup;
 			children = (
@@ -397,6 +412,53 @@
 			path = "LTC_老挝直邮";
 			sourceTree = "<group>";
 		};
+		387B6F25205A571F00E6D916 /* ZCycleView */ = {
+			isa = PBXGroup;
+			children = (
+				387B6F26205A571F00E6D916 /* ZCycleLayout.swift */,
+				387B6F27205A571F00E6D916 /* ZCycleView.swift */,
+				387B6F28205A571F00E6D916 /* ZCycleViewCell.swift */,
+				387B6F29205A571F00E6D916 /* ZPageControl.swift */,
+			);
+			path = ZCycleView;
+			sourceTree = "<group>";
+		};
+		387B6F2E205A72C400E6D916 /* header */ = {
+			isa = PBXGroup;
+			children = (
+				387B6F2F205A72EF00E6D916 /* UserHeaderView.swift */,
+				387B6F31205A72F700E6D916 /* UserHeaderView.xib */,
+			);
+			path = header;
+			sourceTree = "<group>";
+		};
+		387B6F33205A82B900E6D916 /* 我的订单 */ = {
+			isa = PBXGroup;
+			children = (
+				387B6F36205A831D00E6D916 /* UserOrderCell.swift */,
+				387B6F37205A831D00E6D916 /* UserOrderCell.xib */,
+			);
+			path = "我的订单";
+			sourceTree = "<group>";
+		};
+		387B6F3A205A83D300E6D916 /* adaper */ = {
+			isa = PBXGroup;
+			children = (
+				387B6F3B205A83F300E6D916 /* UserCenterButton.swift */,
+				387B6F3D205A988900E6D916 /* UserServceBtn.swift */,
+			);
+			path = adaper;
+			sourceTree = "<group>";
+		};
+		387B6F3F205A99B600E6D916 /* 我的服务 */ = {
+			isa = PBXGroup;
+			children = (
+				387B6F40205A99E800E6D916 /* UserServceCell.swift */,
+				387B6F41205A99E800E6D916 /* UserServceCell.xib */,
+			);
+			path = "我的服务";
+			sourceTree = "<group>";
+		};
 		388BA01B20525A65009C7C70 /* base */ = {
 			isa = PBXGroup;
 			children = (
@@ -461,6 +523,10 @@
 			isa = PBXGroup;
 			children = (
 				38B879A2204155DC0080BB3C /* MyVC.swift */,
+				387B6F3A205A83D300E6D916 /* adaper */,
+				387B6F3F205A99B600E6D916 /* 我的服务 */,
+				387B6F33205A82B900E6D916 /* 我的订单 */,
+				387B6F2E205A72C400E6D916 /* header */,
 			);
 			path = "My_我的";
 			sourceTree = "<group>";
@@ -621,12 +687,14 @@
 		38FD686F204020F400B19A42 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				387B6F25205A571F00E6D916 /* ZCycleView */,
 				38F7636B20593950002C1999 /* iCarousel.h */,
 				38F7636C20593950002C1999 /* iCarousel.m */,
 				388004C6204FAAEE00FE9DD0 /* JsonTransform.swift */,
 				38213003204948EA00F1413C /* JJRealmManager.swift */,
 				38EE015A2045778E0050759A /* JJTextField.swift */,
-				381C630C2047C81A00A9066C /* WSCollectionViewFlowLayout */,
+				381C630D2047C81A00A9066C /* WSCollectionViewFlowLayout.h */,
+				381C630E2047C81A00A9066C /* WSCollectionViewFlowLayout.m */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -809,6 +877,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				387B6F43205A99E800E6D916 /* UserServceCell.xib in Resources */,
+				387B6F32205A72F700E6D916 /* UserHeaderView.xib in Resources */,
 				38F9CA63202FED60004D105D /* LaunchScreen.storyboard in Resources */,
 				38FD9A3F2040FD9E0090D978 /* Images.xcassets in Resources */,
 				38F6423A20590151004A75DF /* TimeReCCell.xib in Resources */,
@@ -821,6 +891,7 @@
 				38F9CA5E202FED60004D105D /* Main.storyboard in Resources */,
 				38BAE1492053781100CA822A /* ItemTitleView.xib in Resources */,
 				38F7636620592012002C1999 /* HotInStoreView.xib in Resources */,
+				387B6F39205A831D00E6D916 /* UserOrderCell.xib in Resources */,
 				38437B4B2058E8AE00F7FE2F /* NatureCell.xib in Resources */,
 				381C63002046861100A9066C /* SearchRecordTitleView.xib in Resources */,
 			);
@@ -869,19 +940,15 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-GreateSmart/Pods-GreateSmart-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/AFNetworking/AFNetworking.framework",
+				"${BUILT_PRODUCTS_DIR}/Kingfisher/Kingfisher.framework",
 				"${BUILT_PRODUCTS_DIR}/MJExtension/MJExtension.framework",
-				"${BUILT_PRODUCTS_DIR}/Realm/Realm.framework",
-				"${BUILT_PRODUCTS_DIR}/RealmSwift/RealmSwift.framework",
-				"${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework",
 				"${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AFNetworking.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Kingfisher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MJExtension.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Realm.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RealmSwift.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDWebImage.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SnapKit.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -924,6 +991,7 @@
 				38FD686E2040207A00B19A42 /* XIB.swift in Sources */,
 				38FD687B2040267C00B19A42 /* BaseAFNetwork.swift in Sources */,
 				38F76371205940BA002C1999 /* HotSaleCell.swift in Sources */,
+				387B6F2D205A571F00E6D916 /* ZPageControl.swift in Sources */,
 				38FD686420401E4F00B19A42 /* UIView+viewFrame.m in Sources */,
 				38FD9A45204115160090D978 /* BaseUITableView.swift in Sources */,
 				38FD687F204027F300B19A42 /* NetworkManage.swift in Sources */,
@@ -938,8 +1006,11 @@
 				38B879A6204268A60080BB3C /* SearchVC.swift in Sources */,
 				38EE01532043F29D0050759A /* CustomNaviBar.swift in Sources */,
 				384EE4502057A37D00D2BCB6 /* errorPrevent.swift in Sources */,
+				387B6F2C205A571F00E6D916 /* ZCycleViewCell.swift in Sources */,
 				388004C9204FD58200FE9DD0 /* ErrorCodeHandle.swift in Sources */,
 				384EE4622057EBD200D2BCB6 /* BoutiqueControl.swift in Sources */,
+				387B6F38205A831D00E6D916 /* UserOrderCell.swift in Sources */,
+				387B6F3C205A83F300E6D916 /* UserCenterButton.swift in Sources */,
 				38EE015920455F8A0050759A /* InformationVC.swift in Sources */,
 				384EE4602057EBC500D2BCB6 /* TimeReCControl.swift in Sources */,
 				381C63032046990F00A9066C /* SearchHistoryCell.swift in Sources */,
@@ -951,15 +1022,18 @@
 				381C62FA20464C5500A9066C /* ResultVC.swift in Sources */,
 				388BA0202052A057009C7C70 /* SortTypeModel.swift in Sources */,
 				38FD686520401E4F00B19A42 /* UIButton+parameter.m in Sources */,
+				387B6F2B205A571F00E6D916 /* ZCycleView.swift in Sources */,
 				38437B492058E8A300F7FE2F /* NatureCell.swift in Sources */,
 				38213004204948EA00F1413C /* JJRealmManager.swift in Sources */,
 				384EE4582057EB8800D2BCB6 /* HotInStoreControl.swift in Sources */,
+				387B6F2A205A571F00E6D916 /* ZCycleLayout.swift in Sources */,
 				38FD687D204026D200B19A42 /* NetAPI.swift in Sources */,
 				FA16F7B42056D30B0094F47B /* HotInStoreModel.swift in Sources */,
 				FA13949920581CF4008D6F68 /* ForMaleView.swift in Sources */,
 				38213021204D568000F1413C /* GreateSmartDefine.swift in Sources */,
 				384EE4542057C51700D2BCB6 /* LTCView.swift in Sources */,
 				388BA01A205226BC009C7C70 /* property.swift in Sources */,
+				387B6F42205A99E800E6D916 /* UserServceCell.swift in Sources */,
 				38437B432058C46D00F7FE2F /* BoutiqueView.swift in Sources */,
 				38FD68742040220D00B19A42 /* PublicDefine.swift in Sources */,
 				38B879A1204155C60080BB3C /* ShopCartVC.swift in Sources */,
@@ -981,10 +1055,12 @@
 				38F7636F20593A3B002C1999 /* HotSaleView.swift in Sources */,
 				38213027204EAC3D00F1413C /* BannerView.swift in Sources */,
 				388004C2204F92BE00FE9DD0 /* AFBaseNetwork.m in Sources */,
+				387B6F30205A72EF00E6D916 /* UserHeaderView.swift in Sources */,
 				38EE015B2045778E0050759A /* JJTextField.swift in Sources */,
 				38EE015620442D3B0050759A /* swiftHeaderFile.swift in Sources */,
 				38FD686620401E4F00B19A42 /* UIColor+HexString.m in Sources */,
 				38FD688320402A9000B19A42 /* HomePageVC.swift in Sources */,
+				387B6F3E205A988900E6D916 /* UserServceBtn.swift in Sources */,
 				38FD686320401E4F00B19A42 /* UIImage+AttributeImage.m in Sources */,
 				384EE44E205771C900D2BCB6 /* LTCModel.swift in Sources */,
 				381C63192048097F00A9066C /* StringSize.swift in Sources */,

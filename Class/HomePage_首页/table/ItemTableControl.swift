@@ -149,13 +149,18 @@ class ItemTableControl: BaseControl,UITableViewDelegate,UITableViewDataSource {
     }
     
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
-        delog("\(scrollView.contentOffset.y)")
+        //delog("\(scrollView.contentOffset.y)")
         tableView.banner.y = scrollView.contentOffset.y
-        let offsetY = scrollView.contentOffset.y + heightBanner
+        
+        tableView.banner.backgroundColor = .yellow
+        
 //        tableView.banner.isUserInteractionEnabled = false
-        if offsetY < 0 {
-            tableView.banner.height = heightBanner-offsetY
+        if scrollView.contentOffset.y < -heightBanner {
+            tableView.banner.backgroundColor = .red
+            tableView.banner.height = -scrollView.contentOffset.y
+            tableView.banner.cycleView1.height = -scrollView.contentOffset.y
 //            tableView.banner.isUserInteractionEnabled = true
+            //delog(tableView.banner.cycleView1.height)
         }
     }
     
@@ -196,7 +201,6 @@ class ItemTableControl: BaseControl,UITableViewDelegate,UITableViewDataSource {
         }
         if obj is HotSaleControl {
             let control = obj as! HotSaleControl
-//            control.view.frame = CGRect(x: itemcellLeft, y: itemcellTop, width: kScreenW-itemcellLeft-itemcellRight, height: heightHotSale-itemcellTop-itemcellBottom)
             cell!.addSubview(control.view)
         }
         if obj is NatureControl {

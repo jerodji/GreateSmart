@@ -40,6 +40,11 @@ class BaseUIViewController: UIViewController {
                 self.dismiss(animated: true, completion: nil)
             }
         }
+        
+    }
+    
+    func bringNaviToFront() -> Void {
+        naviBar.layer.zPosition = 100
     }
     
     override func didReceiveMemoryWarning() {

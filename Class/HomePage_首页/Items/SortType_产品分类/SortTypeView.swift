@@ -55,7 +55,7 @@ class SortTypeCell: UICollectionViewCell {
     func image(_ url:String) -> Void {
         
         let imgview = UIImageView.init(frame: self.contentView.bounds)
-        imgview.sd_setImage(with: URL.init(string: url), completed: nil)
+        imgview.kf.setImage(with: URL.init(string: url))
         imgview.layer.cornerRadius = 5
         
         self.contentView.addSubview(imgview)

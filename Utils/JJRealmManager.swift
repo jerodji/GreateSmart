@@ -13,41 +13,41 @@
 import Foundation
 import UIKit
 
-import RealmSwift
+//import RealmSwift
 
 /**
  *  Realm 数据库
  */
 class JJRealmManager: NSObject {
 
-    var database: Realm?
-    
-    private var config = Realm.Configuration()
-    
-    override init() {
-        super.init()
-    }
-    
-    //MARK:创建 数据库, Realm会自动判断数据库是否存在
-    func createDB(name:String) -> Void {
-        //var config = Realm.Configuration()
-        config.fileURL = config.fileURL!.deletingLastPathComponent().appendingPathComponent("\(name).realm") /* 使用默认的目录 */
-        
-        //Realm.Configuration.defaultConfiguration = config
-        let realm = try! Realm.init(configuration: config)
-        database = realm
-        
-        delog("数据库创建完成 \(String(describing: config.fileURL))")
-//        return realm
-    }
-    
-//    //MARK:获取 数据库
-//    func openDB(name:String) -> Void {
-////        return database
+//    var database: Realm?
 //
+//    private var config = Realm.Configuration()
+//
+//    override init() {
+//        super.init()
 //    }
-    
-    //MARK:删除 数据库
-    
+//
+//    //MARK:创建 数据库, Realm会自动判断数据库是否存在
+//    func createDB(name:String) -> Void {
+//        //var config = Realm.Configuration()
+//        config.fileURL = config.fileURL!.deletingLastPathComponent().appendingPathComponent("\(name).realm") /* 使用默认的目录 */
+//
+//        //Realm.Configuration.defaultConfiguration = config
+//        let realm = try! Realm.init(configuration: config)
+//        database = realm
+//
+//        delog("数据库创建完成 \(String(describing: config.fileURL))")
+////        return realm
+//    }
+//
+////    //MARK:获取 数据库
+////    func openDB(name:String) -> Void {
+//////        return database
+////
+////    }
+//
+//    //MARK:删除 数据库
+//
     
 }

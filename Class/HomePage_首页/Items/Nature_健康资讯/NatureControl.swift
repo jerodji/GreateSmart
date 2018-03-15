@@ -38,7 +38,7 @@ class NatureControl: BaseControl {
             let cellView = NatureCell.loadFromXIB()
             cellView.frame = CGRect.init(x: itemcellLeft, y: itemcellTop + CGFloat(i) * (elemHeightNature + distanceNature), width: cellWidth, height: elemHeightNature)
             
-            cellView.imgView.sd_setImage(with: URL.init(string: (model.data.block[i] as! NatureBlockElemModel).img ), completed: nil)
+            cellView.imgView.kf.setImage(with: URL.init(string: (model.data.block[i] as! NatureBlockElemModel).img))
             cellView.titleLabel.text = (model.data.block[i] as! NatureBlockElemModel).title
             
             view.addSubview(cellView)

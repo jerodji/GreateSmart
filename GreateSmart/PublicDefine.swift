@@ -44,13 +44,13 @@ let kColorTabbar = UIColor.white
 let kColorNavi   = UIColor.white
 let kColorTheme  = UIColor.black /* 主题颜色 */
 
-func ColorRGBA(r:CGFloat, g:CGFloat, b:CGFloat, a:CGFloat) -> UIColor {
+func UIColorRGBA(r:CGFloat, g:CGFloat, b:CGFloat, a:CGFloat) -> UIColor {
     return UIColor.init(red: r/255.0, green: g/255.0, blue: b/255.0, alpha: a)
 }
-func ColorRGB(r:CGFloat, g:CGFloat, b:CGFloat) -> UIColor {
-    return ColorRGBA(r: r, g: g, b: b, a: 1)
+func UIColorRGB(r:CGFloat, g:CGFloat, b:CGFloat) -> UIColor {
+    return UIColorRGBA(r: r, g: g, b: b, a: 1)
 }
-func ColorHex(hex:String) -> UIColor {
+func UIColorHex(hex:String) -> UIColor {
     return UIColor.init(hex: hex)
 }
 

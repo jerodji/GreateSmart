@@ -5,11 +5,9 @@ use_frameworks!
 
 target 'GreateSmart' do
 
-pod 'SDWebImage'
 pod 'AFNetworking'
-pod 'SnapKit'
-pod 'RealmSwift'
+pod 'SnapKit', '~> 4.0.0'
 pod 'MJExtension'
-
+pod 'Kingfisher', '~> 4.6.1'
 
 end
