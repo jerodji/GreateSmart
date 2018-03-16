@@ -16,7 +16,14 @@ class UserHeaderView: UIView,LoadXIBView {
     @IBOutlet weak var idLabel: UILabel!
     @IBOutlet weak var levelLabel: UIButton!
     
+    required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+    }
     
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        levelLabel.layer.cornerRadius = 4
+    }
     
     /*
     // Only override draw() if you perform custom drawing.

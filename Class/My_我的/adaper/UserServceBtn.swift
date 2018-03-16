@@ -12,7 +12,6 @@ class UserServceBtn: UIButton {
 
     var numberLabel : UILabel!
     
-    
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         setupUI()
@@ -28,10 +27,11 @@ class UserServceBtn: UIButton {
         numberLabel = UILabel.init()
         numberLabel.frame = CGRect.init(x: 3, y: self.bounds.size.height-3-20-35, width: self.bounds.size.width-3-3, height: 35)
         numberLabel.textAlignment = .center
-        numberLabel.backgroundColor = UIColor.red
+        numberLabel.font = UIFont.systemFont(ofSize: 18)
         self.addSubview(numberLabel)
         
         self.titleLabel?.textAlignment = .center
+        self.titleLabel?.font = UIFont.systemFont(ofSize: 11)
     }
     
 //    override func imageRect(forContentRect contentRect: CGRect) -> CGRect {

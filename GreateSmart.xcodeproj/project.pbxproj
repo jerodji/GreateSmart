@@ -459,6 +459,13 @@
 			path = "我的服务";
 			sourceTree = "<group>";
 		};
+		387D4969205B8BAC0059BB20 /* 优惠券 */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "优惠券";
+			sourceTree = "<group>";
+		};
 		388BA01B20525A65009C7C70 /* base */ = {
 			isa = PBXGroup;
 			children = (
@@ -524,9 +531,10 @@
 			children = (
 				38B879A2204155DC0080BB3C /* MyVC.swift */,
 				387B6F3A205A83D300E6D916 /* adaper */,
-				387B6F3F205A99B600E6D916 /* 我的服务 */,
-				387B6F33205A82B900E6D916 /* 我的订单 */,
 				387B6F2E205A72C400E6D916 /* header */,
+				387D4969205B8BAC0059BB20 /* 优惠券 */,
+				387B6F33205A82B900E6D916 /* 我的订单 */,
+				387B6F3F205A99B600E6D916 /* 我的服务 */,
 			);
 			path = "My_我的";
 			sourceTree = "<group>";

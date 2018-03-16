@@ -22,6 +22,7 @@ class UserCenterButton: UIButton {
     
     func setupUI() -> Void {
         self.titleLabel?.textAlignment = .center
+        self.titleLabel?.font = UIFont.systemFont(ofSize: 11)
     }
     
     override func imageRect(forContentRect contentRect: CGRect) -> CGRect {
