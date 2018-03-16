@@ -84,7 +84,7 @@
                 <outlet property="priceLabel" destination="LGZ-PB-6h2" id="Qgr-xt-Abd"/>
                 <outlet property="shopButton" destination="wFX-tp-vmR" id="bjJ-Bg-N3U"/>
             </connections>
-            <point key="canvasLocation" x="-16" y="43"/>
+            <point key="canvasLocation" x="-1" y="42"/>
         </view>
     </objects>
 </document>

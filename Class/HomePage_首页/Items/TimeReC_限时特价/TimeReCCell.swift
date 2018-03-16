@@ -22,7 +22,7 @@ class TimeReCCell: UICollectionViewCell {
         self.layer.cornerRadius = 5
         self.layer.masksToBounds = true
         self.layer.borderWidth = 0.5
-        self.layer.borderColor = UIColorRGBA(r: 83, g: 83, b: 83, a: 0.4).cgColor
+        self.layer.borderColor = RGBA(83, 83, 83, 0.4).cgColor
         
         //imageView.layer.cornerRadius = 5
         discountLabel.layer.cornerRadius = 3

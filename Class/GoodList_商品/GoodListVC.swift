@@ -8,30 +8,48 @@
 
 import UIKit
 
+let heightSortView = CGFloat(40)
+
 class GoodListVC: BaseUIViewController {
 
+    let sortView : SortingView = SortingView.loadFromXIB()
+    let goodcl = GoodsListColtrol.init()
+    
+    
+    override func loadView() {
+        super.loadView()
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.naviBar.titleLab.text = "GOOD LIST"
-        self.view.backgroundColor = .red
+        self.naviBar.titleLab.text = "全部商品"
         self.naviBar.leftItemBtn.isHidden = true
         self.naviBar.rightItemBtn.isHidden = true
+        
+        self.view.addSubview(sortView)
+        self.view.addSubview(goodcl.leftView)
+        self.view.addSubview(goodcl.rightView)
     }
+    
+    override func viewWillLayoutSubviews() {
+        super.viewWillLayoutSubviews()
+        
+        sortView.frame = CGRect.init(x: 0, y: kNaviH, width: kScreenW, height: heightSortView)
+        
+        let Y = kNaviH+heightSortView+4
+        let W = (kScreenW-15*3)/2
+        let H = kScreenH-kNaviH-kTabbarH-heightSortView-4
+        goodcl.leftView.frame  = CGRect(x: 15, y:Y , width:W , height:H )
+        goodcl.rightView.frame = CGRect(x: 15+W+15, y: Y, width: W, height: H)
+    }
+    
+    
+    
+    
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
     
-    
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }

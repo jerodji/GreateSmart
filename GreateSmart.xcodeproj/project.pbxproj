@@ -56,6 +56,14 @@
 		387B6F3E205A988900E6D916 /* UserServceBtn.swift in Sources */ = {isa = PBXBuildFile; fileRef = 387B6F3D205A988900E6D916 /* UserServceBtn.swift */; };
 		387B6F42205A99E800E6D916 /* UserServceCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 387B6F40205A99E800E6D916 /* UserServceCell.swift */; };
 		387B6F43205A99E800E6D916 /* UserServceCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 387B6F41205A99E800E6D916 /* UserServceCell.xib */; };
+		387D496C205B98B40059BB20 /* SortingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 387D496B205B98B40059BB20 /* SortingView.swift */; };
+		387D496E205B98C10059BB20 /* SortingView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 387D496D205B98C10059BB20 /* SortingView.xib */; };
+		387D4971205BA4070059BB20 /* SortButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 387D4970205BA4070059BB20 /* SortButton.swift */; };
+		387D4974205BCBF20059BB20 /* LeftGoodsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 387D4973205BCBF20059BB20 /* LeftGoodsView.swift */; };
+		387D4976205BCC1B0059BB20 /* RightGoodsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 387D4975205BCC1B0059BB20 /* RightGoodsView.swift */; };
+		387D4978205BCCC30059BB20 /* GoodsListColtrol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 387D4977205BCCC30059BB20 /* GoodsListColtrol.swift */; };
+		387D497B205BD4DB0059BB20 /* GoodCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 387D4979205BD4DB0059BB20 /* GoodCell.swift */; };
+		387D497C205BD4DB0059BB20 /* GoodCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 387D497A205BD4DB0059BB20 /* GoodCell.xib */; };
 		388004C2204F92BE00FE9DD0 /* AFBaseNetwork.m in Sources */ = {isa = PBXBuildFile; fileRef = 388004C1204F92BD00FE9DD0 /* AFBaseNetwork.m */; };
 		388004C7204FAAEE00FE9DD0 /* JsonTransform.swift in Sources */ = {isa = PBXBuildFile; fileRef = 388004C6204FAAEE00FE9DD0 /* JsonTransform.swift */; };
 		388004C9204FD58200FE9DD0 /* ErrorCodeHandle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 388004C8204FD58200FE9DD0 /* ErrorCodeHandle.swift */; };
@@ -191,6 +199,14 @@
 		387B6F3D205A988900E6D916 /* UserServceBtn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserServceBtn.swift; sourceTree = "<group>"; };
 		387B6F40205A99E800E6D916 /* UserServceCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserServceCell.swift; sourceTree = "<group>"; };
 		387B6F41205A99E800E6D916 /* UserServceCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UserServceCell.xib; sourceTree = "<group>"; };
+		387D496B205B98B40059BB20 /* SortingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SortingView.swift; sourceTree = "<group>"; };
+		387D496D205B98C10059BB20 /* SortingView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SortingView.xib; sourceTree = "<group>"; };
+		387D4970205BA4070059BB20 /* SortButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SortButton.swift; sourceTree = "<group>"; };
+		387D4973205BCBF20059BB20 /* LeftGoodsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeftGoodsView.swift; sourceTree = "<group>"; };
+		387D4975205BCC1B0059BB20 /* RightGoodsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RightGoodsView.swift; sourceTree = "<group>"; };
+		387D4977205BCCC30059BB20 /* GoodsListColtrol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoodsListColtrol.swift; sourceTree = "<group>"; };
+		387D4979205BD4DB0059BB20 /* GoodCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoodCell.swift; sourceTree = "<group>"; };
+		387D497A205BD4DB0059BB20 /* GoodCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GoodCell.xib; sourceTree = "<group>"; };
 		388004C0204F92BD00FE9DD0 /* AFBaseNetwork.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFBaseNetwork.h; sourceTree = "<group>"; };
 		388004C1204F92BD00FE9DD0 /* AFBaseNetwork.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFBaseNetwork.m; sourceTree = "<group>"; };
 		388004C6204FAAEE00FE9DD0 /* JsonTransform.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JsonTransform.swift; sourceTree = "<group>"; };
@@ -466,6 +482,35 @@
 			path = "优惠券";
 			sourceTree = "<group>";
 		};
+		387D496A205B98990059BB20 /* SortingView */ = {
+			isa = PBXGroup;
+			children = (
+				387D496B205B98B40059BB20 /* SortingView.swift */,
+				387D496D205B98C10059BB20 /* SortingView.xib */,
+			);
+			path = SortingView;
+			sourceTree = "<group>";
+		};
+		387D496F205BA3BF0059BB20 /* adaper */ = {
+			isa = PBXGroup;
+			children = (
+				387D4970205BA4070059BB20 /* SortButton.swift */,
+			);
+			path = adaper;
+			sourceTree = "<group>";
+		};
+		387D4972205BCB690059BB20 /* Goods */ = {
+			isa = PBXGroup;
+			children = (
+				387D4977205BCCC30059BB20 /* GoodsListColtrol.swift */,
+				387D4973205BCBF20059BB20 /* LeftGoodsView.swift */,
+				387D4975205BCC1B0059BB20 /* RightGoodsView.swift */,
+				387D4979205BD4DB0059BB20 /* GoodCell.swift */,
+				387D497A205BD4DB0059BB20 /* GoodCell.xib */,
+			);
+			path = Goods;
+			sourceTree = "<group>";
+		};
 		388BA01B20525A65009C7C70 /* base */ = {
 			isa = PBXGroup;
 			children = (
@@ -514,6 +559,9 @@
 			isa = PBXGroup;
 			children = (
 				38B8799E204155A00080BB3C /* GoodListVC.swift */,
+				387D4972205BCB690059BB20 /* Goods */,
+				387D496A205B98990059BB20 /* SortingView */,
+				387D496F205BA3BF0059BB20 /* adaper */,
 			);
 			path = "GoodList_商品";
 			sourceTree = "<group>";
@@ -892,6 +940,7 @@
 				38F6423A20590151004A75DF /* TimeReCCell.xib in Resources */,
 				384EE4562057C56700D2BCB6 /* LTCView.xib in Resources */,
 				381C63042046990F00A9066C /* SearchHistoryCell.xib in Resources */,
+				387D496E205B98C10059BB20 /* SortingView.xib in Resources */,
 				FA13949B20581DC7008D6F68 /* ForMaleView.xib in Resources */,
 				38F76373205940CB002C1999 /* HotSaleCell.xib in Resources */,
 				38F7636A205922F4002C1999 /* HotInStoreCell.xib in Resources */,
@@ -899,6 +948,7 @@
 				38F9CA5E202FED60004D105D /* Main.storyboard in Resources */,
 				38BAE1492053781100CA822A /* ItemTitleView.xib in Resources */,
 				38F7636620592012002C1999 /* HotInStoreView.xib in Resources */,
+				387D497C205BD4DB0059BB20 /* GoodCell.xib in Resources */,
 				387B6F39205A831D00E6D916 /* UserOrderCell.xib in Resources */,
 				38437B4B2058E8AE00F7FE2F /* NatureCell.xib in Resources */,
 				381C63002046861100A9066C /* SearchRecordTitleView.xib in Resources */,
@@ -988,6 +1038,7 @@
 			files = (
 				384EE45C2057EBA900D2BCB6 /* HotSaleControl.swift in Sources */,
 				38213019204D429600F1413C /* ItemTableView.swift in Sources */,
+				387D497B205BD4DB0059BB20 /* GoodCell.swift in Sources */,
 				38F76368205922E6002C1999 /* HotInStoreCell.swift in Sources */,
 				388BA0162050FE11009C7C70 /* NSObject+conversion.m in Sources */,
 				381C630F2047C81A00A9066C /* WSCollectionViewFlowLayout.m in Sources */,
@@ -1008,6 +1059,7 @@
 				38FD9A49204116DF0090D978 /* TabbarController.swift in Sources */,
 				384EE44B205770FD00D2BCB6 /* BoutiqueModel.swift in Sources */,
 				3821300D204A9C4600F1413C /* OCHeaderFile.m in Sources */,
+				387D4976205BCC1B0059BB20 /* RightGoodsView.swift in Sources */,
 				3821301C204D465000F1413C /* ItemCell.swift in Sources */,
 				38FD9A43204112960090D978 /* BannerModel.swift in Sources */,
 				38B8799F204155A00080BB3C /* GoodListVC.swift in Sources */,
@@ -1015,6 +1067,7 @@
 				38EE01532043F29D0050759A /* CustomNaviBar.swift in Sources */,
 				384EE4502057A37D00D2BCB6 /* errorPrevent.swift in Sources */,
 				387B6F2C205A571F00E6D916 /* ZCycleViewCell.swift in Sources */,
+				387D4974205BCBF20059BB20 /* LeftGoodsView.swift in Sources */,
 				388004C9204FD58200FE9DD0 /* ErrorCodeHandle.swift in Sources */,
 				384EE4622057EBD200D2BCB6 /* BoutiqueControl.swift in Sources */,
 				387B6F38205A831D00E6D916 /* UserOrderCell.swift in Sources */,
@@ -1027,6 +1080,7 @@
 				FA16F7B72056ECFB0094F47B /* ForMaleModel.swift in Sources */,
 				38FD686C2040202C00B19A42 /* BaseUITableViewController.swift in Sources */,
 				38FD685F20401E4F00B19A42 /* UIViewController+XIB.m in Sources */,
+				387D496C205B98B40059BB20 /* SortingView.swift in Sources */,
 				381C62FA20464C5500A9066C /* ResultVC.swift in Sources */,
 				388BA0202052A057009C7C70 /* SortTypeModel.swift in Sources */,
 				38FD686520401E4F00B19A42 /* UIButton+parameter.m in Sources */,
@@ -1034,6 +1088,7 @@
 				38437B492058E8A300F7FE2F /* NatureCell.swift in Sources */,
 				38213004204948EA00F1413C /* JJRealmManager.swift in Sources */,
 				384EE4582057EB8800D2BCB6 /* HotInStoreControl.swift in Sources */,
+				387D4971205BA4070059BB20 /* SortButton.swift in Sources */,
 				387B6F2A205A571F00E6D916 /* ZCycleLayout.swift in Sources */,
 				38FD687D204026D200B19A42 /* NetAPI.swift in Sources */,
 				FA16F7B42056D30B0094F47B /* HotInStoreModel.swift in Sources */,
@@ -1046,6 +1101,7 @@
 				38FD68742040220D00B19A42 /* PublicDefine.swift in Sources */,
 				38B879A1204155C60080BB3C /* ShopCartVC.swift in Sources */,
 				38FD686820401F9F00B19A42 /* BaseUIViewController.swift in Sources */,
+				387D4978205BCCC30059BB20 /* GoodsListColtrol.swift in Sources */,
 				38FD686120401E4F00B19A42 /* NSObject+isNull.m in Sources */,
 				38F6423920590151004A75DF /* TimeReCCell.swift in Sources */,
 				384EE4522057C4ED00D2BCB6 /* LTCControl.swift in Sources */,

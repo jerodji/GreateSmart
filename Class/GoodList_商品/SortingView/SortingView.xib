@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="SortingView" customModule="GreateSmart" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="40"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7sb-fI-4bA">
+                    <rect key="frame" x="0.0" y="0.0" width="78.5" height="40"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <state key="normal" title="全部">
+                        <color key="titleColor" red="0.15294117647058825" green="0.15294117647058825" blue="0.15294117647058825" alpha="1" colorSpace="calibratedRGB"/>
+                    </state>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZlP-h1-6nF" customClass="SortButton" customModule="GreateSmart" customModuleProvider="target">
+                    <rect key="frame" x="78.5" y="0.0" width="78.5" height="40"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                    <state key="normal">
+                        <color key="titleColor" red="0.71764705882352942" green="0.71764705882352942" blue="0.71764705882352942" alpha="1" colorSpace="calibratedRGB"/>
+                    </state>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eRK-5p-GT0" customClass="SortButton" customModule="GreateSmart" customModuleProvider="target">
+                    <rect key="frame" x="157" y="0.0" width="78.5" height="40"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                    <state key="normal">
+                        <color key="titleColor" red="0.71764705880000002" green="0.71764705880000002" blue="0.71764705880000002" alpha="1" colorSpace="calibratedRGB"/>
+                    </state>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ylV-tf-PLI">
+                    <rect key="frame" x="235.5" y="0.0" width="78.5" height="40"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                    <state key="normal" title="新品">
+                        <color key="titleColor" red="0.71764705880000002" green="0.71764705880000002" blue="0.71764705880000002" alpha="1" colorSpace="calibratedRGB"/>
+                    </state>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mpD-ju-2K4">
+                    <rect key="frame" x="315" y="0.0" width="60" height="40"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="60" id="hfq-OH-fuD"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                    <state key="normal" title="筛选">
+                        <color key="titleColor" red="0.71764705880000002" green="0.71764705880000002" blue="0.71764705880000002" alpha="1" colorSpace="calibratedRGB"/>
+                    </state>
+                </button>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MEp-nI-2Ef">
+                    <rect key="frame" x="314" y="13" width="1" height="14"/>
+                    <color key="backgroundColor" red="0.90196078431372551" green="0.89411764705882346" blue="0.89411764705882346" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="1" id="yJM-At-KXt"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="ylV-tf-PLI" firstAttribute="bottom" secondItem="ZlP-h1-6nF" secondAttribute="bottom" id="0gO-1t-0Wy"/>
+                <constraint firstItem="7sb-fI-4bA" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" id="1te-w4-Ef4"/>
+                <constraint firstItem="ylV-tf-PLI" firstAttribute="leading" secondItem="eRK-5p-GT0" secondAttribute="trailing" id="2jR-nd-lPr"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="mpD-ju-2K4" secondAttribute="trailing" id="2ka-m4-Tur"/>
+                <constraint firstItem="eRK-5p-GT0" firstAttribute="leading" secondItem="ZlP-h1-6nF" secondAttribute="trailing" id="8iA-bJ-mnT"/>
+                <constraint firstItem="ylV-tf-PLI" firstAttribute="width" secondItem="ZlP-h1-6nF" secondAttribute="width" id="DBp-yi-Cvv"/>
+                <constraint firstAttribute="bottom" secondItem="MEp-nI-2Ef" secondAttribute="bottom" constant="13" id="G66-KP-i5p"/>
+                <constraint firstItem="ZlP-h1-6nF" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" id="HTj-K6-KwP"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="7sb-fI-4bA" secondAttribute="bottom" id="Pzb-Q3-gZV"/>
+                <constraint firstItem="ZlP-h1-6nF" firstAttribute="leading" secondItem="7sb-fI-4bA" secondAttribute="trailing" id="Tcj-fZ-m66"/>
+                <constraint firstItem="7sb-fI-4bA" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="Te0-C5-nfB"/>
+                <constraint firstItem="eRK-5p-GT0" firstAttribute="top" secondItem="ZlP-h1-6nF" secondAttribute="top" id="Uql-LY-MNE"/>
+                <constraint firstItem="eRK-5p-GT0" firstAttribute="width" secondItem="ZlP-h1-6nF" secondAttribute="width" id="apE-PE-niR"/>
+                <constraint firstItem="eRK-5p-GT0" firstAttribute="bottom" secondItem="ZlP-h1-6nF" secondAttribute="bottom" id="bV3-4i-2ii"/>
+                <constraint firstItem="MEp-nI-2Ef" firstAttribute="leading" secondItem="ylV-tf-PLI" secondAttribute="trailing" id="cop-UQ-9U3"/>
+                <constraint firstItem="ylV-tf-PLI" firstAttribute="top" secondItem="ZlP-h1-6nF" secondAttribute="top" id="kLh-kf-K1m"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="ZlP-h1-6nF" secondAttribute="bottom" id="nvk-PP-W9C"/>
+                <constraint firstItem="7sb-fI-4bA" firstAttribute="width" secondItem="ZlP-h1-6nF" secondAttribute="width" id="pCf-KE-Br4"/>
+                <constraint firstItem="MEp-nI-2Ef" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" constant="13" id="rZ7-TU-ajE"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="mpD-ju-2K4" secondAttribute="bottom" id="tyb-6S-TZO"/>
+                <constraint firstItem="mpD-ju-2K4" firstAttribute="leading" secondItem="MEp-nI-2Ef" secondAttribute="trailing" id="w6N-CT-Vle"/>
+                <constraint firstItem="mpD-ju-2K4" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" id="zOO-6o-PYP"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <connections>
+                <outlet property="priceBtn" destination="eRK-5p-GT0" id="ega-QM-7no"/>
+                <outlet property="salesBtn" destination="ZlP-h1-6nF" id="Rk4-mG-0jb"/>
+            </connections>
+            <point key="canvasLocation" x="-69" y="113"/>
+        </view>
+    </objects>
+</document>

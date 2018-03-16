@@ -19,7 +19,7 @@ class UserOrderCell: UITableViewCell {
         // Initialization code
         backView.layer.cornerRadius = 5
         backView.layer.borderWidth = 0.5
-        backView.layer.borderColor = UIColorRGBA(r: 83, g: 83, b: 83, a: 0.4).cgColor
+        backView.layer.borderColor = RGBA(83, 83, 83, 0.4).cgColor
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
