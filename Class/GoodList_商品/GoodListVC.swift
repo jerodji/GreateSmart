@@ -13,7 +13,8 @@ let heightSortView = CGFloat(40)
 class GoodListVC: BaseUIViewController {
 
     let sortView : SortingView = SortingView.loadFromXIB()
-    let goodcl = GoodsListColtrol.init()
+    let leftCtl = LeftControl.init()
+    let rightCtl = RightControl.init()
     
     
     override func loadView() {
@@ -27,8 +28,8 @@ class GoodListVC: BaseUIViewController {
         self.naviBar.rightItemBtn.isHidden = true
         
         self.view.addSubview(sortView)
-        self.view.addSubview(goodcl.leftView)
-        self.view.addSubview(goodcl.rightView)
+        self.view.addSubview(leftCtl.view)
+        self.view.addSubview(rightCtl.view)
     }
     
     override func viewWillLayoutSubviews() {
@@ -37,10 +38,10 @@ class GoodListVC: BaseUIViewController {
         sortView.frame = CGRect.init(x: 0, y: kNaviH, width: kScreenW, height: heightSortView)
         
         let Y = kNaviH+heightSortView+4
-        let W = (kScreenW-15*3)/2
+        let W = kScreenW/2
         let H = kScreenH-kNaviH-kTabbarH-heightSortView-4
-        goodcl.leftView.frame  = CGRect(x: 15, y:Y , width:W , height:H )
-        goodcl.rightView.frame = CGRect(x: 15+W+15, y: Y, width: W, height: H)
+        leftCtl.view.frame  = CGRect(x: 0, y:Y , width:W , height:H )
+        rightCtl.view.frame = CGRect(x: W, y: Y, width: W, height: H)
     }
     
     

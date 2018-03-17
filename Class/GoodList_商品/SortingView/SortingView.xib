@@ -93,7 +93,7 @@
                 <outlet property="priceBtn" destination="eRK-5p-GT0" id="ega-QM-7no"/>
                 <outlet property="salesBtn" destination="ZlP-h1-6nF" id="Rk4-mG-0jb"/>
             </connections>
-            <point key="canvasLocation" x="-69" y="113"/>
+            <point key="canvasLocation" x="-267" y="109"/>
         </view>
     </objects>
 </document>

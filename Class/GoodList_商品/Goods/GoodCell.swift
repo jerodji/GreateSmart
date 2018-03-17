@@ -8,7 +8,14 @@
 
 import UIKit
 
-class GoodCell: UICollectionViewCell {
+class GoodCell: UICollectionViewCell,LoadXIBView {
+    
+    @IBOutlet weak var backView: UIView!
+    @IBOutlet weak var imageView: UIImageView!
+    @IBOutlet weak var priceLabel: UILabel!
+    @IBOutlet weak var nameLabel: UILabel!
+    @IBOutlet weak var decsLabel: UILabel!
+    @IBOutlet weak var shopButton: UIButton!
     
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
@@ -17,6 +24,18 @@ class GoodCell: UICollectionViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
+        
+        backView.layer.shadowColor = RGB(83, 83, 83).cgColor
+        backView.layer.shadowOpacity = 0.4
+        backView.layer.shadowRadius = 2
+        //self.layer.shadowOffset = CGSize.init(width: -2, height: 2)
+        backView.layer.shadowPath = UIBezierPath.init(roundedRect: CGRect.init(x: -0.5, y: 2, width: backView.bounds.size.width*kSizeScale, height: backView.bounds.size.height*kSizeScale), cornerRadius: 10).cgPath
+        //self.layer.shouldRasterize = true //设置缓存
+        //self.layer.rasterizationScale = UIScreen.main.scale //设置抗锯齿边缘
+        
+        imageView.layer.cornerRadius = 10
+        backView.layer.cornerRadius = 10
+        //backView.layer.masksToBounds = true //以上的设置无效了
     }
 
 }

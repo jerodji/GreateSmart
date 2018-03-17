@@ -22,9 +22,11 @@ class RightGoodsView: UICollectionView {
         let lay = UICollectionViewFlowLayout.init()
         lay.scrollDirection = .vertical
         lay.minimumInteritemSpacing = 15
-        lay.itemSize = CGSize.init(width: 165, height: 245)
+        lay.itemSize = CGSize.init(width: 175*kSizeScale, height: 255*kSizeScale)
         
         self.init(frame: frame, collectionViewLayout: lay)
+        
+        self.backgroundColor = UIColor.white
     }
     
     
