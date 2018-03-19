@@ -64,6 +64,14 @@
                         <color key="textColor" red="0.71764705882352942" green="0.71764705882352942" blue="0.71764705882352942" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="PEQ-TD-CEt">
+                        <rect key="frame" x="72" y="8" width="35" height="35"/>
+                        <color key="backgroundColor" red="0.71764705880000002" green="0.71764705880000002" blue="0.71764705880000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="35" id="3ky-FS-rdP"/>
+                            <constraint firstAttribute="height" constant="35" id="TnG-MJ-C8c"/>
+                        </constraints>
+                    </imageView>
                 </subviews>
             </view>
             <constraints>
@@ -72,6 +80,8 @@
                 <constraint firstItem="Gqg-PC-VbE" firstAttribute="leading" secondItem="TIk-5O-k7i" secondAttribute="trailing" id="5TH-8n-P1x"/>
                 <constraint firstItem="TIk-5O-k7i" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="3" id="6ic-or-6hh"/>
                 <constraint firstAttribute="trailing" secondItem="06h-pU-l9Z" secondAttribute="trailing" constant="3" id="8m3-D9-E7d"/>
+                <constraint firstItem="ZTg-uK-7eu" firstAttribute="trailing" secondItem="PEQ-TD-CEt" secondAttribute="trailing" constant="8" id="Snc-9B-Ufv"/>
+                <constraint firstItem="PEQ-TD-CEt" firstAttribute="top" secondItem="ZTg-uK-7eu" secondAttribute="top" constant="8" id="XJz-Fe-LdU"/>
                 <constraint firstAttribute="trailing" secondItem="Gqg-PC-VbE" secondAttribute="trailing" constant="3" id="dOh-Q3-pFE"/>
                 <constraint firstItem="BQE-ZD-Y12" firstAttribute="top" secondItem="T9h-lk-Cif" secondAttribute="bottom" constant="5" id="iv0-cj-tWh"/>
                 <constraint firstAttribute="trailing" secondItem="T9h-lk-Cif" secondAttribute="trailing" id="j2l-Pv-KXc"/>
@@ -87,6 +97,7 @@
             <connections>
                 <outlet property="discountLabel" destination="TIk-5O-k7i" id="HEa-86-ZPq"/>
                 <outlet property="imageView" destination="T9h-lk-Cif" id="69O-Vn-1Ys"/>
+                <outlet property="littleImgVIew" destination="PEQ-TD-CEt" id="Fwh-I4-bJo"/>
                 <outlet property="nameLabel" destination="06h-pU-l9Z" id="Tdl-8Y-zC0"/>
                 <outlet property="priceLabel" destination="BQE-ZD-Y12" id="anf-BL-N3g"/>
                 <outlet property="remainingLabel" destination="Gqg-PC-VbE" id="XE6-oj-GdM"/>

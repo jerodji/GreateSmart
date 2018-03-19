@@ -27,6 +27,8 @@ class GoodListVC: BaseUIViewController {
         self.naviBar.leftItemBtn.isHidden = true
         self.naviBar.rightItemBtn.isHidden = true
         
+        leftCtl.scene = self
+        rightCtl.scene = self
         self.view.addSubview(sortView)
         self.view.addSubview(leftCtl.view)
         self.view.addSubview(rightCtl.view)

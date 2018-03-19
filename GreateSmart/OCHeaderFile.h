@@ -25,7 +25,7 @@
 #import "WSCollectionViewFlowLayout.h"
 #import "AFBaseNetwork.h"
 #import "iCarousel.h"
-
+#import "SYATopScrollViewController.h"
 
 
 #pragma mark ------------ CocoaPod ------------

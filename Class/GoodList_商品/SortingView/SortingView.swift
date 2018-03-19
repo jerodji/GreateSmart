@@ -20,7 +20,7 @@ class SortingView: UIView,LoadXIBView {
     override func awakeFromNib() {
         super.awakeFromNib()
         
-        self.layer.shadowColor = RGB(83, 83, 83).cgColor
+        self.layer.shadowColor = UIColor.init(r: 83, g: 83, b: 83).cgColor
         self.layer.shadowOpacity = 0.4
         self.layer.shadowRadius = 2
         //self.layer.shadowOffset = CGSize.init(width: 0, height: 2)

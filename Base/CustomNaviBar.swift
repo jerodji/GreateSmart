@@ -22,6 +22,19 @@ class CustomNaviBar: UIView {
     let titleLab = UILabel()
     let line = UIView()
     
+    private var _jj_backgroundColor : UIColor?
+    var jj_backgroundColor : UIColor? {
+        get {
+            return _jj_backgroundColor
+        }
+        set {
+            _jj_backgroundColor = newValue
+            self.backgroundColor = _jj_backgroundColor
+            self.line.backgroundColor = _jj_backgroundColor
+        }
+    }
+    
+    
     //声明闭包
     typealias LEFTBLOCK = () -> ()
     var leftCallback: LEFTBLOCK?
@@ -80,5 +93,10 @@ class CustomNaviBar: UIView {
             rightCallback!()
         }
     }
+    
+//    func jj_backgroundColor(_ color:UIColor) -> Void {
+//        self.backgroundColor = color
+//        self.line.backgroundColor = color
+//    }
     
 }

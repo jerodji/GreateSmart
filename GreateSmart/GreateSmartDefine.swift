@@ -8,6 +8,12 @@
 
 import UIKit
 
+/**======================  Color  =======================**/
+let kColorTabbar = UIColor.white
+let kColorNavi   = UIColor.white
+let kColorTheme  = UIColor.black /* 主题颜色 */
+
+
 // item类型
 public enum ShowTypeENUM: String {
     case NewBanner   = "NewBanner"

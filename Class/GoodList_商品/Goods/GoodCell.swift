@@ -25,7 +25,7 @@ class GoodCell: UICollectionViewCell,LoadXIBView {
         super.awakeFromNib()
         // Initialization code
         
-        backView.layer.shadowColor = RGB(83, 83, 83).cgColor
+        backView.layer.shadowColor = UIColor.init(r: 83, g: 83, b: 83).cgColor
         backView.layer.shadowOpacity = 0.4
         backView.layer.shadowRadius = 2
         //self.layer.shadowOffset = CGSize.init(width: -2, height: 2)
@@ -33,7 +33,7 @@ class GoodCell: UICollectionViewCell,LoadXIBView {
         //self.layer.shouldRasterize = true //设置缓存
         //self.layer.rasterizationScale = UIScreen.main.scale //设置抗锯齿边缘
         
-        imageView.layer.cornerRadius = 10
+        imageView.addCorner(roundingCorners: UIRectCorner(rawValue: UIRectCorner.RawValue(UInt8(UIRectCorner.topLeft.rawValue)|UInt8(UIRectCorner.topRight.rawValue))), cornerSize: CGSize(width: 10, height: 10))
         backView.layer.cornerRadius = 10
         //backView.layer.masksToBounds = true //以上的设置无效了
     }

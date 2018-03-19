@@ -36,7 +36,6 @@ class TabbarController: UITabBarController {
         
         self.viewControllers = Navs
         self.tabBar.barTintColor = kColorTabbar
-        self.tabBar.backgroundColor = .green
     }
 
     

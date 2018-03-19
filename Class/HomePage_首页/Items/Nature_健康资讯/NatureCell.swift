@@ -32,7 +32,7 @@ class NatureCell: UIView,LoadXIBView {
 //        self.layer.shadowOpacity = 0.4
         
         self.layer.borderWidth = 1
-        self.layer.borderColor = RGBA(83, 83, 83, 0.4).cgColor
+        self.layer.borderColor = UIColor.RGBA(83, 83, 83, 0.4).cgColor
     }
     
 //    func setFrame(_ frame:CGRect) -> Void {

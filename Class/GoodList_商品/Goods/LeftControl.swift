@@ -11,6 +11,7 @@ import UIKit
 class LeftControl: BaseControl,UICollectionViewDelegate,UICollectionViewDataSource {
 
     var view : LeftGoodsView!
+    var scene : GoodListVC!
     
     override init() {
         super.init()
@@ -27,17 +28,14 @@ class LeftControl: BaseControl,UICollectionViewDelegate,UICollectionViewDataSour
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "leftgoodcellid", for: indexPath)
-        
-//        cell.layer.shadowColor = RGB(83, 83, 83).cgColor
-//        cell.layer.shadowOpacity = 0.4
-//        cell.layer.shadowRadius = 2
-//        //self.layer.shadowOffset = CGSize.init(width: 0, height: 2)
-//        cell.layer.shadowPath = UIBezierPath.init(roundedRect: CGRect.init(x: 0, y: 2, width: cell.bounds.size.width, height: cell.bounds.size.height+2), cornerRadius: 0).cgPath
-//        cell.layer.shouldRasterize = true //设置缓存
-//        cell.layer.rasterizationScale = UIScreen.main.scale //设置抗锯齿边缘
-        
-        
         return cell
     }
 
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let goodDetailVC = GoodDetailsVC()
+        
+        scene.navigationController?.pushViewController(goodDetailVC, animated: true)
+    }
+    
+    
 }

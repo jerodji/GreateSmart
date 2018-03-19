@@ -18,6 +18,7 @@ let kHomeIndicatorH = CGFloat((kStatusH==20.0) ? 0.0 : 34.0) /* home_indicator 0
 let kTabbarH  = CGFloat(49.0 + kHomeIndicatorH) /* 49, 83 */
 let kNavi44 = CGFloat(44.0)
 let kTab49  = CGFloat(49.0)
+let kSafeH = (kScreenH - kNaviH - kTabbarH)
 
 func isiPhoneX() -> Bool {
     if kStatusH > CGFloat(20) {
@@ -39,20 +40,8 @@ func delog(_ msg:Any,file:String = #file,funcName:String = #function,lineNum:Int
     #endif
 }
 
-/**======================  Color  =======================**/
-let kColorTabbar = UIColor.white
-let kColorNavi   = UIColor.white
-let kColorTheme  = UIColor.black /* 主题颜色 */
 
-func RGBA(_ r:CGFloat, _ g:CGFloat, _ b:CGFloat, _ a:CGFloat) -> UIColor {
-    return UIColor.init(red: r/255.0, green: g/255.0, blue: b/255.0, alpha: a)
-}
-func RGB(_ r:CGFloat, _ g:CGFloat, _ b:CGFloat) -> UIColor {
-    return RGBA(r, g, b, 1)
-}
-func UIColorHex(_ hex:String) -> UIColor {
-    return UIColor.init(hex: hex)
-}
+
 
 /**======================    =======================**/
 

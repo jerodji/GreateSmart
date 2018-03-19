@@ -26,14 +26,14 @@ class UserServceCell: UITableViewCell {
         // Initialization code
         backVIew.layer.cornerRadius = 5
         backVIew.layer.borderWidth = 0.5
-        backVIew.layer.borderColor = RGBA(83, 83, 83, 0.4).cgColor
+        backVIew.layer.borderColor = UIColor.init(r: 83, g: 83, b: 83, a: 0.4).cgColor
         
         let wid = (kScreenW-20-20)/4
         
         for index in 0...7 {
             let btn = UserServceBtn.init(frame: CGRect(x: 10 + wid*CGFloat(index%4), y: (36+CGFloat(index/4))+(65*CGFloat(index/4)), width: wid, height: 65))
             btn.setTitle(names[index], for: UIControlState.normal)
-            btn.setTitleColor(RGB(39, 39, 39), for: .normal)
+            btn.setTitleColor(UIColor.init(r: 39, g: 39, b: 39), for: .normal)
             btn.numberLabel.text = "666"
             if index > 3 {
                 btn.numberLabel.textColor = .red

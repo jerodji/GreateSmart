@@ -26,7 +26,7 @@ class HotSaleCell: UIView,LoadXIBView {
         self.layer.cornerRadius = 15
         self.layer.masksToBounds = true
         self.layer.borderWidth = 0.5
-        self.layer.borderColor = RGBA(83, 83, 83, 0.4).cgColor
+        self.layer.borderColor = UIColor.RGBA(83, 83, 83, 0.4).cgColor
     }
     
 //    func setFrame(_ frame:CGRect) -> Void {

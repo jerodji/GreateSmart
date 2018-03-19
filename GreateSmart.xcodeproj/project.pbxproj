@@ -25,6 +25,25 @@
 		38213021204D568000F1413C /* GreateSmartDefine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38213020204D568000F1413C /* GreateSmartDefine.swift */; };
 		38213025204EAB2C00F1413C /* ItemTableControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38213024204EAB2C00F1413C /* ItemTableControl.swift */; };
 		38213027204EAC3D00F1413C /* BannerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38213026204EAC3D00F1413C /* BannerView.swift */; };
+		382EF401205F611F00F3A33B /* UIView_extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 382EF400205F611F00F3A33B /* UIView_extension.swift */; };
+		382EF404205F66E000F3A33B /* GoodDetailsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 382EF403205F66E000F3A33B /* GoodDetailsVC.swift */; };
+		382EF406205F699000F3A33B /* UIColor_extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 382EF405205F699000F3A33B /* UIColor_extension.swift */; };
+		382EF408205F911500F3A33B /* GoodDetailsControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 382EF407205F911500F3A33B /* GoodDetailsControl.swift */; };
+		382EF40A205F914100F3A33B /* GoodDetailsTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 382EF409205F914100F3A33B /* GoodDetailsTableView.swift */; };
+		382EF40D205F9AF100F3A33B /* GoodIntroduceCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 382EF40B205F9AF100F3A33B /* GoodIntroduceCell.swift */; };
+		382EF40E205F9AF100F3A33B /* GoodIntroduceCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 382EF40C205F9AF100F3A33B /* GoodIntroduceCell.xib */; };
+		382EF411205FAC2E00F3A33B /* StoreCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 382EF40F205FAC2E00F3A33B /* StoreCell.swift */; };
+		382EF412205FAC2E00F3A33B /* StoreCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 382EF410205FAC2E00F3A33B /* StoreCell.xib */; };
+		382EF415205FB1D900F3A33B /* StoreIntroduceCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 382EF413205FB1D900F3A33B /* StoreIntroduceCell.swift */; };
+		382EF416205FB1D900F3A33B /* StoreIntroduceCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 382EF414205FB1D900F3A33B /* StoreIntroduceCell.xib */; };
+		382EF419205FB9D600F3A33B /* EvaluationCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 382EF417205FB9D600F3A33B /* EvaluationCell.swift */; };
+		382EF41A205FB9D600F3A33B /* EvaluationCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 382EF418205FB9D600F3A33B /* EvaluationCell.xib */; };
+		382EF424205FBA5200F3A33B /* SYAFlowLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 382EF41D205FBA5200F3A33B /* SYAFlowLayout.m */; };
+		382EF425205FBA5200F3A33B /* SYATopScrollViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 382EF41F205FBA5200F3A33B /* SYATopScrollViewController.m */; };
+		382EF426205FBA5200F3A33B /* SYATopScrollViewTitleLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 382EF421205FBA5200F3A33B /* SYATopScrollViewTitleLabel.m */; };
+		382EF427205FBA5200F3A33B /* UIView+SYAViewFrame.m in Sources */ = {isa = PBXBuildFile; fileRef = 382EF423205FBA5200F3A33B /* UIView+SYAViewFrame.m */; };
+		382EF42B205FD1FC00F3A33B /* HotRecommendCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 382EF429205FD1FC00F3A33B /* HotRecommendCell.swift */; };
+		382EF42C205FD1FC00F3A33B /* HotRecommendCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 382EF42A205FD1FC00F3A33B /* HotRecommendCell.xib */; };
 		38437B432058C46D00F7FE2F /* BoutiqueView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38437B422058C46D00F7FE2F /* BoutiqueView.swift */; };
 		38437B452058E71B00F7FE2F /* NatureView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38437B442058E71B00F7FE2F /* NatureView.swift */; };
 		38437B492058E8A300F7FE2F /* NatureCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38437B482058E8A300F7FE2F /* NatureCell.swift */; };
@@ -169,6 +188,30 @@
 		38213020204D568000F1413C /* GreateSmartDefine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GreateSmartDefine.swift; sourceTree = "<group>"; };
 		38213024204EAB2C00F1413C /* ItemTableControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemTableControl.swift; sourceTree = "<group>"; };
 		38213026204EAC3D00F1413C /* BannerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BannerView.swift; sourceTree = "<group>"; };
+		382EF400205F611F00F3A33B /* UIView_extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIView_extension.swift; sourceTree = "<group>"; };
+		382EF403205F66E000F3A33B /* GoodDetailsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoodDetailsVC.swift; sourceTree = "<group>"; };
+		382EF405205F699000F3A33B /* UIColor_extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColor_extension.swift; sourceTree = "<group>"; };
+		382EF407205F911500F3A33B /* GoodDetailsControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoodDetailsControl.swift; sourceTree = "<group>"; };
+		382EF409205F914100F3A33B /* GoodDetailsTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoodDetailsTableView.swift; sourceTree = "<group>"; };
+		382EF40B205F9AF100F3A33B /* GoodIntroduceCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoodIntroduceCell.swift; sourceTree = "<group>"; };
+		382EF40C205F9AF100F3A33B /* GoodIntroduceCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GoodIntroduceCell.xib; sourceTree = "<group>"; };
+		382EF40F205FAC2E00F3A33B /* StoreCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreCell.swift; sourceTree = "<group>"; };
+		382EF410205FAC2E00F3A33B /* StoreCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = StoreCell.xib; sourceTree = "<group>"; };
+		382EF413205FB1D900F3A33B /* StoreIntroduceCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreIntroduceCell.swift; sourceTree = "<group>"; };
+		382EF414205FB1D900F3A33B /* StoreIntroduceCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = StoreIntroduceCell.xib; sourceTree = "<group>"; };
+		382EF417205FB9D600F3A33B /* EvaluationCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EvaluationCell.swift; sourceTree = "<group>"; };
+		382EF418205FB9D600F3A33B /* EvaluationCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EvaluationCell.xib; sourceTree = "<group>"; };
+		382EF41C205FBA5200F3A33B /* SYAFlowLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SYAFlowLayout.h; sourceTree = "<group>"; };
+		382EF41D205FBA5200F3A33B /* SYAFlowLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SYAFlowLayout.m; sourceTree = "<group>"; };
+		382EF41E205FBA5200F3A33B /* SYATopScrollViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SYATopScrollViewController.h; sourceTree = "<group>"; };
+		382EF41F205FBA5200F3A33B /* SYATopScrollViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SYATopScrollViewController.m; sourceTree = "<group>"; };
+		382EF420205FBA5200F3A33B /* SYATopScrollViewTitleLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SYATopScrollViewTitleLabel.h; sourceTree = "<group>"; };
+		382EF421205FBA5200F3A33B /* SYATopScrollViewTitleLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SYATopScrollViewTitleLabel.m; sourceTree = "<group>"; };
+		382EF422205FBA5200F3A33B /* UIView+SYAViewFrame.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+SYAViewFrame.h"; sourceTree = "<group>"; };
+		382EF423205FBA5200F3A33B /* UIView+SYAViewFrame.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+SYAViewFrame.m"; sourceTree = "<group>"; };
+		382EF428205FBA7300F3A33B /* SYATopScrollViewHeader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SYATopScrollViewHeader.h; sourceTree = "<group>"; };
+		382EF429205FD1FC00F3A33B /* HotRecommendCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HotRecommendCell.swift; sourceTree = "<group>"; };
+		382EF42A205FD1FC00F3A33B /* HotRecommendCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HotRecommendCell.xib; sourceTree = "<group>"; };
 		38437B422058C46D00F7FE2F /* BoutiqueView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoutiqueView.swift; sourceTree = "<group>"; };
 		38437B442058E71B00F7FE2F /* NatureView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NatureView.swift; sourceTree = "<group>"; };
 		38437B482058E8A300F7FE2F /* NatureCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NatureCell.swift; sourceTree = "<group>"; };
@@ -335,6 +378,7 @@
 		381C630B2046C86500A9066C /* ModuleClass */ = {
 			isa = PBXGroup;
 			children = (
+				382EF402205F65C500F3A33B /* GoodDetails_商品详情 */,
 				38B879A42042685A0080BB3C /* Search_搜索 */,
 			);
 			path = ModuleClass;
@@ -371,6 +415,42 @@
 				AFE5A3FFF7CEC461A4847CB6 /* Pods_GreateSmart.framework */,
 			);
 			path = Frameworks;
+			sourceTree = "<group>";
+		};
+		382EF402205F65C500F3A33B /* GoodDetails_商品详情 */ = {
+			isa = PBXGroup;
+			children = (
+				382EF403205F66E000F3A33B /* GoodDetailsVC.swift */,
+				382EF407205F911500F3A33B /* GoodDetailsControl.swift */,
+				382EF409205F914100F3A33B /* GoodDetailsTableView.swift */,
+				382EF40B205F9AF100F3A33B /* GoodIntroduceCell.swift */,
+				382EF40C205F9AF100F3A33B /* GoodIntroduceCell.xib */,
+				382EF40F205FAC2E00F3A33B /* StoreCell.swift */,
+				382EF410205FAC2E00F3A33B /* StoreCell.xib */,
+				382EF413205FB1D900F3A33B /* StoreIntroduceCell.swift */,
+				382EF414205FB1D900F3A33B /* StoreIntroduceCell.xib */,
+				382EF417205FB9D600F3A33B /* EvaluationCell.swift */,
+				382EF418205FB9D600F3A33B /* EvaluationCell.xib */,
+				382EF429205FD1FC00F3A33B /* HotRecommendCell.swift */,
+				382EF42A205FD1FC00F3A33B /* HotRecommendCell.xib */,
+			);
+			path = "GoodDetails_商品详情";
+			sourceTree = "<group>";
+		};
+		382EF41B205FBA5200F3A33B /* SYATopScrollviewVC */ = {
+			isa = PBXGroup;
+			children = (
+				382EF428205FBA7300F3A33B /* SYATopScrollViewHeader.h */,
+				382EF41C205FBA5200F3A33B /* SYAFlowLayout.h */,
+				382EF41D205FBA5200F3A33B /* SYAFlowLayout.m */,
+				382EF41E205FBA5200F3A33B /* SYATopScrollViewController.h */,
+				382EF41F205FBA5200F3A33B /* SYATopScrollViewController.m */,
+				382EF420205FBA5200F3A33B /* SYATopScrollViewTitleLabel.h */,
+				382EF421205FBA5200F3A33B /* SYATopScrollViewTitleLabel.m */,
+				382EF422205FBA5200F3A33B /* UIView+SYAViewFrame.h */,
+				382EF423205FBA5200F3A33B /* UIView+SYAViewFrame.m */,
+			);
+			path = SYATopScrollviewVC;
 			sourceTree = "<group>";
 		};
 		384EE4402057671000D2BCB6 /* HotSale_人气商品 */ = {
@@ -709,6 +789,8 @@
 				381C63182048097F00A9066C /* StringSize.swift */,
 				388BA019205226BC009C7C70 /* property.swift */,
 				384EE44F2057A37D00D2BCB6 /* errorPrevent.swift */,
+				382EF400205F611F00F3A33B /* UIView_extension.swift */,
+				382EF405205F699000F3A33B /* UIColor_extension.swift */,
 				388BA0142050FE11009C7C70 /* NSObject+conversion.h */,
 				388BA0152050FE11009C7C70 /* NSObject+conversion.m */,
 				38FD685020401E4D00B19A42 /* NSObject+isNull.h */,
@@ -746,6 +828,7 @@
 		38FD686F204020F400B19A42 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				382EF41B205FBA5200F3A33B /* SYATopScrollviewVC */,
 				387B6F25205A571F00E6D916 /* ZCycleView */,
 				38F7636B20593950002C1999 /* iCarousel.h */,
 				38F7636C20593950002C1999 /* iCarousel.m */,
@@ -937,19 +1020,24 @@
 			buildActionMask = 2147483647;
 			files = (
 				387B6F43205A99E800E6D916 /* UserServceCell.xib in Resources */,
+				382EF412205FAC2E00F3A33B /* StoreCell.xib in Resources */,
 				387B6F32205A72F700E6D916 /* UserHeaderView.xib in Resources */,
 				38F9CA63202FED60004D105D /* LaunchScreen.storyboard in Resources */,
 				38FD9A3F2040FD9E0090D978 /* Images.xcassets in Resources */,
+				382EF40E205F9AF100F3A33B /* GoodIntroduceCell.xib in Resources */,
 				38F6423A20590151004A75DF /* TimeReCCell.xib in Resources */,
 				384EE4562057C56700D2BCB6 /* LTCView.xib in Resources */,
 				381C63042046990F00A9066C /* SearchHistoryCell.xib in Resources */,
 				387D496E205B98C10059BB20 /* SortingView.xib in Resources */,
 				FA13949B20581DC7008D6F68 /* ForMaleView.xib in Resources */,
+				382EF416205FB1D900F3A33B /* StoreIntroduceCell.xib in Resources */,
 				38F76373205940CB002C1999 /* HotSaleCell.xib in Resources */,
 				38F7636A205922F4002C1999 /* HotInStoreCell.xib in Resources */,
 				38F9CA60202FED60004D105D /* Assets.xcassets in Resources */,
 				38F9CA5E202FED60004D105D /* Main.storyboard in Resources */,
 				38BAE1492053781100CA822A /* ItemTitleView.xib in Resources */,
+				382EF41A205FB9D600F3A33B /* EvaluationCell.xib in Resources */,
+				382EF42C205FD1FC00F3A33B /* HotRecommendCell.xib in Resources */,
 				38F7636620592012002C1999 /* HotInStoreView.xib in Resources */,
 				387D497C205BD4DB0059BB20 /* GoodCell.xib in Resources */,
 				387B6F39205A831D00E6D916 /* UserOrderCell.xib in Resources */,
@@ -1059,6 +1147,10 @@
 				38FD687F204027F300B19A42 /* NetworkManage.swift in Sources */,
 				381C63172047D04200A9066C /* FlowCollectionControl.swift in Sources */,
 				384EE45E2057EBB600D2BCB6 /* NatureControl.swift in Sources */,
+				382EF404205F66E000F3A33B /* GoodDetailsVC.swift in Sources */,
+				382EF424205FBA5200F3A33B /* SYAFlowLayout.m in Sources */,
+				382EF401205F611F00F3A33B /* UIView_extension.swift in Sources */,
+				382EF419205FB9D600F3A33B /* EvaluationCell.swift in Sources */,
 				38FD9A49204116DF0090D978 /* TabbarController.swift in Sources */,
 				384EE44B205770FD00D2BCB6 /* BoutiqueModel.swift in Sources */,
 				3821300D204A9C4600F1413C /* OCHeaderFile.m in Sources */,
@@ -1079,6 +1171,7 @@
 				384EE4602057EBC500D2BCB6 /* TimeReCControl.swift in Sources */,
 				381C63032046990F00A9066C /* SearchHistoryCell.swift in Sources */,
 				384EE4422057673A00D2BCB6 /* HotSaleModel.swift in Sources */,
+				382EF42B205FD1FC00F3A33B /* HotRecommendCell.swift in Sources */,
 				38FD686220401E4F00B19A42 /* UIView+control.m in Sources */,
 				FA16F7B72056ECFB0094F47B /* ForMaleModel.swift in Sources */,
 				38FD686C2040202C00B19A42 /* BaseUITableViewController.swift in Sources */,
@@ -1101,19 +1194,24 @@
 				384EE4542057C51700D2BCB6 /* LTCView.swift in Sources */,
 				388BA01A205226BC009C7C70 /* property.swift in Sources */,
 				387B6F42205A99E800E6D916 /* UserServceCell.swift in Sources */,
+				382EF411205FAC2E00F3A33B /* StoreCell.swift in Sources */,
 				38437B432058C46D00F7FE2F /* BoutiqueView.swift in Sources */,
 				38FD68742040220D00B19A42 /* PublicDefine.swift in Sources */,
+				382EF427205FBA5200F3A33B /* UIView+SYAViewFrame.m in Sources */,
 				38B879A1204155C60080BB3C /* ShopCartVC.swift in Sources */,
 				38FD686820401F9F00B19A42 /* BaseUIViewController.swift in Sources */,
+				382EF415205FB1D900F3A33B /* StoreIntroduceCell.swift in Sources */,
 				38FD686120401E4F00B19A42 /* NSObject+isNull.m in Sources */,
 				38F6423920590151004A75DF /* TimeReCCell.swift in Sources */,
 				384EE4522057C4ED00D2BCB6 /* LTCControl.swift in Sources */,
+				382EF426205FBA5200F3A33B /* SYATopScrollViewTitleLabel.m in Sources */,
 				381C63152047CCCC00A9066C /* FlowCollectionView.swift in Sources */,
 				38F6423C20591F99004A75DF /* HotInStoreView.swift in Sources */,
 				38F7636D20593950002C1999 /* iCarousel.m in Sources */,
 				38B879AA20426A3F0080BB3C /* BaseControl.swift in Sources */,
 				38437B452058E71B00F7FE2F /* NatureView.swift in Sources */,
 				3864DAC5205CE22D00F89A25 /* RightControl.swift in Sources */,
+				382EF425205FBA5200F3A33B /* SYATopScrollViewController.m in Sources */,
 				38BAE14F2053865100CA822A /* SortTypeView.swift in Sources */,
 				381C62FE204685D700A9066C /* SearchRecordTitleView.swift in Sources */,
 				38BAE1512053869D00CA822A /* SortTypeControl.swift in Sources */,
@@ -1126,15 +1224,19 @@
 				387B6F30205A72EF00E6D916 /* UserHeaderView.swift in Sources */,
 				38EE015B2045778E0050759A /* JJTextField.swift in Sources */,
 				38EE015620442D3B0050759A /* swiftHeaderFile.swift in Sources */,
+				382EF40A205F914100F3A33B /* GoodDetailsTableView.swift in Sources */,
 				38FD686620401E4F00B19A42 /* UIColor+HexString.m in Sources */,
 				38FD688320402A9000B19A42 /* HomePageVC.swift in Sources */,
 				387B6F3E205A988900E6D916 /* UserServceBtn.swift in Sources */,
 				38FD686320401E4F00B19A42 /* UIImage+AttributeImage.m in Sources */,
 				384EE44E205771C900D2BCB6 /* LTCModel.swift in Sources */,
 				381C63192048097F00A9066C /* StringSize.swift in Sources */,
+				382EF406205F699000F3A33B /* UIColor_extension.swift in Sources */,
 				38F9CA59202FED60004D105D /* AppDelegate.swift in Sources */,
+				382EF40D205F9AF100F3A33B /* GoodIntroduceCell.swift in Sources */,
 				38B879A3204155DC0080BB3C /* MyVC.swift in Sources */,
 				38FD686A20401FBC00B19A42 /* BaseUINavigationController.swift in Sources */,
+				382EF408205F911500F3A33B /* GoodDetailsControl.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

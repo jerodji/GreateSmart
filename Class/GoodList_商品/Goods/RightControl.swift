@@ -10,6 +10,7 @@ import UIKit
 
 class RightControl: BaseControl,UICollectionViewDelegate,UICollectionViewDataSource {
 
+    var scene : GoodListVC!
     var view: RightGoodsView!
     
     override init() {
@@ -28,6 +29,12 @@ class RightControl: BaseControl,UICollectionViewDelegate,UICollectionViewDataSou
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "rightgoodcellid", for: indexPath)
         return cell
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let goodDetailVC = GoodDetailsVC()
+        
+        scene.navigationController?.pushViewController(goodDetailVC, animated: true)
     }
     
 }

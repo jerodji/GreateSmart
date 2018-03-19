@@ -37,7 +37,7 @@ class SortButton: UIButton {
         
         customLabel = UILabel.init()
         customLabel.font = UIFont.systemFont(ofSize: 12)
-        customLabel.textColor = RGB(183, 183, 183)
+        customLabel.textColor = UIColor.RGB(183, 183, 183)
         self.addSubview(customLabel)
         
         self.addTarget(self, action: #selector(setHeighColor), for: UIControlEvents.touchDown)

@@ -46,7 +46,8 @@ class MyVC: BaseUIViewController,UITableViewDelegate,UITableViewDataSource {
         userHeadView.frame = CGRect.init(x: 0, y: -heightUserHeadView, width: kScreenW, height: heightUserHeadView)
         tableView.addSubview(userHeadView)
         
-        bringNaviToFront()
+        //bringNaviToFront()
+        view.bringSubview(toFront: naviBar)
     }
     
     func scrollViewDidScroll(_ scrollView: UIScrollView) {

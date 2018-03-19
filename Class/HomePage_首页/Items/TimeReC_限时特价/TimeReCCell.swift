@@ -11,6 +11,7 @@ import UIKit
 class TimeReCCell: UICollectionViewCell {
 
     @IBOutlet weak var imageView: UIImageView!
+    @IBOutlet weak var littleImgVIew: UIImageView!
     @IBOutlet weak var priceLabel: UILabel!
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var discountLabel: UILabel!  //限量半价
@@ -22,7 +23,7 @@ class TimeReCCell: UICollectionViewCell {
         self.layer.cornerRadius = 5
         self.layer.masksToBounds = true
         self.layer.borderWidth = 0.5
-        self.layer.borderColor = RGBA(83, 83, 83, 0.4).cgColor
+        self.layer.borderColor = UIColor.RGBA(83, 83, 83, 0.4).cgColor
         
         //imageView.layer.cornerRadius = 5
         discountLabel.layer.cornerRadius = 3

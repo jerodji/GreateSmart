@@ -20,6 +20,15 @@ class BaseUIViewController: UIViewController {
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        view.bringSubview(toFront: naviBar)
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -43,9 +52,9 @@ class BaseUIViewController: UIViewController {
         
     }
     
-    func bringNaviToFront() -> Void {
-        naviBar.layer.zPosition = 100
-    }
+//    func bringNaviToFront() -> Void {
+//        naviBar.layer.zPosition = 200
+//    }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
