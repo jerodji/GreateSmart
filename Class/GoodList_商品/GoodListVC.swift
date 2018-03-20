@@ -29,6 +29,32 @@ class GoodListVC: BaseUIViewController {
         
         leftCtl.scene = self
         rightCtl.scene = self
+        
+        sortView.clickCB = { (tag) in
+            switch tag {
+                case 0: do {
+                    delog("点击了 全部 按钮")
+                };break
+                case 1: do {
+                    delog("点击了 销量 按钮")
+                };break
+                case 2: do {
+                    delog("点击了 价格 按钮")
+                };break
+                case 3: do {
+                    delog("点击了 新品 按钮")
+                };break
+                case 4: do {
+                     delog("点击了 筛选 按钮")
+                    let selecVC = SelectConditionVC()
+                    self.navigationController?.pushViewController(selecVC, animated: true)
+                };break
+               
+            default:
+                delog("1")
+            }
+        }
+        
         self.view.addSubview(sortView)
         self.view.addSubview(leftCtl.view)
         self.view.addSubview(rightCtl.view)

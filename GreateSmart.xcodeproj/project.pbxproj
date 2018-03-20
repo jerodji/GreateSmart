@@ -65,6 +65,12 @@
 		384EE4622057EBD200D2BCB6 /* BoutiqueControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 384EE4612057EBD200D2BCB6 /* BoutiqueControl.swift */; };
 		3864DAC3205CE22100F89A25 /* LeftControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3864DAC2205CE22100F89A25 /* LeftControl.swift */; };
 		3864DAC5205CE22D00F89A25 /* RightControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3864DAC4205CE22D00F89A25 /* RightControl.swift */; };
+		386CAFE82060B696006E32DF /* RightView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 386CAFE72060B696006E32DF /* RightView.xib */; };
+		386CAFEA2060B868006E32DF /* StarsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 386CAFE92060B868006E32DF /* StarsView.swift */; };
+		386CAFEC2060B877006E32DF /* StarsView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 386CAFEB2060B877006E32DF /* StarsView.xib */; };
+		386CAFF0206100FD006E32DF /* SelectConditionVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 386CAFEF206100FD006E32DF /* SelectConditionVC.swift */; };
+		386CAFF3206111F6006E32DF /* SelecHeaderButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 386CAFF2206111F6006E32DF /* SelecHeaderButton.swift */; };
+		386CAFF5206113BD006E32DF /* SelectAreaView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 386CAFF4206113BD006E32DF /* SelectAreaView.swift */; };
 		387B6F2A205A571F00E6D916 /* ZCycleLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 387B6F26205A571F00E6D916 /* ZCycleLayout.swift */; };
 		387B6F2B205A571F00E6D916 /* ZCycleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 387B6F27205A571F00E6D916 /* ZCycleView.swift */; };
 		387B6F2C205A571F00E6D916 /* ZCycleViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 387B6F28205A571F00E6D916 /* ZCycleViewCell.swift */; };
@@ -233,6 +239,12 @@
 		384EE4612057EBD200D2BCB6 /* BoutiqueControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoutiqueControl.swift; sourceTree = "<group>"; };
 		3864DAC2205CE22100F89A25 /* LeftControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeftControl.swift; sourceTree = "<group>"; };
 		3864DAC4205CE22D00F89A25 /* RightControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RightControl.swift; sourceTree = "<group>"; };
+		386CAFE72060B696006E32DF /* RightView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RightView.xib; sourceTree = "<group>"; };
+		386CAFE92060B868006E32DF /* StarsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StarsView.swift; sourceTree = "<group>"; };
+		386CAFEB2060B877006E32DF /* StarsView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = StarsView.xib; sourceTree = "<group>"; };
+		386CAFEF206100FD006E32DF /* SelectConditionVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectConditionVC.swift; sourceTree = "<group>"; };
+		386CAFF2206111F6006E32DF /* SelecHeaderButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelecHeaderButton.swift; sourceTree = "<group>"; };
+		386CAFF4206113BD006E32DF /* SelectAreaView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectAreaView.swift; sourceTree = "<group>"; };
 		387B6F26205A571F00E6D916 /* ZCycleLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZCycleLayout.swift; sourceTree = "<group>"; };
 		387B6F27205A571F00E6D916 /* ZCycleView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZCycleView.swift; sourceTree = "<group>"; };
 		387B6F28205A571F00E6D916 /* ZCycleViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZCycleViewCell.swift; sourceTree = "<group>"; };
@@ -378,6 +390,7 @@
 		381C630B2046C86500A9066C /* ModuleClass */ = {
 			isa = PBXGroup;
 			children = (
+				386CAFEE20610068006E32DF /* Select_商品筛选条件 */,
 				382EF402205F65C500F3A33B /* GoodDetails_商品详情 */,
 				38B879A42042685A0080BB3C /* Search_搜索 */,
 			);
@@ -420,19 +433,11 @@
 		382EF402205F65C500F3A33B /* GoodDetails_商品详情 */ = {
 			isa = PBXGroup;
 			children = (
-				382EF403205F66E000F3A33B /* GoodDetailsVC.swift */,
+				386CAFE62060ADA5006E32DF /* scene */,
 				382EF407205F911500F3A33B /* GoodDetailsControl.swift */,
 				382EF409205F914100F3A33B /* GoodDetailsTableView.swift */,
-				382EF40B205F9AF100F3A33B /* GoodIntroduceCell.swift */,
-				382EF40C205F9AF100F3A33B /* GoodIntroduceCell.xib */,
-				382EF40F205FAC2E00F3A33B /* StoreCell.swift */,
-				382EF410205FAC2E00F3A33B /* StoreCell.xib */,
-				382EF413205FB1D900F3A33B /* StoreIntroduceCell.swift */,
-				382EF414205FB1D900F3A33B /* StoreIntroduceCell.xib */,
-				382EF417205FB9D600F3A33B /* EvaluationCell.swift */,
-				382EF418205FB9D600F3A33B /* EvaluationCell.xib */,
-				382EF429205FD1FC00F3A33B /* HotRecommendCell.swift */,
-				382EF42A205FD1FC00F3A33B /* HotRecommendCell.xib */,
+				386CAFE52060AD33006E32DF /* cell */,
+				386CAFED2060B8B7006E32DF /* adaper */,
 			);
 			path = "GoodDetails_商品详情";
 			sourceTree = "<group>";
@@ -508,6 +513,59 @@
 				384EE44D205771C900D2BCB6 /* LTCModel.swift */,
 			);
 			path = "LTC_老挝直邮";
+			sourceTree = "<group>";
+		};
+		386CAFE52060AD33006E32DF /* cell */ = {
+			isa = PBXGroup;
+			children = (
+				382EF40B205F9AF100F3A33B /* GoodIntroduceCell.swift */,
+				382EF40C205F9AF100F3A33B /* GoodIntroduceCell.xib */,
+				382EF40F205FAC2E00F3A33B /* StoreCell.swift */,
+				382EF410205FAC2E00F3A33B /* StoreCell.xib */,
+				382EF413205FB1D900F3A33B /* StoreIntroduceCell.swift */,
+				382EF414205FB1D900F3A33B /* StoreIntroduceCell.xib */,
+				382EF417205FB9D600F3A33B /* EvaluationCell.swift */,
+				382EF418205FB9D600F3A33B /* EvaluationCell.xib */,
+				382EF429205FD1FC00F3A33B /* HotRecommendCell.swift */,
+				382EF42A205FD1FC00F3A33B /* HotRecommendCell.xib */,
+			);
+			path = cell;
+			sourceTree = "<group>";
+		};
+		386CAFE62060ADA5006E32DF /* scene */ = {
+			isa = PBXGroup;
+			children = (
+				382EF403205F66E000F3A33B /* GoodDetailsVC.swift */,
+			);
+			path = scene;
+			sourceTree = "<group>";
+		};
+		386CAFED2060B8B7006E32DF /* adaper */ = {
+			isa = PBXGroup;
+			children = (
+				386CAFE72060B696006E32DF /* RightView.xib */,
+				386CAFE92060B868006E32DF /* StarsView.swift */,
+				386CAFEB2060B877006E32DF /* StarsView.xib */,
+			);
+			path = adaper;
+			sourceTree = "<group>";
+		};
+		386CAFEE20610068006E32DF /* Select_商品筛选条件 */ = {
+			isa = PBXGroup;
+			children = (
+				386CAFEF206100FD006E32DF /* SelectConditionVC.swift */,
+				386CAFF1206111CD006E32DF /* adaper */,
+			);
+			path = "Select_商品筛选条件";
+			sourceTree = "<group>";
+		};
+		386CAFF1206111CD006E32DF /* adaper */ = {
+			isa = PBXGroup;
+			children = (
+				386CAFF4206113BD006E32DF /* SelectAreaView.swift */,
+				386CAFF2206111F6006E32DF /* SelecHeaderButton.swift */,
+			);
+			path = adaper;
 			sourceTree = "<group>";
 		};
 		387B6F25205A571F00E6D916 /* ZCycleView */ = {
@@ -1025,6 +1083,7 @@
 				38F9CA63202FED60004D105D /* LaunchScreen.storyboard in Resources */,
 				38FD9A3F2040FD9E0090D978 /* Images.xcassets in Resources */,
 				382EF40E205F9AF100F3A33B /* GoodIntroduceCell.xib in Resources */,
+				386CAFE82060B696006E32DF /* RightView.xib in Resources */,
 				38F6423A20590151004A75DF /* TimeReCCell.xib in Resources */,
 				384EE4562057C56700D2BCB6 /* LTCView.xib in Resources */,
 				381C63042046990F00A9066C /* SearchHistoryCell.xib in Resources */,
@@ -1038,6 +1097,7 @@
 				38BAE1492053781100CA822A /* ItemTitleView.xib in Resources */,
 				382EF41A205FB9D600F3A33B /* EvaluationCell.xib in Resources */,
 				382EF42C205FD1FC00F3A33B /* HotRecommendCell.xib in Resources */,
+				386CAFEC2060B877006E32DF /* StarsView.xib in Resources */,
 				38F7636620592012002C1999 /* HotInStoreView.xib in Resources */,
 				387D497C205BD4DB0059BB20 /* GoodCell.xib in Resources */,
 				387B6F39205A831D00E6D916 /* UserOrderCell.xib in Resources */,
@@ -1129,6 +1189,7 @@
 			files = (
 				384EE45C2057EBA900D2BCB6 /* HotSaleControl.swift in Sources */,
 				38213019204D429600F1413C /* ItemTableView.swift in Sources */,
+				386CAFF0206100FD006E32DF /* SelectConditionVC.swift in Sources */,
 				387D497B205BD4DB0059BB20 /* GoodCell.swift in Sources */,
 				38F76368205922E6002C1999 /* HotInStoreCell.swift in Sources */,
 				388BA0162050FE11009C7C70 /* NSObject+conversion.m in Sources */,
@@ -1182,6 +1243,7 @@
 				38FD686520401E4F00B19A42 /* UIButton+parameter.m in Sources */,
 				387B6F2B205A571F00E6D916 /* ZCycleView.swift in Sources */,
 				38437B492058E8A300F7FE2F /* NatureCell.swift in Sources */,
+				386CAFEA2060B868006E32DF /* StarsView.swift in Sources */,
 				38213004204948EA00F1413C /* JJRealmManager.swift in Sources */,
 				384EE4582057EB8800D2BCB6 /* HotInStoreControl.swift in Sources */,
 				387D4971205BA4070059BB20 /* SortButton.swift in Sources */,
@@ -1203,6 +1265,8 @@
 				382EF415205FB1D900F3A33B /* StoreIntroduceCell.swift in Sources */,
 				38FD686120401E4F00B19A42 /* NSObject+isNull.m in Sources */,
 				38F6423920590151004A75DF /* TimeReCCell.swift in Sources */,
+				386CAFF3206111F6006E32DF /* SelecHeaderButton.swift in Sources */,
+				386CAFF5206113BD006E32DF /* SelectAreaView.swift in Sources */,
 				384EE4522057C4ED00D2BCB6 /* LTCControl.swift in Sources */,
 				382EF426205FBA5200F3A33B /* SYATopScrollViewTitleLabel.m in Sources */,
 				381C63152047CCCC00A9066C /* FlowCollectionView.swift in Sources */,

@@ -8,7 +8,7 @@
 
 import UIKit
 
-private class LeftView: UIView {
+class LeftView: UIView {
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
     }
@@ -18,19 +18,41 @@ private class LeftView: UIView {
     }
 }
 
-private class RightView: UIView {
+class RightView: UIView,LoadXIBView {
+    
+    @IBOutlet weak var icon: UIImageView!
+    @IBOutlet weak var nameLabel: UILabel!
+    var starv : StarsView!
+    @IBOutlet weak var textLabel: UILabel!
+    private var rectFrame : CGRect!
+    
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
+        starv = StarsView.loadFromXIB()
     }
     override init(frame: CGRect) {
         super.init(frame: frame)
         self.backgroundColor = UIColor.yellow
     }
+    
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        self.addSubview(starv)
+    }
+    
+    func setFrame(_ frame:CGRect) -> Void {
+        rectFrame = frame
+    }
+    
+    override func draw(_ rect: CGRect) {
+        self.frame = rectFrame
+        starv.frame = CGRect.init(x: icon.right+15, y: nameLabel.bottom+3, width: 25*5, height: 25)
+    }
 }
 
 class EvaluationCell: UITableViewCell,UIScrollViewDelegate {
 
-    private var frameRect:CGRect!
+    //private var frameRect:CGRect!
     @IBOutlet weak var leftBtn: UIButton!
     @IBOutlet weak var rightBtn: UIButton!
     @IBOutlet weak var blackLine: UIView!
@@ -43,7 +65,9 @@ class EvaluationCell: UITableViewCell,UIScrollViewDelegate {
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         leftV = LeftView.init(frame: CGRect.init(x: 0, y: 0, width: kScreenW, height: 200))
-        rightV = RightView.init(frame: CGRect.init(x: kScreenW, y: 0, width: kScreenW, height: 200))
+        
+        rightV = RightView.loadFromXIB("RightView")
+        //rightV.frame = CGRect.init(x: kScreenW, y: 0, width: kScreenW, height: 200)
     }
     
     override func awakeFromNib() {
@@ -55,22 +79,18 @@ class EvaluationCell: UITableViewCell,UIScrollViewDelegate {
         scrollView.contentSize = CGSize.init(width: 2*kScreenW, height: 1)
         scrollView.isPagingEnabled = true
         scrollView.delegate = self
+        
+        rightV.setFrame(CGRect.init(x: kScreenW, y: 0, width: kScreenW, height: 200))
         scrollView.addSubview(leftV)
         scrollView.addSubview(rightV)
     }
     
     @objc func leftAction() -> Void {
-        UIView.animate(withDuration: 0.3) {
-            self.leftBtnState()
-        }
+        UIView.animate(withDuration: 0.3) { self.leftBtnState() }
     }
-    
     @objc func rightAction() -> Void {
-        UIView.animate(withDuration: 0.3) {
-            self.rightBtnState()
-        }
+        UIView.animate(withDuration: 0.3) { self.rightBtnState() }
     }
-    
     @objc func lookMoreAction() -> Void {
         delog("lookMoreAction")
     }
@@ -93,9 +113,9 @@ class EvaluationCell: UITableViewCell,UIScrollViewDelegate {
         scrollView.contentOffset.x = kScreenW
     }
     
-    func setFrame(_ frame:CGRect) -> Void {
-        frameRect = frame
-    }
+//    func setFrame(_ frame:CGRect) -> Void {
+//        frameRect = frame
+//    }
     
 //    override func draw(_ rect: CGRect) {
 //

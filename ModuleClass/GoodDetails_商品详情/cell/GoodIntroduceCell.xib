@@ -78,6 +78,9 @@
                             <constraint firstAttribute="height" constant="30" id="8tG-ez-WxC"/>
                         </constraints>
                         <state key="normal" image="xiaozhankai"/>
+                        <connections>
+                            <action selector="showAllIntruduceAction:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="u3y-ua-J8g"/>
+                        </connections>
                     </button>
                 </subviews>
                 <constraints>
@@ -105,7 +108,10 @@
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
-            <point key="canvasLocation" x="70" y="29"/>
+            <connections>
+                <outlet property="showAllIntroduceBtn" destination="agv-gD-3Wl" id="Xac-co-ap2"/>
+            </connections>
+            <point key="canvasLocation" x="28" y="-23"/>
         </tableViewCell>
     </objects>
     <resources>

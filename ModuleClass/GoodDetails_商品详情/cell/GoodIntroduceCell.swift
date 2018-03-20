@@ -9,12 +9,26 @@
 import UIKit
 
 class GoodIntroduceCell: UITableViewCell {
+    
+    @IBOutlet weak var showAllIntroduceBtn: UIButton!
+    typealias SHOWBLK = () -> Void
+    var zhankaiCB : SHOWBLK?
 
+    required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+    }
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
     }
 
+    @IBAction func showAllIntruduceAction(_ sender: Any) {
+        if (zhankaiCB != nil) {
+            zhankaiCB!()
+        }
+    }
+    
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
 

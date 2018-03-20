@@ -30,7 +30,7 @@
                     <state key="normal" title="更多更多"/>
                 </button>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QyV-rh-kIS">
-                    <rect key="frame" x="10" y="0.0" width="3" height="30"/>
+                    <rect key="frame" x="10" y="3" width="3" height="24"/>
                     <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="3" id="xHf-fr-qhF"/>
@@ -57,8 +57,8 @@
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="RJ5-JC-NN3" secondAttribute="bottom" id="l0o-cc-E9L"/>
                 <constraint firstItem="kR9-ir-ANv" firstAttribute="leading" secondItem="RJ5-JC-NN3" secondAttribute="trailing" id="nU9-NX-gcQ"/>
                 <constraint firstItem="aHn-To-e84" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" id="qGi-Vm-YzV"/>
-                <constraint firstItem="QyV-rh-kIS" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" id="uXo-dT-Aqm"/>
-                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="QyV-rh-kIS" secondAttribute="bottom" id="wev-Ni-yuq"/>
+                <constraint firstItem="QyV-rh-kIS" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" constant="3" id="uXo-dT-Aqm"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="QyV-rh-kIS" secondAttribute="bottom" constant="3" id="wev-Ni-yuq"/>
                 <constraint firstItem="RJ5-JC-NN3" firstAttribute="leading" secondItem="QyV-rh-kIS" secondAttribute="trailing" constant="10" id="xoq-o6-7I1"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>

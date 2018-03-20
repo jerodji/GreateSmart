@@ -106,7 +106,7 @@
                 <outlet property="rightBtn" destination="Kzs-FH-N0X" id="OrV-a1-Z2r"/>
                 <outlet property="scrollView" destination="911-8X-pwz" id="t8G-Xw-kaY"/>
             </connections>
-            <point key="canvasLocation" x="-130" y="124"/>
+            <point key="canvasLocation" x="-29" y="120"/>
         </tableViewCell>
     </objects>
 </document>

@@ -10,8 +10,14 @@ import UIKit
 
 class SortingView: UIView,LoadXIBView {
 
+    @IBOutlet weak var allBtn: UIButton!
     @IBOutlet weak var salesBtn: SortButton!
     @IBOutlet weak var priceBtn: SortButton!
+    @IBOutlet weak var newBtn: UIButton!
+    @IBOutlet weak var selectBtn: UIButton!
+    
+    typealias BTNBLK = (Int)->()
+    var clickCB : BTNBLK?
     
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
@@ -19,6 +25,12 @@ class SortingView: UIView,LoadXIBView {
     
     override func awakeFromNib() {
         super.awakeFromNib()
+        
+        allBtn.tag    = 0
+        salesBtn.tag  = 1
+        priceBtn.tag  = 2
+        newBtn.tag    = 3
+        selectBtn.tag = 4
         
         self.layer.shadowColor = UIColor.init(r: 83, g: 83, b: 83).cgColor
         self.layer.shadowOpacity = 0.4
@@ -31,16 +43,45 @@ class SortingView: UIView,LoadXIBView {
         salesBtn.jj_setTitle("销量")
         salesBtn.jj_setUpImage(name: "shang", heighName: "shang2")
         salesBtn.jj_setDownImage(name: "xia", heighName: "xia2")
-//        salesBtn.jj_setBackgroundColor(color: .white, heighColor: .black)
+        //salesBtn.jj_setBackgroundColor(color: .white, heighColor: .black)
         
         priceBtn.jj_setTitle("价格")
         priceBtn.jj_setUpImage(name: "shang", heighName: "shang2")
         priceBtn.jj_setDownImage(name: "xia", heighName: "xia2")
-//        priceBtn.jj_setBackgroundColor(color: .white, heighColor: .black)
-        
+        //priceBtn.jj_setBackgroundColor(color: .white, heighColor: .black)
     }
     
-
+    @IBAction func allAction(_ sender: UIButton) {
+        if clickCB != nil {
+            clickCB!(sender.tag)
+        }
+    }
+    
+    @IBAction func salesAction(_ sender: SortButton) {
+        if clickCB != nil {
+            clickCB!(sender.tag)
+        }
+    }
+    
+    @IBAction func priceBtnAction(_ sender: SortButton) {
+        if clickCB != nil {
+            clickCB!(sender.tag)
+        }
+    }
+    
+    @IBAction func newGoodAction(_ sender: UIButton) {
+        if clickCB != nil {
+            clickCB!(sender.tag)
+        }
+    }
+    
+    @IBAction func selectConditionAction(_ sender: Any) {
+        if clickCB != nil {
+            clickCB!((sender as! UIButton).tag)
+        }
+    }
+    
+    
     
     /*
     // Only override draw() if you perform custom drawing.
