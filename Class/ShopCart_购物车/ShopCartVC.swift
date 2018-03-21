@@ -13,7 +13,7 @@ class ShopCartVC: BaseUIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.naviBar.titleLab.text = "SHOP CART"
-        self.view.backgroundColor = .yellow
+//        self.view.backgroundColor = .yellow
         self.naviBar.leftItemBtn.isHidden = true
         self.naviBar.rightItemBtn.isHidden = true
     }

@@ -16,6 +16,7 @@ class SelecHeaderButton: UIButton {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
+        self.backgroundColor = .red
     }
     
     override func imageRect(forContentRect contentRect: CGRect) -> CGRect {

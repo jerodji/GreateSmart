@@ -124,11 +124,12 @@ class GoodDetailsControl: BaseControl,UITableViewDelegate,UITableViewDataSource 
         return 0
     }
     
-    //    func scrollViewDidScroll(_ scrollView: UIScrollView) {
-    //        if (scrollView.contentOffset.y >= 0) && (scrollView.contentOffset.y <= 375) {
-    //            let al = scrollView.contentOffset.y/heightHeaderBanner
-    //            scene.naviBar.backgroundColor = UIColor.white.withAlphaComponent(al)
-    //        }
-    //    }
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        if (scrollView.contentOffset.y >= 0) && (scrollView.contentOffset.y <= 375) {
+            let al = scrollView.contentOffset.y/height_GoodDetails_HeaderBanner
+            scene.naviBar.backgroundColor = UIColor.white.withAlphaComponent(al)
+            scene.naviBar.line.backgroundColor = UIColor.RGB(183, 183, 183).withAlphaComponent(al)
+        }
+    }
     
 }

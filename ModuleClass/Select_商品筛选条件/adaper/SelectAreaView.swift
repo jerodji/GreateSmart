@@ -11,12 +11,13 @@ import UIKit
 class SelectAreaView: UIView {
     
     var headBtn : SelecHeaderButton!
-    var colecView : UIView!
+    var contentView : UIView!
     
     typealias CLICKBLK = (Bool) -> Void
     var headBtnClickCB : CLICKBLK?
     
     var state : Bool = true
+    private var cotentViewHeight :CGFloat = 0
     
     private var rectFrame : CGRect!
     
@@ -36,30 +37,47 @@ class SelectAreaView: UIView {
     }
     
     func setupSubviews() -> Void {
+        
+        self.backgroundColor = UIColor.purple
+        
+        cotentViewHeight = rectFrame.size.height - 60 - 10
+        
         headBtn = SelecHeaderButton.init(frame: CGRect.init(x: 15, y: 10, width: kScreenW-30, height: 60))
         headBtn.addTarget(self, action: #selector(headBtnClickAction), for: .touchUpInside)
         self.addSubview(headBtn)
         headBtn.backgroundColor = .black
         
         if rectFrame==nil { return }
-        colecView = UIView()
-        colecView.backgroundColor = .red
-        self.addSubview(colecView)
-        colecView.snp.makeConstraints { (make) in
-            make.left.equalTo(headBtn)
-            make.top.equalTo(headBtn.snp.bottom)
-            make.right.equalTo(headBtn)
-            make.bottom.equalTo(self)
-        }
+        
+        contentView = UIView()
+        contentView.frame = CGRect.init(x: 15, y: headBtn.bottom, width: kScreenW-30, height: rectFrame.size.height-70)
+        contentView.backgroundColor = .lightGray
+        self.addSubview(contentView)
+        
     }
     
     @objc func headBtnClickAction() -> Void {
         if headBtnClickCB != nil {
             if state {
                 state = false
+                
+                UIView.animate(withDuration: 1, animations: {
+                    self.contentView.height = 0
+                    //self.height = 70
+                })
+                
+                
                 headBtnClickCB!(false)
+                
             } else {
                 state = true
+                
+                UIView.animate(withDuration: 1, animations: {
+                    self.contentView.height = self.cotentViewHeight
+                    //self.height = 70 + self.cotentViewHeight
+                })
+                
+                
                 headBtnClickCB!(true)
             }
         }

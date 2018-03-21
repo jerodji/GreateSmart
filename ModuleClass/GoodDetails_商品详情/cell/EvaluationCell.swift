@@ -59,13 +59,13 @@ class EvaluationCell: UITableViewCell,UIScrollViewDelegate {
     @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var lookMoreBtn: UIButton!
     
-    private var leftV : LeftView!
+    private var leftV : RightView!
     private var rightV: RightView!
     
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
-        leftV = LeftView.init(frame: CGRect.init(x: 0, y: 0, width: kScreenW, height: 200))
-        
+        //leftV = LeftView.init(frame: CGRect.init(x: 0, y: 0, width: kScreenW, height: 200))
+        leftV = RightView.loadFromXIB("RightView")
         rightV = RightView.loadFromXIB("RightView")
         //rightV.frame = CGRect.init(x: kScreenW, y: 0, width: kScreenW, height: 200)
     }
@@ -80,6 +80,7 @@ class EvaluationCell: UITableViewCell,UIScrollViewDelegate {
         scrollView.isPagingEnabled = true
         scrollView.delegate = self
         
+        leftV.setFrame(CGRect.init(x: 0, y: 0, width: kScreenW, height: 200))
         rightV.setFrame(CGRect.init(x: kScreenW, y: 0, width: kScreenW, height: 200))
         scrollView.addSubview(leftV)
         scrollView.addSubview(rightV)

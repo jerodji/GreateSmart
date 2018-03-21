@@ -15,7 +15,7 @@ class InformationVC: BaseUIViewController {
         self.naviBar.titleLab.text = "INFORMATION"
         self.naviBar.leftItemBtn.isHidden = true
         self.naviBar.rightItemBtn.isHidden = true
-        self.view.backgroundColor = UIColor.cyan
+//        self.view.backgroundColor = UIColor.cyan
     }
 
     override func didReceiveMemoryWarning() {

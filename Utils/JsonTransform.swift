@@ -23,6 +23,17 @@ class JsonTransform: NSObject {
         
     }
     
+    static func arrayFromJSONString(jsonString:String) -> NSArray {
+        
+        let jsonData:Data = jsonString.data(using: .utf8)!
+        
+        let array = try? JSONSerialization.jsonObject(with: jsonData, options: .mutableContainers)
+        if array != nil {
+            return array as! NSArray
+        }
+        return NSArray()
+    }
+    
     //字典转换为JSONString
     static func JSONStringFromDictionary(dictionary:NSDictionary) -> String {
         
