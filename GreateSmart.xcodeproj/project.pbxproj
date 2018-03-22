@@ -96,6 +96,8 @@
 		388BA0162050FE11009C7C70 /* NSObject+conversion.m in Sources */ = {isa = PBXBuildFile; fileRef = 388BA0152050FE11009C7C70 /* NSObject+conversion.m */; };
 		388BA01A205226BC009C7C70 /* property.swift in Sources */ = {isa = PBXBuildFile; fileRef = 388BA019205226BC009C7C70 /* property.swift */; };
 		388BA0202052A057009C7C70 /* SortTypeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 388BA01F2052A057009C7C70 /* SortTypeModel.swift */; };
+		389040D320634CC700277974 /* SelecHeadView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 389040D220634CC700277974 /* SelecHeadView.swift */; };
+		389040D52063506A00277974 /* SelectConditionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 389040D42063506A00277974 /* SelectConditionCell.swift */; };
 		38B8799F204155A00080BB3C /* GoodListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38B8799E204155A00080BB3C /* GoodListVC.swift */; };
 		38B879A1204155C60080BB3C /* ShopCartVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38B879A0204155C60080BB3C /* ShopCartVC.swift */; };
 		38B879A3204155DC0080BB3C /* MyVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38B879A2204155DC0080BB3C /* MyVC.swift */; };
@@ -273,6 +275,8 @@
 		388BA0152050FE11009C7C70 /* NSObject+conversion.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSObject+conversion.m"; sourceTree = "<group>"; };
 		388BA019205226BC009C7C70 /* property.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = property.swift; sourceTree = "<group>"; };
 		388BA01F2052A057009C7C70 /* SortTypeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SortTypeModel.swift; sourceTree = "<group>"; };
+		389040D220634CC700277974 /* SelecHeadView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelecHeadView.swift; sourceTree = "<group>"; };
+		389040D42063506A00277974 /* SelectConditionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectConditionCell.swift; sourceTree = "<group>"; };
 		38B8799E204155A00080BB3C /* GoodListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoodListVC.swift; sourceTree = "<group>"; };
 		38B879A0204155C60080BB3C /* ShopCartVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShopCartVC.swift; sourceTree = "<group>"; };
 		38B879A2204155DC0080BB3C /* MyVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyVC.swift; sourceTree = "<group>"; };
@@ -557,6 +561,7 @@
 			children = (
 				386CAFEF206100FD006E32DF /* SelectConditionVC.swift */,
 				38B97824206239FE0089D7F9 /* SelectConditionModel.swift */,
+				389040D120634CA900277974 /* view */,
 				386CAFF1206111CD006E32DF /* adaper */,
 			);
 			path = "Select_商品筛选条件";
@@ -697,6 +702,15 @@
 				388BA01F2052A057009C7C70 /* SortTypeModel.swift */,
 			);
 			path = "SortType_产品分类";
+			sourceTree = "<group>";
+		};
+		389040D120634CA900277974 /* view */ = {
+			isa = PBXGroup;
+			children = (
+				389040D42063506A00277974 /* SelectConditionCell.swift */,
+				389040D220634CC700277974 /* SelecHeadView.swift */,
+			);
+			path = view;
 			sourceTree = "<group>";
 		};
 		38B8799B2041553B0080BB3C /* GoodList_商品 */ = {
@@ -1217,6 +1231,7 @@
 				382EF419205FB9D600F3A33B /* EvaluationCell.swift in Sources */,
 				38FD9A49204116DF0090D978 /* TabbarController.swift in Sources */,
 				384EE44B205770FD00D2BCB6 /* BoutiqueModel.swift in Sources */,
+				389040D52063506A00277974 /* SelectConditionCell.swift in Sources */,
 				3821300D204A9C4600F1413C /* OCHeaderFile.m in Sources */,
 				387D4976205BCC1B0059BB20 /* RightGoodsView.swift in Sources */,
 				3821301C204D465000F1413C /* ItemCell.swift in Sources */,
@@ -1277,6 +1292,7 @@
 				38F6423C20591F99004A75DF /* HotInStoreView.swift in Sources */,
 				38F7636D20593950002C1999 /* iCarousel.m in Sources */,
 				38B879AA20426A3F0080BB3C /* BaseControl.swift in Sources */,
+				389040D320634CC700277974 /* SelecHeadView.swift in Sources */,
 				38437B452058E71B00F7FE2F /* NatureView.swift in Sources */,
 				3864DAC5205CE22D00F89A25 /* RightControl.swift in Sources */,
 				382EF425205FBA5200F3A33B /* SYATopScrollViewController.m in Sources */,

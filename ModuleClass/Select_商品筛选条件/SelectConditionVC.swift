@@ -10,113 +10,6 @@ import UIKit
 
 class SelectConditionVC: BaseUIViewController,UITableViewDelegate,UITableViewDataSource {
 
-    //var areas : NSMutableArray! = []
-    
-    var testData: String = "[\n" +
-        "    {\n" +
-        "        \"name\": \"品牌\",\n" +
-        "        \"subMenuList\": [\n" +
-        "            {\n" +
-        "                \"name\": \"测试商店\",\n" +
-        "                \"callBack\": \"store_123123112\"\n" +
-        "            },\n" +
-        "            {\n" +
-        "                \"name\": \"大聪明合伙人\",\n" +
-        "                \"callBack\": \"store_132423423\"\n" +
-        "            },\n" +
-        "            {\n" +
-        "                \"name\": \"老挝海林野生特产\",\n" +
-        "                \"callBack\": \"store_878979239\"\n" +
-        "            }\n" +
-        "        ]\n" +
-        "    },\n" +
-        "    {\n" +
-        "        \"name\": \"类型\",\n" +
-        "        \"subMenuList\": [\n" +
-        "            {\n" +
-        "                \"name\": \"养生\",\n" +
-        "                \"subMenuList\": [\n" +
-        "                    {\n" +
-        "                        \"name\": \"灵芝\",\n" +
-        "                        \"callBack\": 2\n" +
-        "                    },\n" +
-        "                    {\n" +
-        "                        \"name\": \"灵芝\",\n" +
-        "                        \"callBack\": 2\n" +
-        "                    },\n" +
-        "                    {\n" +
-        "                        \"name\": \"灵芝\",\n" +
-        "                        \"callBack\": 2\n" +
-        "                    },\n" +
-        "                    {\n" +
-        "                        \"name\": \"灵芝\",\n" +
-        "                        \"callBack\": 2\n" +
-        "                    }\n" +
-        "                ]\n" +
-        "            },\n" +
-        "            {\n" +
-        "                \"name\": \"美颜\",\n" +
-        "                \"subMenuList\": [\n" +
-        "                    {\n" +
-        "                        \"name\": \"面膜\",\n" +
-        "                        \"callBack\": 12\n" +
-        "                    },\n" +
-        "                    {\n" +
-        "                        \"name\": \"面膜\",\n" +
-        "                        \"callBack\": 12\n" +
-        "                    },\n" +
-        "                    {\n" +
-        "                        \"name\": \"面膜\",\n" +
-        "                        \"callBack\": 12\n" +
-        "                    }\n" +
-        "                ]\n" +
-        "            }\n" +
-        "        ]\n" +
-        "    },\n" +
-        "    {\n" +
-        "        \"name\": \"价格\",\n" +
-        "        \"subMenuList\": [\n" +
-        "            {\n" +
-        "                \"name\": \"100以下\",\n" +
-        "                \"callBack\": {\n" +
-        "                    \"minPrice\": 0,\n" +
-        "                    \"maxPrice\": 100\n" +
-        "                }\n" +
-        "            },\n" +
-        "            {\n" +
-        "                \"name\": \"100～500\",\n" +
-        "                \"callBack\": {\n" +
-        "                    \"minPrice\": 100,\n" +
-        "                    \"maxPrice\": 500\n" +
-        "                }\n" +
-        "            },\n" +
-        "            {\n" +
-        "                \"name\": \"500~1000\",\n" +
-        "                \"callBack\": {\n" +
-        "                    \"minPrice\": 500,\n" +
-        "                    \"maxPrice\": 1000\n" +
-        "                }\n" +
-        "            },\n" +
-        "            {\n" +
-        "                \"name\": \"1000~5000\",\n" +
-        "                \"callBack\": {\n" +
-        "                    \"minPrice\": 1000,\n" +
-        "                    \"maxPrice\": 5000\n" +
-        "                }\n" +
-        "            },\n" +
-        "            {\n" +
-        "                \"name\": \"5000~10000\",\n" +
-        "                \"callBack\": {\n" +
-        "                    \"minPrice\": 5000,\n" +
-        "                    \"maxPrice\": 10000\n" +
-        "                }\n" +
-        "            }\n" +
-        "        ]\n" +
-        "    }\n" +
-    "]"
-    
-    
-    
     //重置 确定
     var resetBtn : UIButton!
     var sureBtn  : UIButton!
@@ -124,13 +17,17 @@ class SelectConditionVC: BaseUIViewController,UITableViewDelegate,UITableViewDat
     var tableView : BaseUITableView!
     //var colecView : UICollectionView!
     var dataList : NSArray!
-    var dataArray : NSMutableArray = []
+    //var dataArray : NSMutableArray = []
+    
+    var heightsDict : NSDictionary! /* 全部展开后实际的cell高度 */
+    var mappingHeights : NSMutableDictionary! = [:] /* 映射的cell高度 */
+    var zkDict : NSDictionary!
+    var mappingZKs : NSMutableDictionary = [:]
     
     var firstCount = 0
     var secondCount = 0
     
     //MARK:-
-    
     
     func getSecondaryCount(_ array:NSArray) -> Void {
         for model in array {
@@ -139,23 +36,49 @@ class SelectConditionVC: BaseUIViewController,UITableViewDelegate,UITableViewDat
                 let mo = model as! SelectConditionModel
                 
                 getSecondaryCount(mo.subMenuList)
-                dataArray.add(model)
+//                dataArray.add(model)
             }
         }
+        
     }
+
+
     
     override func loadView() {
         super.loadView()
         
-        let array = JsonTransform.arrayFromJSONString(jsonString: testData)
+        resetBtn = UIButton.init()
+        sureBtn = UIButton.init()
+        
+        let array = JsonTransform.arrayFromJSONString(jsonString: testSelectConditionData)
         dataList = SelectConditionModel().dataReader(array)
         
         firstCount = dataList.count
         getSecondaryCount(dataList)
         
-        resetBtn = UIButton.init()
-        sureBtn = UIButton.init()
+        
+        heightsDict = SelectConditionModel.getfullHeightsWithArray(dataList) /* 全部展开的cell高度 */
+        /**
+         初始的cell高度 - 全部映射为0
+         */
+        for key in 0...heightsDict.count-1 {
+            let array = heightsDict.object(forKey: key) as! NSArray
+            let mappingArr = NSMutableArray.init(array: array)
+            for index in 0...array.count-1 {
+                mappingArr.replaceObject(at: index, with: 0)
+            }
+            mappingHeights.setObject(mappingArr, forKey: key as NSCopying)
+        }
+        
+        zkDict = SelectConditionModel.getfullIsZKStatus(dataList)
+        for key in 0...zkDict.count-1 {
+            let ar = zkDict.object(forKey: key) as! NSArray
+            let mapAr = NSMutableArray.init(array: ar)
+            mappingZKs.setObject(mapAr, forKey: key as NSCopying)
+        }
+        
     }
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -189,35 +112,7 @@ class SelectConditionVC: BaseUIViewController,UITableViewDelegate,UITableViewDat
         }
     }
     
-    //MARK:-
-/**
-    func configSelecView() -> Void {
-        let s0 = SelectAreaView.init(frame: CGRect.init(x: 0, y: kNaviH, width: kScreenW, height: 300))
-        let s1 = SelectAreaView.init(frame: CGRect.init(x: 0, y: kNaviH+300+10, width: kScreenW, height: 300)) //
-        areas.add(s0)
-        areas.add(s1)
-        self.view.addSubview(s0)
-        self.view.addSubview(s1)
-        
-        s0.headBtnClickCB = { (status) in
-            if  status {
-                UIView.animate(withDuration: 1, animations: {
-                    s0.height = 300
-                    s1.y = kNaviH + 300 + 10
-                })
-            } else {
-                UIView.animate(withDuration: 1, animations: {
-                    s0.height = 70
-                    s1.y = kNaviH + 70
-                    
-                })
-            }
-        }
-        
-        s1.headBtnClickCB = { (status) in
-        }
-    }
-*/
+    //MARK:- 重置 确定 按钮
     
     func configBottomButton() -> Void {
         resetBtn.setTitle("重置", for: .normal)
@@ -235,14 +130,15 @@ class SelectConditionVC: BaseUIViewController,UITableViewDelegate,UITableViewDat
         self.navigationController?.popViewController(animated: true)
     }
     
-    //MARK:-
+    //MARK:- tableView
     
     func configTableView()-> Void {
         
         tableView = BaseUITableView.init(frame: CGRect.init(x: 0, y: kNaviH, width: kScreenW, height: kSafeH), style: UITableViewStyle.grouped)
+        tableView.separatorStyle = .none
         tableView.delegate = self
         tableView.dataSource = self
-        tableView.register(UITableViewCell.self, forCellReuseIdentifier: "selectConditionCellid")
+        //tableView.register(SelectConditionCell.self, forCellReuseIdentifier: "selectConditionCellid")
         view.addSubview(tableView)
     }
     
@@ -261,119 +157,102 @@ class SelectConditionVC: BaseUIViewController,UITableViewDelegate,UITableViewDat
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "selectConditionCellid")
+        var cell = tableView.dequeueReusableCell(withIdentifier: "selectConditionCellid") as? SelectConditionCell
+        if cell==nil {
+            cell = SelectConditionCell.init(style: .default, reuseIdentifier: "selectConditionCellid")
+            cell!.selectionStyle = .none
+            let model = dataList.object(at: indexPath.section) as! SelectConditionModel
+            cell!.setModelWithArray(model.subMenuList, section: indexPath.section, row: indexPath.row)
+        }
+        
+        let h = (mappingHeights.object(forKey: indexPath.section) as! NSArray).object(at: indexPath.row) as! CGFloat
+        if h==CGFloat(0) {
+            cell?.isHidden = true
+        } else {
+            cell?.isHidden = false
+        }
+        
         return cell!
     }
     
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        let array = mappingHeights.object(forKey: indexPath.section) as! NSArray
+        return array.object(at: indexPath.row) as! CGFloat
+    }
+    
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-        let view = SelecHeaderButton.init(frame: CGRect.init(x: 0, y: 0, width: kScreenW, height: 60))
+        
+        let view = SelecHeadView.init(frame: CGRect.init(x: 0, y: 0, width: kScreenW, height: 60))
+        view.btn.setImage(UIImage.init(named: "xia2"), for: .normal)
+        view.btn.setBackgroundImage(UIImage.init(named: "testPi"), for: .normal)
+        view.btn.addTarget(self, action: #selector(headBtnAction(button:)), for: UIControlEvents.touchUpInside)
+        view.btn.section = section
+        view.btn.row = 0
+        let model = dataList.object(at: section) as! SelectConditionModel
+        view.setHeadTitle(model)
+        
         return view
     }
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        return 60
+        return 70
     }
     
     func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
         return nil
     }
     func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
-        return 0.01
+        return 0
     }
-    
-//    //MARK: colec view
-//
-//    func configColecView() -> Void {
-//
-//        let layout = UICollectionViewFlowLayout.init()
-//        layout.itemSize = CGSize.init(width: (kScreenW-15-15-10*3)/4, height: 25)
-//        layout.minimumLineSpacing = 10
-//        layout.minimumInteritemSpacing = 10
-//        layout.sectionInset = UIEdgeInsets.init(top: 10, left: 15, bottom: 10, right: 15)
-//        //layout.headerReferenceSize = CGSize.init(width: kScreenW, height: 60)
-//
-//
-//        colecView = UICollectionView.init(frame: CGRect.init(x: 0, y: kNaviH, width: kScreenW, height: kSafeH), collectionViewLayout: layout)
-//        colecView.backgroundColor = .white
-//        colecView.delegate = self
-//        colecView.dataSource = self
-//        colecView.register(UICollectionViewCell.self, forCellWithReuseIdentifier: "selectcolecViewcellid")
-//        colecView.register(UICollectionReusableView.self, forSupplementaryViewOfKind: UICollectionElementKindSectionHeader, withReuseIdentifier: "selectcolectheaderviewid")
-//        self.view.addSubview(colecView)
-//    }
-//
-//    func numberOfSections(in collectionView: UICollectionView) -> Int {
-//        return firstCount
-//    }
-//
-//    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-//
-//        let model = dataList[section] as! SelectConditionModel
-//        if model.subMenuList[0] is SelectConditionModel {
-//            return model.subMenuList.count
-//        }
-//        else if model.subMenuList[0] is SubMenuModel {
-//            return model.subMenuList.count
-//        }
-//        else {
-//            return 0
-//        }
-//
-//    }
-//
-//    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-//        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "selectcolecViewcellid", for: indexPath)
-//        cell.backgroundColor = UIColor.RGB(236, 236, 236)
-//        return cell
-//    }
-//
-//    func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
-//        let headview = collectionView.dequeueReusableSupplementaryView(ofKind: UICollectionElementKindSectionHeader, withReuseIdentifier: "selectcolectheaderviewid", for: indexPath)
-//        headview.backgroundColor = UIColor.gray
-//        let btn = SelecHeaderButton.init(frame: headview.bounds)
-//        btn.tag = indexPath.section
-//        btn.addTarget(self, action: #selector(headBtnAction(button:)), for: UIControlEvents.touchUpInside)
-//        headview.addSubview(btn)
-//        return headview
-//    }
-//
-//    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
-////        if section==1 {
-////            return CGSize.init(width: kScreenW, height: 10)
-////        }
-//        return CGSize.init(width: kScreenW, height: 60)
-//    }
-//
-//    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-//        delog("click \(indexPath)")
-////        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "selectcolecViewcellid", for: indexPath)
-////        cell.backgroundColor = UIColor.gray
-//    }
-    
     
     @objc func headBtnAction(button:SelecHeaderButton) -> Void {
         
-        switch button.tag {
-        case 0:
-            delog("哎呀")
-        default:
-            break
+        let ar = mappingZKs.object(forKey: button.section!) as! NSMutableArray
+        let stats = ar.object(at: button.row!) as! Bool
+        reloadHeight(isZK: stats, section: button.section!, row: -1)
+        if stats {
+            ar.replaceObject(at: button.row!, with: false)
+        } else {
+            ar.replaceObject(at: button.row!, with: true)
         }
+        
+//        switch button.tag {
+//        case 0:
+//            delog("哎呀")
+//        default:
+//            break
+//        }
         
     }
     
+    /*  MARK: 刷新高度
+     映射到 mappingHeights, 展开:从 heightsDict 映射过来, 收起:将 0 映射过来.
+     row < 0 表示 所有此section种的row都置为0
+     */
+    func reloadHeight(isZK:Bool,section:Int,row:Int) {
+        
+        let arr = heightsDict.object(forKey: section) as! NSArray
+        let mappingArr = NSMutableArray.init(array: arr)
+        
+        if row<0 {
+            for i in 0...mappingArr.count-1 {
+                //mappingArr.replaceObject(at: i, with: 0)
+                if isZK {
+                    mappingArr.replaceObject(at: i, with: arr[i])
+                } else {
+                    mappingArr.replaceObject(at: i, with: 0)
+                }
+            }
+        } else {
+            if isZK {
+                mappingArr.replaceObject(at: row, with: arr[row])
+            } else {
+                mappingArr.replaceObject(at: row, with: 0)
+            }
+        }
+        
+        mappingHeights.setObject(mappingArr, forKey: section as NSCopying)
+        
+        self.tableView.reloadData()
+    }
     
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-    }
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }

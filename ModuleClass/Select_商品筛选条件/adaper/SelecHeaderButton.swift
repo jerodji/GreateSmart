@@ -10,21 +10,29 @@ import UIKit
 
 class SelecHeaderButton: UIButton {
     
+    var isZK:Bool = false
+    var section:Int?
+    var row:Int?
+    
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
     }
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        self.backgroundColor = .red
+        //self.backgroundColor = .red
     }
     
     override func imageRect(forContentRect contentRect: CGRect) -> CGRect {
-        return CGRect.init(x: self.frame.size.width-30-15, y: (self.frame.size.height-30)/2, width: 30, height: 30)
+        let wid = CGFloat(18)
+        let hei = CGFloat(10)
+        let dis = CGFloat(15)
+        return CGRect.init(x: self.frame.size.width-dis-wid, y: (self.frame.size.height-hei)/2, width: wid, height: hei)
     }
     
     override func titleRect(forContentRect contentRect: CGRect) -> CGRect {
-        return CGRect.init(x: 15, y: 0, width: self.frame.size.width-15, height: self.frame.size.height)
+        let dis = CGFloat(15)
+        return CGRect.init(x: dis, y: 0, width: self.frame.size.width-dis, height: self.frame.size.height)
     }
     
     /*
