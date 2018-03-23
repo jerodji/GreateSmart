@@ -9,6 +9,12 @@
 /* Begin PBXBuildFile section */
 		12F29E0B0732CFC549BCF754 /* Pods_GreateSmart.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AFE5A3FFF7CEC461A4847CB6 /* Pods_GreateSmart.framework */; };
 		38172C5520649FE7002ED9AD /* SelecBtnsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38172C5420649FE7002ED9AD /* SelecBtnsView.swift */; };
+		38172C582064F5A7002ED9AD /* CartBottomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38172C572064F5A7002ED9AD /* CartBottomView.swift */; };
+		38172C5A2064F5B3002ED9AD /* CartBottomView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 38172C592064F5B3002ED9AD /* CartBottomView.xib */; };
+		38172C5D2064FC93002ED9AD /* BaseUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38172C5C2064FC93002ED9AD /* BaseUIView.swift */; };
+		38172C5F2065185E002ED9AD /* CartBomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38172C5E2065185E002ED9AD /* CartBomButton.swift */; };
+		38172C622065269F002ED9AD /* ShopCartAccountBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38172C612065269F002ED9AD /* ShopCartAccountBar.swift */; };
+		38172C64206526A6002ED9AD /* ShopCartAccountBar.xib in Resources */ = {isa = PBXBuildFile; fileRef = 38172C63206526A6002ED9AD /* ShopCartAccountBar.xib */; };
 		381C62FA20464C5500A9066C /* ResultVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 381C62F920464C5500A9066C /* ResultVC.swift */; };
 		381C62FE204685D700A9066C /* SearchRecordTitleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 381C62FD204685D700A9066C /* SearchRecordTitleView.swift */; };
 		381C63002046861100A9066C /* SearchRecordTitleView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 381C62FF2046861100A9066C /* SearchRecordTitleView.xib */; };
@@ -177,6 +183,12 @@
 /* Begin PBXFileReference section */
 		2917D95A36F6E4132830CF90 /* Pods-GreateSmart.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GreateSmart.release.xcconfig"; path = "Pods/Target Support Files/Pods-GreateSmart/Pods-GreateSmart.release.xcconfig"; sourceTree = "<group>"; };
 		38172C5420649FE7002ED9AD /* SelecBtnsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelecBtnsView.swift; sourceTree = "<group>"; };
+		38172C572064F5A7002ED9AD /* CartBottomView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartBottomView.swift; sourceTree = "<group>"; };
+		38172C592064F5B3002ED9AD /* CartBottomView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CartBottomView.xib; sourceTree = "<group>"; };
+		38172C5C2064FC93002ED9AD /* BaseUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseUIView.swift; sourceTree = "<group>"; };
+		38172C5E2065185E002ED9AD /* CartBomButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartBomButton.swift; sourceTree = "<group>"; };
+		38172C612065269F002ED9AD /* ShopCartAccountBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShopCartAccountBar.swift; sourceTree = "<group>"; };
+		38172C63206526A6002ED9AD /* ShopCartAccountBar.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ShopCartAccountBar.xib; sourceTree = "<group>"; };
 		381C62F920464C5500A9066C /* ResultVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultVC.swift; sourceTree = "<group>"; };
 		381C62FD204685D700A9066C /* SearchRecordTitleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchRecordTitleView.swift; sourceTree = "<group>"; };
 		381C62FF2046861100A9066C /* SearchRecordTitleView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SearchRecordTitleView.xib; sourceTree = "<group>"; };
@@ -395,6 +407,31 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		38172C562064F57E002ED9AD /* CartBottomView */ = {
+			isa = PBXGroup;
+			children = (
+				38172C572064F5A7002ED9AD /* CartBottomView.swift */,
+				38172C592064F5B3002ED9AD /* CartBottomView.xib */,
+			);
+			path = CartBottomView;
+			sourceTree = "<group>";
+		};
+		38172C5B2064F6C4002ED9AD /* adaper */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = adaper;
+			sourceTree = "<group>";
+		};
+		38172C6020652647002ED9AD /* View */ = {
+			isa = PBXGroup;
+			children = (
+				38172C612065269F002ED9AD /* ShopCartAccountBar.swift */,
+				38172C63206526A6002ED9AD /* ShopCartAccountBar.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		381C630B2046C86500A9066C /* ModuleClass */ = {
 			isa = PBXGroup;
 			children = (
@@ -444,6 +481,7 @@
 				386CAFE62060ADA5006E32DF /* scene */,
 				382EF407205F911500F3A33B /* GoodDetailsControl.swift */,
 				382EF409205F914100F3A33B /* GoodDetailsTableView.swift */,
+				38172C562064F57E002ED9AD /* CartBottomView */,
 				386CAFE52060AD33006E32DF /* cell */,
 				386CAFED2060B8B7006E32DF /* adaper */,
 			);
@@ -554,6 +592,7 @@
 				386CAFE72060B696006E32DF /* RightView.xib */,
 				386CAFE92060B868006E32DF /* StarsView.swift */,
 				386CAFEB2060B877006E32DF /* StarsView.xib */,
+				38172C5E2065185E002ED9AD /* CartBomButton.swift */,
 			);
 			path = adaper;
 			sourceTree = "<group>";
@@ -731,6 +770,8 @@
 			isa = PBXGroup;
 			children = (
 				38B879A0204155C60080BB3C /* ShopCartVC.swift */,
+				38172C6020652647002ED9AD /* View */,
+				38172C5B2064F6C4002ED9AD /* adaper */,
 			);
 			path = "ShopCart_购物车";
 			sourceTree = "<group>";
@@ -892,6 +933,7 @@
 		38F9CA8D203000DC004D105D /* Base */ = {
 			isa = PBXGroup;
 			children = (
+				38172C5C2064FC93002ED9AD /* BaseUIView.swift */,
 				38FD686720401F9F00B19A42 /* BaseUIViewController.swift */,
 				38EE01522043F29D0050759A /* CustomNaviBar.swift */,
 				38FD686920401FBC00B19A42 /* BaseUINavigationController.swift */,
@@ -1102,9 +1144,11 @@
 				387B6F32205A72F700E6D916 /* UserHeaderView.xib in Resources */,
 				38F9CA63202FED60004D105D /* LaunchScreen.storyboard in Resources */,
 				38FD9A3F2040FD9E0090D978 /* Images.xcassets in Resources */,
+				38172C64206526A6002ED9AD /* ShopCartAccountBar.xib in Resources */,
 				382EF40E205F9AF100F3A33B /* GoodIntroduceCell.xib in Resources */,
 				386CAFE82060B696006E32DF /* RightView.xib in Resources */,
 				38F6423A20590151004A75DF /* TimeReCCell.xib in Resources */,
+				38172C5A2064F5B3002ED9AD /* CartBottomView.xib in Resources */,
 				384EE4562057C56700D2BCB6 /* LTCView.xib in Resources */,
 				381C63042046990F00A9066C /* SearchHistoryCell.xib in Resources */,
 				387D496E205B98C10059BB20 /* SortingView.xib in Resources */,
@@ -1212,6 +1256,7 @@
 				386CAFF0206100FD006E32DF /* SelectConditionVC.swift in Sources */,
 				387D497B205BD4DB0059BB20 /* GoodCell.swift in Sources */,
 				38F76368205922E6002C1999 /* HotInStoreCell.swift in Sources */,
+				38172C582064F5A7002ED9AD /* CartBottomView.swift in Sources */,
 				388BA0162050FE11009C7C70 /* NSObject+conversion.m in Sources */,
 				381C630F2047C81A00A9066C /* WSCollectionViewFlowLayout.m in Sources */,
 				38213025204EAB2C00F1413C /* ItemTableControl.swift in Sources */,
@@ -1301,6 +1346,7 @@
 				3864DAC5205CE22D00F89A25 /* RightControl.swift in Sources */,
 				382EF425205FBA5200F3A33B /* SYATopScrollViewController.m in Sources */,
 				38BAE14F2053865100CA822A /* SortTypeView.swift in Sources */,
+				38172C5D2064FC93002ED9AD /* BaseUIView.swift in Sources */,
 				381C62FE204685D700A9066C /* SearchRecordTitleView.swift in Sources */,
 				38BAE1512053869D00CA822A /* SortTypeControl.swift in Sources */,
 				384EE44820576AED00D2BCB6 /* TimeReCModel.swift in Sources */,
@@ -1319,12 +1365,14 @@
 				38FD686320401E4F00B19A42 /* UIImage+AttributeImage.m in Sources */,
 				384EE44E205771C900D2BCB6 /* LTCModel.swift in Sources */,
 				381C63192048097F00A9066C /* StringSize.swift in Sources */,
+				38172C5F2065185E002ED9AD /* CartBomButton.swift in Sources */,
 				382EF406205F699000F3A33B /* UIColor_extension.swift in Sources */,
 				38F9CA59202FED60004D105D /* AppDelegate.swift in Sources */,
 				382EF40D205F9AF100F3A33B /* GoodIntroduceCell.swift in Sources */,
 				38B879A3204155DC0080BB3C /* MyVC.swift in Sources */,
 				38FD686A20401FBC00B19A42 /* BaseUINavigationController.swift in Sources */,
 				382EF408205F911500F3A33B /* GoodDetailsControl.swift in Sources */,
+				38172C622065269F002ED9AD /* ShopCartAccountBar.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

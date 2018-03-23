@@ -129,6 +129,7 @@ class GoodDetailsControl: BaseControl,UITableViewDelegate,UITableViewDataSource 
             let al = scrollView.contentOffset.y/height_GoodDetails_HeaderBanner
             scene.naviBar.backgroundColor = UIColor.white.withAlphaComponent(al)
             scene.naviBar.line.backgroundColor = UIColor.RGB(183, 183, 183).withAlphaComponent(al)
+            scene.naviBar.titleLab.textColor = UIColor.black.withAlphaComponent(al)
         }
     }
     

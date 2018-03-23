@@ -9,15 +9,28 @@
 import UIKit
 
 class ShopCartVC: BaseUIViewController {
-
+    
+    var accountBar : ShopCartAccountBar?
+    private let heightAccountBar = CGFloat(49)
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.naviBar.titleLab.text = "SHOP CART"
-//        self.view.backgroundColor = .yellow
+        self.naviBar.titleLab.text = "购物车"
         self.naviBar.leftItemBtn.isHidden = true
-        self.naviBar.rightItemBtn.isHidden = true
+        self.naviBar.rightItemBtn.setTitle("完成", for: .normal)
+        self.naviBar.rightItemBtn.setTitleColor(.black, for: .normal)
+        self.naviBar.rightItemBtn.titleLabel?.font = UIFont.systemFont(ofSize: 15)
+        self.naviBar.rightItemBtn.titleLabel?.textAlignment = .left
+        self.naviBar.rightCallback = {
+            
+        }
+        
+        accountBar = ShopCartAccountBar.loadFromXIB()
+        accountBar?.frameXib = CGRect.init(x: 0, y: kScreenH - kTabbarH - heightAccountBar, width: kScreenW, height: heightAccountBar)
+        view.addSubview(accountBar!)
+        
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.

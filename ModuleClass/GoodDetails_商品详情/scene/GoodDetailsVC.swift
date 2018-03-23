@@ -11,6 +11,9 @@ import UIKit
 class GoodDetailsVC: BaseUIViewController {
 
     let detailCtl = GoodDetailsControl.init()
+    var cartBomView : CartBottomView?
+    
+    private let height_bottomView = CGFloat(49)
     
     override func loadView() {
         super.loadView()
@@ -40,14 +43,10 @@ class GoodDetailsVC: BaseUIViewController {
         super.viewDidLoad()
         view.backgroundColor = UIColor.RGB(183, 183, 183)
         
-        detailCtl.scene = self
-        detailCtl.initView(frame: CGRect(x: 0, y: kStatusH, width: kScreenW, height: kScreenH-kStatusH-kTabbarH))
-        view.addSubview(detailCtl.view)
-        
         naviBar.leftItemBtn.frame = CGRect.init(x: 15, y: kStatusH + (44-35)/2, width: 35, height: 35)
         naviBar.leftItemBtn.setImage(UIImage.init(named: ""), for: .normal)
         naviBar.leftItemBtn.setBackgroundImage(UIImage.init(named: "bfanhui"), for: .normal)
-        naviBar.rightItemBtn.setImage(UIImage.init(named: "xiangqinggouwuche"), for: .normal)
+        naviBar.rightItemBtn.setImage(UIImage.init(named: "gouwuche2"), for: .normal)
         //view.bringSubview(toFront: naviBar)
         naviBar.leftCallback = { ()->() in
             self.navigationController?.popViewController(animated: true)
@@ -55,6 +54,23 @@ class GoodDetailsVC: BaseUIViewController {
         naviBar.rightCallback = { ()->() in
             delog("right click")
         }
+        
+        naviBar.titleLab.text = "商品详情"
+        naviBar.titleLab.textColor = .clear
+        
+        /**
+         商品详情试图布局
+         */
+        detailCtl.scene = self /** 设定场景为self */
+        detailCtl.initView(frame: CGRect(x: 0, y: kStatusH, width: kScreenW, height: kScreenH - kStatusH - kTabbarH - height_bottomView))
+        view.addSubview(detailCtl.view)
+        
+        /**
+         底部栏试图布局
+         */
+        cartBomView = CartBottomView.loadFromXIB()
+        cartBomView?.frameXib = CGRect.init(x: 0, y: kScreenH - kTabbarH - height_bottomView, width: kScreenW, height: height_bottomView)
+        view.addSubview(cartBomView!)
         
     }
     

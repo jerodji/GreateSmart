@@ -16,7 +16,6 @@ class GoodListVC: BaseUIViewController {
     let leftCtl = LeftControl.init()
     let rightCtl = RightControl.init()
     
-    
     override func loadView() {
         super.loadView()
     }
@@ -58,6 +57,7 @@ class GoodListVC: BaseUIViewController {
         self.view.addSubview(sortView)
         self.view.addSubview(leftCtl.view)
         self.view.addSubview(rightCtl.view)
+        
     }
     
     override func viewWillLayoutSubviews() {
