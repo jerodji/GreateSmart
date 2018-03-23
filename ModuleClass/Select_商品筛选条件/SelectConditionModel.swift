@@ -189,6 +189,9 @@ class SelectConditionModel: BaseModel {
 
 
 //MARK:- 模拟数据
+/**
+ 模拟数据
+ */
 let testSelectConditionData : String = "[\n" +
     "    {\n" +
     "        \"name\": \"品牌\",\n" +

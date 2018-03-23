@@ -44,11 +44,27 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ModuleClass/Select_&#x5546;&#x54c1;&#x7b5b;&#x9009;&#x6761;&#x4ef6;/view/SelectConditionCell.swift"
-            timestampString = "543415694.874902"
+            timestampString = "543486694.688833"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "114"
-            endingLineNumber = "114"
+            startingLineNumber = "39"
+            endingLineNumber = "39"
+            landmarkName = "setModelWithArray(_:section:row:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ModuleClass/Select_&#x5546;&#x54c1;&#x7b5b;&#x9009;&#x6761;&#x4ef6;/view/SelectConditionCell.swift"
+            timestampString = "543486694.688912"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "53"
+            endingLineNumber = "53"
             landmarkName = "setModelWithArray(_:section:row:)"
             landmarkType = "7">
          </BreakpointContent>

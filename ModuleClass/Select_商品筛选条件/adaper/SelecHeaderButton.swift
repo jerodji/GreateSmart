@@ -13,6 +13,7 @@ class SelecHeaderButton: UIButton {
     var isZK:Bool = false
     var section:Int?
     var row:Int?
+    var cell:SelectConditionCell?
     
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)

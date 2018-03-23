@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		12F29E0B0732CFC549BCF754 /* Pods_GreateSmart.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AFE5A3FFF7CEC461A4847CB6 /* Pods_GreateSmart.framework */; };
+		38172C5520649FE7002ED9AD /* SelecBtnsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38172C5420649FE7002ED9AD /* SelecBtnsView.swift */; };
 		381C62FA20464C5500A9066C /* ResultVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 381C62F920464C5500A9066C /* ResultVC.swift */; };
 		381C62FE204685D700A9066C /* SearchRecordTitleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 381C62FD204685D700A9066C /* SearchRecordTitleView.swift */; };
 		381C63002046861100A9066C /* SearchRecordTitleView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 381C62FF2046861100A9066C /* SearchRecordTitleView.xib */; };
@@ -175,6 +176,7 @@
 
 /* Begin PBXFileReference section */
 		2917D95A36F6E4132830CF90 /* Pods-GreateSmart.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GreateSmart.release.xcconfig"; path = "Pods/Target Support Files/Pods-GreateSmart/Pods-GreateSmart.release.xcconfig"; sourceTree = "<group>"; };
+		38172C5420649FE7002ED9AD /* SelecBtnsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelecBtnsView.swift; sourceTree = "<group>"; };
 		381C62F920464C5500A9066C /* ResultVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultVC.swift; sourceTree = "<group>"; };
 		381C62FD204685D700A9066C /* SearchRecordTitleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchRecordTitleView.swift; sourceTree = "<group>"; };
 		381C62FF2046861100A9066C /* SearchRecordTitleView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SearchRecordTitleView.xib; sourceTree = "<group>"; };
@@ -708,6 +710,7 @@
 			isa = PBXGroup;
 			children = (
 				389040D42063506A00277974 /* SelectConditionCell.swift */,
+				38172C5420649FE7002ED9AD /* SelecBtnsView.swift */,
 				389040D220634CC700277974 /* SelecHeadView.swift */,
 			);
 			path = view;
@@ -1280,6 +1283,7 @@
 				38FD68742040220D00B19A42 /* PublicDefine.swift in Sources */,
 				382EF427205FBA5200F3A33B /* UIView+SYAViewFrame.m in Sources */,
 				38B879A1204155C60080BB3C /* ShopCartVC.swift in Sources */,
+				38172C5520649FE7002ED9AD /* SelecBtnsView.swift in Sources */,
 				38FD686820401F9F00B19A42 /* BaseUIViewController.swift in Sources */,
 				382EF415205FB1D900F3A33B /* StoreIntroduceCell.swift in Sources */,
 				38FD686120401E4F00B19A42 /* NSObject+isNull.m in Sources */,
