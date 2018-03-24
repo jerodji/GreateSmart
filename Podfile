@@ -10,4 +10,7 @@ pod 'SnapKit', '~> 4.0.0'
 pod 'MJExtension'
 pod 'Kingfisher', '~> 4.6.1'
 
+#pod 'RxSwift', '~> 4.1.1'
+#pod 'RxCocoa', '~> 4.1.1'
+
 end
