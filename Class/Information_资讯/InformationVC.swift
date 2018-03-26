@@ -12,7 +12,7 @@ class InformationVC: BaseUIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.naviBar.titleLab.text = "INFORMATION"
+        self.naviBar.titleLab.text = "资讯"
         self.naviBar.leftItemBtn.isHidden = true
         self.naviBar.rightItemBtn.isHidden = true
 //        self.view.backgroundColor = UIColor.cyan

@@ -70,7 +70,7 @@ class FlowCollectionView: UICollectionView,UICollectionViewDelegate,UICollection
         layout.contentInset = contentInset
         layout.minimumInteritemSpacing = InteritemSpacing
         layout.minimumLineSpacing = LineSpacing
-
+        
         super.init(frame: frame, collectionViewLayout: layout)
         
         self.backgroundColor = UIColor.clear

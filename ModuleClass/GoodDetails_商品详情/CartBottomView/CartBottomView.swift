@@ -10,6 +10,10 @@ import UIKit
 
 class CartBottomView: BaseUIView,LoadXIBView {
 
+    typealias ADDBLK = () -> ()
+    var addtoCartCB : ADDBLK?
+    
+    
     @IBOutlet weak var buyButton: UIButton!
     
     required init?(coder aDecoder: NSCoder) {
@@ -31,6 +35,7 @@ class CartBottomView: BaseUIView,LoadXIBView {
     }
     
     @IBAction func addtoCartACtion(_ sender: UIButton) {
+        (nil != addtoCartCB) ? addtoCartCB!() : delog("addtoCartCB需要实现block") ;
     }
     
     @IBAction func buyRightnowAction(_ sender: UIButton) {

@@ -97,6 +97,21 @@
 		387D4976205BCC1B0059BB20 /* RightGoodsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 387D4975205BCC1B0059BB20 /* RightGoodsView.swift */; };
 		387D497B205BD4DB0059BB20 /* GoodCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 387D4979205BD4DB0059BB20 /* GoodCell.swift */; };
 		387D497C205BD4DB0059BB20 /* GoodCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 387D497A205BD4DB0059BB20 /* GoodCell.xib */; };
+		387D5537206893560073F934 /* AccountTableControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 387D5536206893560073F934 /* AccountTableControl.swift */; };
+		387D553A206895E60073F934 /* AccountTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 387D5539206895E60073F934 /* AccountTableView.swift */; };
+		387D553D206897F90073F934 /* AcountGoodCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 387D553B206897F90073F934 /* AcountGoodCell.swift */; };
+		387D553E206897F90073F934 /* AcountGoodCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 387D553C206897F90073F934 /* AcountGoodCell.xib */; };
+		387D554020689F930073F934 /* AcountHeadView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 387D553F20689F930073F934 /* AcountHeadView.swift */; };
+		387D554220689F9C0073F934 /* AcountHeadView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 387D554120689F9C0073F934 /* AcountHeadView.xib */; };
+		387D55442068D00A0073F934 /* AcountGoodModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 387D55432068D00A0073F934 /* AcountGoodModel.swift */; };
+		387D55472068D77B0073F934 /* AddToCartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 387D55462068D77B0073F934 /* AddToCartView.swift */; };
+		387D55492068D93F0073F934 /* AddToCartView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 387D55482068D93F0073F934 /* AddToCartView.xib */; };
+		387D554F2068E4650073F934 /* AddToCartControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 387D554E2068E4650073F934 /* AddToCartControl.swift */; };
+		387D55552068FC1C0073F934 /* AddCartGoodConfigTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 387D55542068FC1C0073F934 /* AddCartGoodConfigTableView.swift */; };
+		387D5558206900450073F934 /* AddcartGoodConfigView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 387D5556206900450073F934 /* AddcartGoodConfigView.swift */; };
+		387D555B206906760073F934 /* AddcartGoodConfigView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 387D555A206906760073F934 /* AddcartGoodConfigView.xib */; };
+		387D555F206915DB0073F934 /* JJLayoutColectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 387D555E206915DB0073F934 /* JJLayoutColectionView.swift */; };
+		387D5561206916A70073F934 /* SpecificationColectionControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 387D5560206916A70073F934 /* SpecificationColectionControl.swift */; };
 		388004C2204F92BE00FE9DD0 /* AFBaseNetwork.m in Sources */ = {isa = PBXBuildFile; fileRef = 388004C1204F92BD00FE9DD0 /* AFBaseNetwork.m */; };
 		388004C7204FAAEE00FE9DD0 /* JsonTransform.swift in Sources */ = {isa = PBXBuildFile; fileRef = 388004C6204FAAEE00FE9DD0 /* JsonTransform.swift */; };
 		388004C9204FD58200FE9DD0 /* ErrorCodeHandle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 388004C8204FD58200FE9DD0 /* ErrorCodeHandle.swift */; };
@@ -281,6 +296,21 @@
 		387D4975205BCC1B0059BB20 /* RightGoodsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RightGoodsView.swift; sourceTree = "<group>"; };
 		387D4979205BD4DB0059BB20 /* GoodCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoodCell.swift; sourceTree = "<group>"; };
 		387D497A205BD4DB0059BB20 /* GoodCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GoodCell.xib; sourceTree = "<group>"; };
+		387D5536206893560073F934 /* AccountTableControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountTableControl.swift; sourceTree = "<group>"; };
+		387D5539206895E60073F934 /* AccountTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountTableView.swift; sourceTree = "<group>"; };
+		387D553B206897F90073F934 /* AcountGoodCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AcountGoodCell.swift; sourceTree = "<group>"; };
+		387D553C206897F90073F934 /* AcountGoodCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AcountGoodCell.xib; sourceTree = "<group>"; };
+		387D553F20689F930073F934 /* AcountHeadView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AcountHeadView.swift; sourceTree = "<group>"; };
+		387D554120689F9C0073F934 /* AcountHeadView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AcountHeadView.xib; sourceTree = "<group>"; };
+		387D55432068D00A0073F934 /* AcountGoodModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AcountGoodModel.swift; sourceTree = "<group>"; };
+		387D55462068D77B0073F934 /* AddToCartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddToCartView.swift; sourceTree = "<group>"; };
+		387D55482068D93F0073F934 /* AddToCartView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AddToCartView.xib; sourceTree = "<group>"; };
+		387D554E2068E4650073F934 /* AddToCartControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddToCartControl.swift; sourceTree = "<group>"; };
+		387D55542068FC1C0073F934 /* AddCartGoodConfigTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCartGoodConfigTableView.swift; sourceTree = "<group>"; };
+		387D5556206900450073F934 /* AddcartGoodConfigView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddcartGoodConfigView.swift; sourceTree = "<group>"; };
+		387D555A206906760073F934 /* AddcartGoodConfigView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AddcartGoodConfigView.xib; sourceTree = "<group>"; };
+		387D555E206915DB0073F934 /* JJLayoutColectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JJLayoutColectionView.swift; sourceTree = "<group>"; };
+		387D5560206916A70073F934 /* SpecificationColectionControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpecificationColectionControl.swift; sourceTree = "<group>"; };
 		388004C0204F92BD00FE9DD0 /* AFBaseNetwork.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFBaseNetwork.h; sourceTree = "<group>"; };
 		388004C1204F92BD00FE9DD0 /* AFBaseNetwork.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFBaseNetwork.m; sourceTree = "<group>"; };
 		388004C6204FAAEE00FE9DD0 /* JsonTransform.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JsonTransform.swift; sourceTree = "<group>"; };
@@ -423,18 +453,19 @@
 			path = adaper;
 			sourceTree = "<group>";
 		};
-		38172C6020652647002ED9AD /* View */ = {
+		38172C6020652647002ED9AD /* ShopCartAccountBar */ = {
 			isa = PBXGroup;
 			children = (
 				38172C612065269F002ED9AD /* ShopCartAccountBar.swift */,
 				38172C63206526A6002ED9AD /* ShopCartAccountBar.xib */,
 			);
-			path = View;
+			path = ShopCartAccountBar;
 			sourceTree = "<group>";
 		};
 		381C630B2046C86500A9066C /* ModuleClass */ = {
 			isa = PBXGroup;
 			children = (
+				387D55452068D72E0073F934 /* 加入购物车 */,
 				386CAFEE20610068006E32DF /* Select_商品筛选条件 */,
 				382EF402205F65C500F3A33B /* GoodDetails_商品详情 */,
 				38B879A42042685A0080BB3C /* Search_搜索 */,
@@ -479,10 +510,8 @@
 			isa = PBXGroup;
 			children = (
 				386CAFE62060ADA5006E32DF /* scene */,
-				382EF407205F911500F3A33B /* GoodDetailsControl.swift */,
-				382EF409205F914100F3A33B /* GoodDetailsTableView.swift */,
+				386CAFE52060AD33006E32DF /* GoodDetails */,
 				38172C562064F57E002ED9AD /* CartBottomView */,
-				386CAFE52060AD33006E32DF /* cell */,
 				386CAFED2060B8B7006E32DF /* adaper */,
 			);
 			path = "GoodDetails_商品详情";
@@ -561,9 +590,11 @@
 			path = "LTC_老挝直邮";
 			sourceTree = "<group>";
 		};
-		386CAFE52060AD33006E32DF /* cell */ = {
+		386CAFE52060AD33006E32DF /* GoodDetails */ = {
 			isa = PBXGroup;
 			children = (
+				382EF407205F911500F3A33B /* GoodDetailsControl.swift */,
+				382EF409205F914100F3A33B /* GoodDetailsTableView.swift */,
 				382EF40B205F9AF100F3A33B /* GoodIntroduceCell.swift */,
 				382EF40C205F9AF100F3A33B /* GoodIntroduceCell.xib */,
 				382EF40F205FAC2E00F3A33B /* StoreCell.swift */,
@@ -575,7 +606,7 @@
 				382EF429205FD1FC00F3A33B /* HotRecommendCell.swift */,
 				382EF42A205FD1FC00F3A33B /* HotRecommendCell.xib */,
 			);
-			path = cell;
+			path = GoodDetails;
 			sourceTree = "<group>";
 		};
 		386CAFE62060ADA5006E32DF /* scene */ = {
@@ -701,6 +732,51 @@
 			path = Goods;
 			sourceTree = "<group>";
 		};
+		387D55382068938F0073F934 /* AccountTable */ = {
+			isa = PBXGroup;
+			children = (
+				387D5536206893560073F934 /* AccountTableControl.swift */,
+				387D55432068D00A0073F934 /* AcountGoodModel.swift */,
+				387D5539206895E60073F934 /* AccountTableView.swift */,
+				387D553B206897F90073F934 /* AcountGoodCell.swift */,
+				387D553C206897F90073F934 /* AcountGoodCell.xib */,
+				387D553F20689F930073F934 /* AcountHeadView.swift */,
+				387D554120689F9C0073F934 /* AcountHeadView.xib */,
+			);
+			path = AccountTable;
+			sourceTree = "<group>";
+		};
+		387D55452068D72E0073F934 /* 加入购物车 */ = {
+			isa = PBXGroup;
+			children = (
+				387D554E2068E4650073F934 /* AddToCartControl.swift */,
+				387D55462068D77B0073F934 /* AddToCartView.swift */,
+				387D55482068D93F0073F934 /* AddToCartView.xib */,
+				387D555C206915300073F934 /* GoodConfig */,
+				387D555D206915950073F934 /* SpecificationColectionView_规格 */,
+			);
+			path = "加入购物车";
+			sourceTree = "<group>";
+		};
+		387D555C206915300073F934 /* GoodConfig */ = {
+			isa = PBXGroup;
+			children = (
+				387D55542068FC1C0073F934 /* AddCartGoodConfigTableView.swift */,
+				387D5556206900450073F934 /* AddcartGoodConfigView.swift */,
+				387D555A206906760073F934 /* AddcartGoodConfigView.xib */,
+			);
+			path = GoodConfig;
+			sourceTree = "<group>";
+		};
+		387D555D206915950073F934 /* SpecificationColectionView_规格 */ = {
+			isa = PBXGroup;
+			children = (
+				387D555E206915DB0073F934 /* JJLayoutColectionView.swift */,
+				387D5560206916A70073F934 /* SpecificationColectionControl.swift */,
+			);
+			path = "SpecificationColectionView_规格";
+			sourceTree = "<group>";
+		};
 		388BA01B20525A65009C7C70 /* base */ = {
 			isa = PBXGroup;
 			children = (
@@ -770,7 +846,8 @@
 			isa = PBXGroup;
 			children = (
 				38B879A0204155C60080BB3C /* ShopCartVC.swift */,
-				38172C6020652647002ED9AD /* View */,
+				387D55382068938F0073F934 /* AccountTable */,
+				38172C6020652647002ED9AD /* ShopCartAccountBar */,
 				38172C5B2064F6C4002ED9AD /* adaper */,
 			);
 			path = "ShopCart_购物车";
@@ -1149,16 +1226,20 @@
 				386CAFE82060B696006E32DF /* RightView.xib in Resources */,
 				38F6423A20590151004A75DF /* TimeReCCell.xib in Resources */,
 				38172C5A2064F5B3002ED9AD /* CartBottomView.xib in Resources */,
+				387D554220689F9C0073F934 /* AcountHeadView.xib in Resources */,
 				384EE4562057C56700D2BCB6 /* LTCView.xib in Resources */,
+				387D55492068D93F0073F934 /* AddToCartView.xib in Resources */,
 				381C63042046990F00A9066C /* SearchHistoryCell.xib in Resources */,
 				387D496E205B98C10059BB20 /* SortingView.xib in Resources */,
 				FA13949B20581DC7008D6F68 /* ForMaleView.xib in Resources */,
 				382EF416205FB1D900F3A33B /* StoreIntroduceCell.xib in Resources */,
 				38F76373205940CB002C1999 /* HotSaleCell.xib in Resources */,
+				387D553E206897F90073F934 /* AcountGoodCell.xib in Resources */,
 				38F7636A205922F4002C1999 /* HotInStoreCell.xib in Resources */,
 				38F9CA60202FED60004D105D /* Assets.xcassets in Resources */,
 				38F9CA5E202FED60004D105D /* Main.storyboard in Resources */,
 				38BAE1492053781100CA822A /* ItemTitleView.xib in Resources */,
+				387D555B206906760073F934 /* AddcartGoodConfigView.xib in Resources */,
 				382EF41A205FB9D600F3A33B /* EvaluationCell.xib in Resources */,
 				382EF42C205FD1FC00F3A33B /* HotRecommendCell.xib in Resources */,
 				386CAFEC2060B877006E32DF /* StarsView.xib in Resources */,
@@ -1279,12 +1360,15 @@
 				382EF419205FB9D600F3A33B /* EvaluationCell.swift in Sources */,
 				38FD9A49204116DF0090D978 /* TabbarController.swift in Sources */,
 				384EE44B205770FD00D2BCB6 /* BoutiqueModel.swift in Sources */,
+				387D5561206916A70073F934 /* SpecificationColectionControl.swift in Sources */,
 				389040D52063506A00277974 /* SelectConditionCell.swift in Sources */,
 				3821300D204A9C4600F1413C /* OCHeaderFile.m in Sources */,
+				387D555F206915DB0073F934 /* JJLayoutColectionView.swift in Sources */,
 				387D4976205BCC1B0059BB20 /* RightGoodsView.swift in Sources */,
 				3821301C204D465000F1413C /* ItemCell.swift in Sources */,
 				38FD9A43204112960090D978 /* BannerModel.swift in Sources */,
 				38B8799F204155A00080BB3C /* GoodListVC.swift in Sources */,
+				387D55552068FC1C0073F934 /* AddCartGoodConfigTableView.swift in Sources */,
 				38B879A6204268A60080BB3C /* SearchVC.swift in Sources */,
 				38EE01532043F29D0050759A /* CustomNaviBar.swift in Sources */,
 				384EE4502057A37D00D2BCB6 /* errorPrevent.swift in Sources */,
@@ -1308,6 +1392,7 @@
 				381C62FA20464C5500A9066C /* ResultVC.swift in Sources */,
 				388BA0202052A057009C7C70 /* SortTypeModel.swift in Sources */,
 				38FD686520401E4F00B19A42 /* UIButton+parameter.m in Sources */,
+				387D553D206897F90073F934 /* AcountGoodCell.swift in Sources */,
 				387B6F2B205A571F00E6D916 /* ZCycleView.swift in Sources */,
 				38437B492058E8A300F7FE2F /* NatureCell.swift in Sources */,
 				386CAFEA2060B868006E32DF /* StarsView.swift in Sources */,
@@ -1326,6 +1411,7 @@
 				382EF411205FAC2E00F3A33B /* StoreCell.swift in Sources */,
 				38437B432058C46D00F7FE2F /* BoutiqueView.swift in Sources */,
 				38FD68742040220D00B19A42 /* PublicDefine.swift in Sources */,
+				387D554020689F930073F934 /* AcountHeadView.swift in Sources */,
 				382EF427205FBA5200F3A33B /* UIView+SYAViewFrame.m in Sources */,
 				38B879A1204155C60080BB3C /* ShopCartVC.swift in Sources */,
 				38172C5520649FE7002ED9AD /* SelecBtnsView.swift in Sources */,
@@ -1339,10 +1425,12 @@
 				382EF426205FBA5200F3A33B /* SYATopScrollViewTitleLabel.m in Sources */,
 				381C63152047CCCC00A9066C /* FlowCollectionView.swift in Sources */,
 				38F6423C20591F99004A75DF /* HotInStoreView.swift in Sources */,
+				387D5537206893560073F934 /* AccountTableControl.swift in Sources */,
 				38F7636D20593950002C1999 /* iCarousel.m in Sources */,
 				38B879AA20426A3F0080BB3C /* BaseControl.swift in Sources */,
 				389040D320634CC700277974 /* SelecHeadView.swift in Sources */,
 				38437B452058E71B00F7FE2F /* NatureView.swift in Sources */,
+				387D55472068D77B0073F934 /* AddToCartView.swift in Sources */,
 				3864DAC5205CE22D00F89A25 /* RightControl.swift in Sources */,
 				382EF425205FBA5200F3A33B /* SYATopScrollViewController.m in Sources */,
 				38BAE14F2053865100CA822A /* SortTypeView.swift in Sources */,
@@ -1359,9 +1447,12 @@
 				38EE015B2045778E0050759A /* JJTextField.swift in Sources */,
 				38EE015620442D3B0050759A /* swiftHeaderFile.swift in Sources */,
 				382EF40A205F914100F3A33B /* GoodDetailsTableView.swift in Sources */,
+				387D554F2068E4650073F934 /* AddToCartControl.swift in Sources */,
+				387D553A206895E60073F934 /* AccountTableView.swift in Sources */,
 				38FD686620401E4F00B19A42 /* UIColor+HexString.m in Sources */,
 				38FD688320402A9000B19A42 /* HomePageVC.swift in Sources */,
 				387B6F3E205A988900E6D916 /* UserServceBtn.swift in Sources */,
+				387D5558206900450073F934 /* AddcartGoodConfigView.swift in Sources */,
 				38FD686320401E4F00B19A42 /* UIImage+AttributeImage.m in Sources */,
 				384EE44E205771C900D2BCB6 /* LTCModel.swift in Sources */,
 				381C63192048097F00A9066C /* StringSize.swift in Sources */,
@@ -1373,6 +1464,7 @@
 				38FD686A20401FBC00B19A42 /* BaseUINavigationController.swift in Sources */,
 				382EF408205F911500F3A33B /* GoodDetailsControl.swift in Sources */,
 				38172C622065269F002ED9AD /* ShopCartAccountBar.swift in Sources */,
+				387D55442068D00A0073F934 /* AcountGoodModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

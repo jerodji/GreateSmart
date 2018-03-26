@@ -13,6 +13,8 @@ class GoodDetailsVC: BaseUIViewController {
     let detailCtl = GoodDetailsControl.init()
     var cartBomView : CartBottomView?
     
+    let addtocartCtl = AddToCartControl()
+    
     private let height_bottomView = CGFloat(49)
     
     override func loadView() {
@@ -27,6 +29,7 @@ class GoodDetailsVC: BaseUIViewController {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         navigationController?.interactivePopGestureRecognizer?.isEnabled = false /* 左侧返回手势 */
+        view.bringSubview(toFront: addtocartCtl.view!)
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -71,8 +74,16 @@ class GoodDetailsVC: BaseUIViewController {
         cartBomView = CartBottomView.loadFromXIB()
         cartBomView?.frameXib = CGRect.init(x: 0, y: kScreenH - kTabbarH - height_bottomView, width: kScreenW, height: height_bottomView)
         view.addSubview(cartBomView!)
+        view.addSubview(addtocartCtl.view!)
+        cartBomView?.addtoCartCB = {
+            UIView.animate(withDuration: 0.5, animations: {
+                self.addtocartCtl.view!.frame = CGRect.init(x: 0, y: 0, width: kScreenW, height: kScreenH-kTabbarH)
+            })
+            
+        }
         
     }
+    
     
     override func viewWillLayoutSubviews() {
         super.viewWillLayoutSubviews()

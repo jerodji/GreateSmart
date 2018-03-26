@@ -116,7 +116,7 @@ class SelectConditionVC: BaseUIViewController,UITableViewDelegate,UITableViewDat
     
     func configTableView()-> Void {
         
-        tableView = BaseUITableView.init(frame: CGRect.init(x: 0, y: kNaviH, width: kScreenW, height: kSafeH), style: UITableViewStyle.grouped)
+        tableView = BaseUITableView.init(frame: CGRect.init(x: 0, y: kNaviH, width: kScreenW, height: kValidH), style: UITableViewStyle.grouped)
         tableView.backgroundColor = UIColor.white
         tableView.separatorStyle = .none
         tableView.delegate = self

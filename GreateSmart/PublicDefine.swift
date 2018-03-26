@@ -18,7 +18,8 @@ let kHomeIndicatorH = CGFloat((kStatusH==20.0) ? 0.0 : 34.0) /* home_indicator 0
 let kTabbarH  = CGFloat(49.0 + kHomeIndicatorH) /* 49, 83 */
 let kNavi44 = CGFloat(44.0)
 let kTab49  = CGFloat(49.0)
-let kSafeH = (kScreenH - kNaviH - kTabbarH)
+let kValidH = (kScreenH - kNaviH - kTabbarH) /** 中间的有效高度(除去navi,tab) */
+let kSafeAreaH = (kScreenH - kStatusH - kHomeIndicatorH)
 
 func isiPhoneX() -> Bool {
     if kStatusH > CGFloat(20) {

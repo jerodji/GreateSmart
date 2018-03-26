@@ -27,7 +27,7 @@ class BaseUIViewController: UIViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        view.bringSubview(toFront: naviBar)
+        view.bringSubview(toFront: naviBar) /** 推至最前端 */
     }
 
     override func viewDidLoad() {
