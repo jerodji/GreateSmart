@@ -11,8 +11,12 @@ import UIKit
 class CartBottomView: BaseUIView,LoadXIBView {
 
     typealias ADDBLK = () -> ()
+    /// 加入购物车回调
     var addtoCartCB : ADDBLK?
     
+    typealias BuyBLK = () -> ()
+    /// 立即购买回调
+    var buyCB : BuyBLK?
     
     @IBOutlet weak var buyButton: UIButton!
     
@@ -34,11 +38,18 @@ class CartBottomView: BaseUIView,LoadXIBView {
     @IBAction func shoucang2Action(_ sender: CartBomButton) {
     }
     
+    /**
+     加入购物车
+     */
     @IBAction func addtoCartACtion(_ sender: UIButton) {
-        (nil != addtoCartCB) ? addtoCartCB!() : delog("addtoCartCB需要实现block") ;
+        (nil != addtoCartCB) ? addtoCartCB!() : delog("addtoCartCB需要实现block")
     }
     
+    /**
+     立即购买
+     */
     @IBAction func buyRightnowAction(_ sender: UIButton) {
+        (nil != buyCB) ? buyCB!() : delog("buyCB需要实现")
     }
     
     /*

@@ -8,9 +8,10 @@
 
 import UIKit
 
+/**
+ 加入购物车视图
+ */
 class AddToCartView: BaseUIView,LoadXIBView {
-
-//    @IBOutlet weak var bottomHeight: NSLayoutConstraint!
     
     @IBOutlet weak var topSpaceBtn: UIButton!
     @IBOutlet weak var goodView: UIView!
@@ -29,6 +30,13 @@ class AddToCartView: BaseUIView,LoadXIBView {
         }
     }
     
+    typealias SUREBLK = () -> ()
+    var sureBtnCB : SUREBLK?
+    @IBAction func clickSureAction(_ sender: UIButton) {
+        (sureBtnCB != nil) ? sureBtnCB!() : delog("需要实现sureBtnCB")
+    }
+    
+    
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         setupSubviews()
@@ -44,9 +52,7 @@ class AddToCartView: BaseUIView,LoadXIBView {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        
-        self.frame = CGRect.init(x: 0, y: kScreenH, width: kScreenW, height: kScreenH)
-        
+//        self.frame = CGRect.init(x: 0, y: kScreenH, width: kScreenW, height: kScreenH)
         let tap = UITapGestureRecognizer.init(target: self, action: #selector(tapGoodAction))
         goodView.addGestureRecognizer(tap)
     }

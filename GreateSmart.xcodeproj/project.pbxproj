@@ -112,6 +112,8 @@
 		387D555B206906760073F934 /* AddcartGoodConfigView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 387D555A206906760073F934 /* AddcartGoodConfigView.xib */; };
 		387D555F206915DB0073F934 /* JJLayoutColectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 387D555E206915DB0073F934 /* JJLayoutColectionView.swift */; };
 		387D5561206916A70073F934 /* SpecificationColectionControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 387D5560206916A70073F934 /* SpecificationColectionControl.swift */; };
+		387D55632069DCF20073F934 /* SpecificationCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 387D55622069DCF20073F934 /* SpecificationCollectionCell.swift */; };
+		387D5565206A14990073F934 /* JIStepper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 387D5564206A14990073F934 /* JIStepper.swift */; };
 		388004C2204F92BE00FE9DD0 /* AFBaseNetwork.m in Sources */ = {isa = PBXBuildFile; fileRef = 388004C1204F92BD00FE9DD0 /* AFBaseNetwork.m */; };
 		388004C7204FAAEE00FE9DD0 /* JsonTransform.swift in Sources */ = {isa = PBXBuildFile; fileRef = 388004C6204FAAEE00FE9DD0 /* JsonTransform.swift */; };
 		388004C9204FD58200FE9DD0 /* ErrorCodeHandle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 388004C8204FD58200FE9DD0 /* ErrorCodeHandle.swift */; };
@@ -311,6 +313,8 @@
 		387D555A206906760073F934 /* AddcartGoodConfigView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AddcartGoodConfigView.xib; sourceTree = "<group>"; };
 		387D555E206915DB0073F934 /* JJLayoutColectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JJLayoutColectionView.swift; sourceTree = "<group>"; };
 		387D5560206916A70073F934 /* SpecificationColectionControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpecificationColectionControl.swift; sourceTree = "<group>"; };
+		387D55622069DCF20073F934 /* SpecificationCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpecificationCollectionCell.swift; sourceTree = "<group>"; };
+		387D5564206A14990073F934 /* JIStepper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JIStepper.swift; sourceTree = "<group>"; };
 		388004C0204F92BD00FE9DD0 /* AFBaseNetwork.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFBaseNetwork.h; sourceTree = "<group>"; };
 		388004C1204F92BD00FE9DD0 /* AFBaseNetwork.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFBaseNetwork.m; sourceTree = "<group>"; };
 		388004C6204FAAEE00FE9DD0 /* JsonTransform.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JsonTransform.swift; sourceTree = "<group>"; };
@@ -771,8 +775,9 @@
 		387D555D206915950073F934 /* SpecificationColectionView_规格 */ = {
 			isa = PBXGroup;
 			children = (
-				387D555E206915DB0073F934 /* JJLayoutColectionView.swift */,
 				387D5560206916A70073F934 /* SpecificationColectionControl.swift */,
+				387D555E206915DB0073F934 /* JJLayoutColectionView.swift */,
+				387D55622069DCF20073F934 /* SpecificationCollectionCell.swift */,
 			);
 			path = "SpecificationColectionView_规格";
 			sourceTree = "<group>";
@@ -1025,6 +1030,7 @@
 		38FD686F204020F400B19A42 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				387D5564206A14990073F934 /* JIStepper.swift */,
 				382EF41B205FBA5200F3A33B /* SYATopScrollviewVC */,
 				387B6F25205A571F00E6D916 /* ZCycleView */,
 				38F7636B20593950002C1999 /* iCarousel.h */,
@@ -1359,6 +1365,7 @@
 				382EF401205F611F00F3A33B /* UIView_extension.swift in Sources */,
 				382EF419205FB9D600F3A33B /* EvaluationCell.swift in Sources */,
 				38FD9A49204116DF0090D978 /* TabbarController.swift in Sources */,
+				387D55632069DCF20073F934 /* SpecificationCollectionCell.swift in Sources */,
 				384EE44B205770FD00D2BCB6 /* BoutiqueModel.swift in Sources */,
 				387D5561206916A70073F934 /* SpecificationColectionControl.swift in Sources */,
 				389040D52063506A00277974 /* SelectConditionCell.swift in Sources */,
@@ -1453,6 +1460,7 @@
 				38FD688320402A9000B19A42 /* HomePageVC.swift in Sources */,
 				387B6F3E205A988900E6D916 /* UserServceBtn.swift in Sources */,
 				387D5558206900450073F934 /* AddcartGoodConfigView.swift in Sources */,
+				387D5565206A14990073F934 /* JIStepper.swift in Sources */,
 				38FD686320401E4F00B19A42 /* UIImage+AttributeImage.m in Sources */,
 				384EE44E205771C900D2BCB6 /* LTCModel.swift in Sources */,
 				381C63192048097F00A9066C /* StringSize.swift in Sources */,

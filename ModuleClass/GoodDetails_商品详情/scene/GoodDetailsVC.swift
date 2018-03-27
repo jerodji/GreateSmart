@@ -62,14 +62,14 @@ class GoodDetailsVC: BaseUIViewController {
         naviBar.titleLab.textColor = .clear
         
         /**
-         商品详情试图布局
+         商品详情视图
          */
         detailCtl.scene = self /** 设定场景为self */
         detailCtl.initView(frame: CGRect(x: 0, y: kStatusH, width: kScreenW, height: kScreenH - kStatusH - kTabbarH - height_bottomView))
         view.addSubview(detailCtl.view)
         
         /**
-         底部栏试图布局
+         底部栏视图
          */
         cartBomView = CartBottomView.loadFromXIB()
         cartBomView?.frameXib = CGRect.init(x: 0, y: kScreenH - kTabbarH - height_bottomView, width: kScreenW, height: height_bottomView)
@@ -79,7 +79,11 @@ class GoodDetailsVC: BaseUIViewController {
             UIView.animate(withDuration: 0.5, animations: {
                 self.addtocartCtl.view!.frame = CGRect.init(x: 0, y: 0, width: kScreenW, height: kScreenH-kTabbarH)
             })
-            
+        }
+        cartBomView?.buyCB = {
+            UIView.animate(withDuration: 0.5, animations: {
+                self.addtocartCtl.view!.frame = CGRect.init(x: 0, y: 0, width: kScreenW, height: kScreenH-kTabbarH)
+            })
         }
         
     }

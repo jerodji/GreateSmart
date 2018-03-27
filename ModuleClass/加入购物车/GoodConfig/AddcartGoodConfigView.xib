@@ -37,7 +37,7 @@
             <connections>
                 <outlet property="nameLab" destination="jPb-gW-cy7" id="7dF-Sq-Dkf"/>
             </connections>
-            <point key="canvasLocation" x="28.5" y="315.5"/>
+            <point key="canvasLocation" x="57" y="243"/>
         </view>
     </objects>
 </document>
