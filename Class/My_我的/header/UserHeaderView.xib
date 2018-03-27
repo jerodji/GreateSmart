@@ -21,6 +21,7 @@
                 </imageView>
                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="7YI-7P-BP8">
                     <rect key="frame" x="10" y="17" width="75" height="75"/>
+                    <color key="backgroundColor" red="0.21960784310000001" green="0.81171332470000002" blue="0.21960784310000001" alpha="1" colorSpace="calibratedRGB"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="75" id="AuI-cQ-wpZ"/>
                         <constraint firstAttribute="height" constant="75" id="olV-ej-t0A"/>
@@ -83,7 +84,7 @@
                 <outlet property="levelLabel" destination="gO4-oK-eQY" id="usa-cF-V6D"/>
                 <outlet property="nameLabel" destination="VsL-nY-D7N" id="Gni-Ms-ppK"/>
             </connections>
-            <point key="canvasLocation" x="51" y="239"/>
+            <point key="canvasLocation" x="40" y="243"/>
         </view>
     </objects>
 </document>

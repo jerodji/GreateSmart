@@ -50,6 +50,20 @@ typedef void (^FAIL)(NSURLSessionDataTask * task, NSError* error);
 - (void)request:(NetType)type URL:(NSString*)fullURL paramsEntity:(id)entity success:(SUCC)success fail:(FAIL)failure;
 
 
+/**
+ 设置表单的请求封装
+
+ @param type POST/GET
+ @param headerDict 表单请求头 header
+ @param bodyDict 表单请求体 body
+ @param fullURL url
+ @param params 参数- 字典/实体类
+ @param isEntity params参数是否为实体类
+ @param successBlock 成功回调
+ @param failBlock 失败回调
+ */
+- (void)request:(NetType)type formHeaders:(NSDictionary*)headerDict body:(NSDictionary*)bodyDict URL:(NSString*)fullURL params:(id)params isEntity:(BOOL)isEntity success:(SUCC)successBlock fail:(FAIL)failBlock;
+
 #pragma mark - 以字典集合为参数
 
 /**

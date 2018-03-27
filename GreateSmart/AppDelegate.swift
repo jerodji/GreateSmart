@@ -7,6 +7,7 @@
 //
 
 import UIKit
+//import IQKeyboardManager
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -23,7 +24,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         self.window?.rootViewController =  tabCtrl
         
         /* 状态栏字体颜色,全局 */
-        UIApplication.shared.statusBarStyle = UIStatusBarStyle.default;
+        UIApplication.shared.statusBarStyle = UIStatusBarStyle.default
+        
+        /** 键盘 */
+        IQKeyboardManager.shared().isEnabled = true // 控制整个功能是否启用
+        IQKeyboardManager.shared().shouldResignOnTouchOutside = true // 控制点击背景是否收起键盘
 
         return true
     }

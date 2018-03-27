@@ -86,9 +86,6 @@
     
     //发起请求
     __block NSURLSessionDataTask *dataTask = nil;
-//    url_session_manager_create_task_safely(^{
-//        dataTask = [self.sessionManager.session dataTaskWithRequest:request];
-//    });
     
     dataTask = [self.sessionManager dataTaskWithRequest:request completionHandler:^(NSURLResponse * _Nonnull response, id  _Nullable responseObject, NSError * _Nullable error) {
         
@@ -96,12 +93,58 @@
             if (success) {
                 success(responseObject);
             }
-            //JJLog(@"Reply JSON: %@", responseObject);
         } else {
             if (failure) {
                 failure(dataTask,error);
             }
-            //JJLog(@"请求错误: %@ \n dataTask:%@ \n %@ \n %@", error,dataTask, response, responseObject);
+        }
+    }];
+    
+    [dataTask resume];
+}
+
+//params 字典 或 实体类
+- (void)request:(NetType)type formHeaders:(NSDictionary*)headerDict body:(NSDictionary*)bodyDict URL:(NSString*)fullURL params:(id)params isEntity:(BOOL)isEntity success:(SUCC)successBlock fail:(FAIL)failBlock
+{
+    NSString * method = @"POST";
+    if (type == GET) { method = @"GET";}
+    
+    //参数处理
+    NSDictionary* paramDict;
+    if (params==nil) {
+        paramDict = @{};
+    } else {
+        if (isEntity) {
+            paramDict = [params getIvarDict];
+        } else {
+            paramDict = (NSDictionary*)params;
+        }
+    }
+    
+    /**
+     * request设置
+     */
+    NSMutableURLRequest *request = [[AFJSONRequestSerializer serializer] requestWithMethod:method URLString:fullURL parameters:paramDict error:nil];
+    [request setValue:@"application/json" forHTTPHeaderField:@"Content-Type"]; //默认的
+    //添加 form 表单 header
+    for (NSString* key in headerDict.allKeys) {
+        [request setValue:headerDict[key] forHTTPHeaderField:key];
+    }
+    //添加 form 表单 body
+    NSData* bodyData = [NSJSONSerialization dataWithJSONObject:bodyDict options:NSJSONWritingPrettyPrinted error:nil];
+    [request setHTTPBody:bodyData];
+    
+    /**
+     * 发起请求
+     */
+    __block NSURLSessionDataTask *dataTask = nil;
+    
+    dataTask = [self.sessionManager dataTaskWithRequest:request completionHandler:^(NSURLResponse * _Nonnull response, id  _Nullable responseObject, NSError * _Nullable error) {
+        
+        if (!error) {
+            if (successBlock) { successBlock(responseObject); }
+        } else {
+            if (failBlock) { failBlock(dataTask,error); }
         }
     }];
     

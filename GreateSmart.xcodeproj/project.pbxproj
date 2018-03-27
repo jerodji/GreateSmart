@@ -114,6 +114,9 @@
 		387D5561206916A70073F934 /* SpecificationColectionControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 387D5560206916A70073F934 /* SpecificationColectionControl.swift */; };
 		387D55632069DCF20073F934 /* SpecificationCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 387D55622069DCF20073F934 /* SpecificationCollectionCell.swift */; };
 		387D5565206A14990073F934 /* JIStepper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 387D5564206A14990073F934 /* JIStepper.swift */; };
+		387D5569206A2D360073F934 /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 387D5567206A2D360073F934 /* LoginVC.swift */; };
+		387D556A206A2D360073F934 /* LoginVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 387D5568206A2D360073F934 /* LoginVC.xib */; };
+		387D556C206A4E350073F934 /* UserTokenModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 387D556B206A4E350073F934 /* UserTokenModel.swift */; };
 		388004C2204F92BE00FE9DD0 /* AFBaseNetwork.m in Sources */ = {isa = PBXBuildFile; fileRef = 388004C1204F92BD00FE9DD0 /* AFBaseNetwork.m */; };
 		388004C7204FAAEE00FE9DD0 /* JsonTransform.swift in Sources */ = {isa = PBXBuildFile; fileRef = 388004C6204FAAEE00FE9DD0 /* JsonTransform.swift */; };
 		388004C9204FD58200FE9DD0 /* ErrorCodeHandle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 388004C8204FD58200FE9DD0 /* ErrorCodeHandle.swift */; };
@@ -315,6 +318,9 @@
 		387D5560206916A70073F934 /* SpecificationColectionControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpecificationColectionControl.swift; sourceTree = "<group>"; };
 		387D55622069DCF20073F934 /* SpecificationCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpecificationCollectionCell.swift; sourceTree = "<group>"; };
 		387D5564206A14990073F934 /* JIStepper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JIStepper.swift; sourceTree = "<group>"; };
+		387D5567206A2D360073F934 /* LoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
+		387D5568206A2D360073F934 /* LoginVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoginVC.xib; sourceTree = "<group>"; };
+		387D556B206A4E350073F934 /* UserTokenModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserTokenModel.swift; sourceTree = "<group>"; };
 		388004C0204F92BD00FE9DD0 /* AFBaseNetwork.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFBaseNetwork.h; sourceTree = "<group>"; };
 		388004C1204F92BD00FE9DD0 /* AFBaseNetwork.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFBaseNetwork.m; sourceTree = "<group>"; };
 		388004C6204FAAEE00FE9DD0 /* JsonTransform.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JsonTransform.swift; sourceTree = "<group>"; };
@@ -473,6 +479,7 @@
 				386CAFEE20610068006E32DF /* Select_商品筛选条件 */,
 				382EF402205F65C500F3A33B /* GoodDetails_商品详情 */,
 				38B879A42042685A0080BB3C /* Search_搜索 */,
+				387D5566206A2AB70073F934 /* UserLogin */,
 			);
 			path = ModuleClass;
 			sourceTree = "<group>";
@@ -782,6 +789,16 @@
 			path = "SpecificationColectionView_规格";
 			sourceTree = "<group>";
 		};
+		387D5566206A2AB70073F934 /* UserLogin */ = {
+			isa = PBXGroup;
+			children = (
+				387D5567206A2D360073F934 /* LoginVC.swift */,
+				387D5568206A2D360073F934 /* LoginVC.xib */,
+				387D556B206A4E350073F934 /* UserTokenModel.swift */,
+			);
+			path = UserLogin;
+			sourceTree = "<group>";
+		};
 		388BA01B20525A65009C7C70 /* base */ = {
 			isa = PBXGroup;
 			children = (
@@ -862,11 +879,11 @@
 			isa = PBXGroup;
 			children = (
 				38B879A2204155DC0080BB3C /* MyVC.swift */,
-				387B6F3A205A83D300E6D916 /* adaper */,
 				387B6F2E205A72C400E6D916 /* header */,
 				387D4969205B8BAC0059BB20 /* 优惠券 */,
 				387B6F33205A82B900E6D916 /* 我的订单 */,
 				387B6F3F205A99B600E6D916 /* 我的服务 */,
+				387B6F3A205A83D300E6D916 /* adaper */,
 			);
 			path = "My_我的";
 			sourceTree = "<group>";
@@ -1234,6 +1251,7 @@
 				38172C5A2064F5B3002ED9AD /* CartBottomView.xib in Resources */,
 				387D554220689F9C0073F934 /* AcountHeadView.xib in Resources */,
 				384EE4562057C56700D2BCB6 /* LTCView.xib in Resources */,
+				387D556A206A2D360073F934 /* LoginVC.xib in Resources */,
 				387D55492068D93F0073F934 /* AddToCartView.xib in Resources */,
 				381C63042046990F00A9066C /* SearchHistoryCell.xib in Resources */,
 				387D496E205B98C10059BB20 /* SortingView.xib in Resources */,
@@ -1300,6 +1318,8 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-GreateSmart/Pods-GreateSmart-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/AFNetworking/AFNetworking.framework",
+				"${BUILT_PRODUCTS_DIR}/IQKeyboardManager/IQKeyboardManager.framework",
+				"${BUILT_PRODUCTS_DIR}/KeychainAccess/KeychainAccess.framework",
 				"${BUILT_PRODUCTS_DIR}/Kingfisher/Kingfisher.framework",
 				"${BUILT_PRODUCTS_DIR}/MJExtension/MJExtension.framework",
 				"${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework",
@@ -1307,6 +1327,8 @@
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AFNetworking.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/IQKeyboardManager.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/KeychainAccess.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Kingfisher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MJExtension.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SnapKit.framework",
@@ -1444,6 +1466,7 @@
 				38172C5D2064FC93002ED9AD /* BaseUIView.swift in Sources */,
 				381C62FE204685D700A9066C /* SearchRecordTitleView.swift in Sources */,
 				38BAE1512053869D00CA822A /* SortTypeControl.swift in Sources */,
+				387D5569206A2D360073F934 /* LoginVC.swift in Sources */,
 				384EE44820576AED00D2BCB6 /* TimeReCModel.swift in Sources */,
 				384EE45A2057EB9A00D2BCB6 /* ForMaleControl.swift in Sources */,
 				388004C7204FAAEE00FE9DD0 /* JsonTransform.swift in Sources */,
@@ -1467,6 +1490,7 @@
 				38172C5F2065185E002ED9AD /* CartBomButton.swift in Sources */,
 				382EF406205F699000F3A33B /* UIColor_extension.swift in Sources */,
 				38F9CA59202FED60004D105D /* AppDelegate.swift in Sources */,
+				387D556C206A4E350073F934 /* UserTokenModel.swift in Sources */,
 				382EF40D205F9AF100F3A33B /* GoodIntroduceCell.swift in Sources */,
 				38B879A3204155DC0080BB3C /* MyVC.swift in Sources */,
 				38FD686A20401FBC00B19A42 /* BaseUINavigationController.swift in Sources */,
