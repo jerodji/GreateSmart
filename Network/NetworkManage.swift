@@ -15,7 +15,7 @@ class NetworkManage: NSObject {
     private override init() { }
     
     func testEntityParamsRequest(entity:Any) -> Void {
-        BaseAFNetwork.instance.request(type: RequestType.POST, fullURL: "http://192.168.1.126:18080/test-entity", paramsEntity: entity) { (res) in
+        BaseAFNetwork.instance.request(type: NetType.POST, fullURL: "http://192.168.1.126:18080/test-entity", paramsEntity: entity) { (res) in
             delog(res)
         }
     }

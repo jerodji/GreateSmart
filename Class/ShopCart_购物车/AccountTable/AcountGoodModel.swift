@@ -10,6 +10,6 @@ import UIKit
 
 class AcountGoodModel: BaseModel {
 
-    @objc var selecBtnImage : String?
+    @objc var selecBtnImage : String = ""
     
 }

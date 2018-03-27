@@ -9,10 +9,10 @@
 import UIKit
 //import AFNetworking
 
-enum RequestType:String {
-    case POST = "POST"
-    case GET  = "GET"
-}
+//enum RequestType:String {
+//    case POST = "POST"
+//    case GET  = "GET"
+//}
 
 class BaseAFNetwork: NSObject {
     /* 单例 */
@@ -21,10 +21,43 @@ class BaseAFNetwork: NSObject {
     private override init() { }
     
     typealias SUCC = (_ response:Any) -> ()
-    //typealias FAIL = (_ error:NSError) -> ()
+    typealias FAIL = (_ error:NSError) -> ()
     //var succblock : SUCC?
     
-    //MARK:- entity
+    //MARK:- ----------------------- 表单请求接口  -----------------------
+    /// 设置表单的请求封装
+    ///
+    /// - Parameters:
+    ///   - type: POST/GET
+    ///   - formHeaders: 表单请求头 header
+    ///   - body: 表单请求体 body
+    ///   - url: url
+    ///   - params: 参数- 字典/实体类
+    ///   - isEntity: params参数是否为实体类
+    ///   - succCB: 成功回调
+    ///   - failCB: 失败回调
+    func request(type:NetType, formHeaders:NSDictionary, body:NSDictionary, url:String, params:Any, isEntity:Bool, succCB:@escaping SUCC, failCB:@escaping FAIL) -> Void {
+        
+        AFBaseNetwork.sharedInstance().request(
+            type,
+            formHeaders: formHeaders as! [AnyHashable : Any],
+            body: body as! [AnyHashable : Any],
+            url: url,
+            params: params,
+            isEntity: isEntity,
+            success: succCB,
+            fail: { (task,error) in
+                if error != nil {
+                    ErrorCodeHandle.handleInfo(task: task!, error: error! as NSError)
+                } else {
+                    delog("error info is nil")
+                }
+        })
+        
+    }
+    
+    //MARK:- ----------------------- entity -----------------------
+    
     func POST(api:String, paramsEntity:Any?, succCB : @escaping SUCC) -> Void {
         
         AFBaseNetwork.sharedInstance().post(URLHEAD, urlFunc: api, paramsEntity: paramsEntity, success: { (res) in
@@ -57,58 +90,36 @@ class BaseAFNetwork: NSObject {
         })
     }
     
-    func request(type:RequestType, urlHead:String, api:String, paramsEntity:Any?, succCB : @escaping SUCC) {
+    func request(type:NetType, urlHead:String, api:String, paramsEntity:Any?, succCB : @escaping SUCC) {
         
-        if type == RequestType.POST {
-            AFBaseNetwork.sharedInstance().request(NetType.POST, urlHead: urlHead, urlFunc: api, paramsEntity: paramsEntity, success: succCB, fail: { (task, error) in
-                if error != nil {
-                    ErrorCodeHandle.handleInfo(task: task!, error: error! as NSError)
-                } else {
-                    delog("error info is nil")
-                }
-            })
-        }
-        
-        if type == RequestType.GET {
-            AFBaseNetwork.sharedInstance().request(NetType.GET, urlHead: urlHead, urlFunc: api, paramsEntity: paramsEntity, success: succCB, fail: { (task, error) in
-                if error != nil {
-                    ErrorCodeHandle.handleInfo(task: task!, error: error! as NSError)
-                } else {
-                    delog("error info is nil")
-                }
-            })
-        }
+        AFBaseNetwork.sharedInstance().request(type, urlHead: urlHead, urlFunc: api, paramsEntity: paramsEntity, success: succCB, fail: { (task, error) in
+            if error != nil {
+                ErrorCodeHandle.handleInfo(task: task!, error: error! as NSError)
+            } else {
+                delog("error info is nil")
+            }
+        })
+
     }
     
-    func request(type:RequestType, fullURL:String, paramsEntity:Any?, succCB : @escaping SUCC) -> Void {
+    func request(type:NetType, fullURL:String, paramsEntity:Any?, succCB : @escaping SUCC) -> Void {
         
-        if type == RequestType.POST {
-            AFBaseNetwork.sharedInstance().request(NetType.POST, url: fullURL, paramsEntity: paramsEntity, success: succCB, fail: { (task, error) in
-                if error != nil {
-                    ErrorCodeHandle.handleInfo(task: task!, error: error! as NSError)
-                } else {
-                    delog("error info is nil")
-                }
-            })
-        }
+        AFBaseNetwork.sharedInstance().request(type, url: fullURL, paramsEntity: paramsEntity, success: succCB, fail: { (task, error) in
+            if error != nil {
+                ErrorCodeHandle.handleInfo(task: task!, error: error! as NSError)
+            } else {
+                delog("error info is nil")
+            }
+        })
         
-        if type == RequestType.GET {
-            AFBaseNetwork.sharedInstance().request(NetType.POST, url: fullURL, paramsEntity: paramsEntity, success: succCB, fail: { (task, error) in
-                if error != nil {
-                    ErrorCodeHandle.handleInfo(task: task!, error: error! as NSError)
-                } else {
-                    delog("error info is nil")
-                }
-            })
-        }
     }
     
-    //MARK:- dict
+    //MARK:- ----------------------- dict -----------------------
     /**
      *  post
      */
     func POST(api:String, params:NSDictionary?, succCB : @escaping SUCC) -> Void {
-        request(type: RequestType.POST, urlHead: URLHEAD, api: api, params: params) { (res) in
+        request(type: NetType.POST, urlHead: URLHEAD, api: api, params: params) { (res) in
             succCB(res)
         }
     }
@@ -117,7 +128,7 @@ class BaseAFNetwork: NSObject {
      *  get
      */
     func GET(api:String, params:NSDictionary?, succCB : @escaping SUCC) -> Void {
-        request(type: RequestType.GET, urlHead: URLHEAD, api: api, params: params) { (res) in
+        request(type: NetType.GET, urlHead: URLHEAD, api: api, params: params) { (res) in
             succCB(res)
         }
     }
@@ -126,9 +137,9 @@ class BaseAFNetwork: NSObject {
      * request
      */
     //@escaping 标记为 逃逸闭包
-    func request(type:RequestType, urlHead:String, api:String, params:NSDictionary?, succCB : @escaping SUCC) {
+    func request(type:NetType, urlHead:String, api:String, params:NSDictionary?, succCB : @escaping SUCC) {
         
-        if type == RequestType.POST
+        if type == NetType.POST
         {
             AFBaseNetwork.sharedInstance().post(urlHead, api: api, paramsDict:params as? [AnyHashable : Any], success: { (response) in
                 
@@ -146,7 +157,7 @@ class BaseAFNetwork: NSObject {
             })
         }
         
-        if type == RequestType.GET
+        if type == NetType.GET
         {
             AFBaseNetwork.sharedInstance().get(urlHead, api: api, paramsDict: params as? [AnyHashable : Any], success: { (response) in
                 
@@ -169,31 +180,36 @@ class BaseAFNetwork: NSObject {
     /**
      *  fullURL
      */
-    func request(type:RequestType, fullURL:String, params:NSDictionary?, succCB : @escaping SUCC){
+    func request(type:NetType, fullURL:String, params:NSDictionary?, succCB : @escaping SUCC){
         
-        if type == RequestType.POST {
-            AFBaseNetwork.sharedInstance().request(NetType.POST, fullURL: fullURL, parameterDict: params as! [AnyHashable : Any], success: { (res) in
-                
-                succCB(res!)
-                
-            }, fail: { (task,error) in
-                
-                if error != nil {
-                    ErrorCodeHandle.handleInfo(task: task!, error: error! as NSError)
-                } else {
-                    delog("error info is nil")
-                }
-            })
-        }
+        AFBaseNetwork.sharedInstance().request(type, fullURL: fullURL, parameterDict: params as! [AnyHashable : Any], success: { (res) in
+            
+            succCB(res!)
+            
+        }, fail: { (task,error) in
+            
+            if error != nil {
+                ErrorCodeHandle.handleInfo(task: task!, error: error! as NSError)
+            } else {
+                delog("error info is nil")
+            }
+        })
         
     }
     
     
-    //MARK:-
-    
-    /**
-     * upload
-     */
+    //MARK:- ----------------------- upload -----------------------
+    /// 上传
+    ///
+    /// - Parameters:
+    ///   - api: api
+    ///   - params: 参数 - dict
+    ///   - data: 上传的data
+    ///   - name: name
+    ///   - fileName: 文件名
+    ///   - mimeType: 文件格式
+    ///   - succCB: 成功回调
+    ///   - progressCB: 进度回调
     func upload(api:String, params:NSDictionary, data:NSData, name:String, fileName:String, mimeType:String, succCB: @escaping SUCC, progressCB: @escaping (_ prog: CGFloat) -> ()) {
         
         AFBaseNetwork.sharedInstance().uploadData(withURLHead: URLHEAD, urlFunc: api, parameters: params as? [AnyHashable : Any], data: data as Data!, name: name, fileName: fileName, mimeType: mimeType, success: { (res) in

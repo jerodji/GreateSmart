@@ -17,7 +17,7 @@ class AccountTableControl: BaseControl,UITableViewDelegate,UITableViewDataSource
         super.init()
         
         //MARK: 测试数据
-        for i in 0...7 {
+        for i in 0...17 {
             let model = AcountGoodModel()
             model.selecBtnImage = "weixuanzhong"
             dataArray.add(model)
@@ -34,20 +34,25 @@ class AccountTableControl: BaseControl,UITableViewDelegate,UITableViewDataSource
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {
-        return dataArray.count
+//        return dataArray.count
+        return 1
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 3
+//        return 3
+        return dataArray.count
     }
     // cell
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let model = dataArray.object(at: indexPath.row) as! AcountGoodModel
         let cell = tableView.dequeueReusableCell(withIdentifier: "AcountGoodCellid") as? AcountGoodCell
         cell?.selectionStyle = .none
-        cell?.selecBtn.setImage(UIImage.init(named: "weixuanzhong"), for: .normal)
-//        cell?.selecBtnCB = {
-//            cell?.selecBtn.setImage(UIImage.init(named: "xuanzhogn2"), for: .normal)
-//        }
+        cell?.selecBtn.setImage(UIImage.init(named: model.selecBtnImage), for: .normal)
+        cell?.selecBtnCB = {
+            model.selecBtnImage = "xuanzhogn2"
+            self.dataArray.replaceObject(at: indexPath.row, with: model)
+            cell?.selecBtn.setImage(UIImage.init(named: model.selecBtnImage), for: .normal)
+        }
         return cell!
     }
     

@@ -90,7 +90,18 @@ typedef void (^FAIL)(NSURLSessionDataTask * task, NSError* error);
 #pragma mark - 上传
 
 /**
- *  upload data request
+ 上传
+
+ @param _urlHead 请求url地址
+ @param _urlFunc api
+ @param _parameters 参数 - dict
+ @param _data 上传的data
+ @param _name name
+ @param _fileName 文件名
+ @param _mimeType 文件格式,后缀名
+ @param _success 成功回调
+ @param _failure 失败回调
+ @param _progress 进度回调
  */
 - (void)uploadDataWithURLHead:(NSString*)_urlHead URLFunc:(NSString*)_urlFunc parameters:(NSDictionary*)_parameters data:(NSData*)_data name:(NSString*)_name fileName:(NSString*)_fileName mimeType:(NSString*)_mimeType success:(SUCC)_success failure:(FAIL)_failure progress:(void (^)(CGFloat progres))_progress;
 
