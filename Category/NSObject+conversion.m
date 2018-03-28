@@ -119,6 +119,7 @@ static NSString * PARAM_KEY = @"PARAM_KEY";
 
 @end
 
+#pragma mark -
 
 @implementation NSObject (JSONHandle)
 

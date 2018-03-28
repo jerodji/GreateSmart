@@ -125,6 +125,9 @@
 		388BA0202052A057009C7C70 /* SortTypeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 388BA01F2052A057009C7C70 /* SortTypeModel.swift */; };
 		389040D320634CC700277974 /* SelecHeadView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 389040D220634CC700277974 /* SelecHeadView.swift */; };
 		389040D52063506A00277974 /* SelectConditionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 389040D42063506A00277974 /* SelectConditionCell.swift */; };
+		389BC5E8206B96FD00CC776F /* JJNetwork.m in Sources */ = {isa = PBXBuildFile; fileRef = 389BC5E7206B96FD00CC776F /* JJNetwork.m */; };
+		389BC5EB206B9DDC00CC776F /* JJNetDefine.m in Sources */ = {isa = PBXBuildFile; fileRef = 389BC5EA206B9DDC00CC776F /* JJNetDefine.m */; };
+		389BC5EF206BA39700CC776F /* NSDictionary+extend.m in Sources */ = {isa = PBXBuildFile; fileRef = 389BC5EE206BA39700CC776F /* NSDictionary+extend.m */; };
 		38B8799F204155A00080BB3C /* GoodListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38B8799E204155A00080BB3C /* GoodListVC.swift */; };
 		38B879A1204155C60080BB3C /* ShopCartVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38B879A0204155C60080BB3C /* ShopCartVC.swift */; };
 		38B879A3204155DC0080BB3C /* MyVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38B879A2204155DC0080BB3C /* MyVC.swift */; };
@@ -168,7 +171,6 @@
 		38FD686C2040202C00B19A42 /* BaseUITableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38FD686B2040202C00B19A42 /* BaseUITableViewController.swift */; };
 		38FD686E2040207A00B19A42 /* XIB.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38FD686D2040207A00B19A42 /* XIB.swift */; };
 		38FD68742040220D00B19A42 /* PublicDefine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38FD68732040220D00B19A42 /* PublicDefine.swift */; };
-		38FD687B2040267C00B19A42 /* BaseAFNetwork.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38FD687A2040267C00B19A42 /* BaseAFNetwork.swift */; };
 		38FD687D204026D200B19A42 /* NetAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38FD687C204026D200B19A42 /* NetAPI.swift */; };
 		38FD687F204027F300B19A42 /* NetworkManage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38FD687E204027F300B19A42 /* NetworkManage.swift */; };
 		38FD688320402A9000B19A42 /* HomePageVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38FD688120402A9000B19A42 /* HomePageVC.swift */; };
@@ -331,6 +333,12 @@
 		388BA01F2052A057009C7C70 /* SortTypeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SortTypeModel.swift; sourceTree = "<group>"; };
 		389040D220634CC700277974 /* SelecHeadView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelecHeadView.swift; sourceTree = "<group>"; };
 		389040D42063506A00277974 /* SelectConditionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectConditionCell.swift; sourceTree = "<group>"; };
+		389BC5E6206B96FD00CC776F /* JJNetwork.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JJNetwork.h; sourceTree = "<group>"; };
+		389BC5E7206B96FD00CC776F /* JJNetwork.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JJNetwork.m; sourceTree = "<group>"; };
+		389BC5E9206B9DDC00CC776F /* JJNetDefine.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JJNetDefine.h; sourceTree = "<group>"; };
+		389BC5EA206B9DDC00CC776F /* JJNetDefine.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JJNetDefine.m; sourceTree = "<group>"; };
+		389BC5ED206BA39700CC776F /* NSDictionary+extend.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSDictionary+extend.h"; sourceTree = "<group>"; };
+		389BC5EE206BA39700CC776F /* NSDictionary+extend.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSDictionary+extend.m"; sourceTree = "<group>"; };
 		38B8799E204155A00080BB3C /* GoodListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoodListVC.swift; sourceTree = "<group>"; };
 		38B879A0204155C60080BB3C /* ShopCartVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShopCartVC.swift; sourceTree = "<group>"; };
 		38B879A2204155DC0080BB3C /* MyVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyVC.swift; sourceTree = "<group>"; };
@@ -391,7 +399,6 @@
 		38FD686B2040202C00B19A42 /* BaseUITableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseUITableViewController.swift; sourceTree = "<group>"; };
 		38FD686D2040207A00B19A42 /* XIB.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = XIB.swift; path = ../../SmartAgency/Category/XIB.swift; sourceTree = "<group>"; };
 		38FD68732040220D00B19A42 /* PublicDefine.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PublicDefine.swift; sourceTree = "<group>"; };
-		38FD687A2040267C00B19A42 /* BaseAFNetwork.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseAFNetwork.swift; sourceTree = "<group>"; };
 		38FD687C204026D200B19A42 /* NetAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetAPI.swift; sourceTree = "<group>"; };
 		38FD687E204027F300B19A42 /* NetworkManage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManage.swift; sourceTree = "<group>"; };
 		38FD688120402A9000B19A42 /* HomePageVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePageVC.swift; sourceTree = "<group>"; };
@@ -800,16 +807,6 @@
 			path = UserLogin;
 			sourceTree = "<group>";
 		};
-		388BA01B20525A65009C7C70 /* base */ = {
-			isa = PBXGroup;
-			children = (
-				38FD687A2040267C00B19A42 /* BaseAFNetwork.swift */,
-				388004C0204F92BD00FE9DD0 /* AFBaseNetwork.h */,
-				388004C1204F92BD00FE9DD0 /* AFBaseNetwork.m */,
-			);
-			path = base;
-			sourceTree = "<group>";
-		};
 		388BA01C20529FD2009C7C70 /* Items */ = {
 			isa = PBXGroup;
 			children = (
@@ -1005,6 +1002,8 @@
 			isa = PBXGroup;
 			children = (
 				38FD686D2040207A00B19A42 /* XIB.swift */,
+				389BC5ED206BA39700CC776F /* NSDictionary+extend.h */,
+				389BC5EE206BA39700CC776F /* NSDictionary+extend.m */,
 				381C63182048097F00A9066C /* StringSize.swift */,
 				388BA019205226BC009C7C70 /* property.swift */,
 				384EE44F2057A37D00D2BCB6 /* errorPrevent.swift */,
@@ -1076,10 +1075,15 @@
 		38FD68792040262200B19A42 /* Network */ = {
 			isa = PBXGroup;
 			children = (
-				38FD687C204026D200B19A42 /* NetAPI.swift */,
 				38FD687E204027F300B19A42 /* NetworkManage.swift */,
+				38FD687C204026D200B19A42 /* NetAPI.swift */,
 				388004C8204FD58200FE9DD0 /* ErrorCodeHandle.swift */,
-				388BA01B20525A65009C7C70 /* base */,
+				388004C0204F92BD00FE9DD0 /* AFBaseNetwork.h */,
+				388004C1204F92BD00FE9DD0 /* AFBaseNetwork.m */,
+				389BC5E6206B96FD00CC776F /* JJNetwork.h */,
+				389BC5E7206B96FD00CC776F /* JJNetwork.m */,
+				389BC5E9206B9DDC00CC776F /* JJNetDefine.h */,
+				389BC5EA206B9DDC00CC776F /* JJNetDefine.m */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -1382,7 +1386,6 @@
 				38F64236205900F9004A75DF /* TimeReCCollectView.swift in Sources */,
 				384EE4452057699600D2BCB6 /* NatureModel.swift in Sources */,
 				38FD686E2040207A00B19A42 /* XIB.swift in Sources */,
-				38FD687B2040267C00B19A42 /* BaseAFNetwork.swift in Sources */,
 				38F76371205940BA002C1999 /* HotSaleCell.swift in Sources */,
 				387B6F2D205A571F00E6D916 /* ZPageControl.swift in Sources */,
 				38FD686420401E4F00B19A42 /* UIView+viewFrame.m in Sources */,
@@ -1457,12 +1460,15 @@
 				38FD686120401E4F00B19A42 /* NSObject+isNull.m in Sources */,
 				38F6423920590151004A75DF /* TimeReCCell.swift in Sources */,
 				386CAFF3206111F6006E32DF /* SelecHeaderButton.swift in Sources */,
+				389BC5EB206B9DDC00CC776F /* JJNetDefine.m in Sources */,
 				386CAFF5206113BD006E32DF /* SelectAreaView.swift in Sources */,
 				384EE4522057C4ED00D2BCB6 /* LTCControl.swift in Sources */,
 				382EF426205FBA5200F3A33B /* SYATopScrollViewTitleLabel.m in Sources */,
 				381C63152047CCCC00A9066C /* FlowCollectionView.swift in Sources */,
 				38F6423C20591F99004A75DF /* HotInStoreView.swift in Sources */,
+				389BC5E8206B96FD00CC776F /* JJNetwork.m in Sources */,
 				387D5537206893560073F934 /* AccountTableControl.swift in Sources */,
+				389BC5EF206BA39700CC776F /* NSDictionary+extend.m in Sources */,
 				38F7636D20593950002C1999 /* iCarousel.m in Sources */,
 				38B879AA20426A3F0080BB3C /* BaseControl.swift in Sources */,
 				389040D320634CC700277974 /* SelecHeadView.swift in Sources */,

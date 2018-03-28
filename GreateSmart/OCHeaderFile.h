@@ -19,10 +19,12 @@
 #import "UIView+viewFrame.h"
 #import "UIViewController+XIB.h"
 #import "NSObject+conversion.h"
+#import "NSDictionary+extend.h"
 
 #pragma mark ------------ Utils ------------
 
 #import "AFBaseNetwork.h"
+#import "JJNetwork.h"
 #import "WSCollectionViewFlowLayout.h"
 #import "iCarousel.h"
 #import "SYATopScrollViewController.h"

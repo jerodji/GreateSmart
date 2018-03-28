@@ -38,13 +38,6 @@ class HomePageVC: BaseUIViewController {
     override func loadView() {
         super.loadView()
 //        //MARK:获取首页数据
-//        NetworkManage.instance.requestHomePageData { (info) in
-//            if info is NSArray {
-//                self.homeData = info as! NSArray
-////                delog(self.homeData)
-//                self.tableCtrl.handleHomeData(homeData: self.homeData)
-//            }
-//        }
         
 
         testJsonStr = "[\n" +

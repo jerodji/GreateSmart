@@ -31,8 +31,18 @@ class LoginVC: UIViewController {
     @IBAction func loginAction(_ sender: UIButton) {
         delog("phoneNumber : \(String(describing: phoneNumberTF.text)) ; password : \(String(describing: passwordTF.text))")
         
-        
-        
+        let dict : NSDictionary = [
+            "grant_type":"password",
+            "username":String(describing: phoneNumberTF.text!),
+            "password":String(describing: passwordTF.text!),
+            "scope":"app",
+            "client_id":"client",
+            "client_secret":"secret"
+        ]
+        NetworkManage.ins.requestOAuthToken(formBody: dict) { (res) in
+            self.dismiss(animated: true, completion: nil)
+            delog(res)
+        }
     }
     
     @IBAction func wechatLoginAction(_ sender: UIButton) {

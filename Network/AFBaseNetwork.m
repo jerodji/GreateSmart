@@ -13,6 +13,7 @@
 
 @interface AFBaseNetwork()
 @property (nonatomic,strong) AFHTTPSessionManager * sessionManager;
+@property (nonatomic,strong) AFHTTPSessionManager * formManager;
 @end
 
 @implementation AFBaseNetwork
@@ -25,7 +26,7 @@
         _sessionManager.requestSerializer.timeoutInterval = 6;
         _sessionManager.securityPolicy = [AFSecurityPolicy policyWithPinningMode:AFSSLPinningModeNone];//[AFSecurityPolicy defaultPolicy];
         _sessionManager.requestSerializer.cachePolicy = NSURLRequestUseProtocolCachePolicy;
-        
+        //// 设置接收数据为 JSON 数据
         _sessionManager.responseSerializer = [AFHTTPResponseSerializer serializer]; /* 不设置会报-1016或者会有编码问题, 设置了 [AFHTTPResponseSerializer serializer] 会自动转json */
         NSMutableSet *acceptSet = [_sessionManager.responseSerializer.acceptableContentTypes mutableCopy];
         [acceptSet addObject:@"text/plain"];
@@ -37,7 +38,7 @@
 }
 
 
-+ (AFBaseNetwork *)sharedInstance
++ (AFBaseNetwork *)shared
 {
     static dispatch_once_t pred = 0;
     __strong static id _sharedObject = nil;
@@ -46,6 +47,24 @@
     });
     return _sharedObject;
 }
+
+- (AFHTTPSessionManager *)formManager {
+    if (!_formManager) {
+        _formManager = [AFHTTPSessionManager manager];/* 创建网络请求对象 */
+        /* 设置请求和接收的数据编码格式 */
+        _formManager.requestSerializer  = [AFHTTPRequestSerializer serializer];// [AFJSONRequestSerializer serializer]; // 设置请求数据为 JSON 数据
+        _formManager.responseSerializer = [AFJSONResponseSerializer serializer]; // 设置接收数据为 JSON 数据
+        /* 设置请求头 */
+//        [_formManager.requestSerializer setValue:@"application/json" forHTTPHeaderField:@"Content-Type"];
+//        [_formManager.requestSerializer setValue:@"xxx" forHTTPHeaderField:@"xxx"];
+//        [_formManager.requestSerializer setValue:@"xxx" forHTTPHeaderField:@"xxx"];
+        
+
+    }
+    return _formManager;
+}
+
+
 
 #pragma mark - entity
 
@@ -103,53 +122,7 @@
     [dataTask resume];
 }
 
-//params 字典 或 实体类
-- (void)request:(NetType)type formHeaders:(NSDictionary*)headerDict body:(NSDictionary*)bodyDict URL:(NSString*)fullURL params:(id)params isEntity:(BOOL)isEntity success:(SUCC)successBlock fail:(FAIL)failBlock
-{
-    NSString * method = @"POST";
-    if (type == GET) { method = @"GET";}
-    
-    //参数处理
-    NSDictionary* paramDict;
-    if (params==nil) {
-        paramDict = @{};
-    } else {
-        if (isEntity) {
-            paramDict = [params getIvarDict];
-        } else {
-            paramDict = (NSDictionary*)params;
-        }
-    }
-    
-    /**
-     * request设置
-     */
-    NSMutableURLRequest *request = [[AFJSONRequestSerializer serializer] requestWithMethod:method URLString:fullURL parameters:paramDict error:nil];
-    [request setValue:@"application/json" forHTTPHeaderField:@"Content-Type"]; //默认的
-    //添加 form 表单 header
-    for (NSString* key in headerDict.allKeys) {
-        [request setValue:headerDict[key] forHTTPHeaderField:key];
-    }
-    //添加 form 表单 body
-    NSData* bodyData = [NSJSONSerialization dataWithJSONObject:bodyDict options:NSJSONWritingPrettyPrinted error:nil];
-    [request setHTTPBody:bodyData];
-    
-    /**
-     * 发起请求
-     */
-    __block NSURLSessionDataTask *dataTask = nil;
-    
-    dataTask = [self.sessionManager dataTaskWithRequest:request completionHandler:^(NSURLResponse * _Nonnull response, id  _Nullable responseObject, NSError * _Nullable error) {
-        
-        if (!error) {
-            if (successBlock) { successBlock(responseObject); }
-        } else {
-            if (failBlock) { failBlock(dataTask,error); }
-        }
-    }];
-    
-    [dataTask resume];
-}
+
 
 
 #pragma mark - dict
@@ -170,7 +143,7 @@
     if ( (nil == _urlFunc) || (_urlFunc.length == 0) ) {return;}
     
     // fullURL
-    NSString * fullURL = [NSString stringWithFormat:@"%@/%@", _urlHead, _urlFunc];
+    NSString * fullURL = [NSString stringWithFormat:@"%@%@", _urlHead, _urlFunc];
     JJLog(@"fullURL >> %@",fullURL);
     
     if (_type == POST)
@@ -200,7 +173,7 @@
     
 }
 
-- (void)request:(NetType)_type fullURL:(NSString*)_url parameterDict:(NSDictionary*)_parameter success:(SUCC)_success fail:(FAIL)_failure
+- (void)request:(NetType)_type URL:(NSString*)_url paramsDict:(NSDictionary*)_parameter success:(SUCC)_success fail:(FAIL)_failure
 {
     if ( (nil == _url) || (_url.length == 0) ) {
         JJLog(@"uclog | _url is nil, networking request error");

@@ -29,7 +29,7 @@
                         <constraint firstAttribute="height" constant="45" id="Xd7-bB-VFd"/>
                     </constraints>
                 </imageView>
-                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="输入手机号" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="3jb-AD-0SX">
+                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="123" placeholder="输入手机号" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="3jb-AD-0SX">
                     <rect key="frame" x="30" y="175" width="315" height="32"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="32" id="7w5-xL-pTF"/>
@@ -38,7 +38,7 @@
                     <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="12"/>
                     <textInputTraits key="textInputTraits"/>
                 </textField>
-                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="输入密码" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="45Z-3w-daf">
+                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="123456" placeholder="输入密码" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="45Z-3w-daf">
                     <rect key="frame" x="30" y="227" width="315" height="32"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="32" id="sm8-Sb-QZz"/>
