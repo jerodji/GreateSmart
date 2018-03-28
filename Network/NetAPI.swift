@@ -8,13 +8,19 @@
 
 import UIKit
 
-/** 正式服 https://www.laopdr.cn/ */
+/**
+ *  正式服 https://www.laopdr.cn/
+ */
 //let URLHEAD = "https://www.laopdr.cn/"
 
-/** 测试服 http://test.laopdr.cn:8080/ */
+/**
+ *  测试服 http://test.laopdr.cn:8080/
+ */
 let URLHEAD = "http://test.laopdr.cn:8080/"
 
-/** li dun xi  http://192.168.1.120:8080/ */
+/**
+ *  li dun xi  http://192.168.1.120:8080/
+ */
 //let URLHEAD = "http://192.168.1.120:8080/"
 
 

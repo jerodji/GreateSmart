@@ -46,6 +46,8 @@ func delog(_ msg:Any,file:String = #file,funcName:String = #function,lineNum:Int
 
 /**======================    =======================**/
 
+let kBundleID : String = AppConfig.shareIns().getBundleIdentifier()
+
 
 
 import UIKit

@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import KeychainAccess
 
 class LoginVC: UIViewController {
     
@@ -24,14 +25,14 @@ class LoginVC: UIViewController {
     }
     
     @IBAction func forgatePasswordAction(_ sender: UIButton) {
-        let model = UserTokenModel.instance
+        
         
     }
     
     @IBAction func loginAction(_ sender: UIButton) {
         delog("phoneNumber : \(String(describing: phoneNumberTF.text)) ; password : \(String(describing: passwordTF.text))")
         
-        let dict : NSDictionary = [
+        let bodysKV : NSDictionary = [
             "grant_type":"password",
             "username":String(describing: phoneNumberTF.text!),
             "password":String(describing: passwordTF.text!),
@@ -39,13 +40,28 @@ class LoginVC: UIViewController {
             "client_id":"client",
             "client_secret":"secret"
         ]
-        NetworkManage.ins.requestOAuthToken(formBody: dict) { (res) in
+        
+        NetworkManage.ins.requestOAuthToken(formBody: bodysKV) { (res) in
             self.dismiss(animated: true, completion: nil)
-            delog(res)
+            if res is NSDictionary {
+                let dict = res as! NSDictionary
+                
+                /**
+                 *  keychain 存储token信息
+                 */
+                //let keychain = Keychain(service: kBundleID)
+                Keychain(service: kBundleID)[UserTokenKeys.ins.access_token]  = "\(String.init(describing: dict[UserTokenKeys.ins.access_token]))"
+                Keychain(service: kBundleID)[UserTokenKeys.ins.token_type]    = "\(String.init(describing: dict[UserTokenKeys.ins.token_type]))"
+                Keychain(service: kBundleID)[UserTokenKeys.ins.refresh_token] = "\(String.init(describing: dict[UserTokenKeys.ins.refresh_token]))"
+                Keychain(service: kBundleID)[UserTokenKeys.ins.expires_in]    = "\(String.init(describing: dict[UserTokenKeys.ins.expires_in]))"
+                Keychain(service: kBundleID)[UserTokenKeys.ins.scope]         = "\(String.init(describing: dict[UserTokenKeys.ins.scope]))"
+                
+            }
         }
     }
     
     @IBAction func wechatLoginAction(_ sender: UIButton) {
+        delog("")
     }
     
     

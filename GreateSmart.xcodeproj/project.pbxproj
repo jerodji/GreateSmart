@@ -116,7 +116,7 @@
 		387D5565206A14990073F934 /* JIStepper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 387D5564206A14990073F934 /* JIStepper.swift */; };
 		387D5569206A2D360073F934 /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 387D5567206A2D360073F934 /* LoginVC.swift */; };
 		387D556A206A2D360073F934 /* LoginVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 387D5568206A2D360073F934 /* LoginVC.xib */; };
-		387D556C206A4E350073F934 /* UserTokenModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 387D556B206A4E350073F934 /* UserTokenModel.swift */; };
+		387D556C206A4E350073F934 /* UserTokenKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 387D556B206A4E350073F934 /* UserTokenKeys.swift */; };
 		388004C2204F92BE00FE9DD0 /* AFBaseNetwork.m in Sources */ = {isa = PBXBuildFile; fileRef = 388004C1204F92BD00FE9DD0 /* AFBaseNetwork.m */; };
 		388004C7204FAAEE00FE9DD0 /* JsonTransform.swift in Sources */ = {isa = PBXBuildFile; fileRef = 388004C6204FAAEE00FE9DD0 /* JsonTransform.swift */; };
 		388004C9204FD58200FE9DD0 /* ErrorCodeHandle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 388004C8204FD58200FE9DD0 /* ErrorCodeHandle.swift */; };
@@ -128,6 +128,7 @@
 		389BC5E8206B96FD00CC776F /* JJNetwork.m in Sources */ = {isa = PBXBuildFile; fileRef = 389BC5E7206B96FD00CC776F /* JJNetwork.m */; };
 		389BC5EB206B9DDC00CC776F /* JJNetDefine.m in Sources */ = {isa = PBXBuildFile; fileRef = 389BC5EA206B9DDC00CC776F /* JJNetDefine.m */; };
 		389BC5EF206BA39700CC776F /* NSDictionary+extend.m in Sources */ = {isa = PBXBuildFile; fileRef = 389BC5EE206BA39700CC776F /* NSDictionary+extend.m */; };
+		389BC5F4206BB31900CC776F /* AppConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = 389BC5F2206BB31900CC776F /* AppConfig.m */; };
 		38B8799F204155A00080BB3C /* GoodListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38B8799E204155A00080BB3C /* GoodListVC.swift */; };
 		38B879A1204155C60080BB3C /* ShopCartVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38B879A0204155C60080BB3C /* ShopCartVC.swift */; };
 		38B879A3204155DC0080BB3C /* MyVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38B879A2204155DC0080BB3C /* MyVC.swift */; };
@@ -322,7 +323,7 @@
 		387D5564206A14990073F934 /* JIStepper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JIStepper.swift; sourceTree = "<group>"; };
 		387D5567206A2D360073F934 /* LoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
 		387D5568206A2D360073F934 /* LoginVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoginVC.xib; sourceTree = "<group>"; };
-		387D556B206A4E350073F934 /* UserTokenModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserTokenModel.swift; sourceTree = "<group>"; };
+		387D556B206A4E350073F934 /* UserTokenKeys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserTokenKeys.swift; sourceTree = "<group>"; };
 		388004C0204F92BD00FE9DD0 /* AFBaseNetwork.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFBaseNetwork.h; sourceTree = "<group>"; };
 		388004C1204F92BD00FE9DD0 /* AFBaseNetwork.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFBaseNetwork.m; sourceTree = "<group>"; };
 		388004C6204FAAEE00FE9DD0 /* JsonTransform.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JsonTransform.swift; sourceTree = "<group>"; };
@@ -339,6 +340,8 @@
 		389BC5EA206B9DDC00CC776F /* JJNetDefine.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JJNetDefine.m; sourceTree = "<group>"; };
 		389BC5ED206BA39700CC776F /* NSDictionary+extend.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSDictionary+extend.h"; sourceTree = "<group>"; };
 		389BC5EE206BA39700CC776F /* NSDictionary+extend.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSDictionary+extend.m"; sourceTree = "<group>"; };
+		389BC5F2206BB31900CC776F /* AppConfig.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppConfig.m; sourceTree = "<group>"; };
+		389BC5F3206BB31900CC776F /* AppConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppConfig.h; sourceTree = "<group>"; };
 		38B8799E204155A00080BB3C /* GoodListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoodListVC.swift; sourceTree = "<group>"; };
 		38B879A0204155C60080BB3C /* ShopCartVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShopCartVC.swift; sourceTree = "<group>"; };
 		38B879A2204155DC0080BB3C /* MyVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyVC.swift; sourceTree = "<group>"; };
@@ -802,7 +805,7 @@
 			children = (
 				387D5567206A2D360073F934 /* LoginVC.swift */,
 				387D5568206A2D360073F934 /* LoginVC.xib */,
-				387D556B206A4E350073F934 /* UserTokenModel.swift */,
+				387D556B206A4E350073F934 /* UserTokenKeys.swift */,
 			);
 			path = UserLogin;
 			sourceTree = "<group>";
@@ -1047,6 +1050,8 @@
 		38FD686F204020F400B19A42 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				389BC5F3206BB31900CC776F /* AppConfig.h */,
+				389BC5F2206BB31900CC776F /* AppConfig.m */,
 				387D5564206A14990073F934 /* JIStepper.swift */,
 				382EF41B205FBA5200F3A33B /* SYATopScrollviewVC */,
 				387B6F25205A571F00E6D916 /* ZCycleView */,
@@ -1485,6 +1490,7 @@
 				384EE45A2057EB9A00D2BCB6 /* ForMaleControl.swift in Sources */,
 				388004C7204FAAEE00FE9DD0 /* JsonTransform.swift in Sources */,
 				38F7636F20593A3B002C1999 /* HotSaleView.swift in Sources */,
+				389BC5F4206BB31900CC776F /* AppConfig.m in Sources */,
 				38213027204EAC3D00F1413C /* BannerView.swift in Sources */,
 				388004C2204F92BE00FE9DD0 /* AFBaseNetwork.m in Sources */,
 				387B6F30205A72EF00E6D916 /* UserHeaderView.swift in Sources */,
@@ -1504,7 +1510,7 @@
 				38172C5F2065185E002ED9AD /* CartBomButton.swift in Sources */,
 				382EF406205F699000F3A33B /* UIColor_extension.swift in Sources */,
 				38F9CA59202FED60004D105D /* AppDelegate.swift in Sources */,
-				387D556C206A4E350073F934 /* UserTokenModel.swift in Sources */,
+				387D556C206A4E350073F934 /* UserTokenKeys.swift in Sources */,
 				382EF40D205F9AF100F3A33B /* GoodIntroduceCell.swift in Sources */,
 				38B879A3204155DC0080BB3C /* MyVC.swift in Sources */,
 				38FD686A20401FBC00B19A42 /* BaseUINavigationController.swift in Sources */,

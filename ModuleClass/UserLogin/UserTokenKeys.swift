@@ -8,10 +8,10 @@
 
 import UIKit
 
-class UserTokenModel: BaseModel {
+class UserTokenKeys: NSObject {
     
     /* 单例 */
-    static let instance = UserTokenModel()
+    static let ins = UserTokenKeys()
     /* 需要重写自己的init方法,设置为私有,保证单例是真正唯一的,避免外部对象通过访问init方法创建单例类的其他实例 */
     private override init() { super.init() }
     
@@ -19,11 +19,12 @@ class UserTokenModel: BaseModel {
         fatalError("init(coder:) has not been implemented")
     }
     
-    var access_token : String = "79e7ca46-3401-48b3-9b4a-834cb62f9922"
-    var token_type : String = "bearer"
-    var refresh_token : String = "9c941fc2-2c2c-4270-bd39-75834ceefd5a"
-    var expires_in : String = "4018"
-    var scope : String = "app"
+                                //返回token信息的映射
+    var access_token  : String = "access_token"
+    var token_type    : String = "token_type"
+    var refresh_token : String = "refresh_token"
+    var expires_in    : String = "expires_in"
+    var scope         : String = "scope"
 }
 
 /**

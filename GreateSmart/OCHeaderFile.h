@@ -25,6 +25,7 @@
 
 #import "AFBaseNetwork.h"
 #import "JJNetwork.h"
+#import "AppConfig.h"
 #import "WSCollectionViewFlowLayout.h"
 #import "iCarousel.h"
 #import "SYATopScrollViewController.h"
