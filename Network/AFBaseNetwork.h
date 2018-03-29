@@ -16,34 +16,26 @@
 #define JJLog(format, ...)
 #endif
 
-//typedef NS_ENUM(NSInteger, NetType) {
-//    GET,
-//    POST
-//};
-//
-//typedef void (^SUCC)(id responseObject);
-//typedef void (^FAIL)(NSURLSessionDataTask * task, NSError* error);
-
 @interface AFBaseNetwork : NSObject
 
-+ (AFBaseNetwork*)shared;
++ (AFBaseNetwork*)shareIns;
 
 #pragma mark - 以实体类为参数
 
 /**
  *  get
  */
-//- (void)get:(NSString*)urlHead URLFunc:(NSString*)urlFunc paramsEntity:(id)entity success:(SUCC)success fail:(FAIL)failure;
+- (void)get:(NSString*)urlHead URLFunc:(NSString*)urlFunc paramsEntity:(id)entity success:(SUCC)success fail:(FAIL)failure;
 
 /**
  *  post
  */
-//- (void)post:(NSString*)urlHead URLFunc:(NSString*)urlFunc paramsEntity:(id)entity success:(SUCC)success fail:(FAIL)failure;
+- (void)post:(NSString*)urlHead URLFunc:(NSString*)urlFunc paramsEntity:(id)entity success:(SUCC)success fail:(FAIL)failure;
 
 /**
  *  request with url head and func
  */
-//- (void)request:(NetType)type URLHead:(NSString*)urlHead URLFunc:(NSString*)urlFunc paramsEntity:(id)entity success:(SUCC)success fail:(FAIL)failure;
+- (void)request:(NetType)type URLHead:(NSString*)urlHead URLFunc:(NSString*)urlFunc paramsEntity:(id)entity success:(SUCC)success fail:(FAIL)failure;
 
 
 /**
@@ -63,17 +55,17 @@
 /**
  *  http get request
  */
-//- (void)get:(NSString*)_urlHead api:(NSString*)_urlFunc paramsDict:(NSDictionary*)_parameters success:(SUCC)_success fail:(FAIL)_failure;
+- (void)get:(NSString*)_urlHead api:(NSString*)_urlFunc paramsDict:(NSDictionary*)_parameters success:(SUCC)_success fail:(FAIL)_failure;
 
 /**
  *  http post request
  */
-//- (void)post:(NSString*)_urlHead api:(NSString*)_urlFunc paramsDict:(NSDictionary*)_parameters success:(SUCC)_success fail:(FAIL)_failure;
+- (void)post:(NSString*)_urlHead api:(NSString*)_urlFunc paramsDict:(NSDictionary*)_parameters success:(SUCC)_success fail:(FAIL)_failure;
 
 /**
  *  http request with head and func
  */
-//- (void)request:(NetType)_type URLHead:(NSString*)_urlHead URLFunc:(NSString*)_urlFunc paramsDict:(NSDictionary*)_parameter success:(SUCC)_success fail:(FAIL)_failure;
+- (void)request:(NetType)_type URLHead:(NSString*)_urlHead URLFunc:(NSString*)_urlFunc paramsDict:(NSDictionary*)_parameter success:(SUCC)_success fail:(FAIL)_failure;
 
 
 /**

@@ -38,7 +38,7 @@
 }
 
 
-+ (AFBaseNetwork *)shared
++ (AFBaseNetwork *)shareIns
 {
     static dispatch_once_t pred = 0;
     __strong static id _sharedObject = nil;

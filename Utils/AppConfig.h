@@ -7,7 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
-
+#import <UIKit/UIKit.h>
 
 #define MainScrenH  [UIScreen mainScreen].bounds.size.height
 
@@ -60,5 +60,8 @@
 
 //可以获取到view的父容器的控制器的方法
 //+ (UIViewController *)getSuperViewController:(UIView *)view;
+
+/** 获取当前显示在屏幕最顶层的ViewController */
+- (UIViewController *)topViewController;
 
 @end

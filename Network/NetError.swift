@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ErrorCodeHandle: NSObject {
+class NetError: NSObject {
     
     static func handleInfo(task:URLSessionDataTask?, error:NSError?) -> Void {
         

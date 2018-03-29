@@ -8,6 +8,9 @@
 
 import UIKit
 
+/**
+ 筛选条件
+ */
 class SelectConditionVC: BaseUIViewController,UITableViewDelegate,UITableViewDataSource {
 
     var tableView : BaseUITableView!

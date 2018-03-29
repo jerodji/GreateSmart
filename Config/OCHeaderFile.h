@@ -23,13 +23,13 @@
 
 #pragma mark ------------ Utils ------------
 
-#import "AFBaseNetwork.h"
-#import "JJNetwork.h"
-#import "AppConfig.h"
 #import "WSCollectionViewFlowLayout.h"
 #import "iCarousel.h"
 #import "SYATopScrollViewController.h"
-
+#import "AppConfig.h"
+//#import "AFBaseNetwork.h"
+//#import "JJNetwork.h"
+#import "NetworkHUD.h"
 
 #pragma mark ------------ CocoaPod ------------
 
@@ -41,10 +41,10 @@
 
 //#import <SDWebImage/SDWebImage-umbrella.h>
 
-//#import "YYModel.h"
 #import "MJExtension.h"
 
 #import "IQKeyboardManager-umbrella.h"
+
 
 
 @interface OCHeaderFile : NSObject

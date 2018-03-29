@@ -41,7 +41,8 @@ class LoginVC: UIViewController {
             "client_secret":"secret"
         ]
         
-        NetworkManage.ins.requestOAuthToken(formBody: bodysKV) { (res) in
+        
+        NetHttp.ins.requestOAuthToken(formBody: bodysKV) { (res) in
             self.dismiss(animated: true, completion: nil)
             if res is NSDictionary {
                 let dict = res as! NSDictionary
@@ -58,6 +59,8 @@ class LoginVC: UIViewController {
                 
             }
         }
+        
+        
     }
     
     @IBAction func wechatLoginAction(_ sender: UIButton) {

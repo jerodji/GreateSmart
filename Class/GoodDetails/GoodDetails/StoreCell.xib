@@ -36,7 +36,7 @@
                         <constraints>
                             <constraint firstAttribute="width" constant="50" id="FJK-06-HeS"/>
                         </constraints>
-                        <state key="normal" image="xiaojingru"/>
+                        <state key="normal" image="xiaojingru1"/>
                     </button>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="老挝海林野生物产" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ov2-eb-ddz">
                         <rect key="frame" x="51" y="11" width="219" height="28"/>
@@ -61,6 +61,6 @@
         </tableViewCell>
     </objects>
     <resources>
-        <image name="xiaojingru" width="6" height="11"/>
+        <image name="xiaojingru1" width="10" height="18"/>
     </resources>
 </document>

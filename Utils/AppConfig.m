@@ -567,7 +567,7 @@ static AppConfig* _instance = nil;
     }
 }
 
-//可以获取到view的父容器的控制器的方法,就是这个黑科技.
+/** 可以获取到view的父容器的控制器的方法,就是这个黑科技. */
 - (UIViewController *)getSuperViewController:(UIView *)view
 {
     UIResponder *responder = view;
@@ -580,5 +580,25 @@ static AppConfig* _instance = nil;
     return nil;
 }
 
+
+- (UIViewController *)topViewController {
+    UIViewController *resultVC;
+    resultVC = [self _topViewController:[[UIApplication sharedApplication].keyWindow rootViewController]];
+    while (resultVC.presentedViewController) {
+        resultVC = [self _topViewController:resultVC.presentedViewController];
+    }
+    return resultVC;
+}
+
+- (UIViewController *)_topViewController:(UIViewController *)vc {
+    if ([vc isKindOfClass:[UINavigationController class]]) {
+        return [self _topViewController:[(UINavigationController *)vc topViewController]];
+    } else if ([vc isKindOfClass:[UITabBarController class]]) {
+        return [self _topViewController:[(UITabBarController *)vc selectedViewController]];
+    } else {
+        return vc;
+    }
+    return nil;
+}
 
 @end
