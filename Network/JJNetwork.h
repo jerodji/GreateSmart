@@ -30,10 +30,10 @@
  @param headerDict 表单请求头 header
  @param bodyDict 表单请求体 body
  @param fullURL url
- @param params 参数- 字典/实体类
  @param successBlock 成功回调
  @param failBlock 失败回调
  */
-- (void)request:(NetType)type URL:(NSString*)fullURL formHeaders:(NSDictionary*)headerDict body:(NSDictionary*)bodyDict params:(id)params success:(SUCC)successBlock fail:(FAIL)failBlock;
+//表单请求
+- (void)request:(NetType)type URL:(NSString*)fullURL formHeaders:(NSDictionary*)headerDict body:(NSDictionary*)bodyDict success:(SUCC)successBlock fail:(FAIL)failBlock;
 
 @end

@@ -36,7 +36,7 @@ class NetHttp: NSObject {
     func requestOAuthToken(formBody:NSDictionary?, info: @escaping (Any)->() ) -> Void {
         
         let url = URLHEAD + NetAPI.ins.oauth_token
-        NetworkHUD.shareIns().request(.POST, url: url, formHeaders: nil, body: formBody as! [AnyHashable:Any], params: nil, success: { (res) in
+        NetworkHUD.shareIns().request(.POST, url: url, formHeaders: nil, body: formBody as! [AnyHashable:Any], success: { (res) in
             info(res!)
         }, fail: { (task, error) in
             NetError.handleInfo(task: task, error: error as NSError?)

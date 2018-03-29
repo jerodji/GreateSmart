@@ -11,18 +11,17 @@ import UIKit
 /**
  订单顶部的收货地址 control
  */
-class OrderAddressControl: BaseControl {
+class OrderAddressCtrl: BaseControl {
     
     var view : OrderAddressView?
     var defauleAdsModel : AddressModel?
     
-    init(viewFrame:CGRect) {
+    override init() {
         super.init()
         
         view = OrderAddressView.loadFromXIB()
-        view?.frameXib = viewFrame
-        
     }
-
+    
+    
     
 }

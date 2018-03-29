@@ -16,7 +16,7 @@
 /**
  form表单请求
  */
-- (void)request:(NetType)type URL:(NSString*)fullURL formHeaders:(NSDictionary*)headerDict body:(NSDictionary*)bodyDict params:(id)params success:(SUCC)successBlock fail:(FAIL)failBlock showHUD:(BOOL)showhud;
+- (void)request:(NetType)type URL:(NSString*)fullURL formHeaders:(NSDictionary*)headerDict body:(NSDictionary*)bodyDict success:(SUCC)successBlock fail:(FAIL)failBlock showHUD:(BOOL)showhud;
 
 /**
  网络请求 参数-实体类(对象)

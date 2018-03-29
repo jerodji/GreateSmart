@@ -21,21 +21,11 @@
     return _sharedObject;
 }
 
-//params 字典 或 实体类
-- (void)request:(NetType)type URL:(NSString*)fullURL formHeaders:(NSDictionary*)headerDict body:(NSDictionary*)bodyDict params:(id)params success:(SUCC)successBlock fail:(FAIL)failBlock
+//表单请求
+- (void)request:(NetType)type URL:(NSString*)fullURL formHeaders:(NSDictionary*)headerDict body:(NSDictionary*)bodyDict success:(SUCC)successBlock fail:(FAIL)failBlock
 {
     NSString * method = @"POST";
     if (type == GET) { method = @"GET";}
-    
-    //参数处理
-    NSDictionary* paramDict = nil;
-    if (params != nil) {
-        if ([params isKindOfClass: [NSDictionary class]]) {
-            paramDict = params;
-        } else {
-            paramDict = [params getIvarDict];
-        }
-    }
     
     NSMutableURLRequest *request = [[NSMutableURLRequest alloc] initWithURL:[NSURL URLWithString:fullURL]];
     
@@ -47,7 +37,7 @@
         }
     }
     
-    //添加 表单 body
+    //添加 表单 body, 参数
     if (bodyDict != nil) {
         NSMutableString* apdStr = [[NSMutableString alloc] init];
         for (NSString* key in bodyDict) {

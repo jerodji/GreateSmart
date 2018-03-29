@@ -26,6 +26,10 @@ class OrderAddressView: BaseUIView,LoadXIBView {
     override func awakeFromNib() {
         super.awakeFromNib()
         
+        self.layer.shadowColor = UIColor.init(r: 183, g: 183, b: 183).cgColor
+        self.layer.shadowOpacity = 1
+        self.layer.shadowRadius = 2
+        self.layer.shadowOffset = CGSize.init(width: 0, height: 1)
     }
     
     /*

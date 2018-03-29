@@ -33,6 +33,9 @@
                     <state key="normal" title="开始结算">
                         <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                     </state>
+                    <connections>
+                        <action selector="accountAction:" destination="iN0-l3-epB" eventType="touchUpInside" id="sLq-xS-1y3"/>
+                    </connections>
                 </button>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bEi-7X-DwH">
                     <rect key="frame" x="0.0" y="0.0" width="375" height="1"/>
@@ -56,7 +59,11 @@
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
-            <point key="canvasLocation" x="25.5" y="353.5"/>
+            <connections>
+                <outlet property="accountBtn" destination="nLu-d6-iHn" id="4Eh-t6-bFf"/>
+                <outlet property="allPriceLab" destination="5bC-9m-WfL" id="sa4-b0-kUE"/>
+            </connections>
+            <point key="canvasLocation" x="333" y="8"/>
         </view>
     </objects>
 </document>

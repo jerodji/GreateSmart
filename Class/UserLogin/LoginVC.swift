@@ -30,7 +30,7 @@ class LoginVC: UIViewController {
     }
     
     @IBAction func loginAction(_ sender: UIButton) {
-        delog("phoneNumber : \(String(describing: phoneNumberTF.text)) ; password : \(String(describing: passwordTF.text))")
+        delog("phoneNumber : \(String(describing: phoneNumberTF.text!)) ; password : \(String(describing: passwordTF.text!))")
         
         let bodysKV : NSDictionary = [
             "grant_type":"password",

@@ -130,12 +130,17 @@
 		389BC5EF206BA39700CC776F /* NSDictionary+extend.m in Sources */ = {isa = PBXBuildFile; fileRef = 389BC5EE206BA39700CC776F /* NSDictionary+extend.m */; };
 		389BC5F4206BB31900CC776F /* AppConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = 389BC5F2206BB31900CC776F /* AppConfig.m */; };
 		389BC5F9206BBACC00CC776F /* OrderVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 389BC5F8206BBACC00CC776F /* OrderVC.swift */; };
-		389BC5FB206BBBCF00CC776F /* OrderAddressControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 389BC5FA206BBBCF00CC776F /* OrderAddressControl.swift */; };
+		389BC5FB206BBBCF00CC776F /* OrderAddressCtrl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 389BC5FA206BBBCF00CC776F /* OrderAddressCtrl.swift */; };
 		389BC5FD206C839A00CC776F /* OrderAddressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 389BC5FC206C839A00CC776F /* OrderAddressView.swift */; };
 		389BC5FF206C849000CC776F /* OrderAddressView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 389BC5FE206C849000CC776F /* OrderAddressView.xib */; };
 		389BC602206C8F3B00CC776F /* AddressModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 389BC601206C8F3B00CC776F /* AddressModel.swift */; };
 		389BC60C206CD15B00CC776F /* MBProgressHUD+topVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 389BC60B206CD15B00CC776F /* MBProgressHUD+topVC.m */; };
 		389BC610206CD75C00CC776F /* NetworkHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 389BC60F206CD75C00CC776F /* NetworkHUD.m */; };
+		389BC615206D015900CC776F /* OrderGoodlistCtrl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 389BC614206D015900CC776F /* OrderGoodlistCtrl.swift */; };
+		389BC619206D02B200CC776F /* OrderGoodlistTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 389BC618206D02B200CC776F /* OrderGoodlistTableView.swift */; };
+		389BC61E206D169900CC776F /* OrderpayCtrl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 389BC61D206D169900CC776F /* OrderpayCtrl.swift */; };
+		389BC620206D16B300CC776F /* OrderpayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 389BC61F206D16B300CC776F /* OrderpayView.swift */; };
+		389BC622206D16BB00CC776F /* OrderpayView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 389BC621206D16BB00CC776F /* OrderpayView.xib */; };
 		38B8799F204155A00080BB3C /* GoodListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38B8799E204155A00080BB3C /* GoodListVC.swift */; };
 		38B879A1204155C60080BB3C /* ShopCartVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38B879A0204155C60080BB3C /* ShopCartVC.swift */; };
 		38B879A3204155DC0080BB3C /* MyVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38B879A2204155DC0080BB3C /* MyVC.swift */; };
@@ -349,7 +354,7 @@
 		389BC5F2206BB31900CC776F /* AppConfig.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppConfig.m; sourceTree = "<group>"; };
 		389BC5F3206BB31900CC776F /* AppConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppConfig.h; sourceTree = "<group>"; };
 		389BC5F8206BBACC00CC776F /* OrderVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OrderVC.swift; sourceTree = "<group>"; };
-		389BC5FA206BBBCF00CC776F /* OrderAddressControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderAddressControl.swift; sourceTree = "<group>"; };
+		389BC5FA206BBBCF00CC776F /* OrderAddressCtrl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderAddressCtrl.swift; sourceTree = "<group>"; };
 		389BC5FC206C839A00CC776F /* OrderAddressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderAddressView.swift; sourceTree = "<group>"; };
 		389BC5FE206C849000CC776F /* OrderAddressView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OrderAddressView.xib; sourceTree = "<group>"; };
 		389BC601206C8F3B00CC776F /* AddressModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddressModel.swift; sourceTree = "<group>"; };
@@ -358,6 +363,11 @@
 		389BC60D206CD1E800CC776F /* NSDictionary+extend.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSDictionary+extend.h"; sourceTree = "<group>"; };
 		389BC60E206CD75C00CC776F /* NetworkHUD.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NetworkHUD.h; sourceTree = "<group>"; };
 		389BC60F206CD75C00CC776F /* NetworkHUD.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NetworkHUD.m; sourceTree = "<group>"; };
+		389BC614206D015900CC776F /* OrderGoodlistCtrl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderGoodlistCtrl.swift; sourceTree = "<group>"; };
+		389BC618206D02B200CC776F /* OrderGoodlistTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderGoodlistTableView.swift; sourceTree = "<group>"; };
+		389BC61D206D169900CC776F /* OrderpayCtrl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderpayCtrl.swift; sourceTree = "<group>"; };
+		389BC61F206D16B300CC776F /* OrderpayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderpayView.swift; sourceTree = "<group>"; };
+		389BC621206D16BB00CC776F /* OrderpayView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OrderpayView.xib; sourceTree = "<group>"; };
 		38B8799E204155A00080BB3C /* GoodListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoodListVC.swift; sourceTree = "<group>"; };
 		38B879A0204155C60080BB3C /* ShopCartVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShopCartVC.swift; sourceTree = "<group>"; };
 		38B879A2204155DC0080BB3C /* MyVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyVC.swift; sourceTree = "<group>"; };
@@ -875,9 +885,9 @@
 			isa = PBXGroup;
 			children = (
 				389BC5F8206BBACC00CC776F /* OrderVC.swift */,
-				389BC5FA206BBBCF00CC776F /* OrderAddressControl.swift */,
-				389BC5FC206C839A00CC776F /* OrderAddressView.swift */,
-				389BC5FE206C849000CC776F /* OrderAddressView.xib */,
+				389BC61C206D163A00CC776F /* OrderPay */,
+				389BC617206D023A00CC776F /* OrderGoodlist */,
+				389BC616206D021A00CC776F /* OrderAddress */,
 			);
 			path = Order;
 			sourceTree = "<group>";
@@ -899,6 +909,35 @@
 				3821300C204A9C4600F1413C /* OCHeaderFile.m */,
 			);
 			path = Config;
+			sourceTree = "<group>";
+		};
+		389BC616206D021A00CC776F /* OrderAddress */ = {
+			isa = PBXGroup;
+			children = (
+				389BC5FA206BBBCF00CC776F /* OrderAddressCtrl.swift */,
+				389BC5FC206C839A00CC776F /* OrderAddressView.swift */,
+				389BC5FE206C849000CC776F /* OrderAddressView.xib */,
+			);
+			path = OrderAddress;
+			sourceTree = "<group>";
+		};
+		389BC617206D023A00CC776F /* OrderGoodlist */ = {
+			isa = PBXGroup;
+			children = (
+				389BC614206D015900CC776F /* OrderGoodlistCtrl.swift */,
+				389BC618206D02B200CC776F /* OrderGoodlistTableView.swift */,
+			);
+			path = OrderGoodlist;
+			sourceTree = "<group>";
+		};
+		389BC61C206D163A00CC776F /* OrderPay */ = {
+			isa = PBXGroup;
+			children = (
+				389BC61D206D169900CC776F /* OrderpayCtrl.swift */,
+				389BC61F206D16B300CC776F /* OrderpayView.swift */,
+				389BC621206D16BB00CC776F /* OrderpayView.xib */,
+			);
+			path = OrderPay;
 			sourceTree = "<group>";
 		};
 		38B8799B2041553B0080BB3C /* GoodList_商品 */ = {
@@ -1326,6 +1365,7 @@
 				382EF41A205FB9D600F3A33B /* EvaluationCell.xib in Resources */,
 				382EF42C205FD1FC00F3A33B /* HotRecommendCell.xib in Resources */,
 				386CAFEC2060B877006E32DF /* StarsView.xib in Resources */,
+				389BC622206D16BB00CC776F /* OrderpayView.xib in Resources */,
 				38F7636620592012002C1999 /* HotInStoreView.xib in Resources */,
 				387D497C205BD4DB0059BB20 /* GoodCell.xib in Resources */,
 				387B6F39205A831D00E6D916 /* UserOrderCell.xib in Resources */,
@@ -1444,6 +1484,7 @@
 				384EE45E2057EBB600D2BCB6 /* NatureControl.swift in Sources */,
 				382EF404205F66E000F3A33B /* GoodDetailsVC.swift in Sources */,
 				382EF424205FBA5200F3A33B /* SYAFlowLayout.m in Sources */,
+				389BC61E206D169900CC776F /* OrderpayCtrl.swift in Sources */,
 				382EF401205F611F00F3A33B /* UIView_extension.swift in Sources */,
 				382EF419205FB9D600F3A33B /* EvaluationCell.swift in Sources */,
 				38FD9A49204116DF0090D978 /* TabbarController.swift in Sources */,
@@ -1478,7 +1519,7 @@
 				FA16F7B72056ECFB0094F47B /* ForMaleModel.swift in Sources */,
 				38FD686C2040202C00B19A42 /* BaseUITableViewController.swift in Sources */,
 				38FD685F20401E4F00B19A42 /* UIViewController+XIB.m in Sources */,
-				389BC5FB206BBBCF00CC776F /* OrderAddressControl.swift in Sources */,
+				389BC5FB206BBBCF00CC776F /* OrderAddressCtrl.swift in Sources */,
 				387D496C205B98B40059BB20 /* SortingView.swift in Sources */,
 				381C62FA20464C5500A9066C /* ResultVC.swift in Sources */,
 				388BA0202052A057009C7C70 /* SortTypeModel.swift in Sources */,
@@ -1495,6 +1536,7 @@
 				38FD687D204026D200B19A42 /* NetAPI.swift in Sources */,
 				FA16F7B42056D30B0094F47B /* HotInStoreModel.swift in Sources */,
 				3864DAC3205CE22100F89A25 /* LeftControl.swift in Sources */,
+				389BC615206D015900CC776F /* OrderGoodlistCtrl.swift in Sources */,
 				FA13949920581CF4008D6F68 /* ForMaleView.swift in Sources */,
 				38213021204D568000F1413C /* GreateSmartDefine.swift in Sources */,
 				384EE4542057C51700D2BCB6 /* LTCView.swift in Sources */,
@@ -1511,6 +1553,7 @@
 				382EF415205FB1D900F3A33B /* StoreIntroduceCell.swift in Sources */,
 				38FD686120401E4F00B19A42 /* NSObject+isNull.m in Sources */,
 				38F6423920590151004A75DF /* TimeReCCell.swift in Sources */,
+				389BC619206D02B200CC776F /* OrderGoodlistTableView.swift in Sources */,
 				386CAFF3206111F6006E32DF /* SelecHeaderButton.swift in Sources */,
 				389BC5EB206B9DDC00CC776F /* JJNetDefine.m in Sources */,
 				386CAFF5206113BD006E32DF /* SelectAreaView.swift in Sources */,
@@ -1560,6 +1603,7 @@
 				38172C5F2065185E002ED9AD /* CartBomButton.swift in Sources */,
 				382EF406205F699000F3A33B /* UIColor_extension.swift in Sources */,
 				38F9CA59202FED60004D105D /* AppDelegate.swift in Sources */,
+				389BC620206D16B300CC776F /* OrderpayView.swift in Sources */,
 				387D556C206A4E350073F934 /* UserTokenKeys.swift in Sources */,
 				382EF40D205F9AF100F3A33B /* GoodIntroduceCell.swift in Sources */,
 				38B879A3204155DC0080BB3C /* MyVC.swift in Sources */,
