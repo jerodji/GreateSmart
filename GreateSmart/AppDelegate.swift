@@ -29,7 +29,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         /** 键盘 */
         IQKeyboardManager.shared().isEnabled = true // 控制整个功能是否启用
         IQKeyboardManager.shared().shouldResignOnTouchOutside = true // 控制点击背景是否收起键盘
-
+        
         return true
     }
 

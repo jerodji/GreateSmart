@@ -6,7 +6,7 @@
 //  Copyright © 2018年 Jerod. All rights reserved.
 //
 
-/**======================  屏幕尺寸  ======================**/
+//MARK: ********************  屏幕尺寸  ********************
 
 let kScreenW = UIScreen.main.bounds.width  /* 屏幕宽度 */
 let kScreenH = UIScreen.main.bounds.height /* 屏幕高度 */
@@ -28,7 +28,22 @@ func isiPhoneX() -> Bool {
     return false
 }
 
-/**======================  DEBUG  =======================**/
+//MARK: ********************  font  ********************
+
+let fontDINOT = "DIN OT"
+let fontMicrosoftYaHei = "MicrosoftYaHei"
+let fontPingFangSCMedium = "PingFangSC-Medium"
+/**
+ PingFang SC
+ - 0 : "PingFangSC-Medium"
+ - 1 : "PingFangSC-Semibold"
+ - 2 : "PingFangSC-Light"
+ - 3 : "PingFangSC-Ultralight"
+ - 4 : "PingFangSC-Regular"
+ - 5 : "PingFangSC-Thin"
+ */
+
+//MARK: ********************  DEBUG  ********************
 
 func delog(_ msg:Any,file:String = #file,funcName:String = #function,lineNum:Int = #line){
     /* Build Setting -> Other Swift Flags - Debug : -D DEBUG */
@@ -41,15 +56,15 @@ func delog(_ msg:Any,file:String = #file,funcName:String = #function,lineNum:Int
     #endif
 }
 
-
-
-
-/**======================    =======================**/
+//MARK: ********************  app info  ********************
 
 let kBundleID : String = AppConfig.shareIns().getBundleIdentifier()
 
 
 
+
+
+//MARK:-
 import UIKit
 
 class PublicDefine: NSObject {

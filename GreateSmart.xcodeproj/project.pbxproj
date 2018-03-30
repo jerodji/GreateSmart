@@ -151,6 +151,15 @@
 		38BAE1492053781100CA822A /* ItemTitleView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 38BAE1482053781100CA822A /* ItemTitleView.xib */; };
 		38BAE14F2053865100CA822A /* SortTypeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38BAE14E2053865100CA822A /* SortTypeView.swift */; };
 		38BAE1512053869D00CA822A /* SortTypeControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38BAE1502053869D00CA822A /* SortTypeControl.swift */; };
+		38BF9532206DD8DC00F8294A /* CouponButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38BF9531206DD8DC00F8294A /* CouponButton.swift */; };
+		38BF9536206DE6D300F8294A /* DINOT-CondBlack_0.otf in Sources */ = {isa = PBXBuildFile; fileRef = 38BF9534206DE67500F8294A /* DINOT-CondBlack_0.otf */; };
+		38BF9537206DE6D700F8294A /* msyh.ttf in Sources */ = {isa = PBXBuildFile; fileRef = 38BF9535206DE68F00F8294A /* msyh.ttf */; };
+		38BF953D206E2C5300F8294A /* UIView+extend.m in Sources */ = {isa = PBXBuildFile; fileRef = 38BF953C206E2C5300F8294A /* UIView+extend.m */; };
+		38BF9540206E307E00F8294A /* UILabel+extend.m in Sources */ = {isa = PBXBuildFile; fileRef = 38BF953F206E307E00F8294A /* UILabel+extend.m */; };
+		38BF9543206E530700F8294A /* OrderAllPriceBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38BF9542206E530700F8294A /* OrderAllPriceBar.swift */; };
+		38BF9545206E531600F8294A /* OrderAllPriceBar.xib in Resources */ = {isa = PBXBuildFile; fileRef = 38BF9544206E531600F8294A /* OrderAllPriceBar.xib */; };
+		38BF9548206E5D6100F8294A /* OrderGoodlistCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38BF9546206E5D6100F8294A /* OrderGoodlistCell.swift */; };
+		38BF9549206E5D6100F8294A /* OrderGoodlistCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 38BF9547206E5D6100F8294A /* OrderGoodlistCell.xib */; };
 		38EE01532043F29D0050759A /* CustomNaviBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38EE01522043F29D0050759A /* CustomNaviBar.swift */; };
 		38EE015620442D3B0050759A /* swiftHeaderFile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38EE015520442D3B0050759A /* swiftHeaderFile.swift */; };
 		38EE015920455F8A0050759A /* InformationVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38EE015820455F8A0050759A /* InformationVC.swift */; };
@@ -378,6 +387,17 @@
 		38BAE1482053781100CA822A /* ItemTitleView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ItemTitleView.xib; sourceTree = "<group>"; };
 		38BAE14E2053865100CA822A /* SortTypeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SortTypeView.swift; sourceTree = "<group>"; };
 		38BAE1502053869D00CA822A /* SortTypeControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SortTypeControl.swift; sourceTree = "<group>"; };
+		38BF9531206DD8DC00F8294A /* CouponButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CouponButton.swift; sourceTree = "<group>"; };
+		38BF9534206DE67500F8294A /* DINOT-CondBlack_0.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "DINOT-CondBlack_0.otf"; sourceTree = "<group>"; };
+		38BF9535206DE68F00F8294A /* msyh.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = msyh.ttf; sourceTree = "<group>"; };
+		38BF953B206E2C5300F8294A /* UIView+extend.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIView+extend.h"; sourceTree = "<group>"; };
+		38BF953C206E2C5300F8294A /* UIView+extend.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIView+extend.m"; sourceTree = "<group>"; };
+		38BF953E206E307E00F8294A /* UILabel+extend.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UILabel+extend.h"; sourceTree = "<group>"; };
+		38BF953F206E307E00F8294A /* UILabel+extend.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UILabel+extend.m"; sourceTree = "<group>"; };
+		38BF9542206E530700F8294A /* OrderAllPriceBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderAllPriceBar.swift; sourceTree = "<group>"; };
+		38BF9544206E531600F8294A /* OrderAllPriceBar.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OrderAllPriceBar.xib; sourceTree = "<group>"; };
+		38BF9546206E5D6100F8294A /* OrderGoodlistCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderGoodlistCell.swift; sourceTree = "<group>"; };
+		38BF9547206E5D6100F8294A /* OrderGoodlistCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OrderGoodlistCell.xib; sourceTree = "<group>"; };
 		38EE01522043F29D0050759A /* CustomNaviBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomNaviBar.swift; sourceTree = "<group>"; };
 		38EE015520442D3B0050759A /* swiftHeaderFile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = swiftHeaderFile.swift; sourceTree = "<group>"; };
 		38EE015820455F8A0050759A /* InformationVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InformationVC.swift; sourceTree = "<group>"; };
@@ -885,9 +905,11 @@
 			isa = PBXGroup;
 			children = (
 				389BC5F8206BBACC00CC776F /* OrderVC.swift */,
-				389BC61C206D163A00CC776F /* OrderPay */,
-				389BC617206D023A00CC776F /* OrderGoodlist */,
 				389BC616206D021A00CC776F /* OrderAddress */,
+				389BC617206D023A00CC776F /* OrderGoodlist */,
+				389BC61C206D163A00CC776F /* OrderPay */,
+				38BF9541206E528D00F8294A /* OrderAllPriceBar */,
+				38BF9530206DD6C600F8294A /* adaper */,
 			);
 			path = Order;
 			sourceTree = "<group>";
@@ -926,6 +948,8 @@
 			children = (
 				389BC614206D015900CC776F /* OrderGoodlistCtrl.swift */,
 				389BC618206D02B200CC776F /* OrderGoodlistTableView.swift */,
+				38BF9546206E5D6100F8294A /* OrderGoodlistCell.swift */,
+				38BF9547206E5D6100F8294A /* OrderGoodlistCell.xib */,
 			);
 			path = OrderGoodlist;
 			sourceTree = "<group>";
@@ -1003,6 +1027,23 @@
 			path = title;
 			sourceTree = "<group>";
 		};
+		38BF9530206DD6C600F8294A /* adaper */ = {
+			isa = PBXGroup;
+			children = (
+				38BF9531206DD8DC00F8294A /* CouponButton.swift */,
+			);
+			path = adaper;
+			sourceTree = "<group>";
+		};
+		38BF9541206E528D00F8294A /* OrderAllPriceBar */ = {
+			isa = PBXGroup;
+			children = (
+				38BF9542206E530700F8294A /* OrderAllPriceBar.swift */,
+				38BF9544206E531600F8294A /* OrderAllPriceBar.xib */,
+			);
+			path = OrderAllPriceBar;
+			sourceTree = "<group>";
+		};
 		38EE015720455EB80050759A /* Information_资讯 */ = {
 			isa = PBXGroup;
 			children = (
@@ -1045,9 +1086,9 @@
 		38F9CA57202FED60004D105D /* GreateSmart */ = {
 			isa = PBXGroup;
 			children = (
+				38F9CA58202FED60004D105D /* AppDelegate.swift */,
 				38F9CA64202FED60004D105D /* Info.plist */,
 				38FD9A48204116DF0090D978 /* TabbarController.swift */,
-				38F9CA58202FED60004D105D /* AppDelegate.swift */,
 				38FD68732040220D00B19A42 /* PublicDefine.swift */,
 				38213020204D568000F1413C /* GreateSmartDefine.swift */,
 			);
@@ -1107,6 +1148,10 @@
 				38FD685C20401E4F00B19A42 /* UIColor+HexString.m */,
 				38FD685420401E4E00B19A42 /* UIImage+AttributeImage.h */,
 				38FD685620401E4E00B19A42 /* UIImage+AttributeImage.m */,
+				38BF953E206E307E00F8294A /* UILabel+extend.h */,
+				38BF953F206E307E00F8294A /* UILabel+extend.m */,
+				38BF953B206E2C5300F8294A /* UIView+extend.h */,
+				38BF953C206E2C5300F8294A /* UIView+extend.m */,
 				38FD685D20401E4F00B19A42 /* UIView+control.h */,
 				38FD685520401E4E00B19A42 /* UIView+control.m */,
 				38FD685B20401E4F00B19A42 /* UIView+viewFrame.h */,
@@ -1154,6 +1199,8 @@
 		38FD6870204020FA00B19A42 /* Resource */ = {
 			isa = PBXGroup;
 			children = (
+				38BF9534206DE67500F8294A /* DINOT-CondBlack_0.otf */,
+				38BF9535206DE68F00F8294A /* msyh.ttf */,
 				38FD9A3E2040FD9E0090D978 /* Images.xcassets */,
 				38F9CA5F202FED60004D105D /* Assets.xcassets */,
 				38F9CA5C202FED60004D105D /* Main.storyboard */,
@@ -1338,6 +1385,7 @@
 			files = (
 				387B6F43205A99E800E6D916 /* UserServceCell.xib in Resources */,
 				382EF412205FAC2E00F3A33B /* StoreCell.xib in Resources */,
+				38BF9549206E5D6100F8294A /* OrderGoodlistCell.xib in Resources */,
 				387B6F32205A72F700E6D916 /* UserHeaderView.xib in Resources */,
 				38F9CA63202FED60004D105D /* LaunchScreen.storyboard in Resources */,
 				38FD9A3F2040FD9E0090D978 /* Images.xcassets in Resources */,
@@ -1358,6 +1406,7 @@
 				38F76373205940CB002C1999 /* HotSaleCell.xib in Resources */,
 				387D553E206897F90073F934 /* AcountGoodCell.xib in Resources */,
 				38F7636A205922F4002C1999 /* HotInStoreCell.xib in Resources */,
+				38BF9545206E531600F8294A /* OrderAllPriceBar.xib in Resources */,
 				38F9CA60202FED60004D105D /* Assets.xcassets in Resources */,
 				38F9CA5E202FED60004D105D /* Main.storyboard in Resources */,
 				38BAE1492053781100CA822A /* ItemTitleView.xib in Resources */,
@@ -1461,6 +1510,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				38BF9536206DE6D300F8294A /* DINOT-CondBlack_0.otf in Sources */,
+				38BF9537206DE6D700F8294A /* msyh.ttf in Sources */,
 				384EE45C2057EBA900D2BCB6 /* HotSaleControl.swift in Sources */,
 				38213019204D429600F1413C /* ItemTableView.swift in Sources */,
 				386CAFF0206100FD006E32DF /* SelectConditionVC.swift in Sources */,
@@ -1483,6 +1534,7 @@
 				381C63172047D04200A9066C /* FlowCollectionControl.swift in Sources */,
 				384EE45E2057EBB600D2BCB6 /* NatureControl.swift in Sources */,
 				382EF404205F66E000F3A33B /* GoodDetailsVC.swift in Sources */,
+				38BF9548206E5D6100F8294A /* OrderGoodlistCell.swift in Sources */,
 				382EF424205FBA5200F3A33B /* SYAFlowLayout.m in Sources */,
 				389BC61E206D169900CC776F /* OrderpayCtrl.swift in Sources */,
 				382EF401205F611F00F3A33B /* UIView_extension.swift in Sources */,
@@ -1521,6 +1573,7 @@
 				38FD685F20401E4F00B19A42 /* UIViewController+XIB.m in Sources */,
 				389BC5FB206BBBCF00CC776F /* OrderAddressCtrl.swift in Sources */,
 				387D496C205B98B40059BB20 /* SortingView.swift in Sources */,
+				38BF9543206E530700F8294A /* OrderAllPriceBar.swift in Sources */,
 				381C62FA20464C5500A9066C /* ResultVC.swift in Sources */,
 				388BA0202052A057009C7C70 /* SortTypeModel.swift in Sources */,
 				38FD686520401E4F00B19A42 /* UIButton+parameter.m in Sources */,
@@ -1531,11 +1584,13 @@
 				38213004204948EA00F1413C /* JJRealmManager.swift in Sources */,
 				384EE4582057EB8800D2BCB6 /* HotInStoreControl.swift in Sources */,
 				387D4971205BA4070059BB20 /* SortButton.swift in Sources */,
+				38BF953D206E2C5300F8294A /* UIView+extend.m in Sources */,
 				389BC602206C8F3B00CC776F /* AddressModel.swift in Sources */,
 				387B6F2A205A571F00E6D916 /* ZCycleLayout.swift in Sources */,
 				38FD687D204026D200B19A42 /* NetAPI.swift in Sources */,
 				FA16F7B42056D30B0094F47B /* HotInStoreModel.swift in Sources */,
 				3864DAC3205CE22100F89A25 /* LeftControl.swift in Sources */,
+				38BF9540206E307E00F8294A /* UILabel+extend.m in Sources */,
 				389BC615206D015900CC776F /* OrderGoodlistCtrl.swift in Sources */,
 				FA13949920581CF4008D6F68 /* ForMaleView.swift in Sources */,
 				38213021204D568000F1413C /* GreateSmartDefine.swift in Sources */,
@@ -1604,6 +1659,7 @@
 				382EF406205F699000F3A33B /* UIColor_extension.swift in Sources */,
 				38F9CA59202FED60004D105D /* AppDelegate.swift in Sources */,
 				389BC620206D16B300CC776F /* OrderpayView.swift in Sources */,
+				38BF9532206DD8DC00F8294A /* CouponButton.swift in Sources */,
 				387D556C206A4E350073F934 /* UserTokenKeys.swift in Sources */,
 				382EF40D205F9AF100F3A33B /* GoodIntroduceCell.swift in Sources */,
 				38B879A3204155DC0080BB3C /* MyVC.swift in Sources */,

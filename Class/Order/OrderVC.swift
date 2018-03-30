@@ -14,17 +14,28 @@ class OrderVC: BaseUIViewController {
     var adrsCtrl : OrderAddressCtrl?
     var goodCtrl : OrderGoodlistCtrl?
     var payCtrl : OrderpayCtrl?
+    var allpriceBar : OrderAllPriceBar?
+    var allHeight : CGFloat = 0
     
     override func loadView() {
         super.loadView()
         
-        //数据
-        scrol = UIScrollView.init(frame: CGRect.init(x: 0, y: kNaviH+60, width: kScreenW, height: kScreenH-kNaviH-60-kTabbarH))
-        scrol?.contentSize = CGSize.init(width: 0, height: kScreenH * 2)
-
-        //control初始化
+        //数据...
+        
+        //地址control初始化
         adrsCtrl = OrderAddressCtrl.init()
         adrsCtrl?.view!.frameXib = CGRect.init(x: 0, y: kNaviH, width: kScreenW, height: 60)
+        //商品列表
+        goodCtrl = OrderGoodlistCtrl.init()
+        goodCtrl!.createView(frame: CGRect.init(x: 10, y: 15, width: kScreenW-20, height: h_OrderGoodlistCell*7))
+        allHeight += (15 + h_OrderGoodlistCell*7)
+        //支付信息
+        payCtrl = OrderpayCtrl.init()
+        payCtrl!.createView(frame: CGRect.init(x: 0, y: goodCtrl!.view!.bottom + 15 + 30/*test*/, width: kScreenW, height: 450))
+        allHeight += (15+450) + 30/*test*/
+        // scroll view
+        scrol = UIScrollView.init(frame: CGRect.init(x: 0, y: kNaviH+60, width: kScreenW, height: kScreenH-kNaviH-60-kTabbarH))
+        scrol?.contentSize = CGSize.init(width: 0, height: allHeight)
         
     }
     
@@ -33,16 +44,15 @@ class OrderVC: BaseUIViewController {
         naviBar.titleLab.text = "确认订单"
         view.addSubview(scrol!)
         view.addSubview(adrsCtrl!.view!)
-        
-        goodCtrl = OrderGoodlistCtrl.init()
-        goodCtrl!.createView(frame: CGRect.init(x: 10, y: 15, width: kScreenW-20, height: 300))
         scrol!.addSubview(goodCtrl!.view!)
-        
-        payCtrl = OrderpayCtrl.init()
-        payCtrl!.createView(frame: CGRect.init(x: 0, y: goodCtrl!.view!.bottom + 15, width: kScreenW, height: 200))
         scrol!.addSubview(payCtrl!.view!)
+        
+        // bar
+        allpriceBar = OrderAllPriceBar.loadFromXIB()
+        allpriceBar!.frameXib = CGRect.init(x: 0, y: kScreenH-kTabbarH, width: kScreenW, height: kTab49)
+        view.addSubview(allpriceBar!)
     }
-
+    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         UIView.animate(withDuration: 0.5) {

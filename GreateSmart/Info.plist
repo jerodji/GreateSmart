@@ -48,5 +48,10 @@
 		<key>NSAllowsArbitraryLoads</key>
 		<true/>
 	</dict>
+	<key>UIAppFonts</key>
+	<array>
+		<string>DINOT-CondBlack_0.otf</string>
+		<string>msyh.ttf</string>
+	</array>
 </dict>
 </plist>

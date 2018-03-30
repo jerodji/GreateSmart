@@ -8,13 +8,16 @@
 
 import UIKit
 
-/**======================  Color  =======================**/
+//MARK: ----------------  color  ----------------
+
 let kColorTabbar = UIColor.white
 let kColorNavi   = UIColor.white
 let kColorTheme  = UIColor.black /* 主题颜色 */
+let kcolor56  = UIColor.RGB(56, 57, 56)
+let kcolor183 = UIColor.RGB(183, 183, 183)
 
+//MARK:---------------- item类型 ----------------
 
-// item类型
 public enum ShowTypeENUM: String {
     case NewBanner   = "NewBanner"
     case SortType    = "SortType"
@@ -29,6 +32,8 @@ public enum ShowTypeENUM: String {
     case Nature2     = "Nature2"
 }
 
+
+//MARK: ---------------- 首页不同的 item 高度 ----------------
 // 每个item的内边距
 let itemcellTop    = CGFloat(10)
 let itemcellLeft   = CGFloat(10)
@@ -41,7 +46,7 @@ let heightTitle = CGFloat(30)
 // banner高度
 let heightBanner = CGFloat(315.0*kSizeScale)
 
-//MARK:- 首页 每个item的高度
+//- 首页 每个item的高度
 
 let heightSortType   = CGFloat(140 * kSizeScale + itemcellTop + itemcellBottom)
 

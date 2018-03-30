@@ -26,10 +26,7 @@ class OrderGoodlistTableView: BaseUITableView {
         self.layer.cornerRadius = 5
         self.layer.masksToBounds = true
         //阴影
-        self.layer.shadowColor = UIColor.init(r: 183, g: 183, b: 183).cgColor
-        self.layer.shadowOpacity = 1
-        self.layer.shadowRadius = 3
-        self.layer.shadowOffset = CGSize.init(width: 0, height: 1)
+        self.shadow(with: UIColor(r: 183, g: 183, b: 183).cgColor, opacity: 1, radius: 2, offset: CGSize.init(width: 0, height: 0))
         self.clipsToBounds = false /** tableview 的 clipsToBounds 默认为yes, 会将阴影裁减掉 */
         
         

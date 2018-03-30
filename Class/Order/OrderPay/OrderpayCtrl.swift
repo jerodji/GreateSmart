@@ -8,7 +8,7 @@
 
 import UIKit
 
-class OrderpayCtrl: BaseControl {
+class OrderpayCtrl: BaseControl,UITextViewDelegate {
     var view : OrderpayView?
     
     override init() {
@@ -18,6 +18,21 @@ class OrderpayCtrl: BaseControl {
     func createView(frame:CGRect) -> Void {
         view = OrderpayView.loadFromXIB()
         view?.frameXib = frame
+        view?.couponBtn.descriptionLabel.text = "未选择"
+        view?.useCurrencyLab.text = "   可使用xxx聪明币"
+        view?.integralLab.text = "   可使用xxx积分"
+        view?.textView.delegate = self
+        //view?.textView.becomeFirstResponder()
+    }
+    
+    //MARK: text delegate
+    
+    func textViewDidEndEditing(_ textView: UITextView) {
+        textView.resignFirstResponder()
+    }
+    
+    func textViewDidBeginEditing(_ textView: UITextView) {
+        delog("1")
     }
     
 }

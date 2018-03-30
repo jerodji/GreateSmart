@@ -20,6 +20,8 @@
 #import "UIViewController+XIB.h"
 #import "NSObject+conversion.h"
 #import "NSDictionary+extend.h"
+#import "UILabel+extend.h"
+#import "UIView+extend.h"
 
 #pragma mark ------------ Utils ------------
 
