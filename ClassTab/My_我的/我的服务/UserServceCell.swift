@@ -14,6 +14,10 @@ let heightUserServceCell = CGFloat(240)
 class UserServceCell: UITableViewCell {
 
     @IBOutlet weak var backVIew: UIView!
+    
+    typealias CLICKBLK = (Int) -> ()
+    var btnActionCB : CLICKBLK?
+    
     let names = ["优惠券","聪明币","我的积分","我的消息","商品收藏","店铺收藏","资讯收藏","浏览记录","地址管理","意见反馈","我的会员","二维码"]
     let icons = ["dizhi","yijianfankui","wodehuiyuan","erweima"]
     
@@ -23,7 +27,7 @@ class UserServceCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+        
         backVIew.layer.cornerRadius = 5
         backVIew.layer.borderWidth = 0.5
         backVIew.layer.borderColor = UIColor.init(r: 83, g: 83, b: 83, a: 0.4).cgColor
@@ -40,6 +44,7 @@ class UserServceCell: UITableViewCell {
             }
             btn.tag = index
             backVIew.addSubview(btn)
+            btn.addTarget(self, action: #selector(clickAction0(button:)), for: .touchUpInside)
         }
         
         for index in 8...11 {
@@ -51,7 +56,17 @@ class UserServceCell: UITableViewCell {
             //btn.setBackgroundImage(UIImage.init(named: names[i]), for: .normal)
             btn.tag = index
             backVIew.addSubview(btn)
+            btn.addTarget(self, action: #selector(clickAction1(button:)), for: .touchUpInside)
         }
+    }
+    
+    @objc func clickAction0(button:UserServceBtn) -> Void {
+        //delog(button.tag)
+        (btnActionCB == nil) ? delog("没有实现btnActionCB") : btnActionCB!(button.tag)
+    }
+    @objc func clickAction1(button:UserCenterButton) -> Void {
+        //delog(button.tag)
+        (btnActionCB == nil) ? delog("没有实现btnActionCB") : btnActionCB!(button.tag)
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {

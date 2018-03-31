@@ -13,6 +13,7 @@ import UIKit
  */
 class OrderAddressCtrl: BaseControl {
     
+    var scene : OrderVC?
     var view : OrderAddressView?
     var defauleAdsModel : AddressModel?
     
@@ -20,8 +21,13 @@ class OrderAddressCtrl: BaseControl {
         super.init()
         
         view = OrderAddressView.loadFromXIB()
+        
     }
     
-    
+    func setScene(vc:OrderVC,viewTapSel:Selector) -> Void {
+        scene = vc
+        let tap = UITapGestureRecognizer.init(target: scene, action: viewTapSel)
+        view?.addGestureRecognizer(tap)
+    }
     
 }

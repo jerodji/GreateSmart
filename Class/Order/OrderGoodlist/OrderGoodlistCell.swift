@@ -8,7 +8,7 @@
 
 import UIKit
 
-let h_OrderGoodlistCell : CGFloat = CGFloat(105.0)
+
 
 class OrderGoodlistCell: UITableViewCell {
 

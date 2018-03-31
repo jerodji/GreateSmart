@@ -15,7 +15,7 @@ class OrderVC: BaseUIViewController {
     var goodCtrl : OrderGoodlistCtrl?
     var payCtrl : OrderpayCtrl?
     var allpriceBar : OrderAllPriceBar?
-    var allHeight : CGFloat = 0
+    var alldistance : CGFloat = 0
     
     override func loadView() {
         super.loadView()
@@ -25,17 +25,18 @@ class OrderVC: BaseUIViewController {
         //地址control初始化
         adrsCtrl = OrderAddressCtrl.init()
         adrsCtrl?.view!.frameXib = CGRect.init(x: 0, y: kNaviH, width: kScreenW, height: 60)
-        //商品列表
+        //商品信息列表
         goodCtrl = OrderGoodlistCtrl.init()
-        goodCtrl!.createView(frame: CGRect.init(x: 10, y: 15, width: kScreenW-20, height: h_OrderGoodlistCell*7))
-        allHeight += (15 + h_OrderGoodlistCell*7)
+        let listH = h_OrderGoodlistCell*6 + h_orderGoodlistCellHead*2 + h_orderGoodlistCellFoot*2
+        goodCtrl!.createView(frame: CGRect.init(x: 10, y: 15, width: kScreenW-20, height: listH))
+        alldistance += 15 + listH
         //支付信息
         payCtrl = OrderpayCtrl.init()
-        payCtrl!.createView(frame: CGRect.init(x: 0, y: goodCtrl!.view!.bottom + 15 + 30/*test*/, width: kScreenW, height: 450))
-        allHeight += (15+450) + 30/*test*/
+        payCtrl!.createView(frame: CGRect.init(x: 0, y: goodCtrl!.view!.bottom + 15, width: kScreenW, height: 450))
+        alldistance += (15+450)
         // scroll view
         scrol = UIScrollView.init(frame: CGRect.init(x: 0, y: kNaviH+60, width: kScreenW, height: kScreenH-kNaviH-60-kTabbarH))
-        scrol?.contentSize = CGSize.init(width: 0, height: allHeight)
+        scrol?.contentSize = CGSize.init(width: 0, height: alldistance)
         
     }
     
@@ -51,6 +52,9 @@ class OrderVC: BaseUIViewController {
         allpriceBar = OrderAllPriceBar.loadFromXIB()
         allpriceBar!.frameXib = CGRect.init(x: 0, y: kScreenH-kTabbarH, width: kScreenW, height: kTab49)
         view.addSubview(allpriceBar!)
+        
+        //地址事件
+        adrsCtrl?.setScene(vc: self, viewTapSel: #selector(addressAction))
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -74,6 +78,15 @@ class OrderVC: BaseUIViewController {
             self.tabBarController?.tabBar.y = kScreenH-kTabbarH
         }
     }
+    
+    //MARK:-
+    
+    @objc func addressAction () -> Void {
+        self.navigationController?.pushViewController(AddAddressVC(), animated: true)
+    }
+    
+    
+    
     
     
     override func didReceiveMemoryWarning() {

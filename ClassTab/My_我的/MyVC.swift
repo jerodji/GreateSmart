@@ -54,6 +54,7 @@ class MyVC: BaseUIViewController,UITableViewDelegate,UITableViewDataSource {
         
     }
     
+    //MARK:-
 //    func scrollViewDidScroll(_ scrollView: UIScrollView) {
 //        if scrollView.contentOffset.y < -heightUserHeadView {
 //            scrollView.contentOffset.y = -heightUserHeadView
@@ -66,15 +67,21 @@ class MyVC: BaseUIViewController,UITableViewDelegate,UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         if indexPath.section==0 {
-            
+            //我的订单
             let cell = tableView.dequeueReusableCell(withIdentifier: "UserOrderCellid")
             cell?.selectionStyle = .none
             return cell!
             
         } else if indexPath.section==1 {
-            
-            let cell = tableView.dequeueReusableCell(withIdentifier: "UserServceCellid")
+            //我的服务
+            let cell = tableView.dequeueReusableCell(withIdentifier: "UserServceCellid") as? UserServceCell
             cell?.selectionStyle = .none
+            cell?.btnActionCB = { (tag) in
+                delog(tag)
+                self.ServceAction(btnTag: tag)
+            }
+            
+            
             return cell!
             
         } else {
@@ -102,6 +109,52 @@ class MyVC: BaseUIViewController,UITableViewDelegate,UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 1
+    }
+    
+    //MARK:-
+    
+    func ServceAction(btnTag:Int) -> Void {
+        switch btnTag {
+        case 0: do{
+            
+        }; break
+        case 1: do{
+            
+        }; break
+        case 2: do{
+            
+        }; break
+        case 3: do{
+            
+        }; break
+        case 4: do{
+            
+        }; break
+        case 5: do{
+            
+        }; break
+        case 6: do{
+            
+        }; break
+        case 7: do{
+            
+        }; break
+        case 8: do{
+            self.navigationController?.pushViewController(AddAddressVC(), animated: true)
+        }; break
+        case 9: do{
+            
+        }; break
+        case 10: do{
+            
+        }; break
+        case 11: do{
+            
+        }; break
+        default: do{
+            
+        }
+        }
     }
     
     

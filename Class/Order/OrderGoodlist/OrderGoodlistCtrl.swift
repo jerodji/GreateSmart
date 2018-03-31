@@ -8,6 +8,10 @@
 
 import UIKit
 
+let h_OrderGoodlistCell : CGFloat = CGFloat(105.0)
+let h_orderGoodlistCellHead : CGFloat = CGFloat(35)
+let h_orderGoodlistCellFoot : CGFloat = CGFloat(75)
+
 class OrderGoodlistCtrl: NSObject,UITableViewDelegate,UITableViewDataSource {
 
     var view : OrderGoodlistTableView?
@@ -24,8 +28,12 @@ class OrderGoodlistCtrl: NSObject,UITableViewDelegate,UITableViewDataSource {
         view?.isScrollEnabled = false
     }
     
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 2
+    }
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 7
+        return 3
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -37,5 +45,24 @@ class OrderGoodlistCtrl: NSObject,UITableViewDelegate,UITableViewDataSource {
         return h_OrderGoodlistCell
     }
     
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        let view = UIView()
+        view.backgroundColor = .red
+        return view
+    }
+    
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return h_orderGoodlistCellHead
+    }
+    
+    func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
+        let view = UIView()
+        view.backgroundColor = UIColor.yellow.withAlphaComponent(0.4)
+        return view
+    }
+    
+    func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
+        return h_orderGoodlistCellFoot
+    }
     
 }
