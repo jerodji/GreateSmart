@@ -75,6 +75,8 @@ class CustomNaviBar: UIView {
         leftItemBtn.addTarget(self, action: #selector(leftAction), for: UIControlEvents.touchUpInside)
         rightItemBtn.addTarget(self, action: #selector(rightAction), for: UIControlEvents.touchUpInside)
         
+        rightItemBtn.setTitleColor(UIColor.RGB(39, 39, 39), for: .normal)
+        
         self.addSubview(statusbar)
         self.addSubview(leftItemBtn)
         self.addSubview(rightItemBtn)

@@ -126,6 +126,11 @@
 		389040D320634CC700277974 /* SelecHeadView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 389040D220634CC700277974 /* SelecHeadView.swift */; };
 		389040D52063506A00277974 /* SelectConditionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 389040D42063506A00277974 /* SelectConditionCell.swift */; };
 		389AA0A4206F89E5009AC93C /* AddAddressVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 389AA0A3206F89E5009AC93C /* AddAddressVC.swift */; };
+		389AA0A62071C9B2009AC93C /* NoAddressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 389AA0A52071C9B2009AC93C /* NoAddressView.swift */; };
+		389AA0A82071C9BB009AC93C /* NoAddressView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 389AA0A72071C9BB009AC93C /* NoAddressView.xib */; };
+		389AA0AF2071CF92009AC93C /* CreateNewAdresVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 389AA0AD2071CF92009AC93C /* CreateNewAdresVC.swift */; };
+		389AA0B02071CF92009AC93C /* CreateNewAdresVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 389AA0AE2071CF92009AC93C /* CreateNewAdresVC.xib */; };
+		389AA0B32071DD2E009AC93C /* JITextView.m in Sources */ = {isa = PBXBuildFile; fileRef = 389AA0B22071DD2E009AC93C /* JITextView.m */; };
 		389BC5E8206B96FD00CC776F /* JJNetwork.m in Sources */ = {isa = PBXBuildFile; fileRef = 389BC5E7206B96FD00CC776F /* JJNetwork.m */; };
 		389BC5EB206B9DDC00CC776F /* JJNetDefine.m in Sources */ = {isa = PBXBuildFile; fileRef = 389BC5EA206B9DDC00CC776F /* JJNetDefine.m */; };
 		389BC5EF206BA39700CC776F /* NSDictionary+extend.m in Sources */ = {isa = PBXBuildFile; fileRef = 389BC5EE206BA39700CC776F /* NSDictionary+extend.m */; };
@@ -135,7 +140,6 @@
 		389BC5FD206C839A00CC776F /* OrderAddressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 389BC5FC206C839A00CC776F /* OrderAddressView.swift */; };
 		389BC5FF206C849000CC776F /* OrderAddressView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 389BC5FE206C849000CC776F /* OrderAddressView.xib */; };
 		389BC602206C8F3B00CC776F /* AddressModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 389BC601206C8F3B00CC776F /* AddressModel.swift */; };
-		389BC60C206CD15B00CC776F /* MBProgressHUD+topVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 389BC60B206CD15B00CC776F /* MBProgressHUD+topVC.m */; };
 		389BC610206CD75C00CC776F /* NetworkHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 389BC60F206CD75C00CC776F /* NetworkHUD.m */; };
 		389BC615206D015900CC776F /* OrderGoodlistCtrl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 389BC614206D015900CC776F /* OrderGoodlistCtrl.swift */; };
 		389BC619206D02B200CC776F /* OrderGoodlistTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 389BC618206D02B200CC776F /* OrderGoodlistTableView.swift */; };
@@ -357,6 +361,12 @@
 		389040D220634CC700277974 /* SelecHeadView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelecHeadView.swift; sourceTree = "<group>"; };
 		389040D42063506A00277974 /* SelectConditionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectConditionCell.swift; sourceTree = "<group>"; };
 		389AA0A3206F89E5009AC93C /* AddAddressVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddAddressVC.swift; sourceTree = "<group>"; };
+		389AA0A52071C9B2009AC93C /* NoAddressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoAddressView.swift; sourceTree = "<group>"; };
+		389AA0A72071C9BB009AC93C /* NoAddressView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NoAddressView.xib; sourceTree = "<group>"; };
+		389AA0AD2071CF92009AC93C /* CreateNewAdresVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateNewAdresVC.swift; sourceTree = "<group>"; };
+		389AA0AE2071CF92009AC93C /* CreateNewAdresVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CreateNewAdresVC.xib; sourceTree = "<group>"; };
+		389AA0B12071DD2E009AC93C /* JITextView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JITextView.h; sourceTree = "<group>"; };
+		389AA0B22071DD2E009AC93C /* JITextView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JITextView.m; sourceTree = "<group>"; };
 		389BC5E6206B96FD00CC776F /* JJNetwork.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JJNetwork.h; sourceTree = "<group>"; };
 		389BC5E7206B96FD00CC776F /* JJNetwork.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JJNetwork.m; sourceTree = "<group>"; };
 		389BC5E9206B9DDC00CC776F /* JJNetDefine.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JJNetDefine.h; sourceTree = "<group>"; };
@@ -369,8 +379,6 @@
 		389BC5FC206C839A00CC776F /* OrderAddressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderAddressView.swift; sourceTree = "<group>"; };
 		389BC5FE206C849000CC776F /* OrderAddressView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OrderAddressView.xib; sourceTree = "<group>"; };
 		389BC601206C8F3B00CC776F /* AddressModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddressModel.swift; sourceTree = "<group>"; };
-		389BC60A206CD15B00CC776F /* MBProgressHUD+topVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "MBProgressHUD+topVC.h"; sourceTree = "<group>"; };
-		389BC60B206CD15B00CC776F /* MBProgressHUD+topVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "MBProgressHUD+topVC.m"; sourceTree = "<group>"; };
 		389BC60D206CD1E800CC776F /* NSDictionary+extend.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSDictionary+extend.h"; sourceTree = "<group>"; };
 		389BC60E206CD75C00CC776F /* NetworkHUD.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NetworkHUD.h; sourceTree = "<group>"; };
 		389BC60F206CD75C00CC776F /* NetworkHUD.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NetworkHUD.m; sourceTree = "<group>"; };
@@ -919,8 +927,12 @@
 		389BC600206C8F1600CC776F /* AddAddress */ = {
 			isa = PBXGroup;
 			children = (
-				389AA0A3206F89E5009AC93C /* AddAddressVC.swift */,
 				389BC601206C8F3B00CC776F /* AddressModel.swift */,
+				389AA0A3206F89E5009AC93C /* AddAddressVC.swift */,
+				389AA0A52071C9B2009AC93C /* NoAddressView.swift */,
+				389AA0A72071C9BB009AC93C /* NoAddressView.xib */,
+				389AA0AD2071CF92009AC93C /* CreateNewAdresVC.swift */,
+				389AA0AE2071CF92009AC93C /* CreateNewAdresVC.xib */,
 			);
 			path = AddAddress;
 			sourceTree = "<group>";
@@ -1132,8 +1144,6 @@
 			isa = PBXGroup;
 			children = (
 				38FD686D2040207A00B19A42 /* XIB.swift */,
-				389BC60A206CD15B00CC776F /* MBProgressHUD+topVC.h */,
-				389BC60B206CD15B00CC776F /* MBProgressHUD+topVC.m */,
 				389BC60D206CD1E800CC776F /* NSDictionary+extend.h */,
 				389BC5EE206BA39700CC776F /* NSDictionary+extend.m */,
 				381C63182048097F00A9066C /* StringSize.swift */,
@@ -1186,6 +1196,8 @@
 				389BC5F3206BB31900CC776F /* AppConfig.h */,
 				389BC5F2206BB31900CC776F /* AppConfig.m */,
 				387D5564206A14990073F934 /* JIStepper.swift */,
+				389AA0B12071DD2E009AC93C /* JITextView.h */,
+				389AA0B22071DD2E009AC93C /* JITextView.m */,
 				382EF41B205FBA5200F3A33B /* SYATopScrollviewVC */,
 				387B6F25205A571F00E6D916 /* ZCycleView */,
 				38F7636B20593950002C1999 /* iCarousel.h */,
@@ -1416,12 +1428,14 @@
 				387D555B206906760073F934 /* AddcartGoodConfigView.xib in Resources */,
 				382EF41A205FB9D600F3A33B /* EvaluationCell.xib in Resources */,
 				382EF42C205FD1FC00F3A33B /* HotRecommendCell.xib in Resources */,
+				389AA0A82071C9BB009AC93C /* NoAddressView.xib in Resources */,
 				386CAFEC2060B877006E32DF /* StarsView.xib in Resources */,
 				389BC622206D16BB00CC776F /* OrderpayView.xib in Resources */,
 				38F7636620592012002C1999 /* HotInStoreView.xib in Resources */,
 				387D497C205BD4DB0059BB20 /* GoodCell.xib in Resources */,
 				387B6F39205A831D00E6D916 /* UserOrderCell.xib in Resources */,
 				38437B4B2058E8AE00F7FE2F /* NatureCell.xib in Resources */,
+				389AA0B02071CF92009AC93C /* CreateNewAdresVC.xib in Resources */,
 				381C63002046861100A9066C /* SearchRecordTitleView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1517,6 +1531,7 @@
 				38BF9537206DE6D700F8294A /* msyh.ttf in Sources */,
 				384EE45C2057EBA900D2BCB6 /* HotSaleControl.swift in Sources */,
 				38213019204D429600F1413C /* ItemTableView.swift in Sources */,
+				389AA0B32071DD2E009AC93C /* JITextView.m in Sources */,
 				386CAFF0206100FD006E32DF /* SelectConditionVC.swift in Sources */,
 				387D497B205BD4DB0059BB20 /* GoodCell.swift in Sources */,
 				38F76368205922E6002C1999 /* HotInStoreCell.swift in Sources */,
@@ -1551,7 +1566,6 @@
 				387D555F206915DB0073F934 /* JJLayoutColectionView.swift in Sources */,
 				387D4976205BCC1B0059BB20 /* RightGoodsView.swift in Sources */,
 				3821301C204D465000F1413C /* ItemCell.swift in Sources */,
-				389BC60C206CD15B00CC776F /* MBProgressHUD+topVC.m in Sources */,
 				38FD9A43204112960090D978 /* BannerModel.swift in Sources */,
 				38B8799F204155A00080BB3C /* GoodListVC.swift in Sources */,
 				387D55552068FC1C0073F934 /* AddCartGoodConfigTableView.swift in Sources */,
@@ -1568,6 +1582,7 @@
 				38EE015920455F8A0050759A /* InformationVC.swift in Sources */,
 				384EE4602057EBC500D2BCB6 /* TimeReCControl.swift in Sources */,
 				381C63032046990F00A9066C /* SearchHistoryCell.swift in Sources */,
+				389AA0AF2071CF92009AC93C /* CreateNewAdresVC.swift in Sources */,
 				384EE4422057673A00D2BCB6 /* HotSaleModel.swift in Sources */,
 				382EF42B205FD1FC00F3A33B /* HotRecommendCell.swift in Sources */,
 				38FD686220401E4F00B19A42 /* UIView+control.m in Sources */,
@@ -1602,6 +1617,7 @@
 				387B6F42205A99E800E6D916 /* UserServceCell.swift in Sources */,
 				382EF411205FAC2E00F3A33B /* StoreCell.swift in Sources */,
 				38437B432058C46D00F7FE2F /* BoutiqueView.swift in Sources */,
+				389AA0A62071C9B2009AC93C /* NoAddressView.swift in Sources */,
 				38FD68742040220D00B19A42 /* PublicDefine.swift in Sources */,
 				387D554020689F930073F934 /* AcountHeadView.swift in Sources */,
 				382EF427205FBA5200F3A33B /* UIView+SYAViewFrame.m in Sources */,
@@ -1859,7 +1875,7 @@
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = 1;
-				USER_HEADER_SEARCH_PATHS = "$(SRCROOT)/** $(SRCROOT)/Pods";
+				USER_HEADER_SEARCH_PATHS = "$(SRCROOT)/** $(SRCROOT)/Pods $(SRCROOT)/Pods/KeychainAccess";
 			};
 			name = Debug;
 		};
@@ -1889,7 +1905,7 @@
 				SWIFT_OBJC_BRIDGING_HEADER = "${SRCROOT}/Config/GreateSmart-Bridging-Header.h";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = 1;
-				USER_HEADER_SEARCH_PATHS = "$(SRCROOT)/** $(SRCROOT)/Pods";
+				USER_HEADER_SEARCH_PATHS = "$(SRCROOT)/** $(SRCROOT)/Pods $(SRCROOT)/Pods/KeychainAccess";
 			};
 			name = Release;
 		};

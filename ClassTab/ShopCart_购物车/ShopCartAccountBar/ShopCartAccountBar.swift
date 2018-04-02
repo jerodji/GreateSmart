@@ -15,10 +15,12 @@ class ShopCartAccountBar: BaseUIView,LoadXIBView {
     /** 结算buttond */
     @IBOutlet weak var accountBtn: UIButton!
     
-    
     @IBAction func accountAction(_ sender: UIButton) {
-        self.viewController().navigationController?.pushViewController(OrderVC(), animated: true)
+        let vc = OrderVC()
+        vc.hidesBottomBarWhenPushed = true /** 隐藏tbbar */
+        self.viewController().navigationController?.pushViewController(vc, animated: true)
     }
+    
     /*
     // Only override draw() if you perform custom drawing.
     // An empty implementation adversely affects performance during animation.

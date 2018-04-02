@@ -50,12 +50,17 @@ class LoginVC: UIViewController {
                 /**
                  *  keychain 存储token信息
                  */
+                let keys : NSArray = dict.allKeys as NSArray
+                for index in 0...keys.count-1  {
+                    Keychain(service: kBundleID)[keys[index] as! String] = String.init(describing: dict[keys[index] as! String]!)
+                }
+                
                 //let keychain = Keychain(service: kBundleID)
-                Keychain(service: kBundleID)[UserTokenKeys.ins.access_token]  = "\(String.init(describing: dict[UserTokenKeys.ins.access_token]))"
-                Keychain(service: kBundleID)[UserTokenKeys.ins.token_type]    = "\(String.init(describing: dict[UserTokenKeys.ins.token_type]))"
-                Keychain(service: kBundleID)[UserTokenKeys.ins.refresh_token] = "\(String.init(describing: dict[UserTokenKeys.ins.refresh_token]))"
-                Keychain(service: kBundleID)[UserTokenKeys.ins.expires_in]    = "\(String.init(describing: dict[UserTokenKeys.ins.expires_in]))"
-                Keychain(service: kBundleID)[UserTokenKeys.ins.scope]         = "\(String.init(describing: dict[UserTokenKeys.ins.scope]))"
+//                Keychain(service: kBundleID)[UserTokenKeys.ins.access_token]  = String.init(describing: dict[UserTokenKeys.ins.access_token]!)
+//                Keychain(service: kBundleID)[UserTokenKeys.ins.token_type]    = String.init(describing: dict[UserTokenKeys.ins.token_type]!)
+//                Keychain(service: kBundleID)[UserTokenKeys.ins.refresh_token] = String.init(describing: dict[UserTokenKeys.ins.refresh_token]!)
+//                Keychain(service: kBundleID)[UserTokenKeys.ins.expires_in]    = String.init(describing: dict[UserTokenKeys.ins.expires_in]!)
+//                Keychain(service: kBundleID)[UserTokenKeys.ins.scope]         = String.init(describing: dict[UserTokenKeys.ins.scope]!)
                 
             }
         }

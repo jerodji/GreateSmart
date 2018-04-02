@@ -10,8 +10,9 @@ import UIKit
 
 class BaseUIViewController: UIViewController {
     
-    //MARK: 自定义导航栏bar
+    //MARK: 自定义的导航栏bar
     let naviBar = CustomNaviBar.init(frame: CGRect.init(x: 0, y: 0, width: kScreenW, height: kNaviH))
+    var hideTabbar : Bool = false
     
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
@@ -19,6 +20,16 @@ class BaseUIViewController: UIViewController {
     
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
+    }
+    
+    override func loadView() {
+        super.loadView()
+    }
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        self.view.backgroundColor = .white
+        customNavigationBar()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -29,12 +40,34 @@ class BaseUIViewController: UIViewController {
         super.viewDidAppear(animated)
         view.bringSubview(toFront: naviBar) /** 推至最前端 */
     }
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        self.view.backgroundColor = .white
-        customNavigationBar()
+    
+    override func viewWillLayoutSubviews() {
+        super.viewWillLayoutSubviews()
     }
+    
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+    }
+    
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(animated)
+        
+//        if hideTabbar {
+//            UIView.animate(withDuration: 0.5) {
+//                self.tabBarController?.tabBar.y = kScreenH-kTabbarH
+//            }
+//        }
+        
+    }
+    
+
+
+    
+
    
     func customNavigationBar() -> () {
         /* 隐藏系统导航栏bar */

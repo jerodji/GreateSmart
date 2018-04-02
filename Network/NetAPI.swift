@@ -13,15 +13,14 @@ import UIKit
  */
 //let URLHEAD = "https://www.laopdr.cn/"
 
-/**
- *  测试服 http://test.laopdr.cn:8080/
- */
+/// 测试服 http://test.laopdr.cn:8080/
 let URLHEAD = "http://test.laopdr.cn:8080/"
 
-/**
- *  li dun xi  http://192.168.1.120:8080/
- */
+///  李趸玺的电脑  http://192.168.1.120:8080/
 //let URLHEAD = "http://192.168.1.120:8080/"
+
+/// 瞿云康电脑 http://192.168.1.103:8080/
+//let URLHEAD = "http://192.168.1.103:8080/"
 
 
 class NetAPI: NSObject {
@@ -39,7 +38,8 @@ class NetAPI: NSObject {
     
     /** 用户登录/登录验证 */
     let oauth_token = "oauth/token"
-    
+    /** 添加收货地址 */
+    let addAddress = "userAddress/addAddress"
     
     
     

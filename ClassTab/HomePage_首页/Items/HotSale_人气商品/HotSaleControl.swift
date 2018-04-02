@@ -10,8 +10,8 @@ import UIKit
 
 class HotSaleControl: BaseControl,iCarouselDelegate, iCarouselDataSource {
 
-    var view : HotSaleView!
-    var model: HotSaleModel!
+    var view : HotSaleView?
+    var model: HotSaleModel?
 //    private var rect:CGRect!
     
     override init() {
@@ -21,22 +21,22 @@ class HotSaleControl: BaseControl,iCarouselDelegate, iCarouselDataSource {
     
     func handleData(typeInfo:Any!) -> HotSaleModel {
         model = HotSaleModel.dataReader(typeInfo: typeInfo)
-        return model
+        return model!
     }
     
     func initView(frame:CGRect) -> Void {
 //        rect = frame
         view = HotSaleView.init(frame: frame)
-        view.delegate = self
-        view.dataSource = self
+        view!.delegate = self
+        view!.dataSource = self
     }
     
     func numberOfItems(in carousel: iCarousel) -> Int {
-        return model.data.block.count
+        return model!.data.block.count
     }
     
     func carousel(_ carousel: iCarousel, viewForItemAt index: Int, reusing view: UIView?) -> UIView {
-        let mod = model.data.block[index] as! HotSaleBlockElemModel
+        let mod = model!.data.block[index] as! HotSaleBlockElemModel
         let cell = HotSaleCell.loadFromXIB()
 //        cell.setFrame(rect)
         cell.imageView.kf.setImage(with: URL.init(string: mod.itemTitleImage))

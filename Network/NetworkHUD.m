@@ -10,7 +10,8 @@
 #import "JJNetwork.h"
 #import "AFBaseNetwork.h"
 #import "MBProgressHUD.h"
-#import "MBProgressHUD+topVC.h"
+#import "NSObject+conversion.h"
+//#import <objc/runtime.h>
 
 @implementation NetworkHUD
 
@@ -71,33 +72,71 @@ static NetworkHUD* _ins = nil;
 //    });
 }
 
-- (void)successHUD {
+- (void)succHUD:(NSString*)msg {
     
     dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, 0.01 * NSEC_PER_SEC);
     dispatch_after(popTime, dispatch_get_main_queue(), ^(void){
-        [MBProgressHUD hideHUDForView:[self topViewController].view animated:YES];
-        
-//        MBProgressHUD *hud = [[MBProgressHUD alloc] initWithView:[self topViewController].view];
-////        hud.mode = MBProgressHUDModeCustomView;
-//        hud.label.text = @"success";
-//        [hud showAnimated:YES];
-//        [hud hideAnimated:true afterDelay:2];
+        //[MBProgressHUD hideHUDForView:[self topViewController].view animated:YES];
+        if (![msg isEqualToString:@""] && ![msg isEqual:[NSNull null]] && msg!=nil) {
+            MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:[self topViewController].view animated:YES];
+            hud.mode = MBProgressHUDModeText;
+            hud.label.text = msg;
+            [hud hideAnimated:true afterDelay:2.5];
+        }
     });
     
 }
 
-- (void)failHUD {
+- (void)failHUD:(NSString*)msg  {
     
     dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, 0.01 * NSEC_PER_SEC);
     dispatch_after(popTime, dispatch_get_main_queue(), ^(void){
-        [MBProgressHUD hideHUDForView:[self topViewController].view animated:YES];
+        //[MBProgressHUD hideHUDForView:[self topViewController].view animated:YES];
+        if (![msg isEqualToString:@""] && ![msg isEqual:[NSNull null]] && msg!=nil) {
+            MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:[self topViewController].view animated:YES];
+            hud.mode = MBProgressHUDModeText;
+            hud.label.text = msg;
+            [hud hideAnimated:true afterDelay:2.5];
+        }
+    });
+}
+
+#pragma mark -
+
+- (void)request:(NetType)type URL:(NSString*)url formHeader:(NSDictionary*)formHeaderDict params:(NSDictionary*)params success:(SUCC)success fail:(FAIL)failure showHUD:(BOOL)showhud
+{
+    if (showhud) [self showHUD];
+    dispatch_async(dispatch_get_global_queue( DISPATCH_QUEUE_PRIORITY_LOW, 0), ^{
+        [[AFBaseNetwork shareIns] request:type URL:url formHeader:formHeaderDict params:params success:^(id responseObject) {
+            
+            
+            
+            //NSString* json = [[NSString alloc] initWithData:responseObject encoding:NSUTF8StringEncoding];
+            NSObject* obj = [NSJSONSerialization JSONObjectWithData:responseObject options:0 error:nil];
+            //[NSObject objectFromJSONString:json];
+            if ([obj isKindOfClass:[NSDictionary class]]) {
+                NSDictionary* dict = (NSDictionary*)obj;
+                success(dict);
+                if (showhud) [self hideHUD];
+                if (showhud) {[self succHUD:dict[@"msg"]];}
+            } else {
+                success(obj);
+                if (showhud) [self hideHUD];
+                if (showhud) {[self succHUD:nil];}
+            }
+            
+        } fail:^(NSURLSessionDataTask *task, NSError *error) {
+            failure(task,error);
+            if (showhud) [self hideHUD];
+            if (showhud) {[self failHUD:nil];}
+        }];
     });
 }
 
 /**
  form表单请求
  */
-- (void)request:(NetType)type URL:(NSString*)fullURL formHeaders:(NSDictionary*)headerDict body:(NSDictionary*)bodyDict success:(SUCC)successBlock fail:(FAIL)failBlock showHUD:(BOOL)showhud
+- (void)request:(NetType)type URL:(NSString*)fullURL formHeaders:(NSDictionary*)headerDict formBody:(NSDictionary*)bodyDict success:(SUCC)successBlock fail:(FAIL)failBlock showHUD:(BOOL)showhud
 {
     if (showhud) [self showHUD];
     
@@ -106,12 +145,14 @@ static NetworkHUD* _ins = nil;
         [[JJNetwork shareIns] request:type URL:fullURL formHeaders:headerDict body:bodyDict success:^(id responseObject) {
 //            sleep(3);//test
             successBlock(responseObject);
-            if (showhud) [self successHUD];
+            if (showhud) [self hideHUD];
+            if (showhud) [self succHUD:nil];
             
         } fail:^(NSURLSessionDataTask *task, NSError *error) {
 //            sleep(3);//test
             failBlock(task,error);
-            if (showhud) [self failHUD];
+            if (showhud) [self hideHUD];
+            if (showhud) [self failHUD:nil];
         }];
     });
 }
@@ -127,10 +168,12 @@ static NetworkHUD* _ins = nil;
         
         [[AFBaseNetwork shareIns] request:type URL:fullURL paramsEntity:entity success:^(id responseObject) {
             success(responseObject);
-            if (showhud) [self successHUD];
+            if (showhud) [self hideHUD];
+            if (showhud) [self succHUD:nil];
         } fail:^(NSURLSessionDataTask *task, NSError *error) {
             failure(task,error);
-            if (showhud) [self failHUD];
+            if (showhud) [self hideHUD];
+            if (showhud) [self failHUD:nil];
         }];
         
     });
@@ -147,10 +190,12 @@ static NetworkHUD* _ins = nil;
         
         [[AFBaseNetwork shareIns] request:_type URL:_url paramsDict:_parameter success:^(id responseObject) {
             _success(responseObject);
-            if (showhud) [self successHUD];
+            if (showhud) [self hideHUD];
+            if (showhud) [self succHUD:nil];
         } fail:^(NSURLSessionDataTask *task, NSError *error) {
             _failure(task,error);
-            if (showhud) [self failHUD];
+            if (showhud) [self hideHUD];
+            if (showhud) [self failHUD:nil];
         }];
         
     });

@@ -32,6 +32,7 @@
 //#import "AFBaseNetwork.h"
 //#import "JJNetwork.h"
 #import "NetworkHUD.h"
+#import "JITextView.h"
 
 #pragma mark ------------ CocoaPod ------------
 
@@ -43,9 +44,15 @@
 
 //#import <SDWebImage/SDWebImage-umbrella.h>
 
-#import "MJExtension.h"
+//#import "MJExtension.h"
+#import <MJExtension/MJExtension.h>
+//#import <MJExtension/MJExtension-umbrella.h>
 
-#import "IQKeyboardManager-umbrella.h"
+#import "IQKeyboardManager.h"
+//#import "IQKeyboardManager-umbrella.h"
+//#import <IQKeyboardManager/IQKeyboardManager.h>
+//#import <IQKeyboardManager/IQKeyboardManager-umbrella.h>
+
 
 
 

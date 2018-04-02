@@ -43,6 +43,7 @@ class OrderVC: BaseUIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         naviBar.titleLab.text = "确认订单"
+        hideTabbar = true
         view.addSubview(scrol!)
         view.addSubview(adrsCtrl!.view!)
         scrol!.addSubview(goodCtrl!.view!)
@@ -59,9 +60,9 @@ class OrderVC: BaseUIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        UIView.animate(withDuration: 0.5) {
-            self.tabBarController?.tabBar.y = kScreenH
-        }
+//        UIView.animate(withDuration: 0.5) {
+//            self.tabBarController?.tabBar.y = kScreenH
+//        }
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -74,15 +75,24 @@ class OrderVC: BaseUIViewController {
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
-        UIView.animate(withDuration: 0.5) {
-            self.tabBarController?.tabBar.y = kScreenH-kTabbarH
-        }
+        
+    }
+    
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(animated)
+//        UIView.animate(withDuration: 0.5) {
+//            self.tabBarController?.tabBar.y = kScreenH-kTabbarH
+//        }
     }
     
     //MARK:-
     
     @objc func addressAction () -> Void {
-        self.navigationController?.pushViewController(AddAddressVC(), animated: true)
+        let vc = AddAddressVC()
+        
+        self.navigationController?.pushViewController(vc, animated: true)
+        //present
+        
     }
     
     

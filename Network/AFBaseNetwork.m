@@ -64,6 +64,37 @@
     return _formManager;
 }
 
+- (void)request:(NetType)type URL:(NSString*)url formHeader:(NSDictionary*)formHeaderDict params:(NSDictionary*)params success:(SUCC)success fail:(FAIL)failure
+{
+    NSString * method = @"POST";
+    if (type == GET) {
+        method = @"GET";
+    }
+    
+    NSMutableURLRequest *request = [[AFJSONRequestSerializer serializer] requestWithMethod:method URLString:url parameters:params error:nil];
+    [request setValue:@"application/json" forHTTPHeaderField:@"Content-Type"];
+    for (NSString* key in formHeaderDict) {
+         [request setValue:formHeaderDict[key] forHTTPHeaderField:key];
+    }
+    
+    //发起请求
+    __block NSURLSessionDataTask *dataTask = nil;
+    
+    dataTask = [self.sessionManager dataTaskWithRequest:request completionHandler:^(NSURLResponse * _Nonnull response, id  _Nullable responseObject, NSError * _Nullable error) {
+        
+        if (!error) {
+            if (success) {
+                success(responseObject);
+            }
+        } else {
+            if (failure) {
+                failure(dataTask,error);
+            }
+        }
+    }];
+    
+    [dataTask resume];
+}
 
 
 #pragma mark - entity

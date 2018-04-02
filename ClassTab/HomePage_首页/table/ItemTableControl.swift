@@ -201,7 +201,7 @@ class ItemTableControl: BaseControl,UITableViewDelegate,UITableViewDataSource {
         }
         if obj is HotSaleControl {
             let control = obj as! HotSaleControl
-            cell!.addSubview(control.view)
+            cell!.addSubview(control.view!)
         }
         if obj is NatureControl {
             let control = obj as! NatureControl
