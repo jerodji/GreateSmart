@@ -20,10 +20,14 @@ class AddAddressVC: BaseUIViewController {
         super.viewDidLoad()
         self.naviBar.titleLab.text = "选择地址"
         
-        noAdrsView = NoAddressView.loadFromXIB()
-        noAdrsView!.frameXib = view.bounds
-        view.addSubview(noAdrsView!)
-        noAdrsView!.createNewAddressBtn.addTarget(self, action: #selector(createNewAddressAction), for: .touchUpInside)
+//        noAdrsView = NoAddressView.loadFromXIB()
+//        noAdrsView!.frameXib = view.bounds
+//        view.addSubview(noAdrsView!)
+//        noAdrsView!.createNewAddressBtn.addTarget(self, action: #selector(createNewAddressAction), for: .touchUpInside)
+        
+        
+        
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {

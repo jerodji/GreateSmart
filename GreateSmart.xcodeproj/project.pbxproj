@@ -208,6 +208,10 @@
 		38FD9A49204116DF0090D978 /* TabbarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38FD9A48204116DF0090D978 /* TabbarController.swift */; };
 		FA13949920581CF4008D6F68 /* ForMaleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA13949820581CF4008D6F68 /* ForMaleView.swift */; };
 		FA13949B20581DC7008D6F68 /* ForMaleView.xib in Resources */ = {isa = PBXBuildFile; fileRef = FA13949A20581DC7008D6F68 /* ForMaleView.xib */; };
+		FA13949E2072746D008D6F68 /* AddressControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA13949D2072746D008D6F68 /* AddressControl.swift */; };
+		FA1394A020727480008D6F68 /* AddressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA13949F20727480008D6F68 /* AddressView.swift */; };
+		FA1394A32072754C008D6F68 /* AddressCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA1394A12072754C008D6F68 /* AddressCell.swift */; };
+		FA1394A42072754C008D6F68 /* AddressCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FA1394A22072754C008D6F68 /* AddressCell.xib */; };
 		FA16F7B42056D30B0094F47B /* HotInStoreModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA16F7B32056D30B0094F47B /* HotInStoreModel.swift */; };
 		FA16F7B72056ECFB0094F47B /* ForMaleModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA16F7B62056ECFB0094F47B /* ForMaleModel.swift */; };
 /* End PBXBuildFile section */
@@ -471,6 +475,10 @@
 		D64C8E0F66D55CC3EC66E617 /* Pods_GreateSmart.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GreateSmart.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FA13949820581CF4008D6F68 /* ForMaleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForMaleView.swift; sourceTree = "<group>"; };
 		FA13949A20581DC7008D6F68 /* ForMaleView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ForMaleView.xib; sourceTree = "<group>"; };
+		FA13949D2072746D008D6F68 /* AddressControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddressControl.swift; sourceTree = "<group>"; };
+		FA13949F20727480008D6F68 /* AddressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddressView.swift; sourceTree = "<group>"; };
+		FA1394A12072754C008D6F68 /* AddressCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddressCell.swift; sourceTree = "<group>"; };
+		FA1394A22072754C008D6F68 /* AddressCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AddressCell.xib; sourceTree = "<group>"; };
 		FA16F7B32056D30B0094F47B /* HotInStoreModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HotInStoreModel.swift; sourceTree = "<group>"; };
 		FA16F7B62056ECFB0094F47B /* ForMaleModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForMaleModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -927,12 +935,10 @@
 		389BC600206C8F1600CC776F /* AddAddress */ = {
 			isa = PBXGroup;
 			children = (
-				389BC601206C8F3B00CC776F /* AddressModel.swift */,
 				389AA0A3206F89E5009AC93C /* AddAddressVC.swift */,
-				389AA0A52071C9B2009AC93C /* NoAddressView.swift */,
-				389AA0A72071C9BB009AC93C /* NoAddressView.xib */,
-				389AA0AD2071CF92009AC93C /* CreateNewAdresVC.swift */,
-				389AA0AE2071CF92009AC93C /* CreateNewAdresVC.xib */,
+				FA1394A520727DD3008D6F68 /* Address */,
+				FA1394A620727DE5008D6F68 /* NoAddress */,
+				FA1394A720727DF6008D6F68 /* CreateAddress */,
 			);
 			path = AddAddress;
 			sourceTree = "<group>";
@@ -1263,6 +1269,36 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		FA1394A520727DD3008D6F68 /* Address */ = {
+			isa = PBXGroup;
+			children = (
+				FA13949D2072746D008D6F68 /* AddressControl.swift */,
+				FA13949F20727480008D6F68 /* AddressView.swift */,
+				FA1394A12072754C008D6F68 /* AddressCell.swift */,
+				FA1394A22072754C008D6F68 /* AddressCell.xib */,
+				389BC601206C8F3B00CC776F /* AddressModel.swift */,
+			);
+			path = Address;
+			sourceTree = "<group>";
+		};
+		FA1394A620727DE5008D6F68 /* NoAddress */ = {
+			isa = PBXGroup;
+			children = (
+				389AA0A52071C9B2009AC93C /* NoAddressView.swift */,
+				389AA0A72071C9BB009AC93C /* NoAddressView.xib */,
+			);
+			path = NoAddress;
+			sourceTree = "<group>";
+		};
+		FA1394A720727DF6008D6F68 /* CreateAddress */ = {
+			isa = PBXGroup;
+			children = (
+				389AA0AD2071CF92009AC93C /* CreateNewAdresVC.swift */,
+				389AA0AE2071CF92009AC93C /* CreateNewAdresVC.xib */,
+			);
+			path = CreateAddress;
+			sourceTree = "<group>";
+		};
 		FA16F7B22056D2EB0094F47B /* HotInStore_实体店铺推荐 */ = {
 			isa = PBXGroup;
 			children = (
@@ -1404,6 +1440,7 @@
 				387B6F32205A72F700E6D916 /* UserHeaderView.xib in Resources */,
 				38F9CA63202FED60004D105D /* LaunchScreen.storyboard in Resources */,
 				38FD9A3F2040FD9E0090D978 /* Images.xcassets in Resources */,
+				FA1394A42072754C008D6F68 /* AddressCell.xib in Resources */,
 				38172C64206526A6002ED9AD /* ShopCartAccountBar.xib in Resources */,
 				382EF40E205F9AF100F3A33B /* GoodIntroduceCell.xib in Resources */,
 				386CAFE82060B696006E32DF /* RightView.xib in Resources */,
@@ -1604,8 +1641,10 @@
 				387D4971205BA4070059BB20 /* SortButton.swift in Sources */,
 				38BF953D206E2C5300F8294A /* UIView+extend.m in Sources */,
 				389BC602206C8F3B00CC776F /* AddressModel.swift in Sources */,
+				FA1394A020727480008D6F68 /* AddressView.swift in Sources */,
 				387B6F2A205A571F00E6D916 /* ZCycleLayout.swift in Sources */,
 				38FD687D204026D200B19A42 /* NetAPI.swift in Sources */,
+				FA1394A32072754C008D6F68 /* AddressCell.swift in Sources */,
 				FA16F7B42056D30B0094F47B /* HotInStoreModel.swift in Sources */,
 				3864DAC3205CE22100F89A25 /* LeftControl.swift in Sources */,
 				38BF9540206E307E00F8294A /* UILabel+extend.m in Sources */,
@@ -1639,6 +1678,7 @@
 				389BC5E8206B96FD00CC776F /* JJNetwork.m in Sources */,
 				387D5537206893560073F934 /* AccountTableControl.swift in Sources */,
 				389BC5EF206BA39700CC776F /* NSDictionary+extend.m in Sources */,
+				FA13949E2072746D008D6F68 /* AddressControl.swift in Sources */,
 				38F7636D20593950002C1999 /* iCarousel.m in Sources */,
 				38B879AA20426A3F0080BB3C /* BaseControl.swift in Sources */,
 				389040D320634CC700277974 /* SelecHeadView.swift in Sources */,
