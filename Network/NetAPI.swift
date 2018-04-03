@@ -8,19 +8,17 @@
 
 import UIKit
 
-/**
- *  正式服 https://www.laopdr.cn/
- */
-//let URLHEAD = "https://www.laopdr.cn/"
+/** 正式服 https://www.laopdr.cn */
+//let URLHEAD = "https://www.laopdr.cn"
 
-/// 测试服 http://test.laopdr.cn:8080/
-let URLHEAD = "http://test.laopdr.cn:8080/"
+/** 测试服 test.laopdr.cn:8080 */
+let URLHEAD = "http://test.laopdr.cn:8080"
 
-///  李趸玺的电脑  http://192.168.1.120:8080/
-//let URLHEAD = "http://192.168.1.120:8080/"
+/**  李趸玺的电脑  192.168.1.120:8080 */
+//let URLHEAD = "http://192.168.1.120:8080"
 
-/// 瞿云康电脑 http://192.168.1.103:8080/
-//let URLHEAD = "http://192.168.1.103:8080/"
+/** 瞿云康电脑 192.168.1.103:8080 */
+//let URLHEAD = "http://192.168.1.103:8080"
 
 
 class NetAPI: NSObject {
@@ -29,18 +27,22 @@ class NetAPI: NSObject {
     /** 需要重写自己的init方法,设置为私有,保证单例是真正唯一的,避免外部对象通过访问init方法创建单例类的其他实例 */
     private override init() { }
     
-    let test_fail = "test-fail"
-    let test_error = "test-error"
-    let test_entity = "test-entity"
-    
     /** 首页数据 */
-    private(set) var homePage = "home/homePage"
+    private(set) var homePage = URLHEAD + "/home/homePage"
     
+    //MARK:- 用户
+
     /** 用户登录/登录验证 */
-    let oauth_token = "oauth/token"
-    /** 添加收货地址 */
-    let addAddress = "userAddress/addAddress"
+    let oauth_token = URLHEAD + "/oauth/token"
     
+    
+    
+    //MARK:- 地址
+    
+    /** 添加收货地址 */
+    let addAddress = URLHEAD + "/userAddress/addAddress"
+    /** 收货地址列表 */
+    let getAddresses =  URLHEAD + "/userAddress/getAddresses"
     
     
 }

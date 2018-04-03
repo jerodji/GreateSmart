@@ -55,7 +55,7 @@ static NetworkHUD* _ins = nil;
     dispatch_async(dispatch_get_main_queue(), ^{
         MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:[self topViewController].view animated:YES];
         //hud.mode = MBProgressHUDModeAnnularDeterminate;
-        hud.label.text = @"Loading...";
+//        hud.label.text = @"Loading...";
     });
 }
 
@@ -109,26 +109,30 @@ static NetworkHUD* _ins = nil;
     dispatch_async(dispatch_get_global_queue( DISPATCH_QUEUE_PRIORITY_LOW, 0), ^{
         [[AFBaseNetwork shareIns] request:type URL:url formHeader:formHeaderDict params:params success:^(id responseObject) {
             
-            
-            
-            //NSString* json = [[NSString alloc] initWithData:responseObject encoding:NSUTF8StringEncoding];
             NSObject* obj = [NSJSONSerialization JSONObjectWithData:responseObject options:0 error:nil];
-            //[NSObject objectFromJSONString:json];
+            
             if ([obj isKindOfClass:[NSDictionary class]]) {
                 NSDictionary* dict = (NSDictionary*)obj;
                 success(dict);
                 if (showhud) [self hideHUD];
                 if (showhud) {[self succHUD:dict[@"msg"]];}
-            } else {
+            }
+            else if ([obj isKindOfClass:[NSArray class]]) {
+                NSArray* arr = (NSArray*)obj;
+                success(arr);
+                if (showhud) [self hideHUD];
+                //if (showhud) {[self succHUD:dict[@"msg"]];}
+            }
+            else {
                 success(obj);
                 if (showhud) [self hideHUD];
-                if (showhud) {[self succHUD:nil];}
+                //if (showhud) {[self succHUD:nil];}
             }
             
         } fail:^(NSURLSessionDataTask *task, NSError *error) {
             failure(task,error);
             if (showhud) [self hideHUD];
-            if (showhud) {[self failHUD:nil];}
+            //if (showhud) {[self failHUD:nil];}
         }];
     });
 }
@@ -146,13 +150,13 @@ static NetworkHUD* _ins = nil;
 //            sleep(3);//test
             successBlock(responseObject);
             if (showhud) [self hideHUD];
-            if (showhud) [self succHUD:nil];
+            //if (showhud) [self succHUD:nil];
             
         } fail:^(NSURLSessionDataTask *task, NSError *error) {
 //            sleep(3);//test
             failBlock(task,error);
             if (showhud) [self hideHUD];
-            if (showhud) [self failHUD:nil];
+            //if (showhud) [self failHUD:nil];
         }];
     });
 }
@@ -169,11 +173,11 @@ static NetworkHUD* _ins = nil;
         [[AFBaseNetwork shareIns] request:type URL:fullURL paramsEntity:entity success:^(id responseObject) {
             success(responseObject);
             if (showhud) [self hideHUD];
-            if (showhud) [self succHUD:nil];
+            //if (showhud) [self succHUD:nil];
         } fail:^(NSURLSessionDataTask *task, NSError *error) {
             failure(task,error);
             if (showhud) [self hideHUD];
-            if (showhud) [self failHUD:nil];
+            //if (showhud) [self failHUD:nil];
         }];
         
     });
@@ -191,11 +195,11 @@ static NetworkHUD* _ins = nil;
         [[AFBaseNetwork shareIns] request:_type URL:_url paramsDict:_parameter success:^(id responseObject) {
             _success(responseObject);
             if (showhud) [self hideHUD];
-            if (showhud) [self succHUD:nil];
+            //if (showhud) [self succHUD:nil];
         } fail:^(NSURLSessionDataTask *task, NSError *error) {
             _failure(task,error);
             if (showhud) [self hideHUD];
-            if (showhud) [self failHUD:nil];
+            //if (showhud) [self failHUD:nil];
         }];
         
     });

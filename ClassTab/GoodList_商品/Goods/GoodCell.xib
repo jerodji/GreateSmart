@@ -60,7 +60,7 @@
                         <constraints>
                             <constraint firstAttribute="width" secondItem="vfq-65-rJS" secondAttribute="height" multiplier="40:30" id="YAU-Ef-NDF"/>
                         </constraints>
-                        <state key="normal" image="gouwucheda"/>
+                        <state key="normal" image="gouwucheanniu"/>
                     </button>
                 </subviews>
             </view>
@@ -102,6 +102,6 @@
         </collectionViewCell>
     </objects>
     <resources>
-        <image name="gouwucheda" width="94" height="85"/>
+        <image name="gouwucheanniu" width="25" height="25"/>
     </resources>
 </document>

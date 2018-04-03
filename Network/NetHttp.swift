@@ -16,13 +16,16 @@ class NetHttp: NSObject {
     private override init() { }
     
     /** 获取 token拼接的表单头 */
-    func getFromHeaderAuthorization() -> NSDictionary {
-        var formHeaderDict : NSDictionary = ["Authorization" : ""]
+    func formHeaderAuthorization() -> [AnyHashable : Any] {
+        
+        var formHeaderDict : [AnyHashable : Any] = ["Authorization" : ""]
+        
         if Keychain(service:kBundleID)[UserTokenKeys.ins.token_type] != nil {
             let tokenInfo: String = "\(Keychain(service:kBundleID)[UserTokenKeys.ins.token_type]!)" + " " + "\(Keychain(service: kBundleID)[UserTokenKeys.ins.access_token]!)"
             formHeaderDict = ["Authorization":tokenInfo]
         }
-         return formHeaderDict
+        
+        return formHeaderDict
     }
     
 //    // @escaping 标记为 逃逸闭包
@@ -31,11 +34,21 @@ class NetHttp: NSObject {
 //
 //    }
     
-    //MARK:登录验证
-    func requestOAuthToken(formBody:NSDictionary?, info: @escaping (Any)->() ) -> Void {
+    //MARK:- ***************************   用 户   ***************************
+    /**
+     登录验证
+     [
+         "grant_type"   :"password",
+         "username"     :String(describing: phoneNumberTF.text!),
+         "password"     :String(describing: passwordTF.text!),
+         "scope"        :"app",
+         "client_id"    :"client",
+         "client_secret":"secret"
+     ]
+     */
+    func OAuthToken(formBody:NSDictionary?, info: @escaping (Any)->() ) -> Void {
         
-        let url = URLHEAD + NetAPI.ins.oauth_token
-        NetworkHUD.shareIns().request(.POST, url: url, formHeaders: nil, formBody: formBody as! [AnyHashable:Any], success: { (res) in
+        NetworkHUD.shareIns().request(.POST, url: NetAPI.ins.oauth_token, formHeaders: nil, formBody: formBody as! [AnyHashable:Any], success: { (res) in
             info(res!)
             
         }, fail: { (task, error) in
@@ -44,8 +57,12 @@ class NetHttp: NSObject {
         
     }
     
-    //MARK:添加收货地址
+    
+    
+    //MARK:- ***************************   地 址   ***************************
     /**
+     添加收货地址
+     参数:
      {
          "isdefalut":1,
          "userAddress":{
@@ -59,17 +76,22 @@ class NetHttp: NSObject {
      }
      */
     func addAddress(params:NSDictionary?) -> Void {
-        let url = URLHEAD + NetAPI.ins.addAddress
         
-        NetworkHUD.shareIns().request(.POST, url: url, formHeader: getFromHeaderAuthorization() as! [AnyHashable : Any], params: params as! [AnyHashable : Any], success: { (res) in
-            delog(res)
-            
+        NetworkHUD.shareIns().request(.POST, url: NetAPI.ins.addAddress, formHeader: formHeaderAuthorization(), params: params as! [AnyHashable : Any], success: { (res) in
+//            delog(res)
         }, fail: { (task, error) in
-            delog(error)
+            NetError.handleInfo(task: task, error: error as NSError?)
         }, showHUD: true)
     }
     
-    
+    /** 收货地址列表 */
+    func getAddresses(pageNo:Int, pageSize:Int, info: @escaping (Any)->Void) -> Void {
+        NetworkHUD.shareIns().request(.POST, url: NetAPI.ins.getAddresses, formHeader: formHeaderAuthorization(), params: ["pageNo":pageNo,"pageSize":pageSize], success: { (res) in
+            info(res!)
+        }, fail: { (task, error) in
+             NetError.handleInfo(task: task, error: error as NSError?)
+        }, showHUD: true)
+    }
     
     
     

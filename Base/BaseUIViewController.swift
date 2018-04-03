@@ -22,9 +22,9 @@ class BaseUIViewController: UIViewController {
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
     }
     
-    override func loadView() {
-        super.loadView()
-    }
+//    override func loadView() {
+//        super.loadView()
+//    }
     
     override func viewDidLoad() {
         super.viewDidLoad()

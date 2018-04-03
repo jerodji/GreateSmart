@@ -56,6 +56,15 @@ func delog(_ msg:Any,file:String = #file,funcName:String = #function,lineNum:Int
     #endif
 }
 
+// NSLog内容太长会显示不全
+func dlog(_ msg:Any,file:String = #file,funcName:String = #function,lineNum:Int = #line){
+    /* Build Setting -> Other Swift Flags - Debug : -D DEBUG */
+    #if DEBUG
+        let fileName:String = (file as NSString).lastPathComponent
+        NSLog("\(fileName) \(funcName)[\(lineNum)]:\n[DEBUG] %@",[msg])
+    #endif
+}
+
 //MARK: ********************  app info  ********************
 
 let kBundleID : String = AppConfig.shareIns().getBundleIdentifier()

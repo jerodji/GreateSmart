@@ -42,11 +42,11 @@ class LoginVC: UIViewController {
         ]
         
         
-        NetHttp.ins.requestOAuthToken(formBody: bodysKV) { (res) in
+        NetHttp.ins.OAuthToken(formBody: bodysKV) { (res) in
             self.dismiss(animated: true, completion: nil)
             if res is NSDictionary {
                 let dict = res as! NSDictionary
-                
+                delog(dict)
                 /**
                  *  keychain 存储token信息
                  */

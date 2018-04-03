@@ -25,7 +25,7 @@ class BaseUITableView: UITableView {
     func configSeparator() -> () {
         self.separatorStyle = .none
         //self.separatorStyle = UITableViewCellSeparatorStyle.singleLine /* 分割线样式 */
-        //self.separatorColor = UIColor.init(hex: "F1F1F1")  /* 设置分割线颜色 */
+        //self.separatorColor = UIColor.clear  /* 设置分割线颜色 */
         //self.separatorInset = UIEdgeInsetsMake(0, 0, 0, 0) /* 分割线内边距 */
     }
     

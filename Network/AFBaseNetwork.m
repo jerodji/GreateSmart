@@ -48,7 +48,8 @@
     return _sharedObject;
 }
 
-- (AFHTTPSessionManager *)formManager {
+- (AFHTTPSessionManager *)formManager
+{
     if (!_formManager) {
         _formManager = [AFHTTPSessionManager manager];/* 创建网络请求对象 */
         /* 设置请求和接收的数据编码格式 */
@@ -63,6 +64,8 @@
     }
     return _formManager;
 }
+
+#pragma mark- form
 
 - (void)request:(NetType)type URL:(NSString*)url formHeader:(NSDictionary*)formHeaderDict params:(NSDictionary*)params success:(SUCC)success fail:(FAIL)failure
 {
@@ -99,11 +102,13 @@
 
 #pragma mark - entity
 
-- (void)get:(NSString*)urlHead URLFunc:(NSString*)urlFunc paramsEntity:(id)entity success:(SUCC)success fail:(FAIL)failure {
+- (void)get:(NSString*)urlHead URLFunc:(NSString*)urlFunc paramsEntity:(id)entity success:(SUCC)success fail:(FAIL)failure
+{
     [self request:GET URLHead:urlHead URLFunc:urlFunc paramsEntity:entity success:success fail:failure];
 }
 
-- (void)post:(NSString*)urlHead URLFunc:(NSString*)urlFunc paramsEntity:(id)entity success:(SUCC)success fail:(FAIL)failure {
+- (void)post:(NSString*)urlHead URLFunc:(NSString*)urlFunc paramsEntity:(id)entity success:(SUCC)success fail:(FAIL)failure
+{
     [self request:POST URLHead:urlHead URLFunc:urlFunc paramsEntity:entity success:success fail:failure];
 }
 

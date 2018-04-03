@@ -15,6 +15,7 @@ pod 'MBProgressHUD', '~> 1.1.0'
 #Swift4.0
 pod 'KeychainAccess', '~> 3.1.0'
 
+pod 'MJRefresh', '~> 3.1.12'
 
 #pod 'RxSwift', '~> 4.1.1'
 #pod 'RxCocoa', '~> 4.1.1'
