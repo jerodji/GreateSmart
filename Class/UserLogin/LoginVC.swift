@@ -14,6 +14,9 @@ class LoginVC: UIViewController {
     @IBOutlet weak var phoneNumberTF: UITextField!
     @IBOutlet weak var passwordTF: UITextField!
     
+    typealias LOGSUCC = (Any)->()
+    var loginsuccCB : LOGSUCC?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -32,6 +35,9 @@ class LoginVC: UIViewController {
     @IBAction func loginAction(_ sender: UIButton) {
         delog("phoneNumber : \(String(describing: phoneNumberTF.text!)) ; password : \(String(describing: passwordTF.text!))")
         
+        Keychain(service: kBundleID)[KeychainKeys.ins.account] = String(describing: phoneNumberTF.text!)
+        Keychain(service: kBundleID)[KeychainKeys.ins.password] = String(describing: passwordTF.text!)
+        
         let bodysKV : NSDictionary = [
             "grant_type":"password",
             "username":String(describing: phoneNumberTF.text!),
@@ -44,27 +50,8 @@ class LoginVC: UIViewController {
         
         NetHttp.ins.OAuthToken(formBody: bodysKV) { (res) in
             self.dismiss(animated: true, completion: nil)
-            if res is NSDictionary {
-                let dict = res as! NSDictionary
-                delog(dict)
-                /**
-                 *  keychain 存储token信息
-                 */
-                let keys : NSArray = dict.allKeys as NSArray
-                for index in 0...keys.count-1  {
-                    Keychain(service: kBundleID)[keys[index] as! String] = String.init(describing: dict[keys[index] as! String]!)
-                }
-                
-                //let keychain = Keychain(service: kBundleID)
-//                Keychain(service: kBundleID)[UserTokenKeys.ins.access_token]  = String.init(describing: dict[UserTokenKeys.ins.access_token]!)
-//                Keychain(service: kBundleID)[UserTokenKeys.ins.token_type]    = String.init(describing: dict[UserTokenKeys.ins.token_type]!)
-//                Keychain(service: kBundleID)[UserTokenKeys.ins.refresh_token] = String.init(describing: dict[UserTokenKeys.ins.refresh_token]!)
-//                Keychain(service: kBundleID)[UserTokenKeys.ins.expires_in]    = String.init(describing: dict[UserTokenKeys.ins.expires_in]!)
-//                Keychain(service: kBundleID)[UserTokenKeys.ins.scope]         = String.init(describing: dict[UserTokenKeys.ins.scope]!)
-                
-            }
+            (self.loginsuccCB == nil) ? delog("没有实现logsuccCB") : self.loginsuccCB!(res)
         }
-        
         
     }
     

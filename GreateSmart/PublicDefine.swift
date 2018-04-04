@@ -68,7 +68,7 @@ func dlog(_ msg:Any,file:String = #file,funcName:String = #function,lineNum:Int 
 //MARK: ********************  app info  ********************
 
 let kBundleID : String = AppConfig.shareIns().getBundleIdentifier()
-
+//let kUserAPw : String = kBundleID + "acountpw"
 
 
 

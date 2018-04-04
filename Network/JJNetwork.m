@@ -46,6 +46,7 @@
             [apdStr appendString:[NSString stringWithFormat:@"%@=%@",key,value]];
         }
         NSString* bodyStr = [apdStr substringFromIndex:1];
+        NSLog(@"body : %@",bodyStr);
         NSData* bodyData  = [bodyStr dataUsingEncoding:NSUTF8StringEncoding];
         
         [request setHTTPBody:bodyData];

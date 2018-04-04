@@ -8,10 +8,10 @@
 
 import UIKit
 
-class UserTokenKeys: NSObject {
+class KeychainKeys: NSObject {
     
     /* 单例 */
-    static let ins = UserTokenKeys()
+    static let ins = KeychainKeys()
     /* 需要重写自己的init方法,设置为私有,保证单例是真正唯一的,避免外部对象通过访问init方法创建单例类的其他实例 */
     private override init() { super.init() }
     
@@ -19,12 +19,19 @@ class UserTokenKeys: NSObject {
         fatalError("init(coder:) has not been implemented")
     }
     
-                                //返回token信息的映射
+    //返回token信息的key
     var access_token  : String = "access_token"
     var token_type    : String = "token_type"
     var refresh_token : String = "refresh_token"
     var expires_in    : String = "expires_in"
     var scope         : String = "scope"
+    
+    //user account and password
+    var account : String = "account"
+    var password: String = "pasword"
+    
+    
+    
 }
 
 /**

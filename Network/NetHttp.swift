@@ -15,81 +15,151 @@ class NetHttp: NSObject {
     /** 需要重写自己的init方法,设置为私有,保证单例是真正唯一的,避免外部对象通过访问init方法创建单例类的其他实例 */
     private override init() { }
     
-    /** 获取 token拼接的表单头 */
+    /** 请求队列 */
+    //var requestQueue : NSMutableDictionary = [:]
+    
+    /** 记录登录失败后重复登录的次数 */
+    var loginNum : Int = 0
+    
+    
+    //MARK:获取 拼接token的 表单头
     func formHeaderAuthorization() -> [AnyHashable : Any] {
         
         var formHeaderDict : [AnyHashable : Any] = ["Authorization" : ""]
         
-        if Keychain(service:kBundleID)[UserTokenKeys.ins.token_type] != nil {
-            let tokenInfo: String = "\(Keychain(service:kBundleID)[UserTokenKeys.ins.token_type]!)" + " " + "\(Keychain(service: kBundleID)[UserTokenKeys.ins.access_token]!)"
+        if Keychain(service:kBundleID)[KeychainKeys.ins.token_type] != nil {
+            let tokenInfo: String = "\(Keychain(service:kBundleID)[KeychainKeys.ins.token_type]!)" + " " + "\(Keychain(service: kBundleID)[KeychainKeys.ins.access_token]!)"
             formHeaderDict = ["Authorization":tokenInfo]
         }
         
         return formHeaderDict
     }
     
-//    // @escaping 标记为 逃逸闭包
-//    open func requestHomePageData(info:@escaping (Any)->()) -> Void {
-//        let url = URLHEAD + NetAPI.ins.homePage
-//
-//    }
     
-    //MARK:- ***************************   用 户   ***************************
-    /**
-     登录验证
-     [
-         "grant_type"   :"password",
-         "username"     :String(describing: phoneNumberTF.text!),
-         "password"     :String(describing: passwordTF.text!),
-         "scope"        :"app",
-         "client_id"    :"client",
-         "client_secret":"secret"
-     ]
-     */
+    //MARK:-
+    //MARK:登录验证
     func OAuthToken(formBody:NSDictionary?, info: @escaping (Any)->() ) -> Void {
         
         NetworkHUD.shareIns().request(.POST, url: NetAPI.ins.oauth_token, formHeaders: nil, formBody: formBody as! [AnyHashable:Any], success: { (res) in
+            
+            if res is NSDictionary {
+                let dict = res as! NSDictionary
+                delog(dict)
+                /**
+                 *  keychain 存储token信息
+                 */
+                let keys : NSArray = dict.allKeys as NSArray
+                for index in 0...keys.count-1  {
+                    Keychain(service: kBundleID)[keys[index] as! String] = String.init(describing: dict[keys[index] as! String]!)
+                }
+                
+            }
+            
             info(res!)
             
         }, fail: { (task, error) in
-            NetError.handleInfo(task: task, error: error as NSError?)
+            
+            //登录失败后重复三次
+            if self.loginNum < 3 {
+                self.loginNum += 1
+                self.OAuthToken(formBody: formBody, info: info)
+            } else {
+                self.loginNum = 0
+                delog("登录失败")
+//                NetError.ins.handleInfo(task: task, error: error as NSError?)
+            }
+            
         }, showHUD: true)
         
     }
     
+    //MARK:刷新token
+    func refreshToken(info: @escaping (Any)->() ) -> Void {
+        
+        let refresh_token = "\(Keychain(service: kBundleID)[KeychainKeys.ins.refresh_token] ?? "")"
+        let body: [AnyHashable:Any] = [
+            "grant_type"   :"refresh_token",
+//            "scope"        :"app",
+//            "client_id"    :"client",
+//            "client_secret":"secret",
+            "refresh_token":""
+        ]
+        
+        NetworkHUD.shareIns().request(.POST, url: NetAPI.ins.refresh_token, formHeaders: nil, formBody: body , success: { (res) in
+            
+            if res is NSDictionary {
+                let dict = res as! NSDictionary
+                delog(dict)
+                /**
+                 *  keychain 存储token信息
+                 */
+                let keys : NSArray = dict.allKeys as NSArray
+                for index in 0...keys.count-1  {
+                    Keychain(service: kBundleID)[keys[index] as! String] = String.init(describing: dict[keys[index] as! String]!)
+                }
+            }
+            
+            delog("token刷新了 \(res!)")
+            info(res!)
+            
+        }, fail: { (task, error) in
+            
+            delog("刷新token失败,重新登录")
+            //转到登录界面 登录
+            let tpvc = AppConfig.shareIns().topViewController()
+            let loginVC = LoginVC()
+            tpvc?.present(loginVC, animated: true, completion: nil)
+            loginVC.loginsuccCB = { (res) in
+                delog("重新登录成功")
+                info(res)
+            }
+            
+//            let bodysKV : NSDictionary = [
+//                "grant_type":"password",
+//                "username":Keychain(service: kBundleID)[KeychainKeys.ins.account] as Any,
+//                "password":Keychain(service: kBundleID)[KeychainKeys.ins.account] as Any,
+//                "scope":"app",
+//                "client_id":"client",
+//                "client_secret":"secret"
+//            ]
+//            self.OAuthToken(formBody: bodysKV, info: { (res) in
+//
+//            })
+            
+        }, showHUD: true)
+        
+    }
     
-    
-    //MARK:- ***************************   地 址   ***************************
-    /**
-     添加收货地址
-     参数:
-     {
-         "isdefalut":1,
-         "userAddress":{
-             "address":"上海",
-             "area":"松江",
-             "city":"泗泾",
-             "phonenum":"12313212",
-             "province":"康",
-             "receiver":"fajkljlk"
-         }
-     }
-     */
+    //MARK:-
+    //MARK:添加收货地址
     func addAddress(params:NSDictionary?) -> Void {
         
         NetworkHUD.shareIns().request(.POST, url: NetAPI.ins.addAddress, formHeader: formHeaderAuthorization(), params: params as! [AnyHashable : Any], success: { (res) in
 //            delog(res)
         }, fail: { (task, error) in
-            NetError.handleInfo(task: task, error: error as NSError?)
+
         }, showHUD: true)
     }
     
-    /** 收货地址列表 */
+    //MARK:收货地址列表
     func getAddresses(pageNo:Int, pageSize:Int, info: @escaping (Any)->Void) -> Void {
-        NetworkHUD.shareIns().request(.POST, url: NetAPI.ins.getAddresses, formHeader: formHeaderAuthorization(), params: ["pageNo":pageNo,"pageSize":pageSize], success: { (res) in
+        let params = ["pageNo":pageNo,"pageSize":pageSize]
+        NetworkHUD.shareIns().request(.POST, url: NetAPI.ins.getAddresses, formHeader: formHeaderAuthorization(), params:params , success: { (res) in
+            
             info(res!)
+            
         }, fail: { (task, error) in
-             NetError.handleInfo(task: task, error: error as NSError?)
+            
+            NetError.ins.handleError(task: task, error: error as NSError?,
+                                     type:.POST,
+                                     url: NetAPI.ins.getAddresses,
+                                     formHeader: self.formHeaderAuthorization(),
+                                     formBody: nil,
+                                     params: params,
+                                     callback: { (response) in
+                                        info(response)
+                                    })
+            
         }, showHUD: true)
     }
     

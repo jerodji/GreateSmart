@@ -10,7 +10,19 @@ import UIKit
 
 class NetError: NSObject {
     
-    static func handleInfo(task:URLSessionDataTask?, error:NSError?) -> Void {
+    /** 单例 */
+    static let ins = NetError()
+    /** 需要重写自己的init方法,设置为私有,保证单例是真正唯一的,避免外部对象通过访问init方法创建单例类的其他实例 */
+    private override init() { }
+    
+    func handleError(task:URLSessionDataTask?, error:NSError?,
+                     type:NetType,
+                     url:String,
+                     formHeader:[AnyHashable:Any]? ,
+                     formBody:NSDictionary? ,
+                     params:[AnyHashable:Any]? ,
+                     callback:@escaping (Any)->()
+        ) -> Void {
         
         if error == nil { return }
         if task == nil { return }
@@ -30,8 +42,41 @@ class NetError: NSObject {
             let infoDic = JsonTransform.dictionaryFromJSONString(jsonString: jsonStr!)
             delog(infoDic)
         }
+        
+        switch response.statusCode {
+            
+        case 400:do {
+            delog("400 lafl;aksfljasklfjadsklfj")
+        };break
+            
+        case 401:do {
+            delog("token失效")
+            NetHttp.ins.refreshToken(info: { (res) in
+                
+                let newFormHeader = NetHttp.ins.formHeaderAuthorization()
+                delog("重新请求接口 \(url)")
+                NetworkHUD.shareIns().request(type, url: url, formHeader: newFormHeader, params: params, success: { (res) in
+                    callback(res!)
+                }, fail: { (task, error) in
+                    delog("网络繁忙!")
+                }, showHUD: true)
+            })
+        };break
+            
+        case 402:do {
+            
+        };break
+            
+        case 500:do {
+
+        };break
+
+        default: break
+
+        }
 
     }
+
     
     
     

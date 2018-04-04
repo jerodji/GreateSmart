@@ -116,7 +116,7 @@
 		387D5565206A14990073F934 /* JIStepper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 387D5564206A14990073F934 /* JIStepper.swift */; };
 		387D5569206A2D360073F934 /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 387D5567206A2D360073F934 /* LoginVC.swift */; };
 		387D556A206A2D360073F934 /* LoginVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 387D5568206A2D360073F934 /* LoginVC.xib */; };
-		387D556C206A4E350073F934 /* UserTokenKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 387D556B206A4E350073F934 /* UserTokenKeys.swift */; };
+		387D556C206A4E350073F934 /* KeychainKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 387D556B206A4E350073F934 /* KeychainKeys.swift */; };
 		388004C2204F92BE00FE9DD0 /* AFBaseNetwork.m in Sources */ = {isa = PBXBuildFile; fileRef = 388004C1204F92BD00FE9DD0 /* AFBaseNetwork.m */; };
 		388004C7204FAAEE00FE9DD0 /* JsonTransform.swift in Sources */ = {isa = PBXBuildFile; fileRef = 388004C6204FAAEE00FE9DD0 /* JsonTransform.swift */; };
 		388004C9204FD58200FE9DD0 /* NetError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 388004C8204FD58200FE9DD0 /* NetError.swift */; };
@@ -353,7 +353,7 @@
 		387D5564206A14990073F934 /* JIStepper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JIStepper.swift; sourceTree = "<group>"; };
 		387D5567206A2D360073F934 /* LoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
 		387D5568206A2D360073F934 /* LoginVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoginVC.xib; sourceTree = "<group>"; };
-		387D556B206A4E350073F934 /* UserTokenKeys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserTokenKeys.swift; sourceTree = "<group>"; };
+		387D556B206A4E350073F934 /* KeychainKeys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainKeys.swift; sourceTree = "<group>"; };
 		388004C0204F92BD00FE9DD0 /* AFBaseNetwork.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFBaseNetwork.h; sourceTree = "<group>"; };
 		388004C1204F92BD00FE9DD0 /* AFBaseNetwork.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFBaseNetwork.m; sourceTree = "<group>"; };
 		388004C6204FAAEE00FE9DD0 /* JsonTransform.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JsonTransform.swift; sourceTree = "<group>"; };
@@ -870,7 +870,7 @@
 			children = (
 				387D5567206A2D360073F934 /* LoginVC.swift */,
 				387D5568206A2D360073F934 /* LoginVC.xib */,
-				387D556B206A4E350073F934 /* UserTokenKeys.swift */,
+				387D556B206A4E350073F934 /* KeychainKeys.swift */,
 			);
 			path = UserLogin;
 			sourceTree = "<group>";
@@ -1714,7 +1714,7 @@
 				38F9CA59202FED60004D105D /* AppDelegate.swift in Sources */,
 				389BC620206D16B300CC776F /* OrderpayView.swift in Sources */,
 				38BF9532206DD8DC00F8294A /* CouponButton.swift in Sources */,
-				387D556C206A4E350073F934 /* UserTokenKeys.swift in Sources */,
+				387D556C206A4E350073F934 /* KeychainKeys.swift in Sources */,
 				382EF40D205F9AF100F3A33B /* GoodIntroduceCell.swift in Sources */,
 				38B879A3204155DC0080BB3C /* MyVC.swift in Sources */,
 				38FD686A20401FBC00B19A42 /* BaseUINavigationController.swift in Sources */,

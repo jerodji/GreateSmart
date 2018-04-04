@@ -34,7 +34,8 @@ class NetAPI: NSObject {
 
     /** 用户登录/登录验证 */
     let oauth_token = URLHEAD + "/oauth/token"
-    
+    /** 刷新token */
+    let refresh_token = URLHEAD + "/oauth/token"
     
     
     //MARK:- 地址
