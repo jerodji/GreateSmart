@@ -77,7 +77,6 @@ class MyVC: BaseUIViewController,UITableViewDelegate,UITableViewDataSource {
             let cell = tableView.dequeueReusableCell(withIdentifier: "UserServceCellid") as? UserServceCell
             cell?.selectionStyle = .none
             cell?.btnActionCB = { (tag) in
-                delog(tag)
                 self.ServceAction(btnTag: tag)
             }
             
@@ -115,45 +114,62 @@ class MyVC: BaseUIViewController,UITableViewDelegate,UITableViewDataSource {
     
     func ServceAction(btnTag:Int) -> Void {
         switch btnTag {
-        case 0: do{
             
-        }; break
-        case 1: do{
+            case 0: do{
+                delog("我的服务-优惠券")
+            }; break
             
-        }; break
-        case 2: do{
+            case 1: do{
+                delog("我的服务-聪明比")
+            }; break
             
-        }; break
-        case 3: do{
+            case 2: do{
+                delog("我的服务-我的积分")
+            }; break
             
-        }; break
-        case 4: do{
+            case 3: do{
+                delog("我的服务-我的消息")
+            }; break
             
-        }; break
-        case 5: do{
+            case 4: do{
+                delog("我的服务-商品收藏")
+            }; break
             
-        }; break
-        case 6: do{
+            case 5: do{
+                delog("我的服务-店铺收藏")
+            }; break
             
-        }; break
-        case 7: do{
+            case 6: do{
+                delog("我的服务-资讯收藏")
+            }; break
             
-        }; break
-        case 8: do{
-            self.navigationController?.pushViewController(AddAddressVC(), animated: true)
-        }; break
-        case 9: do{
+            case 7: do{
+                delog("我的服务-浏览记录")
+            }; break
             
-        }; break
-        case 10: do{
+            case 8: do{
+                //地址管理
+                delog("我的服务-地址管理")
+                let advc = AddAddressVC()
+                advc.hidesBottomBarWhenPushed = true
+                self.navigationController?.pushViewController(advc, animated: true)
+            }; break
             
-        }; break
-        case 11: do{
+            case 9: do{
+                delog("我的服务-意见反馈")
+            }; break
             
-        }; break
-        default: do{
+            case 10: do{
+                delog("我的服务-我的会员")
+            }; break
             
-        }
+            case 11: do{
+                delog("我的服务-二维码")
+            }; break
+            
+            default: do{
+                delog("我的服务-default:do")
+            }
         }
     }
     

@@ -35,13 +35,6 @@
 
 @implementation AppConfig
 
-/*
-- (NSURLSessionDataTask *)POST:(NSString *)URLString
-parameters:(id)parameters
-success:(void (^)(NSURLSessionDataTask *task, id responseObject))success
-failure:(void (^)(NSURLSessionDataTask *task, NSError *error))failure
-*/
-
 static AppConfig* _instance = nil;
 + (AppConfig*)shareIns
 {
@@ -576,11 +569,17 @@ static AppConfig* _instance = nil;
 
 
 - (UIViewController *)topViewController {
-    UIViewController *resultVC;
-    resultVC = [self _topViewController:[[UIApplication sharedApplication].keyWindow rootViewController]];
-    while (resultVC.presentedViewController) {
-        resultVC = [self _topViewController:resultVC.presentedViewController];
-    }
+    
+    __block UIViewController *resultVC;
+    
+//    dispatch_async(dispatch_get_main_queue(), ^{
+    
+        resultVC = [self _topViewController:[[UIApplication sharedApplication].keyWindow rootViewController]];
+        while (resultVC.presentedViewController) {
+            resultVC = [self _topViewController:resultVC.presentedViewController];
+        }
+//    });
+    
     return resultVC;
 }
 

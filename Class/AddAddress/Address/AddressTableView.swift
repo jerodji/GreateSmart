@@ -8,7 +8,7 @@
 
 import UIKit
 
-class AddressView: BaseUITableView {
+class AddressTableView: BaseUITableView {
     
     
     required init?(coder aDecoder: NSCoder) {

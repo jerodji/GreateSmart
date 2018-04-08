@@ -14,6 +14,10 @@ class BaseModel: NSObject,NSCoding {
         super.init()
     }
     
+//    override static func mj_replacedKeyFromPropertyName() -> [AnyHashable : Any]! {
+//        return ["userId":"id"]
+//    }
+    
     // Swift runtime 其实是 OC 实现
     /**
      * 解档

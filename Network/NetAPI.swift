@@ -31,7 +31,7 @@ class NetAPI: NSObject {
     private(set) var homePage = URLHEAD + "/home/homePage"
     
     //MARK:- 用户
-
+    
     /** 用户登录/登录验证 */
     let oauth_token = URLHEAD + "/oauth/token"
     /** 刷新token */
@@ -44,6 +44,7 @@ class NetAPI: NSObject {
     let addAddress = URLHEAD + "/userAddress/addAddress"
     /** 收货地址列表 */
     let getAddresses =  URLHEAD + "/userAddress/getAddresses"
-    
+    /** 设置默认收货地址 */
+    let changeDfAddress = URLHEAD + "/userAddress/changeDfAddress"
     
 }

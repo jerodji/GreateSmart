@@ -24,13 +24,13 @@ class AddressModel: BaseModel {
     /** 具体地址 */
     @objc var address   : String = "";
     
-    /** 用户Id */
-    @objc var userId :Int = 0;
+    /** Id */
+    @objc var adrsId :String = "";
     /** 是否为默认地址 */
     @objc var defaultAddressId:Int = 0;
     
     override static func mj_replacedKeyFromPropertyName() -> [AnyHashable : Any]! {
-        return ["userId":"id"]
+        return ["adrsId":"id"]
     }
     
 }

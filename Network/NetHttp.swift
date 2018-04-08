@@ -40,7 +40,7 @@ class NetHttp: NSObject {
     //MARK:登录验证
     func OAuthToken(formBody:NSDictionary?, info: @escaping (Any)->() ) -> Void {
         
-        NetworkHUD.shareIns().request(.POST, url: NetAPI.ins.oauth_token, formHeaders: nil, formBody: formBody as! [AnyHashable:Any], success: { (res) in
+        NetworkHUD.shareIns().request(.POST, url: NetAPI.ins.oauth_token, formHeaders: nil, formBody: formBody as! [AnyHashable:Any], success: { (task,res) in
             
             if res is NSDictionary {
                 let dict = res as! NSDictionary
@@ -79,16 +79,16 @@ class NetHttp: NSObject {
         let refresh_token = "\(Keychain(service: kBundleID)[KeychainKeys.ins.refresh_token] ?? "")"
         let body: [AnyHashable:Any] = [
             "grant_type"   :"refresh_token",
-//            "scope"        :"app",
-//            "client_id"    :"client",
-//            "client_secret":"secret",
-            "refresh_token":""
+            "scope"        :"app",
+            "client_id"    :"client",
+            "client_secret":"secret",
+            "refresh_token":refresh_token
         ]
         
-        NetworkHUD.shareIns().request(.POST, url: NetAPI.ins.refresh_token, formHeaders: nil, formBody: body , success: { (res) in
+        NetworkHUD.shareIns().request(.POST, url: NetAPI.ins.refresh_token, formHeaders: nil, formBody: body , success: { (ponse,data) in
             
-            if res is NSDictionary {
-                let dict = res as! NSDictionary
+            if data is NSDictionary {
+                let dict = data as! NSDictionary
                 delog(dict)
                 /**
                  *  keychain 存储token信息
@@ -99,32 +99,26 @@ class NetHttp: NSObject {
                 }
             }
             
-            delog("token刷新了 \(res!)")
-            info(res!)
-            
-        }, fail: { (task, error) in
-            
-            delog("刷新token失败,重新登录")
-            //转到登录界面 登录
-            let tpvc = AppConfig.shareIns().topViewController()
-            let loginVC = LoginVC()
-            tpvc?.present(loginVC, animated: true, completion: nil)
-            loginVC.loginsuccCB = { (res) in
-                delog("重新登录成功")
-                info(res)
+            if data != nil {
+                delog("token刷新了 \(data!)")
+                
+                NetError.ins.succHandleError(response: ponse, data: data!, type: NetType.POST, url: NetAPI.ins.refresh_token, formHeader: nil, formBody: body as NSDictionary, params: nil, callback: { (hand) in
+//                    info(res!)
+                }, info: info)
             }
             
-//            let bodysKV : NSDictionary = [
-//                "grant_type":"password",
-//                "username":Keychain(service: kBundleID)[KeychainKeys.ins.account] as Any,
-//                "password":Keychain(service: kBundleID)[KeychainKeys.ins.account] as Any,
-//                "scope":"app",
-//                "client_id":"client",
-//                "client_secret":"secret"
-//            ]
-//            self.OAuthToken(formBody: bodysKV, info: { (res) in
-//
-//            })
+        }, fail: { (task, error) in
+            //刷新token失败,重新登录
+            NetError.ins.refreshFailThanLogin(info: info)
+//            delog("刷新token失败,重新登录")
+//            //转到登录界面 登录
+//            let tpvc = AppConfig.shareIns().topViewController()
+//            let loginVC = LoginVC()
+//            tpvc?.present(loginVC, animated: true, completion: nil)
+//            loginVC.loginsuccCB = { (res) in
+//                delog("重新登录成功")
+//                info(res)
+//            }
             
         }, showHUD: true)
         
@@ -150,20 +144,26 @@ class NetHttp: NSObject {
             
         }, fail: { (task, error) in
             
-            NetError.ins.handleError(task: task, error: error as NSError?,
-                                     type:.POST,
-                                     url: NetAPI.ins.getAddresses,
-                                     formHeader: self.formHeaderAuthorization(),
-                                     formBody: nil,
-                                     params: params,
-                                     callback: { (response) in
-                                        info(response)
-                                    })
+            NetError.ins.handleError(task: task, error: error as NSError?, type:.POST, url: NetAPI.ins.getAddresses, formHeader: self.formHeaderAuthorization(), formBody: nil, params: params, callback: { (response) in
+                info(response)
+            })
             
         }, showHUD: true)
     }
     
-    
-    
+    //MARK:设置默认地址 changeDfAddress
+    func changeDfAddress(addressId:String, succInfo:@escaping (Any)->() ) -> Void {
+        
+        let formhead = NSMutableDictionary.init(dictionary: formHeaderAuthorization())
+        formhead.setObject("application/json", forKey: "Content-Type" as NSCopying)
+        
+        NetworkHUD.shareIns().request(.POST, url: NetAPI.ins.changeDfAddress, formHeaders: formhead as! [AnyHashable : Any], formBody: addressId, success: { (res, data) in
+            
+            succInfo(res!)
+            
+        }, fail: { (task, error) in
+            
+        }, showHUD: true)
+    }
     
 }

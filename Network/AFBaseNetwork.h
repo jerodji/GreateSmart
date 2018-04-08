@@ -24,7 +24,7 @@
  设置 form header 表单头
  参数以 json 形式
  */
-- (void)request:(NetType)type URL:(NSString*)url formHeader:(NSDictionary*)formHeaderDict params:(NSDictionary*)params success:(SUCC)success fail:(FAIL)failure;
+- (void)request:(NetType)type URL:(NSString*)url formHeader:(NSDictionary*)formHeaderDict params:(id)params success:(SUCC)success fail:(FAIL)failure;
 
 #pragma mark - 以实体类为参数
 

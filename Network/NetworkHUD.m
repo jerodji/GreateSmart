@@ -15,6 +15,30 @@
 
 @implementation NetworkHUD
 
+- (UIViewController *)topViewController {
+    __block UIViewController *resultVC;
+    
+    //    dispatch_sync(dispatch_get_main_queue(), ^{
+    resultVC = [self _topViewController:[[UIApplication sharedApplication].keyWindow rootViewController]];
+    while (resultVC.presentedViewController) {
+        resultVC = [self _topViewController:resultVC.presentedViewController];
+    }
+    //    });
+    
+    return resultVC;
+}
+
+- (UIViewController *)_topViewController:(UIViewController *)vc {
+    if ([vc isKindOfClass:[UINavigationController class]]) {
+        return [self _topViewController:[(UINavigationController *)vc topViewController]];
+    } else if ([vc isKindOfClass:[UITabBarController class]]) {
+        return [self _topViewController:[(UITabBarController *)vc selectedViewController]];
+    } else {
+        return vc;
+    }
+    return nil;
+}
+
 static NetworkHUD* _ins = nil;
 + (NetworkHUD *)shareIns
 {
@@ -30,30 +54,12 @@ static NetworkHUD* _ins = nil;
 //    return _sharedObject;
 }
 
-- (UIViewController *)topViewController {
-    UIViewController *resultVC;
-    resultVC = [self _topViewController:[[UIApplication sharedApplication].keyWindow rootViewController]];
-    while (resultVC.presentedViewController) {
-        resultVC = [self _topViewController:resultVC.presentedViewController];
-    }
-    return resultVC;
-}
-
-- (UIViewController *)_topViewController:(UIViewController *)vc {
-    if ([vc isKindOfClass:[UINavigationController class]]) {
-        return [self _topViewController:[(UINavigationController *)vc topViewController]];
-    } else if ([vc isKindOfClass:[UITabBarController class]]) {
-        return [self _topViewController:[(UITabBarController *)vc selectedViewController]];
-    } else {
-        return vc;
-    }
-    return nil;
-}
+#pragma mark -
 
 - (void)showHUD {
     
     dispatch_async(dispatch_get_main_queue(), ^{
-        MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:[self topViewController].view animated:YES];
+        [MBProgressHUD showHUDAddedTo:[self topViewController].view animated:YES];
         //hud.mode = MBProgressHUDModeAnnularDeterminate;
 //        hud.label.text = @"Loading...";
     });
@@ -74,9 +80,10 @@ static NetworkHUD* _ins = nil;
 
 - (void)succHUD:(NSString*)msg {
     
+    [self hideHUD];
+    
     dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, 0.01 * NSEC_PER_SEC);
     dispatch_after(popTime, dispatch_get_main_queue(), ^(void){
-        //[MBProgressHUD hideHUDForView:[self topViewController].view animated:YES];
         if (![msg isEqualToString:@""] && ![msg isEqual:[NSNull null]] && msg!=nil) {
             MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:[self topViewController].view animated:YES];
             hud.mode = MBProgressHUDModeText;
@@ -89,21 +96,29 @@ static NetworkHUD* _ins = nil;
 
 - (void)failHUD:(NSString*)msg  {
     
+    [self hideHUD];
+    
     dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, 0.01 * NSEC_PER_SEC);
     dispatch_after(popTime, dispatch_get_main_queue(), ^(void){
-        //[MBProgressHUD hideHUDForView:[self topViewController].view animated:YES];
+        
+        [MBProgressHUD hideHUDForView:[self topViewController].view animated:YES];
+        
+        NSString* message = @"网络被趸玺玩坏了";
+        
         if (![msg isEqualToString:@""] && ![msg isEqual:[NSNull null]] && msg!=nil) {
-            MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:[self topViewController].view animated:YES];
-            hud.mode = MBProgressHUDModeText;
-            hud.label.text = msg;
-            [hud hideAnimated:true afterDelay:2.5];
+            message = msg;
         }
+        
+        MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:[self topViewController].view animated:YES];
+        hud.mode = MBProgressHUDModeText;
+        hud.label.text = message;
+        [hud hideAnimated:true afterDelay:2.5];
     });
 }
 
 #pragma mark -
 
-- (void)request:(NetType)type URL:(NSString*)url formHeader:(NSDictionary*)formHeaderDict params:(NSDictionary*)params success:(SUCC)success fail:(FAIL)failure showHUD:(BOOL)showhud
+- (void)request:(NetType)type URL:(NSString*)url formHeader:(NSDictionary*)formHeaderDict params:(id)params success:(SUCC)success fail:(FAIL)failure showHUD:(BOOL)showhud
 {
     if (showhud) [self showHUD];
     dispatch_async(dispatch_get_global_queue( DISPATCH_QUEUE_PRIORITY_LOW, 0), ^{
@@ -114,25 +129,21 @@ static NetworkHUD* _ins = nil;
             if ([obj isKindOfClass:[NSDictionary class]]) {
                 NSDictionary* dict = (NSDictionary*)obj;
                 success(dict);
-                if (showhud) [self hideHUD];
                 if (showhud) {[self succHUD:dict[@"msg"]];}
             }
             else if ([obj isKindOfClass:[NSArray class]]) {
                 NSArray* arr = (NSArray*)obj;
                 success(arr);
-                if (showhud) [self hideHUD];
-                //if (showhud) {[self succHUD:dict[@"msg"]];}
+                if (showhud) {[self succHUD:nil];}
             }
             else {
                 success(obj);
-                if (showhud) [self hideHUD];
-                //if (showhud) {[self succHUD:nil];}
+                if (showhud) {[self succHUD:nil];}
             }
             
         } fail:^(NSURLSessionDataTask *task, NSError *error) {
             failure(task,error);
-            if (showhud) [self hideHUD];
-            //if (showhud) {[self failHUD:nil];}
+            [self failHUD:nil];
         }];
     });
 }
@@ -140,23 +151,26 @@ static NetworkHUD* _ins = nil;
 /**
  form表单请求
  */
-- (void)request:(NetType)type URL:(NSString*)fullURL formHeaders:(NSDictionary*)headerDict formBody:(NSDictionary*)bodyDict success:(SUCC)successBlock fail:(FAIL)failBlock showHUD:(BOOL)showhud
+- (void)request:(NetType)type URL:(NSString*)fullURL formHeaders:(NSDictionary*)headerDict formBody:(id)body
+        success:(void (^)(NSHTTPURLResponse*, id))successBlock
+           fail:(void (^)(NSURLSessionDataTask*, NSError*))failBlock
+        showHUD:(BOOL)showhud
 {
     if (showhud) [self showHUD];
     
     dispatch_async(dispatch_get_global_queue( DISPATCH_QUEUE_PRIORITY_LOW, 0), ^{
         
-        [[JJNetwork shareIns] request:type URL:fullURL formHeaders:headerDict body:bodyDict success:^(id responseObject) {
+        [[JJNetwork shareIns] request:type URL:fullURL formHeaders:headerDict body:body success:^(NSHTTPURLResponse *resp, id data) {
 //            sleep(3);//test
-            successBlock(responseObject);
-            if (showhud) [self hideHUD];
-            //if (showhud) [self succHUD:nil];
+            successBlock(resp,data);
+            
+            NSDictionary* dict = [NSDictionary dictFromData:data];
+            if (showhud) [self succHUD:dict[@"msg"]];
             
         } fail:^(NSURLSessionDataTask *task, NSError *error) {
 //            sleep(3);//test
             failBlock(task,error);
-            if (showhud) [self hideHUD];
-            //if (showhud) [self failHUD:nil];
+            [self failHUD:nil];
         }];
     });
 }
@@ -172,12 +186,10 @@ static NetworkHUD* _ins = nil;
         
         [[AFBaseNetwork shareIns] request:type URL:fullURL paramsEntity:entity success:^(id responseObject) {
             success(responseObject);
-            if (showhud) [self hideHUD];
-            //if (showhud) [self succHUD:nil];
+            if (showhud) [self succHUD:nil];
         } fail:^(NSURLSessionDataTask *task, NSError *error) {
             failure(task,error);
-            if (showhud) [self hideHUD];
-            //if (showhud) [self failHUD:nil];
+            [self failHUD:nil];
         }];
         
     });
@@ -194,12 +206,10 @@ static NetworkHUD* _ins = nil;
         
         [[AFBaseNetwork shareIns] request:_type URL:_url paramsDict:_parameter success:^(id responseObject) {
             _success(responseObject);
-            if (showhud) [self hideHUD];
-            //if (showhud) [self succHUD:nil];
+            if (showhud) [self succHUD:nil];
         } fail:^(NSURLSessionDataTask *task, NSError *error) {
             _failure(task,error);
-            if (showhud) [self hideHUD];
-            //if (showhud) [self failHUD:nil];
+            [self failHUD:nil];
         }];
         
     });

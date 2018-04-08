@@ -11,17 +11,23 @@ import UIKit
 class AddressCell: UITableViewCell {
 
     @IBOutlet weak var backView: UIView!
-    @IBOutlet weak var addBtn: UIButton!
-    @IBOutlet weak var addBtnHeight: NSLayoutConstraint!
     @IBOutlet weak var addLine: UIView!
+    
+    @IBOutlet weak var addBtnHeight: NSLayoutConstraint!
+    
+    @IBOutlet weak var addBtn: UIButton!
     
     @IBOutlet weak var nameLab: UILabel!
     @IBOutlet weak var phoneLab: UILabel!
     @IBOutlet weak var addressLab: UILabel!
-    @IBOutlet weak var setDefBtn: UIButton!
     
+    @IBOutlet weak var setDefBtn: UIButton!
     @IBOutlet weak var changeBtn: UIButton!
     @IBOutlet weak var deleteBtn: UIButton!
+    
+    
+    typealias DfBlk = ()->()
+    var changeDfCB : DfBlk?
     
     
     override func awakeFromNib() {
@@ -44,6 +50,7 @@ class AddressCell: UITableViewCell {
     }
     
     @IBAction func setDefauletAction(_ sender: UIButton) {
+        (changeDfCB == nil) ? delog("没有实现changeDfCB") : changeDfCB!()
     }
     
     @IBAction func changeAction(_ sender: UIButton) {

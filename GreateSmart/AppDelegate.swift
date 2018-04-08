@@ -30,9 +30,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         IQKeyboardManager.shared().isEnabled = true // 控制整个功能是否启用
         IQKeyboardManager.shared().shouldResignOnTouchOutside = true // 控制点击背景是否收起键盘
         
-        NetHttp.ins.refreshToken { (res) in
-            delog(res)
-        }
+//        NetHttp.ins.refreshToken { (res) in
+//            delog(res)
+//        }
         
         return true
     }

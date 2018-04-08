@@ -27,13 +27,15 @@
  设置表单的请求封装
  
  @param type POST/GET
- @param headerDict 表单请求头 header
- @param bodyDict 表单请求体 body
+ @param formHeader 表单请求头 header
+ @param formBody 表单请求体 body
  @param fullURL url
  @param successBlock 成功回调
  @param failBlock 失败回调
  */
 //表单请求
-- (void)request:(NetType)type URL:(NSString*)fullURL formHeaders:(NSDictionary*)headerDict body:(NSDictionary*)bodyDict success:(SUCC)successBlock fail:(FAIL)failBlock;
+- (void)request:(NetType)type URL:(NSString*)fullURL formHeaders:(NSDictionary*)formHeader body:(id)formBody
+        success:(void (^)(NSHTTPURLResponse*, id))successBlock
+           fail:(void (^)(NSURLSessionDataTask*, NSError*))failBlock;
 
 @end

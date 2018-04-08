@@ -55,6 +55,7 @@
 		38437B452058E71B00F7FE2F /* NatureView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38437B442058E71B00F7FE2F /* NatureView.swift */; };
 		38437B492058E8A300F7FE2F /* NatureCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38437B482058E8A300F7FE2F /* NatureCell.swift */; };
 		38437B4B2058E8AE00F7FE2F /* NatureCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 38437B4A2058E8AE00F7FE2F /* NatureCell.xib */; };
+		384625F7207A2F4700D88EDD /* MBHUDMessage.m in Sources */ = {isa = PBXBuildFile; fileRef = 384625F6207A2F4700D88EDD /* MBHUDMessage.m */; };
 		384EE4422057673A00D2BCB6 /* HotSaleModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 384EE4412057673A00D2BCB6 /* HotSaleModel.swift */; };
 		384EE4452057699600D2BCB6 /* NatureModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 384EE4442057699600D2BCB6 /* NatureModel.swift */; };
 		384EE44820576AED00D2BCB6 /* TimeReCModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 384EE44720576AED00D2BCB6 /* TimeReCModel.swift */; };
@@ -209,7 +210,7 @@
 		FA13949920581CF4008D6F68 /* ForMaleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA13949820581CF4008D6F68 /* ForMaleView.swift */; };
 		FA13949B20581DC7008D6F68 /* ForMaleView.xib in Resources */ = {isa = PBXBuildFile; fileRef = FA13949A20581DC7008D6F68 /* ForMaleView.xib */; };
 		FA13949E2072746D008D6F68 /* AddressControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA13949D2072746D008D6F68 /* AddressControl.swift */; };
-		FA1394A020727480008D6F68 /* AddressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA13949F20727480008D6F68 /* AddressView.swift */; };
+		FA1394A020727480008D6F68 /* AddressTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA13949F20727480008D6F68 /* AddressTableView.swift */; };
 		FA1394A32072754C008D6F68 /* AddressCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA1394A12072754C008D6F68 /* AddressCell.swift */; };
 		FA1394A42072754C008D6F68 /* AddressCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FA1394A22072754C008D6F68 /* AddressCell.xib */; };
 		FA16F7B42056D30B0094F47B /* HotInStoreModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA16F7B32056D30B0094F47B /* HotInStoreModel.swift */; };
@@ -292,6 +293,8 @@
 		38437B442058E71B00F7FE2F /* NatureView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NatureView.swift; sourceTree = "<group>"; };
 		38437B482058E8A300F7FE2F /* NatureCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NatureCell.swift; sourceTree = "<group>"; };
 		38437B4A2058E8AE00F7FE2F /* NatureCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NatureCell.xib; sourceTree = "<group>"; };
+		384625F5207A2F4700D88EDD /* MBHUDMessage.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MBHUDMessage.h; sourceTree = "<group>"; };
+		384625F6207A2F4700D88EDD /* MBHUDMessage.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MBHUDMessage.m; sourceTree = "<group>"; };
 		384EE4412057673A00D2BCB6 /* HotSaleModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HotSaleModel.swift; sourceTree = "<group>"; };
 		384EE4442057699600D2BCB6 /* NatureModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NatureModel.swift; sourceTree = "<group>"; };
 		384EE44720576AED00D2BCB6 /* TimeReCModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeReCModel.swift; sourceTree = "<group>"; };
@@ -476,7 +479,7 @@
 		FA13949820581CF4008D6F68 /* ForMaleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForMaleView.swift; sourceTree = "<group>"; };
 		FA13949A20581DC7008D6F68 /* ForMaleView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ForMaleView.xib; sourceTree = "<group>"; };
 		FA13949D2072746D008D6F68 /* AddressControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddressControl.swift; sourceTree = "<group>"; };
-		FA13949F20727480008D6F68 /* AddressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddressView.swift; sourceTree = "<group>"; };
+		FA13949F20727480008D6F68 /* AddressTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddressTableView.swift; sourceTree = "<group>"; };
 		FA1394A12072754C008D6F68 /* AddressCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddressCell.swift; sourceTree = "<group>"; };
 		FA1394A22072754C008D6F68 /* AddressCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AddressCell.xib; sourceTree = "<group>"; };
 		FA16F7B32056D30B0094F47B /* HotInStoreModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HotInStoreModel.swift; sourceTree = "<group>"; };
@@ -1200,6 +1203,8 @@
 			children = (
 				389BC5F3206BB31900CC776F /* AppConfig.h */,
 				389BC5F2206BB31900CC776F /* AppConfig.m */,
+				384625F5207A2F4700D88EDD /* MBHUDMessage.h */,
+				384625F6207A2F4700D88EDD /* MBHUDMessage.m */,
 				387D5564206A14990073F934 /* JIStepper.swift */,
 				389AA0B12071DD2E009AC93C /* JITextView.h */,
 				389AA0B22071DD2E009AC93C /* JITextView.m */,
@@ -1273,7 +1278,7 @@
 			children = (
 				389BC601206C8F3B00CC776F /* AddressModel.swift */,
 				FA13949D2072746D008D6F68 /* AddressControl.swift */,
-				FA13949F20727480008D6F68 /* AddressView.swift */,
+				FA13949F20727480008D6F68 /* AddressTableView.swift */,
 				FA1394A12072754C008D6F68 /* AddressCell.swift */,
 				FA1394A22072754C008D6F68 /* AddressCell.xib */,
 				389AA0A52071C9B2009AC93C /* NoAddressView.swift */,
@@ -1635,7 +1640,7 @@
 				387D4971205BA4070059BB20 /* SortButton.swift in Sources */,
 				38BF953D206E2C5300F8294A /* UIView+extend.m in Sources */,
 				389BC602206C8F3B00CC776F /* AddressModel.swift in Sources */,
-				FA1394A020727480008D6F68 /* AddressView.swift in Sources */,
+				FA1394A020727480008D6F68 /* AddressTableView.swift in Sources */,
 				387B6F2A205A571F00E6D916 /* ZCycleLayout.swift in Sources */,
 				38FD687D204026D200B19A42 /* NetAPI.swift in Sources */,
 				FA1394A32072754C008D6F68 /* AddressCell.swift in Sources */,
@@ -1652,6 +1657,7 @@
 				38437B432058C46D00F7FE2F /* BoutiqueView.swift in Sources */,
 				389AA0A62071C9B2009AC93C /* NoAddressView.swift in Sources */,
 				38FD68742040220D00B19A42 /* PublicDefine.swift in Sources */,
+				384625F7207A2F4700D88EDD /* MBHUDMessage.m in Sources */,
 				387D554020689F930073F934 /* AcountHeadView.swift in Sources */,
 				382EF427205FBA5200F3A33B /* UIView+SYAViewFrame.m in Sources */,
 				38B879A1204155C60080BB3C /* ShopCartVC.swift in Sources */,

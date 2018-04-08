@@ -26,7 +26,7 @@ class AddAddressVC: BaseUIViewController {
         
         dataList.removeAllObjects()
         //加载初始数据
-        NetHttp.ins.getAddresses(pageNo: 0, pageSize: 10) { (res) in
+        NetHttp.ins.getAddresses(pageNo: 1, pageSize: 10) { (res) in
             
             let pageList = (res as! NSDictionary)["list"] as! NSArray
             for i in 0...pageList.count-1 {

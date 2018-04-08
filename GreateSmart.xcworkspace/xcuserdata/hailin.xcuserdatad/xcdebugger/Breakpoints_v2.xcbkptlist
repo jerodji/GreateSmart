@@ -4,14 +4,6 @@
    version = "2.0">
    <Breakpoints>
       <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.SwiftErrorBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.ExceptionBreakpoint">
          <BreakpointContent
             shouldBeEnabled = "Yes"
@@ -22,51 +14,11 @@
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         BreakpointExtensionID = "Xcode.Breakpoint.SwiftErrorBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "No"
+            shouldBeEnabled = "Yes"
             ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Network/NetHttp.swift"
-            timestampString = "544522429.097065"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "88"
-            endingLineNumber = "88"
-            landmarkName = "refreshToken(info:)"
-            landmarkType = "7">
-            <Locations>
-               <Location
-                  shouldBeEnabled = "No"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "GreateSmart.NetHttp.refreshToken(info: (Any) -&gt; ()) -&gt; ()"
-                  moduleName = "GreateSmart"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/hailin/Documents/SMART/GreateSmart/Network/NetHttp.swift"
-                  timestampString = "544520574.743161"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "88"
-                  endingLineNumber = "88"
-                  offsetFromSymbolStart = "1648">
-               </Location>
-               <Location
-                  shouldBeEnabled = "No"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (Swift.Optional&lt;Any&gt;) -&gt; () in GreateSmart.NetHttp.refreshToken(info: (Any) -&gt; ()) -&gt; ()"
-                  moduleName = "GreateSmart"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/hailin/Documents/SMART/GreateSmart/Network/NetHttp.swift"
-                  timestampString = "544520574.745016"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "90"
-                  endingLineNumber = "90"
-                  offsetFromSymbolStart = "40">
-               </Location>
-            </Locations>
+            continueAfterRunningActions = "No">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -75,59 +27,44 @@
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Network/NetHttp.swift"
-            timestampString = "544522429.097398"
+            filePath = "Class/AddAddress/Address/AddressControl.swift"
+            timestampString = "544883966.146476"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "103"
-            endingLineNumber = "103"
-            landmarkName = "refreshToken(info:)"
+            startingLineNumber = "92"
+            endingLineNumber = "92"
+            landmarkName = "tableView(_:cellForRowAt:)"
             landmarkType = "7">
             <Locations>
                <Location
                   shouldBeEnabled = "No"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "GreateSmart.NetHttp.refreshToken(info: (Any) -&gt; ()) -&gt; ()"
+                  symbolName = "closure #1 () -&gt; () in GreateSmart.AddressControl.tableView(__ObjC.UITableView, cellForRowAt: Foundation.IndexPath) -&gt; __ObjC.UITableViewCell"
                   moduleName = "GreateSmart"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/hailin/Documents/SMART/GreateSmart/Network/NetHttp.swift"
-                  timestampString = "544520803.470204"
+                  urlString = "file:///Users/hailin/Documents/SMART/GreateSmart/Class/AddAddress/Address/AddressControl.swift"
+                  timestampString = "544882131.004058"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "104"
-                  endingLineNumber = "104"
-                  offsetFromSymbolStart = "2396">
+                  startingLineNumber = "92"
+                  endingLineNumber = "92"
+                  offsetFromSymbolStart = "60">
                </Location>
                <Location
                   shouldBeEnabled = "No"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (Swift.Optional&lt;Any&gt;) -&gt; () in GreateSmart.NetHttp.refreshToken(info: (Any) -&gt; ()) -&gt; ()"
+                  symbolName = "closure #1 (Any) -&gt; () in closure #1 () -&gt; () in GreateSmart.AddressControl.tableView(__ObjC.UITableView, cellForRowAt: Foundation.IndexPath) -&gt; __ObjC.UITableViewCell"
                   moduleName = "GreateSmart"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/hailin/Documents/SMART/GreateSmart/Network/NetHttp.swift"
-                  timestampString = "544520803.4720941"
+                  urlString = "file:///Users/hailin/Documents/SMART/GreateSmart/Class/AddAddress/Address/AddressControl.swift"
+                  timestampString = "544882131.005942"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "104"
-                  endingLineNumber = "104"
-                  offsetFromSymbolStart = "2392">
-               </Location>
-               <Location
-                  shouldBeEnabled = "No"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #2 (Swift.Optional&lt;__ObjC.URLSessionDataTask&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in GreateSmart.NetHttp.refreshToken(info: (Any) -&gt; ()) -&gt; ()"
-                  moduleName = "GreateSmart"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/hailin/Documents/SMART/GreateSmart/Network/NetHttp.swift"
-                  timestampString = "544520803.473961"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "105"
-                  endingLineNumber = "105"
-                  offsetFromSymbolStart = "40">
+                  startingLineNumber = "93"
+                  endingLineNumber = "93"
+                  offsetFromSymbolStart = "20">
                </Location>
             </Locations>
          </BreakpointContent>

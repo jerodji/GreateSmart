@@ -23,7 +23,7 @@
     if (!_sessionManager)
     {
         _sessionManager = [AFHTTPSessionManager manager];//[[AFHTTPSessionManager alloc] init];
-        _sessionManager.requestSerializer.timeoutInterval = 6;
+        _sessionManager.requestSerializer.timeoutInterval = TIMEOUT_INTERVAL;
         _sessionManager.securityPolicy = [AFSecurityPolicy policyWithPinningMode:AFSSLPinningModeNone];//[AFSecurityPolicy defaultPolicy];
         _sessionManager.requestSerializer.cachePolicy = NSURLRequestUseProtocolCachePolicy;
         //// 设置接收数据为 JSON 数据
@@ -67,7 +67,7 @@
 
 #pragma mark- form
 
-- (void)request:(NetType)type URL:(NSString*)url formHeader:(NSDictionary*)formHeaderDict params:(NSDictionary*)params success:(SUCC)success fail:(FAIL)failure
+- (void)request:(NetType)type URL:(NSString*)url formHeader:(NSDictionary*)formHeaderDict params:(id)params success:(SUCC)success fail:(FAIL)failure
 {
     NSString * method = @"POST";
     if (type == GET) {

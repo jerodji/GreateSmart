@@ -10,9 +10,9 @@ import UIKit
 
 class AddressControl: BaseControl,UITableViewDelegate,UITableViewDataSource {
 
-    var view : AddressView?
+    var view : AddressTableView?
     var dataList : NSMutableArray = []
-    private var pageNum : Int = 0
+    private var pageNum : Int = 1
     private var pageSize: Int = 10
     
     override init() {
@@ -22,7 +22,7 @@ class AddressControl: BaseControl,UITableViewDelegate,UITableViewDataSource {
     
     func initView(_ frame:CGRect) -> Void {
         
-        view = AddressView.init(frame: frame, style: UITableViewStyle.plain)
+        view = AddressTableView.init(frame: frame, style: UITableViewStyle.plain)
         view!.delegate = self
         view!.dataSource = self
         view!.register(UINib.init(nibName: "AddressCell", bundle: nil), forCellReuseIdentifier: "AddressCellid")
@@ -56,14 +56,16 @@ class AddressControl: BaseControl,UITableViewDelegate,UITableViewDataSource {
     }
     
     //MARK: -
-
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return dataList.count
     }
     
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell
+    {
         var cell : AddressCell!
         let model: AddressModel = dataList.object(at: indexPath.row) as! AddressModel
+        
         //防止复用改变样式, 所以采用不同的id
         if indexPath.row == 0 {
             cell = tableView.dequeueReusableCell(withIdentifier: "AddressCellid0") as! AddressCell
@@ -76,7 +78,7 @@ class AddressControl: BaseControl,UITableViewDelegate,UITableViewDataSource {
             cell.addLine.isHidden = true
         }
         
-        cell.nameLab.text = "\(model.userId)"//model.receiver
+        cell.nameLab.text = "\(model.adrsId)"//model.receiver
         cell.phoneLab.text = model.phonenum
         cell.addressLab.text = model.province + model.city + model.area + model.address
         if model.defaultAddressId==1 {
@@ -85,10 +87,25 @@ class AddressControl: BaseControl,UITableViewDelegate,UITableViewDataSource {
             cell.setDefBtn.setImage(UIImage.init(named: "gouxuan"), for: .normal)
         }
         
+        cell.changeDfCB = {
+            if model.defaultAddressId == 0 {
+                NetHttp.ins.changeDfAddress(addressId: model.adrsId, succInfo: { (res) in
+                    delog(res)
+                })
+            } else {
+                MBHUDMessage.showMsg("已经是默认地址")
+            }
+        }
+        
         return cell
     }
     
     
-    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        if indexPath.row == 0 {
+            return 165
+        }
+        return 110
+    }
     
 }

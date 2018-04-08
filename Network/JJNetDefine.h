@@ -8,6 +8,9 @@
 
 #import <Foundation/Foundation.h>
 
+//超时时间
+#define TIMEOUT_INTERVAL 6.0
+
 typedef NS_ENUM(NSInteger, NetType) {
     GET,
     POST
