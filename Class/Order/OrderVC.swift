@@ -61,9 +61,6 @@ class OrderVC: BaseUIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         orderAdrsCtrl?.configView()
-//        UIView.animate(withDuration: 0.5) {
-//            self.tabBarController?.tabBar.y = kScreenH
-//        }
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -81,9 +78,6 @@ class OrderVC: BaseUIViewController {
     
     override func viewDidDisappear(_ animated: Bool) {
         super.viewDidDisappear(animated)
-//        UIView.animate(withDuration: 0.5) {
-//            self.tabBarController?.tabBar.y = kScreenH-kTabbarH
-//        }
     }
     
     //MARK:-

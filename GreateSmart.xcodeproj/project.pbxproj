@@ -623,6 +623,21 @@
 			path = SYATopScrollviewVC;
 			sourceTree = "<group>";
 		};
+		38374F16207B6E4C005F026B /* base */ = {
+			isa = PBXGroup;
+			children = (
+				389BC60E206CD75C00CC776F /* NetworkHUD.h */,
+				389BC60F206CD75C00CC776F /* NetworkHUD.m */,
+				388004C0204F92BD00FE9DD0 /* AFBaseNetwork.h */,
+				388004C1204F92BD00FE9DD0 /* AFBaseNetwork.m */,
+				389BC5E6206B96FD00CC776F /* JJNetwork.h */,
+				389BC5E7206B96FD00CC776F /* JJNetwork.m */,
+				389BC5E9206B9DDC00CC776F /* JJNetDefine.h */,
+				389BC5EA206B9DDC00CC776F /* JJNetDefine.m */,
+			);
+			path = base;
+			sourceTree = "<group>";
+		};
 		384EE4402057671000D2BCB6 /* HotSale_人气商品 */ = {
 			isa = PBXGroup;
 			children = (
@@ -1240,14 +1255,7 @@
 				38FD687E204027F300B19A42 /* NetHttp.swift */,
 				38FD687C204026D200B19A42 /* NetAPI.swift */,
 				388004C8204FD58200FE9DD0 /* NetError.swift */,
-				389BC60E206CD75C00CC776F /* NetworkHUD.h */,
-				389BC60F206CD75C00CC776F /* NetworkHUD.m */,
-				388004C0204F92BD00FE9DD0 /* AFBaseNetwork.h */,
-				388004C1204F92BD00FE9DD0 /* AFBaseNetwork.m */,
-				389BC5E6206B96FD00CC776F /* JJNetwork.h */,
-				389BC5E7206B96FD00CC776F /* JJNetwork.m */,
-				389BC5E9206B9DDC00CC776F /* JJNetDefine.h */,
-				389BC5EA206B9DDC00CC776F /* JJNetDefine.m */,
+				38374F16207B6E4C005F026B /* base */,
 			);
 			path = Network;
 			sourceTree = "<group>";

@@ -124,14 +124,24 @@ class NetHttp: NSObject {
         
     }
     
-    //MARK:- -------------------- 地址 --------------------
+    
+}
+
+extension NetHttp {
+    
+    
+}
+
+//MARK:地址
+extension NetHttp {
+    
     /// 添加收货地址
     func addAddress(params:NSDictionary?, succCb: @escaping (Any)->Void ) -> Void {
         
         NetworkHUD.shareIns().request(.POST, url: NetAPI.ins.addAddress, formHeader: formHeaderAuthorization(), params: params as! [AnyHashable : Any], success: { (res) in
             succCb(res!)
         }, fail: { (task, error) in
-
+            
         }, showHUD: true)
     }
     
@@ -163,13 +173,15 @@ class NetHttp: NSObject {
             NetError.ins.succHandleError(response: res, data: data, type: .POST, url: NetAPI.ins.changeDfAddress, formHeader: formhead as? [AnyHashable : Any], formBody: addressId, params: nil, callback: { (hand) in
                 succInfo(res!)
             }, info: succInfo)
-//
+            //
         }, fail: { (task, error) in
             NetError.ins.handleError(task: task, error: error as NSError?, type: .POST, url: NetAPI.ins.changeDfAddress, formHeader: formhead as? [AnyHashable : Any], formBody: addressId, params: nil, callback: { (response) in
                 succInfo(succInfo)
             })
         }, showHUD: true)
     }
+    
+    
     
     /// 修改收货地址
     func updateAddress(params:NSDictionary, succCb:@escaping (Any)->() ) -> Void {
@@ -187,6 +199,7 @@ class NetHttp: NSObject {
         
     }
     
+    
     /// 删除地址
     func removeAddress(params:NSDictionary, succCb:@escaping (Any)->() ) -> Void {
         
@@ -203,35 +216,5 @@ class NetHttp: NSObject {
         
     }
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
 }
-
-
-
-
 
