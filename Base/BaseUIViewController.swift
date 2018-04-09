@@ -22,6 +22,11 @@ class BaseUIViewController: UIViewController {
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
     }
     
+    //dealloc
+//    deinit {
+//
+//    }
+    
 //    override func loadView() {
 //        super.loadView()
 //    }
@@ -64,10 +69,6 @@ class BaseUIViewController: UIViewController {
         
     }
     
-
-
-    
-
    
     func customNavigationBar() -> () {
         /* 隐藏系统导航栏bar */
@@ -87,7 +88,7 @@ class BaseUIViewController: UIViewController {
     }
     
 //    func bringNaviToFront() -> Void {
-//        naviBar.layer.zPosition = 200
+//        naviBar.layer.zPosition = 200 //推到前端..
 //    }
     
     override func didReceiveMemoryWarning() {

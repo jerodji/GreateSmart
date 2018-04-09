@@ -34,8 +34,8 @@
  @param failBlock 失败回调
  */
 //表单请求
-- (void)request:(NetType)type URL:(NSString*)fullURL formHeaders:(NSDictionary*)formHeader body:(id)formBody
-        success:(void (^)(NSHTTPURLResponse*, id))successBlock
-           fail:(void (^)(NSURLSessionDataTask*, NSError*))failBlock;
+- (void)formRequest:(NetType)type URL:(NSString*)fullURL formHeaders:(NSDictionary*)formHeader body:(id)formBody
+            success:(void (^)(NSHTTPURLResponse*, id))successBlock
+               fail:(void (^)(NSURLSessionDataTask*, NSError*))failBlock;
 
 @end

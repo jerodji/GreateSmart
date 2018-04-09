@@ -151,29 +151,30 @@ static NetworkHUD* _ins = nil;
 /**
  form表单请求
  */
-- (void)request:(NetType)type URL:(NSString*)fullURL formHeaders:(NSDictionary*)headerDict formBody:(id)body
-        success:(void (^)(NSHTTPURLResponse*, id))successBlock
-           fail:(void (^)(NSURLSessionDataTask*, NSError*))failBlock
-        showHUD:(BOOL)showhud
+- (void)formRequest:(NetType)type URL:(NSString*)fullURL formHeaders:(NSDictionary*)headerDict formBody:(id)body
+            success:(void (^)(NSHTTPURLResponse*, id))successBlock
+               fail:(void (^)(NSURLSessionDataTask*, NSError*))failBlock
+            showHUD:(BOOL)showhud
 {
     if (showhud) [self showHUD];
     
     dispatch_async(dispatch_get_global_queue( DISPATCH_QUEUE_PRIORITY_LOW, 0), ^{
         
-        [[JJNetwork shareIns] request:type URL:fullURL formHeaders:headerDict body:body success:^(NSHTTPURLResponse *resp, id data) {
-//            sleep(3);//test
+        [[JJNetwork shareIns] formRequest:type URL:fullURL formHeaders:headerDict body:body success:^(NSHTTPURLResponse *resp, id data) {
+
             successBlock(resp,data);
             
-            NSDictionary* dict = [NSDictionary dictFromData:data];
+            NSDictionary* dict = [NSObject dictFromData:data];
             if (showhud) [self succHUD:dict[@"msg"]];
             
         } fail:^(NSURLSessionDataTask *task, NSError *error) {
-//            sleep(3);//test
             failBlock(task,error);
             [self failHUD:nil];
         }];
     });
 }
+
+#pragma mark -
 
 /**
  网络请求 参数-实体类(对象)

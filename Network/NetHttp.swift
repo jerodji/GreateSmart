@@ -36,11 +36,11 @@ class NetHttp: NSObject {
     }
     
     
-    //MARK:-
-    //MARK:登录验证
+    //MARK:- -------------------- token验证 --------------------
+    /// 登录验证
     func OAuthToken(formBody:NSDictionary?, info: @escaping (Any)->() ) -> Void {
         
-        NetworkHUD.shareIns().request(.POST, url: NetAPI.ins.oauth_token, formHeaders: nil, formBody: formBody as! [AnyHashable:Any], success: { (task,res) in
+        NetworkHUD.shareIns().formRequest(.POST, url: NetAPI.ins.oauth_token, formHeaders: nil, formBody: formBody as! [AnyHashable:Any], success: { (task,res) in
             
             if res is NSDictionary {
                 let dict = res as! NSDictionary
@@ -73,7 +73,7 @@ class NetHttp: NSObject {
         
     }
     
-    //MARK:刷新token
+    /// 刷新token
     func refreshToken(info: @escaping (Any)->() ) -> Void {
         
         let refresh_token = "\(Keychain(service: kBundleID)[KeychainKeys.ins.refresh_token] ?? "")"
@@ -85,7 +85,7 @@ class NetHttp: NSObject {
             "refresh_token":refresh_token
         ]
         
-        NetworkHUD.shareIns().request(.POST, url: NetAPI.ins.refresh_token, formHeaders: nil, formBody: body , success: { (ponse,data) in
+        NetworkHUD.shareIns().formRequest(.POST, url: NetAPI.ins.refresh_token, formHeaders: nil, formBody: body , success: { (ponse,data) in
             
             if data is NSDictionary {
                 let dict = data as! NSDictionary
@@ -124,18 +124,18 @@ class NetHttp: NSObject {
         
     }
     
-    //MARK:-
-    //MARK:添加收货地址
-    func addAddress(params:NSDictionary?) -> Void {
+    //MARK:- -------------------- 地址 --------------------
+    /// 添加收货地址
+    func addAddress(params:NSDictionary?, succCb: @escaping (Any)->Void ) -> Void {
         
         NetworkHUD.shareIns().request(.POST, url: NetAPI.ins.addAddress, formHeader: formHeaderAuthorization(), params: params as! [AnyHashable : Any], success: { (res) in
-//            delog(res)
+            succCb(res!)
         }, fail: { (task, error) in
 
         }, showHUD: true)
     }
     
-    //MARK:收货地址列表
+    /// 收货地址列表
     func getAddresses(pageNo:Int, pageSize:Int, info: @escaping (Any)->Void) -> Void {
         let params = ["pageNo":pageNo,"pageSize":pageSize]
         NetworkHUD.shareIns().request(.POST, url: NetAPI.ins.getAddresses, formHeader: formHeaderAuthorization(), params:params , success: { (res) in
@@ -151,19 +151,87 @@ class NetHttp: NSObject {
         }, showHUD: true)
     }
     
-    //MARK:设置默认地址 changeDfAddress
+    /// 设置默认地址 changeDfAddress
     func changeDfAddress(addressId:String, succInfo:@escaping (Any)->() ) -> Void {
         
         let formhead = NSMutableDictionary.init(dictionary: formHeaderAuthorization())
         formhead.setObject("application/json", forKey: "Content-Type" as NSCopying)
         
-        NetworkHUD.shareIns().request(.POST, url: NetAPI.ins.changeDfAddress, formHeaders: formhead as! [AnyHashable : Any], formBody: addressId, success: { (res, data) in
+        NetworkHUD.shareIns().formRequest(.POST, url: NetAPI.ins.changeDfAddress, formHeaders: formhead as! [AnyHashable : Any], formBody: addressId, success: { (res, data) in
             
-            succInfo(res!)
-            
+            //succInfo(res!)
+            NetError.ins.succHandleError(response: res, data: data, type: .POST, url: NetAPI.ins.changeDfAddress, formHeader: formhead as? [AnyHashable : Any], formBody: addressId, params: nil, callback: { (hand) in
+                succInfo(res!)
+            }, info: succInfo)
+//
         }, fail: { (task, error) in
-            
+            NetError.ins.handleError(task: task, error: error as NSError?, type: .POST, url: NetAPI.ins.changeDfAddress, formHeader: formhead as? [AnyHashable : Any], formBody: addressId, params: nil, callback: { (response) in
+                succInfo(succInfo)
+            })
         }, showHUD: true)
     }
     
+    /// 修改收货地址
+    func updateAddress(params:NSDictionary, succCb:@escaping (Any)->() ) -> Void {
+        
+        let formhead = formHeaderAuthorization()
+        let url = NetAPI.ins.updateAddress
+        
+        NetworkHUD.shareIns().request(.POST, url: url, formHeader: formhead, params: params, success: { (res) in
+            succCb(res!)
+        }, fail: { (task, error) in
+            NetError.ins.handleError(task: task, error: error as NSError?, type: .POST, url: url, formHeader: formhead, formBody: nil, params: params, callback: { (response) in
+                succCb(response)
+            })
+        }, showHUD: true)
+        
+    }
+    
+    /// 删除地址
+    func removeAddress(params:NSDictionary, succCb:@escaping (Any)->() ) -> Void {
+        
+        let formhead = formHeaderAuthorization()
+        let url = NetAPI.ins.removeAddress
+        
+        NetworkHUD.shareIns().request(.POST, url: url, formHeader: formhead, params: params, success: { (res) in
+            succCb(res!)
+        }, fail: { (task, error) in
+            NetError.ins.handleError(task: task, error: error as NSError?, type: .POST, url: url, formHeader: formhead, formBody: nil, params: params, callback: { (response) in
+                succCb(response)
+            })
+        }, showHUD: true)
+        
+    }
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
 }
+
+
+
+
+

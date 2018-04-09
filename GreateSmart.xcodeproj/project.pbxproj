@@ -55,7 +55,7 @@
 		38437B452058E71B00F7FE2F /* NatureView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38437B442058E71B00F7FE2F /* NatureView.swift */; };
 		38437B492058E8A300F7FE2F /* NatureCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38437B482058E8A300F7FE2F /* NatureCell.swift */; };
 		38437B4B2058E8AE00F7FE2F /* NatureCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 38437B4A2058E8AE00F7FE2F /* NatureCell.xib */; };
-		384625F7207A2F4700D88EDD /* MBHUDMessage.m in Sources */ = {isa = PBXBuildFile; fileRef = 384625F6207A2F4700D88EDD /* MBHUDMessage.m */; };
+		384625F7207A2F4700D88EDD /* MBHUDToast.m in Sources */ = {isa = PBXBuildFile; fileRef = 384625F6207A2F4700D88EDD /* MBHUDToast.m */; };
 		384EE4422057673A00D2BCB6 /* HotSaleModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 384EE4412057673A00D2BCB6 /* HotSaleModel.swift */; };
 		384EE4452057699600D2BCB6 /* NatureModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 384EE4442057699600D2BCB6 /* NatureModel.swift */; };
 		384EE44820576AED00D2BCB6 /* TimeReCModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 384EE44720576AED00D2BCB6 /* TimeReCModel.swift */; };
@@ -293,8 +293,8 @@
 		38437B442058E71B00F7FE2F /* NatureView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NatureView.swift; sourceTree = "<group>"; };
 		38437B482058E8A300F7FE2F /* NatureCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NatureCell.swift; sourceTree = "<group>"; };
 		38437B4A2058E8AE00F7FE2F /* NatureCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NatureCell.xib; sourceTree = "<group>"; };
-		384625F5207A2F4700D88EDD /* MBHUDMessage.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MBHUDMessage.h; sourceTree = "<group>"; };
-		384625F6207A2F4700D88EDD /* MBHUDMessage.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MBHUDMessage.m; sourceTree = "<group>"; };
+		384625F5207A2F4700D88EDD /* MBHUDToast.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MBHUDToast.h; sourceTree = "<group>"; };
+		384625F6207A2F4700D88EDD /* MBHUDToast.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MBHUDToast.m; sourceTree = "<group>"; };
 		384EE4412057673A00D2BCB6 /* HotSaleModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HotSaleModel.swift; sourceTree = "<group>"; };
 		384EE4442057699600D2BCB6 /* NatureModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NatureModel.swift; sourceTree = "<group>"; };
 		384EE44720576AED00D2BCB6 /* TimeReCModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeReCModel.swift; sourceTree = "<group>"; };
@@ -1203,8 +1203,8 @@
 			children = (
 				389BC5F3206BB31900CC776F /* AppConfig.h */,
 				389BC5F2206BB31900CC776F /* AppConfig.m */,
-				384625F5207A2F4700D88EDD /* MBHUDMessage.h */,
-				384625F6207A2F4700D88EDD /* MBHUDMessage.m */,
+				384625F5207A2F4700D88EDD /* MBHUDToast.h */,
+				384625F6207A2F4700D88EDD /* MBHUDToast.m */,
 				387D5564206A14990073F934 /* JIStepper.swift */,
 				389AA0B12071DD2E009AC93C /* JITextView.h */,
 				389AA0B22071DD2E009AC93C /* JITextView.m */,
@@ -1657,7 +1657,7 @@
 				38437B432058C46D00F7FE2F /* BoutiqueView.swift in Sources */,
 				389AA0A62071C9B2009AC93C /* NoAddressView.swift in Sources */,
 				38FD68742040220D00B19A42 /* PublicDefine.swift in Sources */,
-				384625F7207A2F4700D88EDD /* MBHUDMessage.m in Sources */,
+				384625F7207A2F4700D88EDD /* MBHUDToast.m in Sources */,
 				387D554020689F930073F934 /* AcountHeadView.swift in Sources */,
 				382EF427205FBA5200F3A33B /* UIView+SYAViewFrame.m in Sources */,
 				38B879A1204155C60080BB3C /* ShopCartVC.swift in Sources */,

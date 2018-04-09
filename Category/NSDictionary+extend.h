@@ -10,6 +10,5 @@
 
 @interface NSDictionary (extend)
 
-+ (NSDictionary*)dictFromData:(NSData*)data;
 
 @end

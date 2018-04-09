@@ -53,4 +53,6 @@
  */
 + (nullable id)objectFromJSONData:(nullable NSData *)jsonData;
 
++ (NSDictionary*)dictFromData:(NSData*)data;
+
 @end

@@ -8,9 +8,19 @@
 
 import UIKit
 
+private let dis = CGFloat(0) // left title right 横向间距
+private let leftItemW = CGFloat(50) //left button 宽度
+private let rightItemW = CGFloat(60) //right button 宽度
+
 class BackButton: UIButton {
     override func imageRect(forContentRect contentRect: CGRect) -> CGRect {
-        return CGRect.init(x: 15, y: (44-18)/2, width: 10, height: 18)
+        return CGRect.init(x: (leftItemW-10)/2 /*15*/, y: (44-18)/2, width: 10, height: 18)
+    }
+}
+
+class RightButton: UIButton {
+    override func titleRect(forContentRect contentRect: CGRect) -> CGRect {
+        return CGRect.init(x: 0, y: 0, width: self.bounds.size.width - 20, height: self.bounds.size.height)
     }
 }
 
@@ -18,7 +28,7 @@ class CustomNaviBar: UIView {
     
     let statusbar = UIView()
     let leftItemBtn = BackButton()
-    let rightItemBtn = UIButton()
+    let rightItemBtn = RightButton()
     let titleLab = UILabel()
     let line = UIView()
     
@@ -53,12 +63,9 @@ class CustomNaviBar: UIView {
     
     func configNaviBar() -> () {
         
-        let dis = CGFloat(0)
-        let itemW = CGFloat(44)
-        
         statusbar.frame    = CGRect.init(x: 0, y: 0, width: kScreenW, height: kStatusH)
-        leftItemBtn.frame  = CGRect.init(x: dis, y: kStatusH, width: itemW, height: kNavi44)
-        rightItemBtn.frame = CGRect.init(x: kScreenW-dis-itemW, y: kStatusH, width: itemW, height: kNavi44)
+        leftItemBtn.frame  = CGRect.init(x: dis, y: kStatusH, width: leftItemW, height: kNavi44)
+        rightItemBtn.frame = CGRect.init(x: kScreenW-dis-rightItemW, y: kStatusH, width: rightItemW, height: kNavi44)
         titleLab.frame     = CGRect.init(x: leftItemBtn.right, y: kStatusH, width: rightItemBtn.left - leftItemBtn.right, height: kNavi44)
         line.frame         = CGRect.init(x: 0, y: kNaviH-1, width: kScreenW, height: 1)
         
@@ -71,11 +78,14 @@ class CustomNaviBar: UIView {
         
         titleLab.textAlignment = NSTextAlignment.center
         titleLab.textColor     = UIColor.black
+        
         leftItemBtn.setImage(UIImage.init(named: "fh"), for: UIControlState.normal)
         leftItemBtn.addTarget(self, action: #selector(leftAction), for: UIControlEvents.touchUpInside)
-        rightItemBtn.addTarget(self, action: #selector(rightAction), for: UIControlEvents.touchUpInside)
         
+        rightItemBtn.addTarget(self, action: #selector(rightAction), for: UIControlEvents.touchUpInside)
         rightItemBtn.setTitleColor(UIColor.RGB(39, 39, 39), for: .normal)
+        rightItemBtn.titleLabel?.textAlignment = .right
+        rightItemBtn.titleLabel?.font = UIFont.init(name: fontPingFangSCMedium, size: 14)
         
         self.addSubview(statusbar)
         self.addSubview(leftItemBtn)

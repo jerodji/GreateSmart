@@ -17,26 +17,29 @@
  form header表单请求头
  params json参数
  */
-- (void)request:(NetType)type URL:(NSString*)url formHeader:(NSDictionary*)formHeaderDict params:(id)params success:(SUCC)success fail:(FAIL)failure showHUD:(BOOL)showhud;
+- (void)request:(NetType)type URL:(NSString*)url formHeader:(NSDictionary*)formHeaderDict params:(id)params
+        success:(SUCC)success
+           fail:(FAIL)failure
+        showHUD:(BOOL)showhud;
 
 /**
  form表单请求
  form header
  form body
  */
-- (void)request:(NetType)type URL:(NSString*)fullURL formHeaders:(NSDictionary*)headerDict formBody:(id)body
-        success:(void (^)(NSHTTPURLResponse*, id))successBlock
-           fail:(void (^)(NSURLSessionDataTask*, NSError*))failBlock
-        showHUD:(BOOL)showhud;
+- (void)formRequest:(NetType)type URL:(NSString*)fullURL formHeaders:(NSDictionary*)headerDict formBody:(id)body
+            success:(void (^)(NSHTTPURLResponse*, id))successBlock
+               fail:(void (^)(NSURLSessionDataTask*, NSError*))failBlock
+            showHUD:(BOOL)showhud;
 
 /**
  网络请求 参数-实体类(对象)
  */
-- (void)request:(NetType)type URL:(NSString*)fullURL paramsEntity:(id)entity success:(SUCC)success fail:(FAIL)failure showHUD:(BOOL)showhud;
+//- (void)request:(NetType)type URL:(NSString*)fullURL paramsEntity:(id)entity success:(SUCC)success fail:(FAIL)failure showHUD:(BOOL)showhud;
 
 /**
  网络请求 参数-字典
  */
-- (void)request:(NetType)_type URL:(NSString*)_url paramsDict:(NSDictionary*)_parameter success:(SUCC)_success fail:(FAIL)_failure showHUD:(BOOL)showhud;
+//- (void)request:(NetType)_type URL:(NSString*)_url paramsDict:(NSDictionary*)_parameter success:(SUCC)_success fail:(FAIL)_failure showHUD:(BOOL)showhud;
 
 @end

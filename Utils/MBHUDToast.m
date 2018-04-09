@@ -6,12 +6,12 @@
 //  Copyright © 2018年 Jerod. All rights reserved.
 //
 
-#import "MBHUDMessage.h"
+#import "MBHUDToast.h"
 #import "AppConfig.h"
 #import "MBProgressHUD.h"
 
 
-@implementation MBHUDMessage
+@implementation MBHUDToast
 
 + (void)showMsg:(NSString*)msg
 {
@@ -24,7 +24,7 @@
             MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:topvc.view animated:YES];
             hud.mode = MBProgressHUDModeText;
             hud.label.text = msg;
-            [hud hideAnimated:true afterDelay:2.5];
+            [hud hideAnimated:true afterDelay:2.5]; //2.5秒后消失
         }
     });
     

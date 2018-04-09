@@ -151,6 +151,7 @@ class MyVC: BaseUIViewController,UITableViewDelegate,UITableViewDataSource {
                 //地址管理
                 delog("我的服务-地址管理")
                 let advc = AddAddressVC()
+                advc.naviBar.titleLab.text = "地址管理"
                 advc.hidesBottomBarWhenPushed = true
                 self.navigationController?.pushViewController(advc, animated: true)
             }; break

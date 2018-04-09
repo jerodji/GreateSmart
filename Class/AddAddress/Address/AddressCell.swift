@@ -25,10 +25,17 @@ class AddressCell: UITableViewCell {
     @IBOutlet weak var changeBtn: UIButton!
     @IBOutlet weak var deleteBtn: UIButton!
     
+    typealias AddBLK = ()->()
+    var AddCb : AddBLK?
     
     typealias DfBlk = ()->()
     var changeDfCB : DfBlk?
     
+    typealias ChangeBLK = ()->()
+    var changeCb : ChangeBLK?
+    
+    typealias DeleteBLK = ()->()
+    var deleteCb : DeleteBLK?
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -46,7 +53,7 @@ class AddressCell: UITableViewCell {
     }
     
     @IBAction func addAction(_ sender: UIButton) {
-        
+        (AddCb == nil) ? delog("没有实现changeDfCB") : AddCb!()
     }
     
     @IBAction func setDefauletAction(_ sender: UIButton) {
@@ -54,9 +61,11 @@ class AddressCell: UITableViewCell {
     }
     
     @IBAction func changeAction(_ sender: UIButton) {
+        (changeCb == nil) ? delog("没有实现changeCb") : changeCb!()
     }
     
     @IBAction func deleteAction(_ sender: UIButton) {
+        (deleteCb == nil) ? delog("没有实现deleteCb") : deleteCb!()
     }
     
     override func setSelected(_ selected: Bool, animated: Bool) {

@@ -10,10 +10,6 @@
 
 @implementation NSDictionary (extend)
 
-+ (NSDictionary*)dictFromData:(NSData*)data
-{
-    NSDictionary* dic = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingAllowFragments error:nil];
-    return dic;
-}
+
 
 @end

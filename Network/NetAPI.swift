@@ -14,6 +14,9 @@ import UIKit
 /** 测试服 test.laopdr.cn:8080 */
 let URLHEAD = "http://test.laopdr.cn:8080"
 
+/** 吴绍康 192.168.1.132:8080 */
+//let URLHEAD = "http://192.168.1.132:8080"
+
 /**  李趸玺的电脑  192.168.1.120:8080 */
 //let URLHEAD = "http://192.168.1.120:8080"
 
@@ -30,21 +33,34 @@ class NetAPI: NSObject {
     /** 首页数据 */
     private(set) var homePage = URLHEAD + "/home/homePage"
     
-    //MARK:- 用户
+    //MARK:- -------------------- 用 户 --------------------
     
-    /** 用户登录/登录验证 */
-    let oauth_token = URLHEAD + "/oauth/token"
-    /** 刷新token */
+    /// 用户登录/登录验证
+    let oauth_token   = URLHEAD + "/oauth/token"
+    /// 刷新token
     let refresh_token = URLHEAD + "/oauth/token"
     
     
-    //MARK:- 地址
+    //MARK:- -------------------- 地 址 --------------------
     
-    /** 添加收货地址 */
-    let addAddress = URLHEAD + "/userAddress/addAddress"
-    /** 收货地址列表 */
-    let getAddresses =  URLHEAD + "/userAddress/getAddresses"
-    /** 设置默认收货地址 */
+    /// 添加收货地址
+    let addAddress      = URLHEAD + "/userAddress/addAddress"
+    /// 收货地址列表
+    let getAddresses    = URLHEAD + "/userAddress/getAddresses"
+    /// 设置默认收货地址
     let changeDfAddress = URLHEAD + "/userAddress/changeDfAddress"
+    /// 修改收货地址
+    let updateAddress   = URLHEAD + "/userAddress/updateAddress"
+    /// 删除地址
+    let removeAddress   = URLHEAD + "/userAddress/removeAddress"
+    
+    
+    
+    
+    
+    
+    
+    
+    
     
 }

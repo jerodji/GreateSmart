@@ -142,4 +142,18 @@ static NSString * PARAM_KEY = @"PARAM_KEY";
     return [NSJSONSerialization JSONObjectWithData:jsonData options:0 error:nil];
 }
 
++ (NSDictionary*)dictFromData:(NSData*)data {
+    
+    if ([data isKindOfClass:[NSDictionary class]]) {
+        return (NSDictionary*)data;
+    }
+    
+    NSDictionary* dic;
+    if ([data isKindOfClass:[NSData class]]) {
+        dic = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingAllowFragments error:nil];
+    }
+    
+    return dic;
+}
+
 @end

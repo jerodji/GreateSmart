@@ -16,8 +16,11 @@ class OrderAddressView: BaseUIView,LoadXIBView {
     @IBOutlet weak var receivePersonLabel: UILabel!
     @IBOutlet weak var receivePhoneNumLabel: UILabel!
     @IBOutlet weak var receiveAddressLabel: UILabel!
-    @IBOutlet weak var enterButton: UIButton!
+    
+    ///请填写收货地址
     @IBOutlet weak var writeLabel: UILabel!
+    
+    @IBOutlet weak var enterButton: UIButton!
     
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
@@ -30,6 +33,8 @@ class OrderAddressView: BaseUIView,LoadXIBView {
         self.layer.shadowOpacity = 1
         self.layer.shadowRadius = 2
         self.layer.shadowOffset = CGSize.init(width: 0, height: 1)
+        
+        enterButton.isUserInteractionEnabled = false
     }
     
     /*

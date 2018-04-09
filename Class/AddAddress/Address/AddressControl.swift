@@ -10,10 +10,14 @@ import UIKit
 
 class AddressControl: BaseControl,UITableViewDelegate,UITableViewDataSource {
 
+    var scene: UIViewController?
     var view : AddressTableView?
     var dataList : NSMutableArray = []
     private var pageNum : Int = 1
     private var pageSize: Int = 10
+    
+    typealias SelecBLK = (AddressModel)->()
+    var selecCb : SelecBLK?
     
     override init() {
         super.init()
@@ -39,23 +43,43 @@ class AddressControl: BaseControl,UITableViewDelegate,UITableViewDataSource {
             
             if list.count == 0
             {
-                self.view?.mj_footer.endRefreshingWithNoMoreData()
+                self.view?.mj_footer.endRefreshingWithNoMoreData()/*没有跟多数据*/
             }
             else
             {
                 for i in 0...list.count-1 {
                     let dict = list[i] as! NSDictionary
-                    let model = AddressModel.mj_object(withKeyValues: dict)
-                    self.dataList.add(model as AddressModel!)
+                    let model : AddressModel = AddressModel.mj_object(withKeyValues: dict)
+                    self.dataList.add(model)
                 }
                 self.view?.mj_footer.endRefreshing()
                 self.view?.reloadData()
             }
-            
+        }
+    }
+    
+    //MARK:跟新默认状态,刷新界面
+    func updateDataListDefaultStatus(index:Int) -> Void {
+        for i in 0...dataList.count-1 {
+            let model: AddressModel = dataList.object(at: i) as! AddressModel
+            if i != index {
+                model.defaultAddressId = 0
+            } else {
+                model.defaultAddressId = 1
+            }
+        }
+        
+        DispatchQueue.main.async {
+            self.view?.reloadData()
         }
     }
     
     //MARK: -
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let model: AddressModel = dataList.object(at: indexPath.row) as! AddressModel
+        (selecCb==nil) ? delog("没有实现selecCb") : selecCb!(model)
+    }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return dataList.count
@@ -78,7 +102,7 @@ class AddressControl: BaseControl,UITableViewDelegate,UITableViewDataSource {
             cell.addLine.isHidden = true
         }
         
-        cell.nameLab.text = "\(model.adrsId)"//model.receiver
+        cell.nameLab.text = model.receiver
         cell.phoneLab.text = model.phonenum
         cell.addressLab.text = model.province + model.city + model.area + model.address
         if model.defaultAddressId==1 {
@@ -87,14 +111,45 @@ class AddressControl: BaseControl,UITableViewDelegate,UITableViewDataSource {
             cell.setDefBtn.setImage(UIImage.init(named: "gouxuan"), for: .normal)
         }
         
+        //MARK:事件回调
+        //设置默认地址
         cell.changeDfCB = {
             if model.defaultAddressId == 0 {
                 NetHttp.ins.changeDfAddress(addressId: model.adrsId, succInfo: { (res) in
-                    delog(res)
+                    /** 成功后刷新界面,跟新默认状态 */
+                    self.updateDataListDefaultStatus(index: indexPath.row)
                 })
             } else {
-                MBHUDMessage.showMsg("已经是默认地址")
+                MBHUDToast.showMsg("已经是默认地址")
             }
+        }
+        
+        //增加地址
+        cell.AddCb = {
+            let newvc = CreateNewAdresVC()
+            self.scene?.navigationController?.pushViewController(newvc, animated: true)
+        }
+        
+        //修改地址
+        cell.changeCb = {
+            let newvc = CreateNewAdresVC()
+            newvc.model = model
+            self.scene?.navigationController?.pushViewController(newvc, animated: true)
+        }
+        
+        //删除地址
+        cell.deleteCb = {
+//            if model.defaultAddressId == 1 {
+//                MBHUDToast.showMsg("不能删除默认地址")
+//            } else {
+                let pam: NSDictionary = ["id":Int.init(model.adrsId)!]
+                NetHttp.ins.removeAddress(params: pam, succCb: { (res) in
+                    self.dataList.removeObject(at: indexPath.row)
+                    DispatchQueue.main.async {
+                        self.view?.reloadData()
+                    }
+                })
+//            }
         }
         
         return cell
@@ -107,5 +162,8 @@ class AddressControl: BaseControl,UITableViewDelegate,UITableViewDataSource {
         }
         return 110
     }
+    
+    
+    
     
 }

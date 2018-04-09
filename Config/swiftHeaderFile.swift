@@ -6,6 +6,8 @@
 //  Copyright © 2018年 Jerod. All rights reserved.
 //
 
+import Dispatch
+
 import SnapKit
 import Kingfisher
 import KeychainAccess

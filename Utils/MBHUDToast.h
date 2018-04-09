@@ -10,9 +10,10 @@
 
 
 /**
+ Toast提示信息
  利用 MBProgressHUD 展示信息
  */
-@interface MBHUDMessage : NSObject
+@interface MBHUDToast : NSObject
 
 + (void)showMsg:(NSString*)msg;
 

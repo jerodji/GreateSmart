@@ -11,8 +11,8 @@ import UIKit
 class OrderVC: BaseUIViewController {
 
     var scrol : UIScrollView?
-    var adrsCtrl : OrderAddressCtrl?
-    var goodCtrl : OrderGoodlistCtrl?
+    var orderAdrsCtrl : OrderAddressCtrl?
+    var orderGoodCtrl : OrderGoodlistCtrl?
     var payCtrl : OrderpayCtrl?
     var allpriceBar : OrderAllPriceBar?
     var alldistance : CGFloat = 0
@@ -23,16 +23,16 @@ class OrderVC: BaseUIViewController {
         //数据...
         
         //地址control初始化
-        adrsCtrl = OrderAddressCtrl.init()
-        adrsCtrl?.view!.frameXib = CGRect.init(x: 0, y: kNaviH, width: kScreenW, height: 60)
+        orderAdrsCtrl = OrderAddressCtrl.init()
+        orderAdrsCtrl?.view!.frameXib = CGRect.init(x: 0, y: kNaviH, width: kScreenW, height: 60)
         //商品信息列表
-        goodCtrl = OrderGoodlistCtrl.init()
+        orderGoodCtrl = OrderGoodlistCtrl.init()
         let listH = h_OrderGoodlistCell*6 + h_orderGoodlistCellHead*2 + h_orderGoodlistCellFoot*2
-        goodCtrl!.createView(frame: CGRect.init(x: 10, y: 15, width: kScreenW-20, height: listH))
+        orderGoodCtrl!.createView(frame: CGRect.init(x: 10, y: 15, width: kScreenW-20, height: listH))
         alldistance += 15 + listH
         //支付信息
         payCtrl = OrderpayCtrl.init()
-        payCtrl!.createView(frame: CGRect.init(x: 0, y: goodCtrl!.view!.bottom + 15, width: kScreenW, height: 450))
+        payCtrl!.createView(frame: CGRect.init(x: 0, y: orderGoodCtrl!.view!.bottom + 15, width: kScreenW, height: 450))
         alldistance += (15+450)
         // scroll view
         scrol = UIScrollView.init(frame: CGRect.init(x: 0, y: kNaviH+60, width: kScreenW, height: kScreenH-kNaviH-60-kTabbarH))
@@ -45,8 +45,8 @@ class OrderVC: BaseUIViewController {
         naviBar.titleLab.text = "确认订单"
         hideTabbar = true
         view.addSubview(scrol!)
-        view.addSubview(adrsCtrl!.view!)
-        scrol!.addSubview(goodCtrl!.view!)
+        view.addSubview(orderAdrsCtrl!.view!)
+        scrol!.addSubview(orderGoodCtrl!.view!)
         scrol!.addSubview(payCtrl!.view!)
         
         // bar
@@ -55,11 +55,12 @@ class OrderVC: BaseUIViewController {
         view.addSubview(allpriceBar!)
         
         //地址事件
-        adrsCtrl?.setScene(vc: self, viewTapSel: #selector(addressAction))
+        orderAdrsCtrl?.setScene(vc: self, viewTapSel: #selector(addressAction))
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        orderAdrsCtrl?.configView()
 //        UIView.animate(withDuration: 0.5) {
 //            self.tabBarController?.tabBar.y = kScreenH
 //        }
@@ -89,12 +90,13 @@ class OrderVC: BaseUIViewController {
     
     @objc func addressAction () -> Void {
         let vc = AddAddressVC()
-        
+        vc.naviBar.titleLab.text = "选择地址"
+        vc.adrsCl?.selecCb = { model in
+            self.orderAdrsCtrl?.adrsModel = model
+            vc.navigationController?.popViewController(animated: true)
+        }
         self.navigationController?.pushViewController(vc, animated: true)
-        //present
-        
     }
-    
     
     
     

@@ -33,7 +33,7 @@
 //#import "JJNetwork.h"
 #import "NetworkHUD.h"
 #import "JITextView.h"
-#import "MBHUDMessage.h"
+#import "MBHUDToast.h"
 
 #pragma mark ------------ CocoaPod ------------
 
