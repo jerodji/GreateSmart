@@ -75,6 +75,18 @@ class AddressPicker: BaseControl,UIPickerViewDelegate,UIPickerViewDataSource {
             self.view!.origin = CGPoint(x: 0, y: frame.origin.y)
         }
         
+        if proArray.count > 0 {
+            //默认选择第一个
+            if (proArray.object(at: 0) as! ProvinceModel).cityArray.count > 0 {
+                self.pickerView(view!, didSelectRow: 0, inComponent: 0)
+                
+                if ((proArray.object(at: 0) as! ProvinceModel).cityArray.object(at: 0) as! CityModel).areaArray.count > 0 {
+                    self.pickerView(view!, didSelectRow: 0, inComponent: 1)
+                }
+            }
+        }
+        
+        
     }
     
     func getaddressdb() -> FMDatabase {
@@ -102,7 +114,7 @@ class AddressPicker: BaseControl,UIPickerViewDelegate,UIPickerViewDataSource {
             return selecProvModel?.cityArray.count ?? 0
         }
         else {
-            return proArray.count
+            return selecCityModel?.areaArray.count ?? 0
         }
     }
     
@@ -110,6 +122,8 @@ class AddressPicker: BaseControl,UIPickerViewDelegate,UIPickerViewDataSource {
         if component == 0 {
             selecProvModel = proArray.object(at: row) as? ProvinceModel
             pickerView.reloadComponent(1)
+            //pickerView.reloadComponent(2)
+            self.pickerView(pickerView, didSelectRow: 0, inComponent: 1)
         }
         if component == 1 {
             selecCityModel = selecProvModel?.cityArray.object(at: row) as? CityModel
@@ -127,17 +141,20 @@ class AddressPicker: BaseControl,UIPickerViewDelegate,UIPickerViewDataSource {
         label.frame = CGRect(x: 0, y: 0, width: kScreenW/3, height: 30)
         label.adjustsFontSizeToFitWidth = true
         label.textAlignment = .center
-        //        label.text = self.pickerView(pickerView, titleForRow: row, forComponent: component)
+        //label.text = self.pickerView(pickerView, titleForRow: row, forComponent: component)
         
-        let model : ProvinceModel = proArray.object(at: row) as! ProvinceModel
+        
         if component == 0 {
+            let model : ProvinceModel = proArray.object(at: row) as! ProvinceModel
             label.text = model.provinceName //省
         }
         if component == 1 {
-            label.text = model.provinceName
+            let cm = selecProvModel?.cityArray.object(at: row) as? CityModel
+            label.text = cm?.cityName ?? ""
         }
         if component == 2 {
-            label.text = model.provinceName
+            let am = selecCityModel?.areaArray.object(at: row) as? AreaModel
+            label.text = am?.areaName ?? ""
         }
         
         return label
