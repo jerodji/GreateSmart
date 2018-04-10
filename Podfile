@@ -5,6 +5,8 @@ use_frameworks!
 
 target 'GreateSmart' do
 
+#pod 'RxSwift', '~> 4.1.1'
+#pod 'RxCocoa', '~> 4.1.1'
 pod 'AFNetworking', '~> 3.1.0'
 pod 'SnapKit', '~> 4.0.0'
 pod 'MJExtension', '~> 3.0.13'
@@ -17,7 +19,8 @@ pod 'KeychainAccess', '~> 3.1.0'
 
 pod 'MJRefresh', '~> 3.1.12'
 
-#pod 'RxSwift', '~> 4.1.1'
-#pod 'RxCocoa', '~> 4.1.1'
+#pod 'SQLite.swift'
+#2.7.2
+pod 'FMDB'
 
 end

@@ -52,10 +52,10 @@ func delog(_ msg:Any,file:String = #file,funcName:String = #function,lineNum:Int
         let formatter = DateFormatter()
         formatter.dateFormat = "yyyy-MM-dd HH:mm:ss:SSS"
         let datestr:String = formatter.string(from: Date())
-        print("\(datestr) \(fileName) \(funcName)[\(lineNum)]" + ":\n[DEBUG] ",msg,"\n")
+        print("[DELOG] \(datestr) \(fileName)[\(lineNum)] \(funcName) :",msg/*,"\n"*/)
     #endif
 }
-
+ 
 // NSLog内容太长会显示不全
 func dlog(_ msg:Any,file:String = #file,funcName:String = #function,lineNum:Int = #line){
     /* Build Setting -> Other Swift Flags - Debug : -D DEBUG */

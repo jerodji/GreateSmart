@@ -75,10 +75,14 @@
     }
     
     NSMutableURLRequest *request = [[AFJSONRequestSerializer serializer] requestWithMethod:method URLString:url parameters:params error:nil];
+    
     [request setValue:@"application/json" forHTTPHeaderField:@"Content-Type"];
+
     for (NSString* key in formHeaderDict) {
          [request setValue:formHeaderDict[key] forHTTPHeaderField:key];
     }
+    
+    request.timeoutInterval = TIMEOUT_INTERVAL;
     
     //发起请求
     __block NSURLSessionDataTask *dataTask = nil;
@@ -138,6 +142,8 @@
     
     //NSData *body = 你需要提交的data;
     //[request setHTTPBody:body];
+    
+    request.timeoutInterval = TIMEOUT_INTERVAL;
     
     //发起请求
     __block NSURLSessionDataTask *dataTask = nil;

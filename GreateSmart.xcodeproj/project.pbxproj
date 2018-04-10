@@ -166,6 +166,10 @@
 		38BF9545206E531600F8294A /* OrderAllPriceBar.xib in Resources */ = {isa = PBXBuildFile; fileRef = 38BF9544206E531600F8294A /* OrderAllPriceBar.xib */; };
 		38BF9548206E5D6100F8294A /* OrderGoodlistCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38BF9546206E5D6100F8294A /* OrderGoodlistCell.swift */; };
 		38BF9549206E5D6100F8294A /* OrderGoodlistCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 38BF9547206E5D6100F8294A /* OrderGoodlistCell.xib */; };
+		38D55362207C832100DD36F6 /* ChoseAddressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38D55361207C832100DD36F6 /* ChoseAddressView.swift */; };
+		38D5536A207C91CF00DD36F6 /* AddressPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38D55369207C91CF00DD36F6 /* AddressPicker.swift */; };
+		38D5536D207C968200DD36F6 /* JJCheckNetwork.m in Sources */ = {isa = PBXBuildFile; fileRef = 38D5536C207C968200DD36F6 /* JJCheckNetwork.m */; };
+		38D55371207C977800DD36F6 /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 38D55370207C977800DD36F6 /* Reachability.m */; };
 		38EE01532043F29D0050759A /* CustomNaviBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38EE01522043F29D0050759A /* CustomNaviBar.swift */; };
 		38EE015620442D3B0050759A /* swiftHeaderFile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38EE015520442D3B0050759A /* swiftHeaderFile.swift */; };
 		38EE015920455F8A0050759A /* InformationVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38EE015820455F8A0050759A /* InformationVC.swift */; };
@@ -318,6 +322,7 @@
 		386CAFEF206100FD006E32DF /* SelectConditionVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectConditionVC.swift; sourceTree = "<group>"; };
 		386CAFF2206111F6006E32DF /* SelecHeaderButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelecHeaderButton.swift; sourceTree = "<group>"; };
 		386CAFF4206113BD006E32DF /* SelectAreaView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectAreaView.swift; sourceTree = "<group>"; };
+		386D69EF207C5B5F00EEA6B9 /* address.db */ = {isa = PBXFileReference; lastKnownFileType = file; path = address.db; sourceTree = "<group>"; };
 		387B6F26205A571F00E6D916 /* ZCycleLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZCycleLayout.swift; sourceTree = "<group>"; };
 		387B6F27205A571F00E6D916 /* ZCycleView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZCycleView.swift; sourceTree = "<group>"; };
 		387B6F28205A571F00E6D916 /* ZCycleViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZCycleViewCell.swift; sourceTree = "<group>"; };
@@ -415,6 +420,12 @@
 		38BF9544206E531600F8294A /* OrderAllPriceBar.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OrderAllPriceBar.xib; sourceTree = "<group>"; };
 		38BF9546206E5D6100F8294A /* OrderGoodlistCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderGoodlistCell.swift; sourceTree = "<group>"; };
 		38BF9547206E5D6100F8294A /* OrderGoodlistCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OrderGoodlistCell.xib; sourceTree = "<group>"; };
+		38D55361207C832100DD36F6 /* ChoseAddressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChoseAddressView.swift; sourceTree = "<group>"; };
+		38D55369207C91CF00DD36F6 /* AddressPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddressPicker.swift; sourceTree = "<group>"; };
+		38D5536B207C968200DD36F6 /* JJCheckNetwork.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JJCheckNetwork.h; sourceTree = "<group>"; };
+		38D5536C207C968200DD36F6 /* JJCheckNetwork.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JJCheckNetwork.m; sourceTree = "<group>"; };
+		38D5536F207C977800DD36F6 /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Reachability.h; sourceTree = "<group>"; };
+		38D55370207C977800DD36F6 /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Reachability.m; sourceTree = "<group>"; };
 		38EE01522043F29D0050759A /* CustomNaviBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomNaviBar.swift; sourceTree = "<group>"; };
 		38EE015520442D3B0050759A /* swiftHeaderFile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = swiftHeaderFile.swift; sourceTree = "<group>"; };
 		38EE015820455F8A0050759A /* InformationVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InformationVC.swift; sourceTree = "<group>"; };
@@ -1082,6 +1093,17 @@
 			path = OrderAllPriceBar;
 			sourceTree = "<group>";
 		};
+		38D5536E207C96B500DD36F6 /* NetStatus */ = {
+			isa = PBXGroup;
+			children = (
+				38D5536B207C968200DD36F6 /* JJCheckNetwork.h */,
+				38D5536C207C968200DD36F6 /* JJCheckNetwork.m */,
+				38D5536F207C977800DD36F6 /* Reachability.h */,
+				38D55370207C977800DD36F6 /* Reachability.m */,
+			);
+			path = NetStatus;
+			sourceTree = "<group>";
+		};
 		38EE015720455EB80050759A /* Information_资讯 */ = {
 			isa = PBXGroup;
 			children = (
@@ -1216,6 +1238,8 @@
 		38FD686F204020F400B19A42 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				387B6F25205A571F00E6D916 /* ZCycleView */,
+				382EF41B205FBA5200F3A33B /* SYATopScrollviewVC */,
 				389BC5F3206BB31900CC776F /* AppConfig.h */,
 				389BC5F2206BB31900CC776F /* AppConfig.m */,
 				384625F5207A2F4700D88EDD /* MBHUDToast.h */,
@@ -1223,8 +1247,6 @@
 				387D5564206A14990073F934 /* JIStepper.swift */,
 				389AA0B12071DD2E009AC93C /* JITextView.h */,
 				389AA0B22071DD2E009AC93C /* JITextView.m */,
-				382EF41B205FBA5200F3A33B /* SYATopScrollviewVC */,
-				387B6F25205A571F00E6D916 /* ZCycleView */,
 				38F7636B20593950002C1999 /* iCarousel.h */,
 				38F7636C20593950002C1999 /* iCarousel.m */,
 				388004C6204FAAEE00FE9DD0 /* JsonTransform.swift */,
@@ -1239,6 +1261,7 @@
 		38FD6870204020FA00B19A42 /* Resource */ = {
 			isa = PBXGroup;
 			children = (
+				386D69EF207C5B5F00EEA6B9 /* address.db */,
 				38BF9534206DE67500F8294A /* DINOT-CondBlack_0.otf */,
 				38BF9535206DE68F00F8294A /* msyh.ttf */,
 				38FD9A3E2040FD9E0090D978 /* Images.xcassets */,
@@ -1256,6 +1279,7 @@
 				38FD687C204026D200B19A42 /* NetAPI.swift */,
 				388004C8204FD58200FE9DD0 /* NetError.swift */,
 				38374F16207B6E4C005F026B /* base */,
+				38D5536E207C96B500DD36F6 /* NetStatus */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -1300,6 +1324,8 @@
 			children = (
 				389AA0AD2071CF92009AC93C /* CreateNewAdresVC.swift */,
 				389AA0AE2071CF92009AC93C /* CreateNewAdresVC.xib */,
+				38D55361207C832100DD36F6 /* ChoseAddressView.swift */,
+				38D55369207C91CF00DD36F6 /* AddressPicker.swift */,
 			);
 			path = CreateAddress;
 			sourceTree = "<group>";
@@ -1527,6 +1553,7 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-GreateSmart/Pods-GreateSmart-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/AFNetworking/AFNetworking.framework",
+				"${BUILT_PRODUCTS_DIR}/FMDB/FMDB.framework",
 				"${BUILT_PRODUCTS_DIR}/IQKeyboardManager/IQKeyboardManager.framework",
 				"${BUILT_PRODUCTS_DIR}/KeychainAccess/KeychainAccess.framework",
 				"${BUILT_PRODUCTS_DIR}/Kingfisher/Kingfisher.framework",
@@ -1538,6 +1565,7 @@
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AFNetworking.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FMDB.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/IQKeyboardManager.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/KeychainAccess.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Kingfisher.framework",
@@ -1588,6 +1616,7 @@
 				38F64236205900F9004A75DF /* TimeReCCollectView.swift in Sources */,
 				384EE4452057699600D2BCB6 /* NatureModel.swift in Sources */,
 				38FD686E2040207A00B19A42 /* XIB.swift in Sources */,
+				38D5536D207C968200DD36F6 /* JJCheckNetwork.m in Sources */,
 				38F76371205940BA002C1999 /* HotSaleCell.swift in Sources */,
 				387B6F2D205A571F00E6D916 /* ZPageControl.swift in Sources */,
 				38FD686420401E4F00B19A42 /* UIView+viewFrame.m in Sources */,
@@ -1611,6 +1640,7 @@
 				387D4976205BCC1B0059BB20 /* RightGoodsView.swift in Sources */,
 				3821301C204D465000F1413C /* ItemCell.swift in Sources */,
 				38FD9A43204112960090D978 /* BannerModel.swift in Sources */,
+				38D55362207C832100DD36F6 /* ChoseAddressView.swift in Sources */,
 				38B8799F204155A00080BB3C /* GoodListVC.swift in Sources */,
 				387D55552068FC1C0073F934 /* AddCartGoodConfigTableView.swift in Sources */,
 				38B879A6204268A60080BB3C /* SearchVC.swift in Sources */,
@@ -1688,6 +1718,7 @@
 				389BC5EF206BA39700CC776F /* NSDictionary+extend.m in Sources */,
 				FA13949E2072746D008D6F68 /* AddressControl.swift in Sources */,
 				38F7636D20593950002C1999 /* iCarousel.m in Sources */,
+				38D5536A207C91CF00DD36F6 /* AddressPicker.swift in Sources */,
 				38B879AA20426A3F0080BB3C /* BaseControl.swift in Sources */,
 				389040D320634CC700277974 /* SelecHeadView.swift in Sources */,
 				38437B452058E71B00F7FE2F /* NatureView.swift in Sources */,
@@ -1712,6 +1743,7 @@
 				38EE015B2045778E0050759A /* JJTextField.swift in Sources */,
 				38EE015620442D3B0050759A /* swiftHeaderFile.swift in Sources */,
 				389BC610206CD75C00CC776F /* NetworkHUD.m in Sources */,
+				38D55371207C977800DD36F6 /* Reachability.m in Sources */,
 				382EF40A205F914100F3A33B /* GoodDetailsTableView.swift in Sources */,
 				387D554F2068E4650073F934 /* AddToCartControl.swift in Sources */,
 				387D553A206895E60073F934 /* AccountTableView.swift in Sources */,

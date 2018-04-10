@@ -12,6 +12,8 @@
 #import "MBProgressHUD.h"
 #import "NSObject+conversion.h"
 //#import <objc/runtime.h>
+#import "JJCheckNetwork.h"
+#import "MBHUDToast.h"
 
 @implementation NetworkHUD
 
@@ -116,10 +118,19 @@ static NetworkHUD* _ins = nil;
     });
 }
 
+- (void)showToast {
+    [MBHUDToast showMsg:@"网络来了大姨妈"];
+}
+
 #pragma mark -
 
 - (void)request:(NetType)type URL:(NSString*)url formHeader:(NSDictionary*)formHeaderDict params:(id)params success:(SUCC)success fail:(FAIL)failure showHUD:(BOOL)showhud
 {
+    if ([JJCheckNetwork checkInternetStatus]==0) {
+        [self showToast];
+        return;
+    }
+    
     if (showhud) [self showHUD];
     dispatch_async(dispatch_get_global_queue( DISPATCH_QUEUE_PRIORITY_LOW, 0), ^{
         [[AFBaseNetwork shareIns] request:type URL:url formHeader:formHeaderDict params:params success:^(id responseObject) {
@@ -156,6 +167,11 @@ static NetworkHUD* _ins = nil;
                fail:(void (^)(NSURLSessionDataTask*, NSError*))failBlock
             showHUD:(BOOL)showhud
 {
+    if ([JJCheckNetwork checkInternetStatus]==0) {
+         [self showToast];
+        return;
+    }
+    
     if (showhud) [self showHUD];
     
     dispatch_async(dispatch_get_global_queue( DISPATCH_QUEUE_PRIORITY_LOW, 0), ^{
@@ -181,6 +197,11 @@ static NetworkHUD* _ins = nil;
  */
 - (void)request:(NetType)type URL:(NSString*)fullURL paramsEntity:(id)entity success:(SUCC)success fail:(FAIL)failure showHUD:(BOOL)showhud
 {
+    if ([JJCheckNetwork checkInternetStatus]==0) {
+         [self showToast];
+        return;
+    }
+    
     if (showhud) [self showHUD];
     
     dispatch_async(dispatch_get_global_queue( DISPATCH_QUEUE_PRIORITY_LOW, 0), ^{
@@ -201,6 +222,11 @@ static NetworkHUD* _ins = nil;
  */
 - (void)request:(NetType)_type URL:(NSString*)_url paramsDict:(NSDictionary*)_parameter success:(SUCC)_success fail:(FAIL)_failure showHUD:(BOOL)showhud
 {
+    if ([JJCheckNetwork checkInternetStatus]==0) {
+         [self showToast];
+        return;
+    }
+    
     if (showhud) [self showHUD];
     
     dispatch_async(dispatch_get_global_queue( DISPATCH_QUEUE_PRIORITY_LOW, 0), ^{

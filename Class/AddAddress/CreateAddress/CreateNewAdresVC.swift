@@ -8,7 +8,7 @@
 
 import UIKit
 
-class CreateNewAdresVC: BaseUIViewController {
+class CreateNewAdresVC: BaseUIViewController,UITextFieldDelegate {
 
     var model: AddressModel?
     
@@ -57,6 +57,9 @@ class CreateNewAdresVC: BaseUIViewController {
             areaTF.text = model?.area
             addressTF.text = model?.address
         }
+        
+        areaTF.delegate = self
+        
     }
     
     func complete() -> Void {
@@ -143,5 +146,14 @@ class CreateNewAdresVC: BaseUIViewController {
         
         NotificationCenter.default.post(name: NSNotification.Name(notifyReloadAddress), object: nil)
     }
+    
+    //MARK:-
+    func textFieldShouldBeginEditing(_ textField: UITextField) -> Bool {
+        delog("")
+        let choseAdresView = ChoseAddressView.init()
+        self.view.addSubview(choseAdresView)
+        return false
+    }
+    
 
 }

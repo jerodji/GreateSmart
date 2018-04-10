@@ -34,6 +34,8 @@
 #import "NetworkHUD.h"
 #import "JITextView.h"
 #import "MBHUDToast.h"
+#import "JJCheckNetwork.h"
+
 
 #pragma mark ------------ CocoaPod ------------
 
@@ -56,6 +58,7 @@
 
 #import "MJRefresh.h"
 
+#import "FMDB.h"
 
 @interface OCHeaderFile : NSObject
 

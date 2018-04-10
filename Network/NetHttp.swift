@@ -58,16 +58,15 @@ class NetHttp: NSObject {
             info(res!)
             
         }, fail: { (task, error) in
-            
-            //登录失败后重复三次
-            if self.loginNum < 3 {
-                self.loginNum += 1
-                self.OAuthToken(formBody: formBody, info: info)
-            } else {
-                self.loginNum = 0
-                delog("登录失败")
-//                NetError.ins.handleInfo(task: task, error: error as NSError?)
-            }
+            delog("登录失败")
+//            //登录失败后重复三次
+//            if self.loginNum < 3 {
+//                self.loginNum += 1
+//                self.OAuthToken(formBody: formBody, info: info)
+//            } else {
+//                self.loginNum = 0
+//                delog("登录失败")
+//            }
             
         }, showHUD: true)
         
@@ -102,8 +101,8 @@ class NetHttp: NSObject {
             if data != nil {
                 delog("token刷新了 \(data!)")
                 
-                NetError.ins.succHandleError(response: ponse, data: data!, type: NetType.POST, url: NetAPI.ins.refresh_token, formHeader: nil, formBody: body as NSDictionary, params: nil, callback: { (hand) in
-//                    info(res!)
+                NetError.ins.succHandleError(response: ponse, data: data!, type: NetType.POST, url: NetAPI.ins.refresh_token, formHeader: nil, formBody: body as NSDictionary, params: nil, callback: { (cbresponse) in
+                    info(cbresponse)
                 }, info: info)
             }
             
@@ -136,6 +135,7 @@ extension NetHttp {
 extension NetHttp {
     
     /// 添加收货地址
+    
     func addAddress(params:NSDictionary?, succCb: @escaping (Any)->Void ) -> Void {
         
         NetworkHUD.shareIns().request(.POST, url: NetAPI.ins.addAddress, formHeader: formHeaderAuthorization(), params: params as! [AnyHashable : Any], success: { (res) in

@@ -85,10 +85,14 @@ class OrderVC: BaseUIViewController {
     @objc func addressAction () -> Void {
         let vc = AddAddressVC()
         vc.naviBar.titleLab.text = "选择地址"
+        
+        weak var wkVC = vc
+        weak var wkself = self
         vc.adrsCl?.selecCb = { model in
-            self.orderAdrsCtrl?.adrsModel = model
-            vc.navigationController?.popViewController(animated: true)
+            wkself?.orderAdrsCtrl?.adrsModel = model
+            wkVC?.navigationController?.popViewController(animated: true)
         }
+        
         self.navigationController?.pushViewController(vc, animated: true)
     }
     
