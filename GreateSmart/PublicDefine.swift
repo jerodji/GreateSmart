@@ -52,7 +52,7 @@ func delog(_ msg:Any,file:String = #file,funcName:String = #function,lineNum:Int
         let formatter = DateFormatter()
         formatter.dateFormat = "yyyy-MM-dd HH:mm:ss:SSS"
         let datestr:String = formatter.string(from: Date())
-        print("[DELOG] \(datestr) \(fileName)[\(lineNum)] \(funcName) :",msg/*,"\n"*/)
+        print("[DELOG] \(datestr) \(fileName)[\(lineNum)] \(funcName) :\n",msg/*,"\n"*/)
     #endif
 }
  

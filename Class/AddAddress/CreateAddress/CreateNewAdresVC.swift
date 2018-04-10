@@ -149,7 +149,6 @@ class CreateNewAdresVC: BaseUIViewController,UITextFieldDelegate {
     
     //MARK:-
     func textFieldShouldBeginEditing(_ textField: UITextField) -> Bool {
-        delog("")
         let choseAdresView = ChoseAddressView.init()
         self.view.addSubview(choseAdresView)
         return false

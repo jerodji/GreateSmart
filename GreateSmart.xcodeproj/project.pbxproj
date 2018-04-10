@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		12F29E0B0732CFC549BCF754 /* Pods_GreateSmart.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AFE5A3FFF7CEC461A4847CB6 /* Pods_GreateSmart.framework */; };
 		38172C5520649FE7002ED9AD /* SelecBtnsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38172C5420649FE7002ED9AD /* SelecBtnsView.swift */; };
 		38172C582064F5A7002ED9AD /* CartBottomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38172C572064F5A7002ED9AD /* CartBottomView.swift */; };
 		38172C5A2064F5B3002ED9AD /* CartBottomView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 38172C592064F5B3002ED9AD /* CartBottomView.xib */; };
@@ -170,6 +169,8 @@
 		38D5536A207C91CF00DD36F6 /* AddressPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38D55369207C91CF00DD36F6 /* AddressPicker.swift */; };
 		38D5536D207C968200DD36F6 /* JJCheckNetwork.m in Sources */ = {isa = PBXBuildFile; fileRef = 38D5536C207C968200DD36F6 /* JJCheckNetwork.m */; };
 		38D55371207C977800DD36F6 /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 38D55370207C977800DD36F6 /* Reachability.m */; };
+		38D55372207CAF5C00DD36F6 /* address.db in Resources */ = {isa = PBXBuildFile; fileRef = 386D69EF207C5B5F00EEA6B9 /* address.db */; };
+		38D5537B207CC30200DD36F6 /* PCAModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38D5537A207CC30200DD36F6 /* PCAModel.swift */; };
 		38EE01532043F29D0050759A /* CustomNaviBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38EE01522043F29D0050759A /* CustomNaviBar.swift */; };
 		38EE015620442D3B0050759A /* swiftHeaderFile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38EE015520442D3B0050759A /* swiftHeaderFile.swift */; };
 		38EE015920455F8A0050759A /* InformationVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38EE015820455F8A0050759A /* InformationVC.swift */; };
@@ -261,9 +262,6 @@
 		38213003204948EA00F1413C /* JJRealmManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JJRealmManager.swift; sourceTree = "<group>"; };
 		3821300B204A9C4600F1413C /* OCHeaderFile.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OCHeaderFile.h; sourceTree = "<group>"; };
 		3821300C204A9C4600F1413C /* OCHeaderFile.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OCHeaderFile.m; sourceTree = "<group>"; };
-		38213013204AA09A00F1413C /* AFNetworking.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = AFNetworking.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		38213015204AA58200F1413C /* AFNetworking.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = AFNetworking.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		38213017204AA58800F1413C /* SnapKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = SnapKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		38213018204D429600F1413C /* ItemTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemTableView.swift; sourceTree = "<group>"; };
 		3821301A204D465000F1413C /* ItemCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemCell.swift; sourceTree = "<group>"; };
 		38213020204D568000F1413C /* GreateSmartDefine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GreateSmartDefine.swift; sourceTree = "<group>"; };
@@ -426,6 +424,8 @@
 		38D5536C207C968200DD36F6 /* JJCheckNetwork.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JJCheckNetwork.m; sourceTree = "<group>"; };
 		38D5536F207C977800DD36F6 /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Reachability.h; sourceTree = "<group>"; };
 		38D55370207C977800DD36F6 /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Reachability.m; sourceTree = "<group>"; };
+		38D55375207CB0DA00DD36F6 /* GreateSmart-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "GreateSmart-Bridging-Header.h"; path = "GreateSmart/Bridging/GreateSmart-Bridging-Header.h"; sourceTree = SOURCE_ROOT; };
+		38D5537A207CC30200DD36F6 /* PCAModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PCAModel.swift; sourceTree = "<group>"; };
 		38EE01522043F29D0050759A /* CustomNaviBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomNaviBar.swift; sourceTree = "<group>"; };
 		38EE015520442D3B0050759A /* swiftHeaderFile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = swiftHeaderFile.swift; sourceTree = "<group>"; };
 		38EE015820455F8A0050759A /* InformationVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InformationVC.swift; sourceTree = "<group>"; };
@@ -456,7 +456,6 @@
 		38F9CA7A202FED60004D105D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		38F9CA88202FEF92004D105D /* SDWebImage.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = SDWebImage.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		38F9CA8A202FEFF7004D105D /* SDWebImage.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = SDWebImage.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		38F9CA8E20300167004D105D /* GreateSmart-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "GreateSmart-Bridging-Header.h"; path = "Config/GreateSmart-Bridging-Header.h"; sourceTree = SOURCE_ROOT; };
 		38FD685020401E4D00B19A42 /* NSObject+isNull.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+isNull.h"; sourceTree = "<group>"; };
 		38FD685120401E4D00B19A42 /* UIViewController+XIB.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+XIB.m"; sourceTree = "<group>"; };
 		38FD685320401E4D00B19A42 /* NSObject+isNull.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+isNull.m"; sourceTree = "<group>"; };
@@ -485,7 +484,6 @@
 		38FD9A44204115160090D978 /* BaseUITableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseUITableView.swift; sourceTree = "<group>"; };
 		38FD9A48204116DF0090D978 /* TabbarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabbarController.swift; sourceTree = "<group>"; };
 		AD1A70950CD1707D4D6B1553 /* Pods-GreateSmart.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GreateSmart.debug.xcconfig"; path = "Pods/Target Support Files/Pods-GreateSmart/Pods-GreateSmart.debug.xcconfig"; sourceTree = "<group>"; };
-		AFE5A3FFF7CEC461A4847CB6 /* Pods_GreateSmart.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GreateSmart.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D64C8E0F66D55CC3EC66E617 /* Pods_GreateSmart.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GreateSmart.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FA13949820581CF4008D6F68 /* ForMaleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForMaleView.swift; sourceTree = "<group>"; };
 		FA13949A20581DC7008D6F68 /* ForMaleView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ForMaleView.xib; sourceTree = "<group>"; };
@@ -503,7 +501,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				38212FFD2049473C00F1413C /* Pods_GreateSmart.framework in Frameworks */,
-				12F29E0B0732CFC549BCF754 /* Pods_GreateSmart.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -594,17 +591,6 @@
 				381C62F920464C5500A9066C /* ResultVC.swift */,
 			);
 			path = result;
-			sourceTree = "<group>";
-		};
-		381C63272049458900A9066C /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				38213017204AA58800F1413C /* SnapKit.framework */,
-				38213015204AA58200F1413C /* AFNetworking.framework */,
-				38213013204AA09A00F1413C /* AFNetworking.framework */,
-				AFE5A3FFF7CEC461A4847CB6 /* Pods_GreateSmart.framework */,
-			);
-			path = Frameworks;
 			sourceTree = "<group>";
 		};
 		382EF402205F65C500F3A33B /* GoodDetails */ = {
@@ -971,15 +957,15 @@
 			path = AddAddress;
 			sourceTree = "<group>";
 		};
-		389BC603206C936100CC776F /* Config */ = {
+		389BC603206C936100CC776F /* Bridging */ = {
 			isa = PBXGroup;
 			children = (
 				38EE015520442D3B0050759A /* swiftHeaderFile.swift */,
-				38F9CA8E20300167004D105D /* GreateSmart-Bridging-Header.h */,
+				38D55375207CB0DA00DD36F6 /* GreateSmart-Bridging-Header.h */,
 				3821300B204A9C4600F1413C /* OCHeaderFile.h */,
 				3821300C204A9C4600F1413C /* OCHeaderFile.m */,
 			);
-			path = Config;
+			path = Bridging;
 			sourceTree = "<group>";
 		};
 		389BC616206D021A00CC776F /* OrderAddress */ = {
@@ -1115,16 +1101,14 @@
 		38F9CA4C202FED60004D105D = {
 			isa = PBXGroup;
 			children = (
-				38F9CA57202FED60004D105D /* GreateSmart */,
-				38F9CA86202FED89004D105D /* ClassTab */,
 				381C630B2046C86500A9066C /* Class */,
+				38F9CA86202FED89004D105D /* ClassTab */,
 				38F9CA8D203000DC004D105D /* Base */,
 				38FD68792040262200B19A42 /* Network */,
-				389BC603206C936100CC776F /* Config */,
 				38FD686F204020F400B19A42 /* Utils */,
 				38F9CA8C203000B5004D105D /* Category */,
 				38FD6870204020FA00B19A42 /* Resource */,
-				381C63272049458900A9066C /* Frameworks */,
+				38F9CA57202FED60004D105D /* GreateSmart */,
 				38F9CA6C202FED60004D105D /* GreateSmartTests */,
 				38F9CA77202FED60004D105D /* GreateSmartUITests */,
 				38F9CA56202FED60004D105D /* Products */,
@@ -1146,6 +1130,7 @@
 		38F9CA57202FED60004D105D /* GreateSmart */ = {
 			isa = PBXGroup;
 			children = (
+				389BC603206C936100CC776F /* Bridging */,
 				38F9CA58202FED60004D105D /* AppDelegate.swift */,
 				38F9CA64202FED60004D105D /* Info.plist */,
 				38FD9A48204116DF0090D978 /* TabbarController.swift */,
@@ -1326,6 +1311,7 @@
 				389AA0AE2071CF92009AC93C /* CreateNewAdresVC.xib */,
 				38D55361207C832100DD36F6 /* ChoseAddressView.swift */,
 				38D55369207C91CF00DD36F6 /* AddressPicker.swift */,
+				38D5537A207CC30200DD36F6 /* PCAModel.swift */,
 			);
 			path = CreateAddress;
 			sourceTree = "<group>";
@@ -1465,6 +1451,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				38D55372207CAF5C00DD36F6 /* address.db in Resources */,
 				38BF9536206DE6D300F8294A /* DINOT-CondBlack_0.otf in Resources */,
 				38BF9537206DE6D700F8294A /* msyh.ttf in Resources */,
 				387B6F43205A99E800E6D916 /* UserServceCell.xib in Resources */,
@@ -1676,6 +1663,7 @@
 				38213004204948EA00F1413C /* JJRealmManager.swift in Sources */,
 				384EE4582057EB8800D2BCB6 /* HotInStoreControl.swift in Sources */,
 				387D4971205BA4070059BB20 /* SortButton.swift in Sources */,
+				38D5537B207CC30200DD36F6 /* PCAModel.swift in Sources */,
 				38BF953D206E2C5300F8294A /* UIView+extend.m in Sources */,
 				389BC602206C8F3B00CC776F /* AddressModel.swift in Sources */,
 				FA1394A020727480008D6F68 /* AddressTableView.swift in Sources */,
@@ -1951,7 +1939,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "3f3f8134-3605-410d-9f31-56d2a4a2dd80";
 				PROVISIONING_PROFILE_SPECIFIER = DEV_dacongming;
-				SWIFT_OBJC_BRIDGING_HEADER = "${SRCROOT}/Config/GreateSmart-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "${SRCROOT}/GreateSmart/Bridging/GreateSmart-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = 1;
@@ -1982,7 +1970,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "7b3e941b-6d7b-4a9f-9498-72de3b789e6e";
 				PROVISIONING_PROFILE_SPECIFIER = DIS_dacongming;
-				SWIFT_OBJC_BRIDGING_HEADER = "${SRCROOT}/Config/GreateSmart-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "${SRCROOT}/GreateSmart/Bridging/GreateSmart-Bridging-Header.h";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = 1;
 				USER_HEADER_SEARCH_PATHS = "$(SRCROOT)/** $(SRCROOT)/Pods $(SRCROOT)/Pods/KeychainAccess";

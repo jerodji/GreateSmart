@@ -15,12 +15,11 @@ private let pickerY = (kScreenH-pickerH)
 
 class ChoseAddressView: BaseUIView {
 
+    var picker : AddressPicker = AddressPicker.init()
+    
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
     }
-    
-    var picker : AddressPicker = AddressPicker.init()
-    
     
     init() {
         super.init(frame: CGRect(x: 0, y: 0, width: kScreenW, height: kScreenH))
@@ -34,25 +33,4 @@ class ChoseAddressView: BaseUIView {
         self.removeFromSuperview()
     }
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    /*
-    // Only override draw() if you perform custom drawing.
-    // An empty implementation adversely affects performance during animation.
-    override func draw(_ rect: CGRect) {
-        // Drawing code
-    }
-    */
-
 }
