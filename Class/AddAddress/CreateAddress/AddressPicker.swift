@@ -100,7 +100,6 @@ class AddressPicker: BaseControl,UIPickerViewDelegate,UIPickerViewDataSource {
     }
     
     
-    
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
         return 3
     }
