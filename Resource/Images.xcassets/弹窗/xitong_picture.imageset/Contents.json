@@ -2,12 +2,11 @@
   "images" : [
     {
       "idiom" : "universal",
-      "filename" : "yaoqing@1x.png",
+      "filename" : "xitong_picture.png",
       "scale" : "1x"
     },
     {
       "idiom" : "universal",
-      "filename" : "yaoqing@2x.png",
       "scale" : "2x"
     },
     {
