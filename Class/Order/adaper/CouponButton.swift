@@ -45,13 +45,5 @@ class CouponButton: UIButton {
         descriptionLabel.frame = CGRect.init(x: 10, y: 0, width: w-10-40, height: h)
         return CGRect.init(x: w-20-6, y: (h-10)/2, width: 6, height: 10)
     }
-    
-    /*
-    // Only override draw() if you perform custom drawing.
-    // An empty implementation adversely affects performance during animation.
-    override func draw(_ rect: CGRect) {
-        // Drawing code
-    }
-    */
 
 }

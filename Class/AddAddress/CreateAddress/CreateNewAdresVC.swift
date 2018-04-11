@@ -10,6 +10,7 @@ import UIKit
 
 class CreateNewAdresVC: BaseUIViewController,UITextFieldDelegate {
 
+    /// 修改地址 传入的model
     var model: AddressModel?
     
     @IBOutlet weak var nameTF: UITextField!
@@ -17,10 +18,18 @@ class CreateNewAdresVC: BaseUIViewController,UITextFieldDelegate {
     @IBOutlet weak var areaTF: UITextField!
     @IBOutlet weak var addressTF: JITextView!
     
-    private var name : String?
-    private var phone : String?
-    private var area : String?
-    private var address : String?
+    private var areaTFText : String = ""
+    private var province : String = ""
+    private var city : String = ""
+    private var area : String = ""
+    
+    private var name : String = ""
+    private var phone : String = ""
+    private var address : String = ""
+    
+//    deinit {
+//        NotificationCenter.default.removeObserver(self, name: NSNotification.Name(notifyPCA), object: nil)
+//    }
     
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
@@ -52,12 +61,13 @@ class CreateNewAdresVC: BaseUIViewController,UITextFieldDelegate {
         
         //修改地址传过来的model
         if model != nil {
-            nameTF.text = model?.receiver
-            phoneTF.text = model?.phonenum
-            areaTF.text = model?.area
-            addressTF.text = model?.address
+            nameTF.text = model!.receiver
+            phoneTF.text = model!.phonenum
+            areaTF.text = model!.province + " " + model!.city + " " + model!.area
+            addressTF.text = model!.address
         }
         
+        //NotificationCenter.default.addObserver(self, selector: #selector(notifyArea(notify:)), name: NSNotification.Name(notifyPCA), object: nil)
         areaTF.delegate = self
         
     }
@@ -67,9 +77,21 @@ class CreateNewAdresVC: BaseUIViewController,UITextFieldDelegate {
         if model == nil
         {
             //设置地址
-            name = nameTF.text
-            phone = phoneTF.text
-            area = areaTF.text
+            name = nameTF.text!
+            phone = phoneTF.text!
+            
+            areaTFText = areaTF.text!
+            let arr = areaTFText.components(separatedBy:" ")
+            if arr.count > 0 {
+                province = arr[0]
+                if arr.count > 1 {
+                    city = arr[1]
+                    if arr.count > 2 {
+                        area = arr[2]
+                    }
+                }
+            }
+            
             address = addressTF.text
             
             if IsNull(name) {
@@ -90,8 +112,8 @@ class CreateNewAdresVC: BaseUIViewController,UITextFieldDelegate {
                     "userAddress":[
                         "receiver":name,
                         "phonenum":phone,
-                        "province":"江苏省",/*省*/
-                        "city"    :"上海市",/*市*/
+                        "province":province,/*省*/
+                        "city"    :city,/*市*/
                         "area"    :area,/*区*/
                         "address" :address/*具体地址*/
                     ]
@@ -105,9 +127,21 @@ class CreateNewAdresVC: BaseUIViewController,UITextFieldDelegate {
         else
         {
             //修改地址
-            name = nameTF.text
-            phone = phoneTF.text
-            area = areaTF.text
+            name = nameTF.text!
+            phone = phoneTF.text!
+            
+            areaTFText = areaTF.text!
+            let arr = areaTFText.components(separatedBy:" ")
+            if arr.count > 0 {
+                province = arr[0]
+                if arr.count > 1 {
+                    city = arr[1]
+                    if arr.count > 2 {
+                        area = arr[2]
+                    }
+                }
+            }
+            
             address = addressTF.text
             
             if IsNull(name) {
@@ -127,12 +161,12 @@ class CreateNewAdresVC: BaseUIViewController,UITextFieldDelegate {
                     "isdefalut":model!.defaultAddressId,
                     "userAddress":[
                         "id"      :Int.init(model!.adrsId) ?? -1,
-                        "receiver":name!,
-                        "phonenum":phone!,
-                        "province":"江苏省", /*省*/
-                        "city"    :"上海市", /*市*/
-                        "area"    :area!,   /*区*/
-                        "address" :address! /*具体地址*/
+                        "receiver":name,
+                        "phonenum":phone,
+                        "province":province, /*省*/
+                        "city"    :city, /*市*/
+                        "area"    :area,   /*区*/
+                        "address" :address /*具体地址*/
                     ]
                 ]
                 
@@ -147,9 +181,19 @@ class CreateNewAdresVC: BaseUIViewController,UITextFieldDelegate {
         NotificationCenter.default.post(name: NSNotification.Name(notifyReloadAddress), object: nil)
     }
     
+//    @objc func notifyArea(notify:NSNotification)->() {
+//        let obj = notify.object as! String
+//        delog(obj)
+//        areaTF.text = obj
+//    }
+    
     //MARK:-
     func textFieldShouldBeginEditing(_ textField: UITextField) -> Bool {
         let choseAdresView = ChoseAddressView.init()
+        choseAdresView.areaCb = { area in
+            delog(area)
+            self.areaTF.text = area
+        }
         self.view.addSubview(choseAdresView)
         return false
     }
