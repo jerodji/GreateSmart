@@ -1,6 +1,7 @@
 # GreateSmart
 
-GreateSmart
+大聪明
+商城2.0
 
 MVCC模式分层分模架构,利用CocoaPod管理框架
 
@@ -27,5 +28,4 @@ Utils - 工具文件
 Category - 扩展文件
 
 Resource - 资源文件
-
 
