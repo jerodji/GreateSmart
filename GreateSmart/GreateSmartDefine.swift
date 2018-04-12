@@ -78,7 +78,7 @@ func heightNature(elemCount:Int) -> CGFloat {
 
 //MARK:- ----------------- 通知 ----------------
 let notifyReloadAddress = "notifyReloadAddress"
-
+let notifyPCA = "notifyprovincecieyarea"
 
 class GreateSmartDefine: NSObject {
 }

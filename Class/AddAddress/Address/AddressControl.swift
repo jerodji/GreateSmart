@@ -104,7 +104,7 @@ class AddressControl: BaseControl,UITableViewDelegate,UITableViewDataSource {
         
         cell.nameLab.text = model.receiver
         cell.phoneLab.text = model.phonenum
-        cell.addressLab.text = model.province + model.city + model.area + model.address
+        cell.addressLab.text = model.province + " " + model.city + " " + model.area + " " + model.address
         if model.defaultAddressId==1 {
             cell.setDefBtn.setImage(UIImage.init(named: "xuanzhogn2"), for: .normal)
         } else {
@@ -158,9 +158,9 @@ class AddressControl: BaseControl,UITableViewDelegate,UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         if indexPath.row == 0 {
-            return 165
+            return 180
         }
-        return 110
+        return 125
     }
     
     

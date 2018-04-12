@@ -8,13 +8,9 @@
 
 import UIKit
 
-//class PCAModel: BaseModel {
-//
-//}
-
 class ProvinceModel: BaseModel {
     @objc var provinceId: Int32 = 0
-    @objc var provinceName: String = "" /** 名字的3 */
+    @objc var provinceName: String = ""
     @objc var cityArray : NSMutableArray = []
 }
 
