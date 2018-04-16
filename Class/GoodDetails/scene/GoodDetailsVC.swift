@@ -71,19 +71,21 @@ class GoodDetailsVC: BaseUIViewController {
         /**
          底部栏视图
          */
+        weak var wkself = self
         cartBomView = CartBottomView.loadFromXIB()
         cartBomView?.frameXib = CGRect.init(x: 0, y: kScreenH - kTabbarH - height_bottomView, width: kScreenW, height: height_bottomView)
         view.addSubview(cartBomView!)
         view.addSubview(addtocartCtl.view!)
+        
         cartBomView?.addtoCartCB = {
-            UIView.animate(withDuration: 0.5, animations: {
-                self.addtocartCtl.view!.frame = CGRect.init(x: 0, y: 0, width: kScreenW, height: kScreenH-kTabbarH)
-            })
+//            UIView.animate(withDuration: 0.5, animations: {
+                wkself?.addtocartCtl.view!.frame = CGRect.init(x: 0, y: 0, width: kScreenW, height: kScreenH-kTabbarH)
+//            })
         }
         cartBomView?.buyCB = {
-            UIView.animate(withDuration: 0.5, animations: {
-                self.addtocartCtl.view!.frame = CGRect.init(x: 0, y: 0, width: kScreenW, height: kScreenH-kTabbarH)
-            })
+//            UIView.animate(withDuration: 0.5, animations: {
+                wkself?.addtocartCtl.view!.frame = CGRect.init(x: 0, y: 0, width: kScreenW, height: kScreenH-kTabbarH)
+//            })
         }
         
     }

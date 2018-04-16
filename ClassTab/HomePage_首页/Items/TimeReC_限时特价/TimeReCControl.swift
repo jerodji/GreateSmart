@@ -44,7 +44,7 @@ class TimeReCControl: BaseControl,UICollectionViewDelegate,UICollectionViewDataS
         
 //        let elemModel = model.data.block[index] as! TimeReCBlockElemModel
         
-        cell.imageView.kf.setImage(with: URL.init(string: model.itemTitleImage))
+        cell.imageView.jj_setImage(url: model.itemTitleImage)
         cell.littleImgVIew.isHidden = true
         cell.priceLabel.text = "¥" + model.price
         cell.nameLabel.text = model.itemName

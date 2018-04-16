@@ -150,18 +150,23 @@ class ItemTableControl: BaseControl,UITableViewDelegate,UITableViewDataSource {
     
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
         //delog("\(scrollView.contentOffset.y)")
+        
+        //banner位置
         tableView.banner.y = scrollView.contentOffset.y
         
-        tableView.banner.backgroundColor = .yellow
-        
-//        tableView.banner.isUserInteractionEnabled = false
-        if scrollView.contentOffset.y < -heightBanner {
-            tableView.banner.backgroundColor = .red
+        //下拉放大
+        if scrollView.contentOffset.y <= -heightBanner {
             tableView.banner.height = -scrollView.contentOffset.y
-            tableView.banner.cycleView1.height = -scrollView.contentOffset.y
-//            tableView.banner.isUserInteractionEnabled = true
-            //delog(tableView.banner.cycleView1.height)
+            //tableView.banner.cycleView2?.height = -scrollView.contentOffset.y
         }
+        
+        //判断是否屏蔽banner交互,以免以免影响首页模块上的交互
+        if scrollView.contentOffset.y <= -heightBanner+20 {
+            tableView.banner.isUserInteractionEnabled = true
+        } else {
+            tableView.banner.isUserInteractionEnabled = false
+        }
+        
     }
     
     //MARK:-
@@ -306,13 +311,14 @@ class ItemTableControl: BaseControl,UITableViewDelegate,UITableViewDataSource {
         }
         return 0
     }
+    
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        if section == 0 {
+            return heightTitle + 20
+        }
         return heightTitle
-//        if section <= dataTitleHeights.count-1 {
-//            return dataTitleHeights.safe_object(at: section) as! CGFloat
-//        }
-//        return 0
     }
+    
     func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
         return 0.01
     }

@@ -45,20 +45,17 @@
 
 #import <AFNetworking/AFNetworking-umbrella.h>
 
-//#import <SDWebImage/SDWebImage-umbrella.h>
+#import <SDWebImage/SDWebImage-umbrella.h>
 
-//#import "MJExtension.h"
 #import <MJExtension/MJExtension.h>
-//#import <MJExtension/MJExtension-umbrella.h>
 
 #import "IQKeyboardManager.h"
-//#import "IQKeyboardManager-umbrella.h"
-//#import <IQKeyboardManager/IQKeyboardManager.h>
-//#import <IQKeyboardManager/IQKeyboardManager-umbrella.h>
 
 #import "MJRefresh.h"
 
 #import "FMDB.h"
+
+#import "SDCycleScrollView.h"
 
 @interface OCHeaderFile : NSObject
 

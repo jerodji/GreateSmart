@@ -9,7 +9,7 @@
 import UIKit
 
 /**
- * right view 视图层逻辑
+ * right view 视图逻辑层
  */
 
 class RightGoodsView: UICollectionView,UICollectionViewDelegate,UICollectionViewDataSource {
@@ -44,7 +44,7 @@ class RightGoodsView: UICollectionView,UICollectionViewDelegate,UICollectionView
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let model = viewModel?.letfList[indexPath.row]
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "rightgoodcellid", for: indexPath) as! GoodCell
-        cell.imageView.kf.setImage(with:  URL.init(string: (model?.image)!))
+        cell.imageView.jj_setImage(url: model?.image)
         cell.priceLabel.text = "\(String(describing: model?.price ?? 0.00))"
         cell.nameLabel.text = model?.itemSkuName
         cell.decsLabel.text = model?.publicity

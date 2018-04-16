@@ -39,6 +39,7 @@ class GoodCell: UICollectionViewCell,LoadXIBView {
     }
     
     override func draw(_ rect: CGRect) {
+        //绘制圆角
         imageView.addCorner(corners: [.topLeft, .topRight], radii: 10)
     }
     

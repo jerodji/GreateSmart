@@ -39,7 +39,7 @@ class HotSaleControl: BaseControl,iCarouselDelegate, iCarouselDataSource {
         let mod = model!.data.block[index] as! HotSaleBlockElemModel
         let cell = HotSaleCell.loadFromXIB()
 //        cell.setFrame(rect)
-        cell.imageView.kf.setImage(with: URL.init(string: mod.itemTitleImage))
+        cell.imageView.jj_setImage(url: mod.itemTitleImage)
         cell.priceLabel.text = mod.price + " " + mod.originalPrice
         cell.nameLabel.text = mod.itemName
         cell.decsLabel.text = mod.publicity

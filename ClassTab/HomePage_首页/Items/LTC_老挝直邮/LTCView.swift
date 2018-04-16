@@ -31,7 +31,7 @@ class LTCView: UIView,LoadXIBView {
 //    }
     
     func image(_ url:String) -> Void {
-        imageVIew.kf.setImage(with: URL.init(string: url), placeholder: nil)
+        imageVIew.jj_setImage(url: url, complete: nil)
     }
     
     

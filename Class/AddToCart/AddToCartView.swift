@@ -25,9 +25,9 @@ class AddToCartView: BaseUIView,LoadXIBView {
     }
     
     func moveOut() -> Void {
-        UIView.animate(withDuration: 0.5) {
+//        UIView.animate(withDuration: 0.5) {
             self.frame = CGRect.init(x: 0, y: kScreenH, width: kScreenW, height: kScreenH)
-        }
+//        }
     }
     
     typealias SUREBLK = () -> ()

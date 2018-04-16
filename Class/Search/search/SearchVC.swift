@@ -34,7 +34,7 @@ class SearchVC: BaseUIViewController,UITableViewDelegate,UITableViewDataSource {
         super.loadView()
         
         let imgv = UIImageView()
-        imgv.kf.setImage(with: URL.init(string: ""))
+        imgv.jj_setImage(url: "")
         
         //MARK: 获取数据
         historyList.addObjects(from: ["111","222","333","4","5"])

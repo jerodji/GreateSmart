@@ -76,10 +76,6 @@
 		386CAFF0206100FD006E32DF /* SelectConditionVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 386CAFEF206100FD006E32DF /* SelectConditionVC.swift */; };
 		386CAFF3206111F6006E32DF /* SelecHeaderButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 386CAFF2206111F6006E32DF /* SelecHeaderButton.swift */; };
 		386CAFF5206113BD006E32DF /* SelectAreaView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 386CAFF4206113BD006E32DF /* SelectAreaView.swift */; };
-		387B6F2A205A571F00E6D916 /* ZCycleLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 387B6F26205A571F00E6D916 /* ZCycleLayout.swift */; };
-		387B6F2B205A571F00E6D916 /* ZCycleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 387B6F27205A571F00E6D916 /* ZCycleView.swift */; };
-		387B6F2C205A571F00E6D916 /* ZCycleViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 387B6F28205A571F00E6D916 /* ZCycleViewCell.swift */; };
-		387B6F2D205A571F00E6D916 /* ZPageControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 387B6F29205A571F00E6D916 /* ZPageControl.swift */; };
 		387B6F30205A72EF00E6D916 /* UserHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 387B6F2F205A72EF00E6D916 /* UserHeaderView.swift */; };
 		387B6F32205A72F700E6D916 /* UserHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 387B6F31205A72F700E6D916 /* UserHeaderView.xib */; };
 		387B6F38205A831D00E6D916 /* UserOrderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 387B6F36205A831D00E6D916 /* UserOrderCell.swift */; };
@@ -220,6 +216,8 @@
 		FA16F7B72056ECFB0094F47B /* ForMaleModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA16F7B62056ECFB0094F47B /* ForMaleModel.swift */; };
 		FA2302242080CE9400A4896A /* GoodsVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA2302232080CE9400A4896A /* GoodsVM.swift */; };
 		FA23022A2080D57700A4896A /* GoodModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA2302292080D57700A4896A /* GoodModel.swift */; };
+		FAFA4708208481E7004D91F7 /* TestHomeData.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAFA4707208481E7004D91F7 /* TestHomeData.swift */; };
+		FAFA470A208498AA004D91F7 /* setImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAFA4709208498AA004D91F7 /* setImage.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -318,10 +316,6 @@
 		386CAFEF206100FD006E32DF /* SelectConditionVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectConditionVC.swift; sourceTree = "<group>"; };
 		386CAFF2206111F6006E32DF /* SelecHeaderButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelecHeaderButton.swift; sourceTree = "<group>"; };
 		386CAFF4206113BD006E32DF /* SelectAreaView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectAreaView.swift; sourceTree = "<group>"; };
-		387B6F26205A571F00E6D916 /* ZCycleLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZCycleLayout.swift; sourceTree = "<group>"; };
-		387B6F27205A571F00E6D916 /* ZCycleView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZCycleView.swift; sourceTree = "<group>"; };
-		387B6F28205A571F00E6D916 /* ZCycleViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZCycleViewCell.swift; sourceTree = "<group>"; };
-		387B6F29205A571F00E6D916 /* ZPageControl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZPageControl.swift; sourceTree = "<group>"; };
 		387B6F2F205A72EF00E6D916 /* UserHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserHeaderView.swift; sourceTree = "<group>"; };
 		387B6F31205A72F700E6D916 /* UserHeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UserHeaderView.xib; sourceTree = "<group>"; };
 		387B6F36205A831D00E6D916 /* UserOrderCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserOrderCell.swift; sourceTree = "<group>"; };
@@ -493,6 +487,8 @@
 		FA16F7B62056ECFB0094F47B /* ForMaleModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForMaleModel.swift; sourceTree = "<group>"; };
 		FA2302232080CE9400A4896A /* GoodsVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoodsVM.swift; sourceTree = "<group>"; };
 		FA2302292080D57700A4896A /* GoodModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoodModel.swift; sourceTree = "<group>"; };
+		FAFA4707208481E7004D91F7 /* TestHomeData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestHomeData.swift; sourceTree = "<group>"; };
+		FAFA4709208498AA004D91F7 /* setImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = setImage.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -750,17 +746,6 @@
 			path = adaper;
 			sourceTree = "<group>";
 		};
-		387B6F25205A571F00E6D916 /* ZCycleView */ = {
-			isa = PBXGroup;
-			children = (
-				387B6F26205A571F00E6D916 /* ZCycleLayout.swift */,
-				387B6F27205A571F00E6D916 /* ZCycleView.swift */,
-				387B6F28205A571F00E6D916 /* ZCycleViewCell.swift */,
-				387B6F29205A571F00E6D916 /* ZPageControl.swift */,
-			);
-			path = ZCycleView;
-			sourceTree = "<group>";
-		};
 		387B6F2E205A72C400E6D916 /* header */ = {
 			isa = PBXGroup;
 			children = (
@@ -828,9 +813,9 @@
 				387D4973205BCBF20059BB20 /* LeftGoodsView.swift */,
 				387D4975205BCC1B0059BB20 /* RightGoodsView.swift */,
 				FA2302232080CE9400A4896A /* GoodsVM.swift */,
-				387D4979205BD4DB0059BB20 /* GoodCell.swift */,
-				387D497A205BD4DB0059BB20 /* GoodCell.xib */,
 				FA2302292080D57700A4896A /* GoodModel.swift */,
+				387D497A205BD4DB0059BB20 /* GoodCell.xib */,
+				387D4979205BD4DB0059BB20 /* GoodCell.swift */,
 			);
 			path = Goods;
 			sourceTree = "<group>";
@@ -1174,6 +1159,7 @@
 			isa = PBXGroup;
 			children = (
 				38FD686D2040207A00B19A42 /* XIB.swift */,
+				FAFA4709208498AA004D91F7 /* setImage.swift */,
 				389BC60D206CD1E800CC776F /* NSDictionary+extend.h */,
 				389BC5EE206BA39700CC776F /* NSDictionary+extend.m */,
 				381C63182048097F00A9066C /* StringExted.swift */,
@@ -1223,7 +1209,6 @@
 		38FD686F204020F400B19A42 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
-				387B6F25205A571F00E6D916 /* ZCycleView */,
 				382EF41B205FBA5200F3A33B /* SYATopScrollviewVC */,
 				389BC5F3206BB31900CC776F /* AppConfig.h */,
 				389BC5F2206BB31900CC776F /* AppConfig.m */,
@@ -1273,6 +1258,7 @@
 			isa = PBXGroup;
 			children = (
 				38FD688120402A9000B19A42 /* HomePageVC.swift */,
+				FAFA4707208481E7004D91F7 /* TestHomeData.swift */,
 				38B879A8204269FC0080BB3C /* table */,
 				388BA01D20529FE6009C7C70 /* NewBanner */,
 				38BAE1452053775E00CA822A /* title */,
@@ -1543,10 +1529,11 @@
 				"${BUILT_PRODUCTS_DIR}/FMDB/FMDB.framework",
 				"${BUILT_PRODUCTS_DIR}/IQKeyboardManager/IQKeyboardManager.framework",
 				"${BUILT_PRODUCTS_DIR}/KeychainAccess/KeychainAccess.framework",
-				"${BUILT_PRODUCTS_DIR}/Kingfisher/Kingfisher.framework",
 				"${BUILT_PRODUCTS_DIR}/MBProgressHUD/MBProgressHUD.framework",
 				"${BUILT_PRODUCTS_DIR}/MJExtension/MJExtension.framework",
 				"${BUILT_PRODUCTS_DIR}/MJRefresh/MJRefresh.framework",
+				"${BUILT_PRODUCTS_DIR}/SDCycleScrollView/SDCycleScrollView.framework",
+				"${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework",
 				"${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
@@ -1555,10 +1542,11 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FMDB.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/IQKeyboardManager.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/KeychainAccess.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Kingfisher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MBProgressHUD.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MJExtension.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MJRefresh.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDCycleScrollView.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDWebImage.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SnapKit.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1605,7 +1593,6 @@
 				38FD686E2040207A00B19A42 /* XIB.swift in Sources */,
 				38D5536D207C968200DD36F6 /* JJCheckNetwork.m in Sources */,
 				38F76371205940BA002C1999 /* HotSaleCell.swift in Sources */,
-				387B6F2D205A571F00E6D916 /* ZPageControl.swift in Sources */,
 				38FD686420401E4F00B19A42 /* UIView+viewFrame.m in Sources */,
 				38FD9A45204115160090D978 /* BaseUITableView.swift in Sources */,
 				38FD687F204027F300B19A42 /* NetHttp.swift in Sources */,
@@ -1633,7 +1620,6 @@
 				38B879A6204268A60080BB3C /* SearchVC.swift in Sources */,
 				38EE01532043F29D0050759A /* CustomNaviBar.swift in Sources */,
 				384EE4502057A37D00D2BCB6 /* errorPrevent.swift in Sources */,
-				387B6F2C205A571F00E6D916 /* ZCycleViewCell.swift in Sources */,
 				387D4974205BCBF20059BB20 /* LeftGoodsView.swift in Sources */,
 				38B97825206239FE0089D7F9 /* SelectConditionModel.swift in Sources */,
 				388004C9204FD58200FE9DD0 /* NetError.swift in Sources */,
@@ -1644,6 +1630,7 @@
 				384EE4602057EBC500D2BCB6 /* TimeReCControl.swift in Sources */,
 				381C63032046990F00A9066C /* SearchHistoryCell.swift in Sources */,
 				389AA0AF2071CF92009AC93C /* CreateNewAdresVC.swift in Sources */,
+				FAFA4708208481E7004D91F7 /* TestHomeData.swift in Sources */,
 				384EE4422057673A00D2BCB6 /* HotSaleModel.swift in Sources */,
 				382EF42B205FD1FC00F3A33B /* HotRecommendCell.swift in Sources */,
 				38FD686220401E4F00B19A42 /* UIView+control.m in Sources */,
@@ -1657,7 +1644,6 @@
 				388BA0202052A057009C7C70 /* SortTypeModel.swift in Sources */,
 				38FD686520401E4F00B19A42 /* UIButton+parameter.m in Sources */,
 				387D553D206897F90073F934 /* AcountGoodCell.swift in Sources */,
-				387B6F2B205A571F00E6D916 /* ZCycleView.swift in Sources */,
 				38437B492058E8A300F7FE2F /* NatureCell.swift in Sources */,
 				386CAFEA2060B868006E32DF /* StarsView.swift in Sources */,
 				38213004204948EA00F1413C /* JJRealmManager.swift in Sources */,
@@ -1667,11 +1653,11 @@
 				38BF953D206E2C5300F8294A /* UIView+extend.m in Sources */,
 				389BC602206C8F3B00CC776F /* AddressModel.swift in Sources */,
 				FA1394A020727480008D6F68 /* AddressTableView.swift in Sources */,
-				387B6F2A205A571F00E6D916 /* ZCycleLayout.swift in Sources */,
 				38FD687D204026D200B19A42 /* NetAPI.swift in Sources */,
 				FA1394A32072754C008D6F68 /* AddressCell.swift in Sources */,
 				FA16F7B42056D30B0094F47B /* HotInStoreModel.swift in Sources */,
 				38BF9540206E307E00F8294A /* UILabel+extend.m in Sources */,
+				FAFA470A208498AA004D91F7 /* setImage.swift in Sources */,
 				389BC615206D015900CC776F /* OrderGoodlistCtrl.swift in Sources */,
 				FA13949920581CF4008D6F68 /* ForMaleView.swift in Sources */,
 				38213021204D568000F1413C /* GreateSmartDefine.swift in Sources */,

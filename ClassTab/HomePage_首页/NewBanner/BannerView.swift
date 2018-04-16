@@ -7,12 +7,13 @@
 //
 
 import UIKit
-//import ZCycleView
 
-class BannerView: UIView,ZCycleViewProtocol {
+class BannerView: UIView, SDCycleScrollViewDelegate {
 
     var model = BannerModel()
-    var cycleView1 : ZCycleView!
+    var cycleView2 : SDCycleScrollView?
+    var bannerImageModels : Array<Any> = []
+    
     private var frameRect: CGRect!
     
     required init?(coder aDecoder: NSCoder) {
@@ -25,10 +26,7 @@ class BannerView: UIView,ZCycleViewProtocol {
         self.frame = frame
         self.backgroundColor = UIColor.white
         
-//        cycleView1 = ZCycleView.init(frame: CGRect(x: 0, y: 0, width: kScreenW, height: heightBanner))
-        cycleView1 = ZCycleView()
-        
-//        imageView.contentMode = UIViewContentMode.scaleAspectFill
+        configNewBanner()
         
         //adjustImageBrightness(brightness: -0.5)
         //CGImageRelease(cgImage!)
@@ -38,42 +36,45 @@ class BannerView: UIView,ZCycleViewProtocol {
     func handleData(typeInfo: Any!) -> Void {
         model = BannerModel.dataReader(typeInfo: typeInfo)
         
-        let imageUrls : NSMutableArray = []
+        var imageUrls : Array<String> = []
         
         for elem in model.data {
             let m = elem as! BannerBlockElemModel
-            imageUrls.add(m.imageUrl)
+            imageUrls.append(m.imageUrl)
+            bannerImageModels.append(m)
         }
         
+        //网络url数组
+        cycleView2?.imageURLStringsGroup = imageUrls
+    }
+    
+    func configNewBanner()-> () {
         
-        cycleView1.setUrlsGroup(imageUrls as! Array<String>)
-        //cycleView1.pageControlIndictirColor = UIColor.green
-        //cycleView1.pageControlCurrentIndictirColor = UIColor.red
-        cycleView1.scrollDirection = .horizontal
-        cycleView1.isAutomatic = false
-        cycleView1.isInfinite = false //无限轮播
-        //cycleView1.timeInterval = 5
-        cycleView1.delegate = self
-        cycleView1.imageContentMode = UIViewContentMode.scaleAspectFill
-        self.addSubview(cycleView1)
-        
-        cycleView1.snp.makeConstraints { (make) in
+        cycleView2 = SDCycleScrollView.init()
+        //cycleView2?.imageURLStringsGroup = urls
+        cycleView2?.delegate = self
+        cycleView2?.bannerImageViewContentMode = UIViewContentMode.scaleAspectFill
+        cycleView2?.showPageControl = true
+        cycleView2?.titleLabelHeight = 0
+        cycleView2?.pageControlAliment = SDCycleScrollViewPageContolAlimentCenter
+        cycleView2?.pageControlStyle = SDCycleScrollViewPageContolStyleClassic
+        cycleView2?.autoScrollTimeInterval = 5
+        self.addSubview(cycleView2!)
+        cycleView2?.snp.makeConstraints { (make) in
             make.edges.equalTo(self)
-//            make.left.equalTo(self).offset(-cycleView1.collectionView.contentOffset.x)
-//            make.top.bottom.right.equalTo(self)
         }
+    }
+    
+    /** 点击图片回调 */
+    func cycleScrollView(_ cycleScrollView: SDCycleScrollView!, didSelectItemAt index: Int) {
+        delog("adsf")
+    }
+    
+    /** 图片滚动回调 */
+    func cycleScrollView(_ cycleScrollView: SDCycleScrollView!, didScrollTo index: Int) {
         
     }
     
-    
-    func cycleViewDidScrollToIndex(_ index: Int) {
-        delog("\(index)")
-    }
-    
-    func cycleViewDidSelectedIndex(_ index: Int) {
-//        delog("selec \(index)")
-    }
-
     
 //    func adjustImageBrightness(brightness: CGFloat) -> Void {
 //

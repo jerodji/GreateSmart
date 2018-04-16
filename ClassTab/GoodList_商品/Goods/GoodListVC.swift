@@ -11,7 +11,7 @@ import UIKit
 let heightSortView = CGFloat(40)
 
 /**
- *  view 视图层逻辑
+ *  view 视图逻辑层
  */
 
 class GoodListVC: BaseUIViewController {

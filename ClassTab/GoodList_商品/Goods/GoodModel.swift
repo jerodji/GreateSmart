@@ -9,10 +9,11 @@
 import UIKit
 
 /**
- * data 数据层逻辑
+ * data 数据逻辑层
  */
 
 class GoodModel: BaseModel {
+    
     @objc var platformItemId : String = ""
     @objc var itemSkuName    : String = ""
     @objc var publicity      : String = ""

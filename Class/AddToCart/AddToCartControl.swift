@@ -9,11 +9,12 @@
 import UIKit
 
 class AddToCartControl: BaseControl, UITableViewDelegate, UITableViewDataSource {
-
+    
     /** 加入购物车视图 */
     var view : AddToCartView?
     /** 规格control */
     private var speciColectCtl : SpecificationColectionControl?
+    /** 数据存储容器 */
     private var speciDataArr : NSArray = []
     /** 数量加减 */
     private var stepView : JIStepper?
@@ -30,7 +31,7 @@ class AddToCartControl: BaseControl, UITableViewDelegate, UITableViewDataSource 
         view?.configTableView.dataSource = self
         view?.sureBtnCB = {
             /* 确定按钮的回调 */
-            delog(self.stepView?.number)
+            //delog(self.stepView?.number)
             
         }
         
@@ -46,14 +47,14 @@ class AddToCartControl: BaseControl, UITableViewDelegate, UITableViewDataSource 
         var cell = tableView.dequeueReusableCell(withIdentifier: String.init(format: "addtocartConfigCellId"+"%d", indexPath.row))
         let configView = AddcartGoodConfigView.loadFromXIB()
         
-        if cell == nil {
+        if cell == nil
+        {
             cell = UITableViewCell.init(style: .default, reuseIdentifier: String.init(format: "addtocartConfigCellId"+"%d", indexPath.row))
             cell?.selectionStyle = .none
             configView.frameXib = cell!.bounds
             cell!.addSubview(configView)
             
             //MARK: 规格
-            
             if indexPath.row == 0 {
                 configView.nameLab.text = "规格"
                 
@@ -68,7 +69,6 @@ class AddToCartControl: BaseControl, UITableViewDelegate, UITableViewDataSource 
             }
             
             //MARK:数量
-            
             if indexPath.row == 1 {
                 configView.nameLab.text = "数量"
                 stepView = JIStepper.init(frame: CGRect.init(x: 20, y: configView.nameLab.bottom + 10, width: 146, height: 25))
@@ -97,8 +97,6 @@ class AddToCartControl: BaseControl, UITableViewDelegate, UITableViewDataSource 
         }
         return (CGFloat((array.count+1)/2) * CGFloat(25+10))  /* 单个cell高度25,竖直间距10 */
     }
-    
-    
     
     
 }

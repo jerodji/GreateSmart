@@ -9,7 +9,7 @@
 import UIKit
 
 /**
- * viewModel 业务层逻辑
+ * viewModel 业务逻辑层
  */
 
 class GoodsViewModel: NSObject {

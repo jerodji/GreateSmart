@@ -27,8 +27,8 @@ class ForMaleControl: BaseControl {
     func handleData(typeInfo:Any!) -> ForMaleModel {
         model = ForMaleModel.dataReader(typeInfo: typeInfo)
         
-        view.leftImgView.kf.setImage(with: URL.init(string: (model.data.block[0] as! ForMaleBlockElemModel).imageUrl))
-        view.rightImgView.kf.setImage(with: URL.init(string: (model.data.block[1] as! ForMaleBlockElemModel).imageUrl))
+        view.leftImgView.jj_setImage(url: (model.data.block[0] as! ForMaleBlockElemModel).imageUrl)
+        view.rightImgView.jj_setImage(url: (model.data.block[1] as! ForMaleBlockElemModel).imageUrl)
         
         return model
     }

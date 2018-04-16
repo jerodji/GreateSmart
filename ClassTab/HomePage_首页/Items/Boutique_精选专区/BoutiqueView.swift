@@ -32,7 +32,7 @@ class BoutiqueView: UIView {
             let imgView = UIImageView.init(frame: CGRect.init(x: itemcellLeft, y: itemcellTop + CGFloat(i)*(elemHeightBoutique + distanceBoutique), width: elemWidth, height: elemHeightBoutique))
             imgView.layer.cornerRadius = 5
             imgView.layer.masksToBounds = true
-            imgView.kf.setImage(with: URL.init(string: (model.data.block[i] as! BoutiqueBlockElemModel).imageUrl))
+            imgView.jj_setImage(url: (model.data.block[i] as! BoutiqueBlockElemModel).imageUrl)
             self.addSubview(imgView)
             
         }
