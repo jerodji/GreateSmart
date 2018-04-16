@@ -8,8 +8,14 @@
 
 import UIKit
 
-class LeftGoodsView: UICollectionView {
+/**
+ * left view 视图层逻辑
+ */
 
+class LeftGoodsView: UICollectionView,UICollectionViewDelegate,UICollectionViewDataSource  {
+
+    var viewModel : GoodsViewModel?
+    
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
     }
@@ -25,18 +31,34 @@ class LeftGoodsView: UICollectionView {
         lay.itemSize = CGSize.init(width: 175*kSizeScale, height: 255*kSizeScale)
         
         self.init(frame: frame, collectionViewLayout: lay)
-        
         self.backgroundColor = UIColor.clear
+        self.delegate = self
+        self.dataSource = self
+        self.register(UINib.init(nibName: "GoodCell", bundle: nil), forCellWithReuseIdentifier: "leftgoodcellid")
+        
+//        self.mj_footer = MJRefreshBackNormalFooter.init(refreshingTarget: self, refreshingAction: #selector(loadMore))
     }
     
     
     
-    /*
-    // Only override draw() if you perform custom drawing.
-    // An empty implementation adversely affects performance during animation.
-    override func draw(_ rect: CGRect) {
-        // Drawing code
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return viewModel?.letfList.count ?? 0
     }
-    */
-
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        
+        let model = viewModel?.letfList[indexPath.row]
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "leftgoodcellid", for: indexPath) as! GoodCell
+        cell.imageView.kf.setImage(with:  URL.init(string: (model?.image)!))
+        cell.priceLabel.text = "\(String(describing: model?.price ?? 0.00))"
+        cell.nameLabel.text = model?.itemSkuName
+        cell.decsLabel.text = model?.publicity
+        
+        return cell
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let goodDetailVC = GoodDetailsVC()
+        self.navigationController().pushViewController(goodDetailVC, animated: true)
+    }
 }

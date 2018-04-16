@@ -41,6 +41,12 @@ class NetAPI: NSObject {
     let refresh_token = URLHEAD + "/oauth/token"
     
     
+    //MARK:- -------------------- 商 品 --------------------
+    /// 商品筛选,(商品首页)
+    let loadItemList = URLHEAD + "/item/loadItemList"
+    
+    
+    
     //MARK:- -------------------- 地 址 --------------------
     
     /// 添加收货地址
@@ -53,14 +59,6 @@ class NetAPI: NSObject {
     let updateAddress   = URLHEAD + "/userAddress/updateAddress"
     /// 删除地址
     let removeAddress   = URLHEAD + "/userAddress/removeAddress"
-    
-    
-    
-    
-    
-    
-    
-    
     
     
 }

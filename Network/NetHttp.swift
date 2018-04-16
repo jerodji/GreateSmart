@@ -126,9 +126,35 @@ class NetHttp: NSObject {
     
 }
 
+//MARK:商品
 extension NetHttp {
     
-    
+    func loadItemList(pageNo:Int, pageSize:Int, succBlk: @escaping (Any)->()) -> Void {
+        
+        let url = NetAPI.ins.loadItemList
+        let pam = ["pageNo":pageNo, "pageSize":pageSize]
+        
+        NetworkHUD.shareIns().request(.POST, url: url, formHeader: nil, params: pam, success: { (res) in
+            /**
+             {
+             "pageNum":1,
+             "pages":9,
+             "list":[
+                     {},//GoodModel
+                     {}
+                 ]
+             }
+             */
+            succBlk(res!)
+            
+        }, fail: { (task, error) in
+        
+            NetError.ins.handleError(task: task, error: error as NSError?, type: .POST, url: url, formHeader: nil, formBody: nil, params: pam, callback: { (cbres) in
+                succBlk(cbres)
+            })
+            
+        }, showHUD: true)
+    }
 }
 
 //MARK:地址

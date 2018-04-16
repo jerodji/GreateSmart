@@ -10,6 +10,7 @@ import UIKit
 
 class SortingView: UIView,LoadXIBView {
 
+    //var viewModel : SortingVM?
     @IBOutlet weak var allBtn: UIButton!
     @IBOutlet weak var salesBtn: SortButton!
     @IBOutlet weak var priceBtn: SortButton!
@@ -66,6 +67,7 @@ class SortingView: UIView,LoadXIBView {
     @IBAction func priceBtnAction(_ sender: SortButton) {
         if clickCB != nil {
             clickCB!(sender.tag)
+            //viewModel?.clickPriceAction()
         }
     }
     

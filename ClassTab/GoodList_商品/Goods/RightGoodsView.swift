@@ -8,7 +8,13 @@
 
 import UIKit
 
-class RightGoodsView: UICollectionView {
+/**
+ * right view 视图层逻辑
+ */
+
+class RightGoodsView: UICollectionView,UICollectionViewDelegate,UICollectionViewDataSource {
+    
+    var viewModel : GoodsViewModel?
     
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
@@ -25,18 +31,29 @@ class RightGoodsView: UICollectionView {
         lay.itemSize = CGSize.init(width: 175*kSizeScale, height: 255*kSizeScale)
         
         self.init(frame: frame, collectionViewLayout: lay)
-        
         self.backgroundColor = UIColor.white
+        self.delegate = self
+        self.dataSource = self
+        self.register(UINib.init(nibName: "GoodCell", bundle: nil), forCellWithReuseIdentifier: "rightgoodcellid")
     }
     
-    
-
-    /*
-    // Only override draw() if you perform custom drawing.
-    // An empty implementation adversely affects performance during animation.
-    override func draw(_ rect: CGRect) {
-        // Drawing code
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return viewModel?.rightList.count ?? 0
     }
-    */
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let model = viewModel?.letfList[indexPath.row]
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "rightgoodcellid", for: indexPath) as! GoodCell
+        cell.imageView.kf.setImage(with:  URL.init(string: (model?.image)!))
+        cell.priceLabel.text = "\(String(describing: model?.price ?? 0.00))"
+        cell.nameLabel.text = model?.itemSkuName
+        cell.decsLabel.text = model?.publicity
+        return cell
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let goodDetailVC = GoodDetailsVC()
+        self.navigationController()?.pushViewController(goodDetailVC, animated: true)
+    }
 
 }
