@@ -16,10 +16,6 @@ class BoutiqueView: UIView {
         super.init(coder: aDecoder)
     }
     
-//    override init(frame: CGRect) {
-//        super.init(frame: frame)
-//    }
-    
     init(frame:CGRect,count:Int) {
         super.init(frame: frame)
         elemWidth = frame.size.width - itemcellLeft - itemcellRight
@@ -37,13 +33,5 @@ class BoutiqueView: UIView {
             
         }
     }
-    
-    /*
-    // Only override draw() if you perform custom drawing.
-    // An empty implementation adversely affects performance during animation.
-    override func draw(_ rect: CGRect) {
-        // Drawing code
-    }
-    */
 
 }
