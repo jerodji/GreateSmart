@@ -8,17 +8,12 @@
 
 import UIKit
 
-//class HistoryModel: BaseModel {
-//    var historyList: List<String>!
-//}
-
 class SearchVC: BaseUIViewController,UITableViewDelegate,UITableViewDataSource {
     
     private let SearchHistoryCellid = "SearchHistoryCellid"
-    private let HistoryCellH = CGFloat(44)
+    private let HistoryCellH = CGFloat(30)
     
     private let textField = JJTextField.init()
-//    private let historyModel = HistoryModel()
     let historyList = NSMutableArray.init()
     
     private let hotList = NSMutableArray.init()
@@ -37,16 +32,11 @@ class SearchVC: BaseUIViewController,UITableViewDelegate,UITableViewDataSource {
         imgv.jj_setImage(url: "")
         
         //MARK: 获取数据
-        historyList.addObjects(from: ["111","222","333","4","5"])
-//        historyModel.historyList = List()
-//        historyModel.historyList.append(objectsIn: ["111","222","333","4"])
-//        historyModel.historyList.append("5")
+        historyList.addObjects(from: ["111","222","333","4","5","wujianyu","xiaoshimei","julongchengbao"])
         
         hotList.addObjects(from: ["a","2sdf22","xvb","kshjdk","wyerio","kzbxckjv","jqowieuroj","askjdfhlanvkahjefo","akshdfln","lkha","a","2sdf22","xvb","kshjdk","wyerio","kzbxckjv","jqowieuroj","askjdfhlanvkahjefo","akshdfln","lkha","a","2sdf22","xvb","kshjdk","wyerio","kzbxckjv","jqowieuroj","askjdfhlanvkahjefo","akshdfln","lkha","a","2sdf22","xvb","kshjdk","wyerio","kzbxckjv","jqowieuroj","askjdfhlanvkahjefo","akshdfln","lkha","a","2sdf22","xvb","kshjdk","wyerio","kzbxckjv","jqowieuroj","askjdfhlanvkahjefo","akshdfln","lkha","a","2sdf22","xvb","kshjdk","wyerio","kzbxckjv","jqowieuroj","askjdfhlanvkahjefo","akshdfln","lkha","a","2sdf22","xvb","kshjdk","wyerio","kzbxckjv","jqowieuroj","askjdfhlanvkahjefo","akshdfln","lkha","a","2sdf22","xvb","kshjdk","wyerio","kzbxckjv","jqowieuroj","askjdfhlanvkahjefo","akshdfln","lkha","a","2sdf22","xvb","kshjdk","wyerio","kzbxckjv","jqowieuroj","askjdfhlanvkahjefo","akshdfln","lkha","a","2sdf22","xvb","kshjdk","wyerio","kzbxckjv","jqowieuroj","askjdfhlanvkahjefo","akshdfln","lkha","a","2sdf22","xvb","kshjdk","wyerio","kzbxckjv","jqowieuroj","askjdfhlanvkahjefo","akshdfln","lkha","a","2sdf22","xvb","kshjdk","wyerio","kzbxckjv","jqowieuroj","askjdfhlanvkahjefo","akshdfln","lkha"]
         )
         
-//        HitsotyDBManager.createDB(name: HistoryDBName)
-                
     }
 
     override func viewDidLoad() {
@@ -88,34 +78,21 @@ class SearchVC: BaseUIViewController,UITableViewDelegate,UITableViewDataSource {
     func configSubviews() -> () {
         
         //MARK: 历史记录title
-        //let historyTitle = SearchRecordTitleView.loadFromXIB()
-        //historyTitle.frame = CGRect.init(x: 0, y: kNaviH, width: kScreenW, height: 52)
         historyTitle.titleLabel.text = "历史记录"
         historyTitle.type = SearchRecordType.History
 
         //MARK: 历史记录tableview
-        //table.frame = CGRect.init(x: 20, y: historyTitle.bottom, width: kScreenW-40, height: HistoryCellH * CGFloat(5))
         table.delegate = self
         table.dataSource = self
         table.register(UINib.init(nibName: "SearchHistoryCell", bundle: nil), forCellReuseIdentifier: SearchHistoryCellid)
-        table.isScrollEnabled = false
+//        table.isScrollEnabled = false
 
         //MARK: 热门搜索title
-        //let hotTitle = SearchRecordTitleView.loadFromXIB()
-        //hotTitle.frame = CGRect.init(x: 0, y: table.bottom, width: kScreenW, height: 52)
         hotTitle.titleLabel.text = "热门搜索"
         hotTitle.type = SearchRecordType.Hot
         hotTitle.delecBtn.isHidden = true
 
         //MARK: 热门搜索数据展示 flowCollectionView
-        //let flowCtrl = FlowCollectionControl.init()
-//        var bottomDis: CGFloat
-//        if isiPhoneX() {
-//            bottomDis = CGFloat(0)
-//        } else {
-//            bottomDis = CGFloat(10)
-//        }
-        
         flowCtrl.setupFlowCollectionView(
             frame: CGRect.init(x: 20, y: hotTitle.bottom, width:kScreenW-40, height: kScreenH - hotTitle.bottom),
             InteritemSpacing: 15,
@@ -144,17 +121,11 @@ class SearchVC: BaseUIViewController,UITableViewDelegate,UITableViewDataSource {
             make.top.equalTo(self.naviBar.line.snp.bottom)
             make.height.equalTo(52)
         }
-        //table.frame = CGRect.init(x: 20, y: historyTitle.bottom, width: kScreenW-40, height: HistoryCellH * CGFloat(5))
+
         table.snp.makeConstraints { (make) in
             make.left.equalTo(self.view).offset(20)
             make.right.equalTo(self.view).inset(20)
             make.top.equalTo(historyTitle.snp.bottom)
-//            var h: CGFloat!
-//            if historyList.count >= 5 {
-//                h = CGFloat(HistoryCellH * 5)
-//            } else {
-//                h = HistoryCellH * CGFloat(historyList.count)
-//            }
             make.height.equalTo(HistoryCellH * 5)
         }
         //hotTitle.frame = CGRect.init(x: 0, y: table.bottom, width: kScreenW, height: 52)
