@@ -16,262 +16,157 @@
     UIColor *_norColor;
     UIColor *_selColor;
 }
-/**
- *  下标宽度是否等于标题宽度
- */
+/** 下标宽度是否等于标题宽度 */
 @property (nonatomic, assign) BOOL isUnderLineEqualTitleWidth;
-/**
- 标题滚动视图背景颜色
- */
+/** 标题滚动视图背景颜色 */
 @property (nonatomic, strong) UIColor *titleScrollViewColor;
-
-
-/**
- 标题高度
- */
+/** 标题高度 */
 @property (nonatomic, assign) CGFloat titleHeight;
-
-/**
- 标题宽度
- */
+/** 标题宽度 */
 @property (nonatomic, assign) CGFloat titleWidth;
-
-
-/**
- 正常标题颜色
- */
+/** 正常标题颜色 */
 @property (nonatomic, strong) UIColor *norColor;
-
-/**
- 选中标题颜色
- */
+/** 选中标题颜色 */
 @property (nonatomic, strong) UIColor *selColor;
-
-/**
- 标题字体
- */
+/** 标题字体 */
 @property (nonatomic, strong) UIFont *titleFont;
-
 /** 整体内容View 包含标题好内容滚动视图 */
 @property (nonatomic, weak) UIView *contentView;
-
-/** 标题滚动视图 */
-@property (nonatomic, weak) UIScrollView *titleScrollView;
-
-/** 内容滚动视图 */
-@property (nonatomic, weak) UICollectionView *contentScrollView;
-
 /** 所以标题数组 */
 @property (nonatomic, strong) NSMutableArray *titleLabels;
-
 /** 所以标题宽度数组 */
 @property (nonatomic, strong) NSMutableArray *titleWidths;
-
 /** 下标视图 */
 @property (nonatomic, weak) UIView *underLine;
-
-/**
- 是否需要下标
- */
+/** 是否需要下标 */
 @property (nonatomic, assign) BOOL isShowUnderLine;
-/**
- 字体是否渐变
- */
+/** 字体是否渐变 */
 @property (nonatomic, assign) BOOL isShowTitleGradient;
-/**
- 字体放大
- */
+/** 字体放大 */
 @property (nonatomic, assign) BOOL isShowTitleScale;
-/**
- 是否显示遮盖
- */
+/** 是否显示遮盖 */
 @property (nonatomic, assign) BOOL isShowTitleCover;
-
 /** 标题遮盖视图 */
 @property (nonatomic, weak) UIView *coverView;
-
 /** 记录上一次内容滚动视图偏移量 */
 @property (nonatomic, assign) CGFloat lastOffsetX;
-
 /** 记录是否点击 */
 @property (nonatomic, assign) BOOL isClickTitle;
-
 /** 记录是否在动画 */
 @property (nonatomic, assign) BOOL isAniming;
-
 /* 是否初始化 */
 @property (nonatomic, assign) BOOL isInitial;
-
 /** 标题间距 */
 @property (nonatomic, assign) CGFloat titleMargin;
-
 /** 计算上一次选中角标 */
 @property (nonatomic, assign) NSInteger selIndex;
-/**
- 颜色渐变样式
- */
+/** 颜色渐变样式 */
 @property (nonatomic, assign) kTitleColorStyle titleColorGradientStyle;
-
-/**
- 字体缩放比例
- */
+/** 字体缩放比例 */
 @property (nonatomic, assign) CGFloat titleScale;
-/**
- 是否延迟滚动下标
- */
+/** 是否延迟滚动下标 */
 @property (nonatomic, assign) BOOL isDelayScroll;
-/**
- 遮盖颜色
- */
+/** 遮盖颜色 */
 @property (nonatomic, strong) UIColor *coverColor;
-
-/**
- 遮盖圆角半径
- */
+/** 遮盖圆角半径 */
 @property (nonatomic, assign) CGFloat coverCornerRadius;
-
-/**
- 下标颜色
- */
+/** 下标颜色 */
 @property (nonatomic, strong) UIColor *underLineColor;
-
-/**
- 下标高度
- */
+/** 下标高度 */
 @property (nonatomic, assign) CGFloat underLineH;
-
-
-/**
- 开始颜色,取值范围0~1
- */
+/** 开始颜色,取值范围0~1 */
 @property (nonatomic, assign) CGFloat startR;
-
 @property (nonatomic, assign) CGFloat startG;
-
 @property (nonatomic, assign) CGFloat startB;
-
-/**
- 完成颜色,取值范围0~1
- */
+/** 完成颜色,取值范围0~1 */
 @property (nonatomic, assign) CGFloat endR;
-
 @property (nonatomic, assign) CGFloat endG;
-
 @property (nonatomic, assign) CGFloat endB;
 @end
 
 @implementation SYATopScrollViewController
 static NSString * const ID = @"CELLID";
 #pragma mark - 初始化方法
-- (instancetype)init
-{
+- (instancetype)init {
     if (self = [super init]) {
         [self initial];
     }
     return self;
 }
 
-- (void)awakeFromNib
-{
+- (void)awakeFromNib {
     [super awakeFromNib];
     [self initial];
 }
 
-- (void)initial
-{
+- (void)initial {
     // 初始化标题高度
     _titleHeight = SYATitleScrollViewH;
-    
     self.automaticallyAdjustsScrollViewInsets = NO;
 }
 
 #pragma mark - 懒加载
 
-- (UIFont *)titleFont
-{
+- (UIFont *)titleFont {
     if (_titleFont == nil) {
         _titleFont = SYATitleFont;
     }
     return _titleFont;
 }
 
-
-- (NSMutableArray *)titleWidths
-{
+- (NSMutableArray *)titleWidths {
     if (_titleWidths == nil) {
         _titleWidths = [NSMutableArray array];
     }
     return _titleWidths;
 }
 
-- (UIColor *)norColor
-{
+- (UIColor *)norColor {
     if (_norColor == nil) self.norColor = [UIColor blackColor];
-    
     return _norColor;
 }
 
-- (UIColor *)selColor
-{
+- (UIColor *)selColor {
     if (_selColor == nil) self.selColor = [UIColor redColor];
-    
     return _selColor;
 }
 
-- (UIView *)coverView
-{
+- (UIView *)coverView {
     if (_coverView == nil) {
         UIView *coverView = [[UIView alloc] init];
-        
         coverView.backgroundColor = _coverColor?_coverColor:[UIColor lightGrayColor];
-        
         coverView.layer.cornerRadius = _coverCornerRadius;
-        
         [self.titleScrollView insertSubview:coverView atIndex:0];
-        
         _coverView = coverView;
     }
     return _isShowTitleCover?_coverView:nil;
 }
 
-- (UIView *)underLine
-{
+- (UIView *)underLine {
     if (_underLine == nil) {
-        
         UIView *underLineView = [[UIView alloc] init];
-        
         underLineView.backgroundColor = _underLineColor?_underLineColor:[UIColor redColor];
-        
         [self.titleScrollView addSubview:underLineView];
-        
         _underLine = underLineView;
-        
     }
     return _isShowUnderLine?_underLine : nil;
 }
 
-- (NSMutableArray *)titleLabels
-{
+- (NSMutableArray *)titleLabels {
     if (_titleLabels == nil) {
         _titleLabels = [NSMutableArray array];
     }
     return _titleLabels;
 }
 
-
 // 懒加载标题滚动视图
-- (UIScrollView *)titleScrollView
-{
+- (UIScrollView *)titleScrollView {
     if (_titleScrollView == nil) {
-        
         UIScrollView *titleScrollView = [[UIScrollView alloc] init];
         titleScrollView.scrollsToTop = NO;
         titleScrollView.backgroundColor = _titleScrollViewColor?_titleScrollViewColor:[UIColor colorWithWhite:1 alpha:0.7];
-        
         [self.contentView addSubview:titleScrollView];
-        
         _titleScrollView = titleScrollView;
-        
     }
     return _titleScrollView;
 }
@@ -519,6 +414,15 @@ static NSString * const ID = @"CELLID";
     
 }
 
+#pragma mark // 设置 titleScrollView shadow
+- (void)setupTitleScrollViewShadowWithColor:(UIColor*)_color Opacity:(float)_Opacity Radius:(CGFloat)_Radius Offset:(CGSize)_Offset
+{
+    self.titleScrollView.layer.shadowColor = _color.CGColor;
+    self.titleScrollView.layer.shadowOpacity = _Opacity;
+    self.titleScrollView.layer.shadowRadius = _Radius;
+    self.titleScrollView.layer.shadowOffset = _Offset;
+    self.titleScrollView.clipsToBounds = false;
+}
 
 #pragma mark - 控制器view生命周期方法
 - (void)viewDidLayoutSubviews
@@ -531,8 +435,9 @@ static NSString * const ID = @"CELLID";
         _isInitial = YES;
         
         CGFloat statusH = [UIApplication sharedApplication].statusBarFrame.size.height;
+        CGFloat naviH = statusH + 44;
         
-        CGFloat titleY = self.navigationController.navigationBarHidden == NO ?SYANavBarH:statusH;
+        CGFloat titleY = (self.navigationController.navigationBarHidden == NO) ? naviH : statusH;
         // 是否占据全屏
         if (_isfullScreen) {
             
@@ -656,7 +561,7 @@ static NSString * const ID = @"CELLID";
         
         // 设置按钮的文字颜色
         label.textColor = self.norColor;
-        
+        label.backgroundColor = [UIColor clearColor];
         label.font = self.titleFont;
         
         // 设置按钮标题
@@ -1259,15 +1164,5 @@ static NSString * const ID = @"CELLID";
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end

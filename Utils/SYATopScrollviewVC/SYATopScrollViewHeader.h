@@ -38,7 +38,12 @@
 #define SYAScreenH [UIScreen mainScreen].bounds.size.height
 
 // 导航条高度
-static CGFloat const SYANavBarH = 64;
+//static CGFloat const SYANavBarH = 64;
+
+#define Device_Is_iPhoneX ([UIScreen instancesRespondToSelector:@selector(currentMode)] ? CGSizeEqualToSize(CGSizeMake(1125, 2436), [[UIScreen mainScreen] currentMode].size) : NO)
+
+#define SYAStatusH = (Device_Is_iPhoneX ? 44 : 20)
+#define SYANavBarH = (SYAStatusH + 44)
 
 // 标题滚动视图的高度
 static CGFloat const SYATitleScrollViewH = 44;

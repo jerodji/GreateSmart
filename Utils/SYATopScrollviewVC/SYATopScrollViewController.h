@@ -16,6 +16,14 @@ typedef enum {
 @interface SYATopScrollViewController : UIViewController
 
 /**
+ 标题滚动视图
+ 公开此属性,便于样式的自定义
+ */
+@property (nonatomic, weak) UIScrollView *titleScrollView;
+/** 内容滚动视图 */
+@property (nonatomic, weak) UICollectionView *contentScrollView;
+
+/**
  内容是否需要全屏展示
  YES :  全屏：内容占据整个屏幕，会有穿透导航栏效果，需要手动设置tableView额外滚动区域
  NO  :  内容从标题下展示
@@ -76,6 +84,11 @@ typedef enum {
  */
 - (void)setupCoverEffectWithCoverColor:(UIColor*)_cover_color
            coverCornerRadius:(CGFloat)_cover_corner_radius;
+
+/**
+ * 设置阴影
+ */
+- (void)setupTitleScrollViewShadowWithColor:(UIColor*)_color Opacity:(float)_Opacity Radius:(CGFloat)_Radius Offset:(CGSize)_Offset;
 
 
 /********【顶部标题样式】******/

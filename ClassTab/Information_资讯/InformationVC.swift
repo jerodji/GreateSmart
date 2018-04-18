@@ -18,19 +18,16 @@ class InformationVC: SYATopScrollViewController {
         self.title = "资讯"
         
         setUpAllViewController()
-        
-//        self.setupTitleEffect(withTitleScrollViewColor: UIColor.gray, norColor: UIColor.black, selColor: UIColor.blue, titleFont: UIFont.systemFont(ofSize: 14), titleHeight: 20, titleWidth: 70)
-        
         self.setupTitleGradient(with: kTitleColorStyleRGB, norColor: UIColor.gray, selColor: UIColor.black)
-        
         self.setupTitleScale(withTitleScale: 1.2)
-        
-//        self.setupUnderLineEffect(withUnderLineDelayScroll: true, underLineH: 5, underLineColor: UIColor.black, isUnderLineEqualTitleWidth: true)
+        self.titleScrollView.backgroundColor = UIColor.white
+        self.setupTitleScrollViewShadow(with: UIColor.RGB(83, 83, 83), opacity: 0.5, radius: 2, offset: CGSize(width: 0, height: 0))
     }
     
     func setUpAllViewController() -> () {
         let vc0 = UIViewController()
         vc0.title = "精品推荐"
+        vc0.view.backgroundColor = .clear
         self.addChildViewController(vc0)
         
         let vc1 = UIViewController()
