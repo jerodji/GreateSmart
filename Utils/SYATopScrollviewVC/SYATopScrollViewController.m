@@ -411,17 +411,16 @@ static NSString * const ID = @"CELLID";
     if (_titleColorGradientStyle == kTitleColorStyleFill && _titleWidth > 0) {
         @throw [NSException exceptionWithName:@"YZ_ERROR" reason:@"标题颜色填充不需要设置标题宽度" userInfo:nil];
     }
-    
 }
 
 #pragma mark // 设置 titleScrollView shadow
-- (void)setupTitleScrollViewShadowWithColor:(UIColor*)_color Opacity:(float)_Opacity Radius:(CGFloat)_Radius Offset:(CGSize)_Offset
+- (void)setupTitleScrollViewShadowWithColor:(UIColor*)_color Opacity:(float)_opacity Radius:(CGFloat)_radius Offset:(CGSize)_offset
 {
     self.titleScrollView.layer.shadowColor = _color.CGColor;
-    self.titleScrollView.layer.shadowOpacity = _Opacity;
-    self.titleScrollView.layer.shadowRadius = _Radius;
-    self.titleScrollView.layer.shadowOffset = _Offset;
-    self.titleScrollView.clipsToBounds = false;
+    self.titleScrollView.layer.shadowOpacity = _opacity;
+    self.titleScrollView.layer.shadowRadius = _radius;
+    self.titleScrollView.layer.shadowOffset = _offset;
+    self.titleScrollView.clipsToBounds = NO;
 }
 
 #pragma mark - 控制器view生命周期方法
@@ -464,9 +463,7 @@ static NSString * const ID = @"CELLID";
         CGFloat contentY = CGRectGetMaxY(self.titleScrollView.frame);
         CGFloat contentH = self.contentView.sya_height - contentY;
         self.contentScrollView.frame = CGRectMake(0, contentY, SYAScreenW, contentH);
-        
     }
-    
 }
 
 - (void)viewWillAppear:(BOOL)animated
@@ -476,19 +473,15 @@ static NSString * const ID = @"CELLID";
     if (_isInitial == NO) {
         
         // 没有子控制器，不需要设置标题
-        if (self.childViewControllers.count == 0) return;
+        if (self.childViewControllers.count == 0)
+            return;
         
         if (_titleColorGradientStyle == kTitleColorStyleFill || _titleWidth == 0) { // 填充样式才需要这样
-            
             [self setUpTitleWidth];
         }
         
-        
         [self setUpAllTitle];
-        
     }
-    
-    
 }
 
 #pragma mark - 添加标题方法
@@ -541,7 +534,6 @@ static NSString * const ID = @"CELLID";
 // 设置所有标题
 - (void)setUpAllTitle
 {
-    
     // 遍历所有的子控制器
     NSUInteger count = self.childViewControllers.count;
     
@@ -600,7 +592,6 @@ static NSString * const ID = @"CELLID";
     _titleScrollView.contentSize = CGSizeMake(CGRectGetMaxX(lastLabel.frame), 0);
     _titleScrollView.showsHorizontalScrollIndicator = NO;
     _contentScrollView.contentSize = CGSizeMake(count * SYAScreenW, 0);
-    
 }
 
 #pragma mark - 标题效果渐变方法
@@ -721,7 +712,6 @@ static NSString * const ID = @"CELLID";
     
     self.underLine.sya_width += underLineWidth;
     self.underLine.sya_x += underLineTransformX;
-    
 }
 
 // 设置遮盖偏移
@@ -746,7 +736,6 @@ static NSString * const ID = @"CELLID";
     
     self.coverView.sya_width += coverWidth;
     self.coverView.sya_x += coverTransformX;
-    
 }
 
 #pragma mark - 标题点击处理
@@ -811,32 +800,25 @@ static NSString * const ID = @"CELLID";
 
 - (void)selectLabel:(UILabel *)label
 {
-    
-    for (SYATopScrollViewTitleLabel *labelView in self.titleLabels) {
-        
+    for (SYATopScrollViewTitleLabel *labelView in self.titleLabels)
+    {
         if (label == labelView) continue;
         
         if (_isShowTitleGradient) {
-            
             labelView.transform = CGAffineTransformIdentity;
         }
         
         labelView.textColor = self.norColor;
         
         if (_isShowTitleGradient && _titleColorGradientStyle == kTitleColorStyleFill) {
-            
             labelView.fillColor = self.norColor;
-            
             labelView.scrollProgress = 1;
         }
-        
     }
     
     // 标题缩放
     if (_isShowTitleScale) {
-        
         CGFloat scaleTransform = _titleScale?_titleScale:SYATitleTransformScale;
-        
         label.transform = CGAffineTransformMakeScale(scaleTransform, scaleTransform);
     }
     
@@ -855,7 +837,6 @@ static NSString * const ID = @"CELLID";
     if (_isShowTitleCover) {
         [self setUpCoverView:label];
     }
-    
 }
 
 // 设置蒙版
@@ -871,7 +852,6 @@ static NSString * const ID = @"CELLID";
     self.coverView.sya_y = (label.sya_height - coverH) * 0.5;
     self.coverView.sya_height = coverH;
     
-    
     // 最开始不需要动画
     if (self.coverView.sya_x == 0) {
         self.coverView.sya_width = coverW;
@@ -884,9 +864,6 @@ static NSString * const ID = @"CELLID";
         self.coverView.sya_width = coverW;
         self.coverView.sya_x = label.sya_x - border;
     }];
-    
-    
-    
 }
 
 // 设置下标的位置
@@ -920,13 +897,11 @@ static NSString * const ID = @"CELLID";
         }
         self.underLine.sya_centerX = label.sya_centerX;
     }];
-    
 }
 
 // 让选中的按钮居中显示
 - (void)setLabelTitleCenter:(UILabel *)label
 {
-    
     // 设置标题滚动区域的偏移量
     CGFloat offsetX = label.center.x - SYAScreenW * 0.5;
     
@@ -947,7 +922,6 @@ static NSString * const ID = @"CELLID";
     
     // 滚动区域
     [self.titleScrollView setContentOffset:CGPointMake(offsetX, 0) animated:YES];
-    
 }
 
 #pragma mark - 刷新界面方法
@@ -967,7 +941,6 @@ static NSString * const ID = @"CELLID";
     
     // 重新设置标题
     if (_titleColorGradientStyle == kTitleColorStyleFill || _titleWidth == 0) {
-        
         [self setUpTitleWidth];
     }
     
@@ -975,7 +948,6 @@ static NSString * const ID = @"CELLID";
     
     // 默认选中标题
     self.selectIndex = self.selectIndex;
-    
 }
 
 #pragma mark - UICollectionViewDataSource
@@ -993,7 +965,6 @@ static NSString * const ID = @"CELLID";
     
     // 添加控制器
     UIViewController *vc = self.childViewControllers[indexPath.row];
-    
     vc.view.frame = CGRectMake(0, 0, self.contentScrollView.sya_width, self.contentScrollView.sya_height);
     
     CGFloat bottom = self.tabBarController == nil?0:49;
@@ -1048,9 +1019,6 @@ static NSString * const ID = @"CELLID";
 - (void)scrollViewDidEndScrollingAnimation:(UIScrollView *)scrollView
 {
     _isAniming = NO;
-    
-    
-    
 }
 
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView
@@ -1102,7 +1070,6 @@ static NSString * const ID = @"CELLID";
 {
     _norColor = norColor;
     [self setupStartColor:norColor];
-    
 }
 
 - (void)setSelColor:(UIColor *)selColor
@@ -1132,8 +1099,6 @@ static NSString * const ID = @"CELLID";
     _endG = components[1];
     _endB = components[2];
 }
-
-
 
 /**
  *  指定颜色，获取颜色的RGB值

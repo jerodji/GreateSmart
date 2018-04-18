@@ -88,7 +88,7 @@ typedef enum {
 /**
  * 设置阴影
  */
-- (void)setupTitleScrollViewShadowWithColor:(UIColor*)_color Opacity:(float)_Opacity Radius:(CGFloat)_Radius Offset:(CGSize)_Offset;
+- (void)setupTitleScrollViewShadowWithColor:(UIColor*)_color Opacity:(float)_opacity Radius:(CGFloat)_radius Offset:(CGSize)_offset;
 
 
 /********【顶部标题样式】******/
