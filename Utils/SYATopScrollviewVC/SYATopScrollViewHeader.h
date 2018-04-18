@@ -30,6 +30,9 @@
  */
 
 #import "SYATopScrollViewController.h"
+#import "SYAFlowLayout.h"
+#import "SYATopScrollViewTitleLabel.h"
+#import "UIView+SYAViewFrame.h"
 
 #define SYAScreenW [UIScreen mainScreen].bounds.size.width
 #define SYAScreenH [UIScreen mainScreen].bounds.size.height

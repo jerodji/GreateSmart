@@ -35,7 +35,7 @@
 #import "JITextView.h"
 #import "MBHUDToast.h"
 #import "JJCheckNetwork.h"
-
+#import "SYATopScrollViewHeader.h"
 
 #pragma mark ------------ CocoaPod ------------
 

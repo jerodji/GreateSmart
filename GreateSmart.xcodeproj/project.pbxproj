@@ -604,10 +604,10 @@
 			isa = PBXGroup;
 			children = (
 				382EF428205FBA7300F3A33B /* SYATopScrollViewHeader.h */,
-				382EF41C205FBA5200F3A33B /* SYAFlowLayout.h */,
-				382EF41D205FBA5200F3A33B /* SYAFlowLayout.m */,
 				382EF41E205FBA5200F3A33B /* SYATopScrollViewController.h */,
 				382EF41F205FBA5200F3A33B /* SYATopScrollViewController.m */,
+				382EF41C205FBA5200F3A33B /* SYAFlowLayout.h */,
+				382EF41D205FBA5200F3A33B /* SYAFlowLayout.m */,
 				382EF420205FBA5200F3A33B /* SYATopScrollViewTitleLabel.h */,
 				382EF421205FBA5200F3A33B /* SYATopScrollViewTitleLabel.m */,
 				382EF422205FBA5200F3A33B /* UIView+SYAViewFrame.h */,

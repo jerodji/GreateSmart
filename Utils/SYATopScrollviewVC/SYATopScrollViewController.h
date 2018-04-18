@@ -7,10 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
+
 typedef enum {
     kTitleColorStyleRGB = 0,
     kTitleColorStyleFill,
 } kTitleColorStyle;
+
 @interface SYATopScrollViewController : UIViewController
 
 /**
@@ -38,21 +40,58 @@ typedef enum {
 - (void)refreshDisplay;
 
 
-/********【顶部标题样式】******/
-- (void)setUpTitleEffect:(void(^)(UIColor **titleScrollViewColor,UIColor **norColor,UIColor **selColor,UIFont **titleFont,CGFloat *titleHeight,CGFloat *titleWidth))titleEffectBlock;
+/**
+ * 顶部标题样式
+ */
+- (void)setupTitleEffectWithTitleScrollViewColor:(UIColor*)_titleScrollViewColor
+                                        norColor:(UIColor*)_normalColor
+                                        selColor:(UIColor*)_selectColor
+                                       titleFont:(UIFont*)_titleFont
+                                     titleHeight:(CGFloat)_titleHeight
+                                      titleWidth:(CGFloat)_titleWidth;
 
+/**
+ * 下标样式
+ */
+- (void)setupUnderLineEffectWithUnderLineDelayScroll:(BOOL)_isUnderLineDelayScroll
+                      underLineH:(CGFloat)_underLineH
+                  underLineColor:(UIColor*)_underLineColor
+      isUnderLineEqualTitleWidth:(BOOL)_isUnderLineEqualTitleWidth;
+
+
+/**
+ * 字体缩放
+ */
+- (void)setupTitleScaleWithTitleScale:(CGFloat)_titleScale;
+
+/**
+ * 颜色渐变
+ */
+- (void)setupTitleGradientWithTitleColorStyle:(kTitleColorStyle)_style
+                           norColor:(UIColor*)_normalColor
+                           selColor:(UIColor*)_selectColor;
+
+/**
+ * 遮盖
+ */
+- (void)setupCoverEffectWithCoverColor:(UIColor*)_cover_color
+           coverCornerRadius:(CGFloat)_cover_corner_radius;
+
+
+/********【顶部标题样式】******/
+//- (void)setUpTitleEffect:(void(^)(UIColor **titleScrollViewColor,UIColor **norColor,UIColor **selColor,UIFont **titleFont,CGFloat *titleHeight,CGFloat *titleWidth))titleEffectBlock;
 
 /***【下标样式】********/
-- (void)setUpUnderLineEffect:(void(^)(BOOL *isUnderLineDelayScroll,CGFloat *underLineH,UIColor **underLineColor, BOOL *isUnderLineEqualTitleWidth))underLineBlock;
+//- (void)setUpUnderLineEffect:(void(^)(BOOL *isUnderLineDelayScroll,CGFloat *underLineH,UIColor **underLineColor, BOOL *isUnderLineEqualTitleWidth))underLineBlock;
 
 
 /*********【字体缩放】************/
-- (void)setUpTitleScale:(void(^)(CGFloat *titleScale))titleScaleBlock;
+//- (void)setUpTitleScale:(void(^)(CGFloat *titleScale))titleScaleBlock;
 
 
 /*********【颜色渐变】**********/
-- (void)setUpTitleGradient:(void(^)(kTitleColorStyle *titleColorGradientStyle,UIColor **norColor,UIColor **selColor))titleGradientBlock;
+//- (void)setUpTitleGradient:(void(^)(kTitleColorStyle *titleColorGradientStyle,UIColor **norColor,UIColor **selColor))titleGradientBlock;
 
 /********【遮盖】************/
-- (void)setUpCoverEffect:(void(^)(UIColor **coverColor,CGFloat *coverCornerRadius))coverEffectBlock;
+//- (void)setUpCoverEffect:(void(^)(UIColor **coverColor,CGFloat *coverCornerRadius))coverEffectBlock;
 @end

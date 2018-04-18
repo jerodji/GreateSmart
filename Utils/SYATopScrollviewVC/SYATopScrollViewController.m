@@ -364,7 +364,19 @@ static NSString * const ID = @"CELLID";
     }
 }
 
-// 一次性设置所有颜色渐变属性
+
+#pragma mark // 一次性设置所有颜色渐变属性
+- (void)setupTitleGradientWithTitleColorStyle:(kTitleColorStyle)_style
+                           norColor:(UIColor*)_normalColor
+                           selColor:(UIColor*)_selectColor
+{
+    [self setUpTitleGradient:^(kTitleColorStyle *titleColorGradientStyle, UIColor *__autoreleasing *norColor, UIColor *__autoreleasing *selColor) {
+        
+        *titleColorGradientStyle = _style;
+        *norColor = _normalColor;
+        *selColor = _selectColor;
+    }];
+}
 - (void)setUpTitleGradient:(void(^)(kTitleColorStyle *titleColorGradientStyle,UIColor **norColor,UIColor **selColor))titleGradientBlock;
 {
     _isShowTitleGradient = YES;
@@ -385,7 +397,15 @@ static NSString * const ID = @"CELLID";
     }
 }
 
-// 一次性设置所有遮盖属性
+#pragma mark // 一次性设置所有遮盖属性
+- (void)setupCoverEffectWithCoverColor:(UIColor*)_cover_color
+           coverCornerRadius:(CGFloat)_cover_corner_radius
+{
+    [self setUpCoverEffect:^(UIColor *__autoreleasing *coverColor, CGFloat *coverCornerRadius) {
+        *coverColor = _cover_color;
+        *coverCornerRadius = _cover_corner_radius;
+    }];
+}
 - (void)setUpCoverEffect:(void (^)(UIColor **, CGFloat *))coverEffectBlock
 {
     UIColor *color;
@@ -403,7 +423,13 @@ static NSString * const ID = @"CELLID";
     }
 }
 
-// 一次性设置所有字体缩放属性
+#pragma mark // 一次性设置所有字体缩放属性
+- (void)setupTitleScaleWithTitleScale:(CGFloat)_titleScale
+{
+    [self setUpTitleScale:^(CGFloat *titleScale) {
+        *titleScale = _titleScale;
+    }];
+}
 - (void)setUpTitleScale:(void(^)(CGFloat *titleScale))titleScaleBlock
 {
     _isShowTitleScale = YES;
@@ -418,7 +444,19 @@ static NSString * const ID = @"CELLID";
     
 }
 
-// 一次性设置所有下标属性
+#pragma mark // 一次性设置所有下标属性
+- (void)setupUnderLineEffectWithUnderLineDelayScroll:(BOOL)_isUnderLineDelayScroll
+                      underLineH:(CGFloat)_underLineH
+                  underLineColor:(UIColor*)_underLineColor
+      isUnderLineEqualTitleWidth:(BOOL)_isUnderLineEqualTitleWidth
+{
+    [self setUpUnderLineEffect:^(BOOL *isUnderLineDelayScroll, CGFloat *underLineH, UIColor *__autoreleasing *underLineColor, BOOL *isUnderLineEqualTitleWidth) {
+        *isUnderLineDelayScroll = _isUnderLineDelayScroll;
+        *underLineH = _underLineH;
+        *underLineColor = _underLineColor;
+        *isUnderLineEqualTitleWidth = _isUnderLineEqualTitleWidth;
+    }];
+}
 - (void)setUpUnderLineEffect:(void(^)(BOOL *isUnderLineDelayScroll,CGFloat *underLineH,UIColor **underLineColor,BOOL *isUnderLineEqualTitleWidth))underLineBlock
 {
     _isShowUnderLine = YES;
@@ -437,8 +475,26 @@ static NSString * const ID = @"CELLID";
     
 }
 
-// 一次性设置所有标题属性
-- (void)setUpTitleEffect:(void(^)(UIColor **titleScrollViewColor,UIColor **norColor,UIColor **selColor,UIFont **titleFont,CGFloat *titleHeight,CGFloat *titleWidth))titleEffectBlock{
+#pragma mark // 一次性设置所有标题属性
+- (void)setupTitleEffectWithTitleScrollViewColor:(UIColor*)_titleScrollViewColor
+                                        norColor:(UIColor*)_normalColor
+                                        selColor:(UIColor*)_selectColor
+                                       titleFont:(UIFont*)_titleFont
+                                     titleHeight:(CGFloat)_titleHeight
+                                      titleWidth:(CGFloat)_titleWidth
+{
+    [self setUpTitleEffect:^(UIColor *__autoreleasing *titleScrollViewColor, UIColor *__autoreleasing *norColor, UIColor *__autoreleasing *selColor, UIFont *__autoreleasing *titleFont, CGFloat *titleHeight, CGFloat *titleWidth) {
+        
+        *titleScrollViewColor = _titleScrollViewColor;
+        *norColor = _normalColor;
+        *selColor = _selectColor;
+        *titleFont = _titleFont;
+        *titleHeight = _titleHeight;
+        *titleWidth = _titleWidth;
+    }];
+}
+- (void)setUpTitleEffect:(void(^)(UIColor **titleScrollViewColor,UIColor **norColor,UIColor **selColor,UIFont **titleFont,CGFloat *titleHeight,CGFloat *titleWidth))titleEffectBlock
+{
     UIColor *titleScrollViewColor;
     UIColor *norColor;
     UIColor *selColor;
