@@ -34,9 +34,19 @@ class TimeReCControl: BaseControl,UICollectionViewDelegate,UICollectionViewDataS
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cel = collectionView.dequeueReusableCell(withReuseIdentifier: "timereccellid", for: indexPath)
-        let mod = model.data.block[indexPath.item] as! TimeReCBlockElemModel
-        setModel(mod, forCell: cel as! TimeReCCell, index: indexPath.item)
+        weak var wkself = self
+        
+        let cel = collectionView.dequeueReusableCell(withReuseIdentifier: "timereccellid", for: indexPath) as! TimeReCCell
+        let mod = wkself?.model.data.block[indexPath.item] as! TimeReCBlockElemModel
+        
+//        wkself?.setModel(mod, forCell: cel as! TimeReCCell, index: indexPath.item)
+        cel.imageView.jj_setImage(url: mod.itemTitleImage)
+        cel.littleImgVIew.isHidden = true
+        cel.priceLabel.text = "¥" + mod.price
+        cel.nameLabel.text = mod.itemName
+        //cell.discountLabel.text = "限量半价"
+        cel.remainingLabel.text = "剩余999件"
+        
         return cel
     }
     

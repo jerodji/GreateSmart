@@ -149,31 +149,36 @@ static AppConfig* _instance = nil;
     SCNetworkReachabilityRef defaultRouteReachability = SCNetworkReachabilityCreateWithAddress(NULL, (struct sockaddr *)&zeroAddress); //创建测试连接的引用：
     SCNetworkReachabilityFlags flags;
     SCNetworkReachabilityGetFlags(defaultRouteReachability, &flags);
-    NSString* Type = @"无";
+//    NSString* Type;
     if ((flags & kSCNetworkReachabilityFlagsReachable) == 0) {
-        return Type;
+        return @"无";
     }
     if ((flags & kSCNetworkReachabilityFlagsConnectionRequired) == 0) {
-        Type = @"Wi-Fi";
+//        Type = @"Wi-Fi";
+        return @"Wi-Fi";
     }
     if ((((flags & kSCNetworkReachabilityFlagsConnectionOnDemand ) != 0) ||
          (flags & kSCNetworkReachabilityFlagsConnectionOnTraffic) != 0)){
         if ((flags & kSCNetworkReachabilityFlagsInterventionRequired) == 0){
-            Type = @"Wi-Fi";
+//            Type = @"Wi-Fi";
+            return @"Wi-Fi";
         }
     }
     if ((flags & kSCNetworkReachabilityFlagsIsWWAN) == kSCNetworkReachabilityFlagsIsWWAN){
         if((flags & kSCNetworkReachabilityFlagsReachable) == kSCNetworkReachabilityFlagsReachable) {
             if ((flags & kSCNetworkReachabilityFlagsTransientConnection) == kSCNetworkReachabilityFlagsTransientConnection) {
-                Type = @"3G";
+//                Type = @"3G";
+                return @"3G";
                 if((flags & kSCNetworkReachabilityFlagsConnectionRequired) == kSCNetworkReachabilityFlagsConnectionRequired) {
-                    Type = @"2G";
+//                    Type = @"2G";
+                    return @"2G";
                 }
             }
         }
     }
     
-    return Type;
+//    return Type;
+    return @"无";
 }
 
 

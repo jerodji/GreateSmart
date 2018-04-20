@@ -16,9 +16,24 @@ class TabbarController: UITabBarController {
     let vcs = [HomePageVC(),GoodListVC(),InformationVC(),ShopCartVC(),MyVC()]
     var Navs:[UIViewController] = [UIViewController]()
     
+    required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+    }
+    
+    override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
+        super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
+    }
+    
+    override func loadView() {
+        super.loadView()
+        configItems()
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+    }
+
+    func configItems() -> Void {
         for i in 0..<names.count {
             let vc = vcs[i]
             let nav = BaseUINavigationController.init(rootViewController: vc)
@@ -37,7 +52,6 @@ class TabbarController: UITabBarController {
         self.viewControllers = Navs
         self.tabBar.barTintColor = kColorTabbar
     }
-
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

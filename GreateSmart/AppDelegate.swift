@@ -20,13 +20,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         self.window = UIWindow.init(frame: UIScreen.main.bounds)
         self.window!.backgroundColor = UIColor.white
         self.window!.makeKeyAndVisible()
-        
+
         let tabCtrl = TabbarController()
-        self.window?.rootViewController =  tabCtrl
+        self.window!.rootViewController =  tabCtrl
         
         /* 状态栏字体颜色,全局 */
         UIApplication.shared.statusBarStyle = UIStatusBarStyle.default
-        
+
         /** 键盘 */
         IQKeyboardManager.shared().isEnabled = true // 控制整个功能是否启用
         IQKeyboardManager.shared().shouldResignOnTouchOutside = true // 控制点击背景是否收起键盘
