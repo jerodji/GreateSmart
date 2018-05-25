@@ -1081,8 +1081,9 @@
 				38F9CA86202FED89004D105D /* ClassTab */,
 				38F9CA8D203000DC004D105D /* Base */,
 				38FD68792040262200B19A42 /* Network */,
-				38FD686F204020F400B19A42 /* Utils */,
 				38F9CA8C203000B5004D105D /* Category */,
+				38FD686F204020F400B19A42 /* Utils */,
+				FA3CE95F20B87626007F6BA0 /* Libs */,
 				38FD6870204020FA00B19A42 /* Resource */,
 				38F9CA57202FED60004D105D /* GreateSmart */,
 				38F9CA6C202FED60004D105D /* GreateSmartTests */,
@@ -1194,7 +1195,6 @@
 		38FD686F204020F400B19A42 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
-				382EF41B205FBA5200F3A33B /* SYATopScrollviewVC */,
 				389BC5F3206BB31900CC776F /* AppConfig.h */,
 				389BC5F2206BB31900CC776F /* AppConfig.m */,
 				384625F5207A2F4700D88EDD /* MBHUDToast.h */,
@@ -1202,13 +1202,9 @@
 				387D5564206A14990073F934 /* JIStepper.swift */,
 				389AA0B12071DD2E009AC93C /* JITextView.h */,
 				389AA0B22071DD2E009AC93C /* JITextView.m */,
-				38F7636B20593950002C1999 /* iCarousel.h */,
-				38F7636C20593950002C1999 /* iCarousel.m */,
 				388004C6204FAAEE00FE9DD0 /* JsonTransform.swift */,
 				38213003204948EA00F1413C /* JJRealmManager.swift */,
 				38EE015A2045778E0050759A /* JJTextField.swift */,
-				381C630D2047C81A00A9066C /* WSCollectionViewFlowLayout.h */,
-				381C630E2047C81A00A9066C /* WSCollectionViewFlowLayout.m */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -1309,6 +1305,34 @@
 				FA13949A20581DC7008D6F68 /* ForMaleView.xib */,
 			);
 			path = "ForMale_男女专区";
+			sourceTree = "<group>";
+		};
+		FA3CE95F20B87626007F6BA0 /* Libs */ = {
+			isa = PBXGroup;
+			children = (
+				FA3CE96120B87695007F6BA0 /* iCarousel */,
+				FA3CE96020B87686007F6BA0 /* WSCollectionViewFlowLayout */,
+				382EF41B205FBA5200F3A33B /* SYATopScrollviewVC */,
+			);
+			path = Libs;
+			sourceTree = "<group>";
+		};
+		FA3CE96020B87686007F6BA0 /* WSCollectionViewFlowLayout */ = {
+			isa = PBXGroup;
+			children = (
+				381C630D2047C81A00A9066C /* WSCollectionViewFlowLayout.h */,
+				381C630E2047C81A00A9066C /* WSCollectionViewFlowLayout.m */,
+			);
+			path = WSCollectionViewFlowLayout;
+			sourceTree = "<group>";
+		};
+		FA3CE96120B87695007F6BA0 /* iCarousel */ = {
+			isa = PBXGroup;
+			children = (
+				38F7636B20593950002C1999 /* iCarousel.h */,
+				38F7636C20593950002C1999 /* iCarousel.m */,
+			);
+			path = iCarousel;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
