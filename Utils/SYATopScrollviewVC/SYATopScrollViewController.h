@@ -20,7 +20,10 @@ typedef enum {
  公开此属性,便于样式的自定义
  */
 @property (nonatomic, weak) UIScrollView *titleScrollView;
-/** 内容滚动视图 */
+
+/**
+ * 内容滚动视图
+ */
 @property (nonatomic, weak) UICollectionView *contentScrollView;
 
 /**
@@ -48,6 +51,7 @@ typedef enum {
 - (void)refreshDisplay;
 
 
+#pragma mark -
 /**
  * 顶部标题样式
  */

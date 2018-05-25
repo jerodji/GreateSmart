@@ -152,7 +152,7 @@ static AppConfig* _instance = nil;
 //    NSString* Type;
     if ((flags & kSCNetworkReachabilityFlagsReachable) == 0) {
         return @"无";
-    }
+    } 
     if ((flags & kSCNetworkReachabilityFlagsConnectionRequired) == 0) {
 //        Type = @"Wi-Fi";
         return @"Wi-Fi";

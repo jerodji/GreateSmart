@@ -40,7 +40,7 @@ class HomePageVC: BaseUIViewController {
     func configSubviews() -> () {
         tableCtrl = ItemTableControl.init(tableFrame: CGRect(x: 0, y: kStatusH, width: kScreenW, height: kScreenH-kStatusH-kTabbarH))
         
-        self.homeData = NSArray.object(fromJSONString: testJsonStr) as! NSArray
+        self.homeData = NSArray.json_object(fromJSONString: testJsonStr) as! NSArray
         self.tableCtrl.handleHomeData(homeData: self.homeData)
         
         self.view.addSubview(tableCtrl.tableView!)

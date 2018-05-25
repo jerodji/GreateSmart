@@ -180,7 +180,7 @@ static NetworkHUD* _ins = nil;
 
             successBlock(resp,data);
             
-            NSDictionary* dict = [NSObject dictFromData:data];
+            NSDictionary* dict = [data json_toDictionary];//[[NSObject jsonHandler] dictFromData:data];
             if (showhud) [self succHUD:dict[@"msg"]];
             
         } fail:^(NSURLSessionDataTask *task, NSError *error) {

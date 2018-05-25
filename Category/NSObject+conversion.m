@@ -123,37 +123,73 @@ static NSString * PARAM_KEY = @"PARAM_KEY";
 
 @implementation NSObject (JSONHandle)
 
-- (NSData *)JSONData{
+/** JSON对象转换为NSData */
+- (NSData *)json_toData {
     return [NSJSONSerialization dataWithJSONObject:self options:0 error:nil];
 }
 
-- (NSString *)JSONString{
+/** JSON对象转换为String */
+- (NSString *)json_toString{
     if (![NSJSONSerialization isValidJSONObject:self]) {
         return @"";
     }
     return [[NSString alloc] initWithData:[NSJSONSerialization dataWithJSONObject:self options:NSJSONWritingPrettyPrinted error:nil] encoding:NSUTF8StringEncoding];
 }
 
-+ (id)objectFromJSONString:(NSString *)jsonString{
-    return [NSJSONSerialization JSONObjectWithData:[jsonString dataUsingEncoding:NSUTF8StringEncoding] options:0 error:nil];
-}
-
-+ (nullable id)objectFromJSONData:(nullable NSData *)jsonData{
-    return [NSJSONSerialization JSONObjectWithData:jsonData options:0 error:nil];
-}
-
-+ (NSDictionary*)dictFromData:(NSData*)data {
-    
-    if ([data isKindOfClass:[NSDictionary class]]) {
-        return (NSDictionary*)data;
+/** JSON对象转换为Dictionary */
+- (NSDictionary*)json_toDictionary {
+    if ([self isKindOfClass:[NSDictionary class]]) {
+        return (NSDictionary*)self;
     }
     
     NSDictionary* dic;
-    if ([data isKindOfClass:[NSData class]]) {
+    if ([self isKindOfClass:[NSData class]]) {
+        dic = [NSJSONSerialization JSONObjectWithData:(NSData*)self options:NSJSONReadingAllowFragments error:nil];
+    } else {
+        NSData* data = [NSJSONSerialization dataWithJSONObject:self options:NSJSONWritingPrettyPrinted error:nil];
         dic = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingAllowFragments error:nil];
     }
     
     return dic;
 }
+
+
+#pragma mark object form JSON
+
+//static NSObject* _json_handler = nil;
+//+ (NSObject*)jsonHandler {
+//    if (!_json_handler) {
+//        _json_handler = [[NSObject alloc] init];
+//    }
+//    return _json_handler;
+//}
+
+/** 将JSONString转换为对象 */
++ (id)json_objectFromJSONString:(NSString *)jsonString{
+    id obj = [NSJSONSerialization JSONObjectWithData:[jsonString dataUsingEncoding:NSUTF8StringEncoding] options:0 error:nil];
+    return obj;
+}
+
+/** 将JSONSData转换为对象 */
++ (nullable id)json_objectFromJSONData:(nullable NSData *)jsonData{
+    return [NSJSONSerialization JSONObjectWithData:jsonData options:0 error:nil];
+}
+
+
+//- (NSDictionary*)dictFromData:(NSData*)data {
+//
+//    if ([data isKindOfClass:[NSDictionary class]]) {
+//        return (NSDictionary*)data;
+//    }
+//
+//    NSDictionary* dic;
+//    if ([data isKindOfClass:[NSData class]]) {
+//        dic = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingAllowFragments error:nil];
+//    }
+//
+//    return dic;
+//}
+
+
 
 @end

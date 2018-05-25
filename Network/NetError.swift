@@ -109,7 +109,7 @@ class NetError: NSObject {
             return
         }
         
-        delog("总有刁民害朕~~  \(response?.statusCode)  \nURL : \(String(describing: response?.url)) \n错误信息 : \(String(describing: data))")
+        delog("总有刁民害朕~~  \(String(describing: response?.statusCode))  \nURL : \(String(describing: response?.url)) \n错误信息 : \(String(describing: data))")
         
         if data == nil {return}
         

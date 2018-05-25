@@ -22,6 +22,7 @@ class InformationVC: SYATopScrollViewController {
         self.setupTitleScale(withTitleScale: 1.2)
         self.titleScrollView.backgroundColor = UIColor.white
         self.setupTitleScrollViewShadow(with: UIColor.RGB(83, 83, 83), opacity: 0.5, radius: 2, offset: CGSize(width: 0, height: 0))
+        
     }
     
     func setUpAllViewController() -> () {
@@ -50,10 +51,10 @@ class InformationVC: SYATopScrollViewController {
 //        vc4.view.backgroundColor = UIColor.green
         self.addChildViewController(vc4)
         
-        let vc5 = UIViewController()
-        vc5.title = "sad"
-        vc5.view.backgroundColor = UIColor.gray
-        self.addChildViewController(vc5)
+//        let vc5 = UIViewController()
+//        vc5.title = "sad"
+//        vc5.view.backgroundColor = UIColor.gray
+//        self.addChildViewController(vc5)
     }
     
     

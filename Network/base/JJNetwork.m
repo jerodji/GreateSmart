@@ -22,7 +22,9 @@
 }
 
 //表单请求
-- (void)formRequest:(NetType)type URL:(NSString*)fullURL formHeaders:(NSDictionary*)formHeader body:(id)formBody
+- (void)formRequest:(NetType)type URL:(NSString*)fullURL
+        formHeaders:(NSDictionary*)formHeader
+               body:(id)formBody
             success:(void (^)(NSHTTPURLResponse*, id))successBlock
                fail:(void (^)(NSURLSessionDataTask*, NSError*))failBlock
 {

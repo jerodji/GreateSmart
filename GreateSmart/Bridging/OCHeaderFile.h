@@ -15,11 +15,8 @@
 #import "UIButton+parameter.h"
 #import "UIColor+HexString.h"
 #import "UIImage+AttributeImage.h"
-#import "UIView+control.h"
-#import "UIView+viewFrame.h"
 #import "UIViewController+XIB.h"
 #import "NSObject+conversion.h"
-#import "NSDictionary+extend.h"
 #import "UILabel+extend.h"
 #import "UIView+extend.h"
 

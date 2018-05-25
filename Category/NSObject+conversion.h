@@ -12,19 +12,13 @@
 
 @property (nonatomic, strong) NSMutableDictionary * _Nullable params;
 
-/**
- *  将对象的属性转成字典
- */
+/** 将对象的属性转成字典 */
 - (nullable NSDictionary*)getPropertyDict;
 
-/**
- *  获取变量字典
- */
+/** 获取变量字典 */
 - (nullable NSDictionary*)getIvarDict;
 
-/**
- *  获取对应的集合
- */
+/** 获取对应的集合 */
 - (nullable id)getObjectInternal;
 
 @end
@@ -33,26 +27,19 @@
 
 @interface NSObject (JSONHandle)
 
-/**
- *  对象转换为JSONData
- */
-- (nullable NSData *)JSONData;
+/** JSON对象转换为NSData */
+- (nullable NSData *)json_toData;
+/** JSON对象转换为String */
+- (nullable NSString *)json_toString;
+/** JSON对象转换为Dictionary */
+- (nullable NSDictionary*)json_toDictionary;
 
-/**
- *  对象转换为JSONString
- */
-- (nullable NSString *)JSONString;
 
-/**
- *  将JSONString转换为对象
- */
-+ (nullable id)objectFromJSONString:(nullable NSString *)jsonString;
-
-/**
- *  将JSONSData转换为对象
- */
-+ (nullable id)objectFromJSONData:(nullable NSData *)jsonData;
-
-+ (NSDictionary*)dictFromData:(NSData*)data;
+//+ (NSObject*)jsonHandler;
+/** 将JSONString转换为对象 */
++ (nullable id)json_objectFromJSONString:(nullable NSString *)jsonString;
+/** 将JSONSData转换为对象 */
++ (nullable id)json_objectFromJSONData:(nullable NSData *)jsonData;
+//- (NSDictionary*)dictFromData:(NSData*)data;
 
 @end
